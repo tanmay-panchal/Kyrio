@@ -1,0 +1,122 @@
+﻿<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+@Styles.Render("~/Style/datatable")
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> Invoices & Receipts</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="busiessForm">
+                                <div class="form-group">
+                                    <input type="checkbox" checked id="printReceipts" name="printReceipts" ispropertiesmodel />
+                                    <label class="col-form-label">Automatically print receipts upon sale completion</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" checked id="saleShowCustomerInfo" name="saleShowCustomerInfo" ispropertiesmodel />
+                                    <label class="col-form-label">Show client mobile and email on invoices</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" checked id="saleShowCustomerAddress" name="saleShowCustomerAddress" ispropertiesmodel />
+                                    <label class="col-form-label">Show client address on invoices</label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" style="font-weight:bold">Invoice Title</label>
+                                    <input type="text" class="form-control" id="customInvoiceTitle" name="customInvoiceTitle" ispropertiesmodel maxlength="200">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" style="font-weight:bold">Receipt Custom Line 1</label>
+                                    <input type="text" class="form-control" id="saleCustomHeader1" name="saleCustomHeader1" ispropertiesmodel maxlength="200">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" style="font-weight:bold">Receipt Custom Line 2</label>
+                                    <input type="text" class="form-control" id="saleCustomHeader2" name="saleCustomHeader2" ispropertiesmodel maxlength="200">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" style="font-weight:bold">Receipt Footer</label>
+                                    <input type="text" class="form-control" id="receiptMessage" name="receiptMessage" ispropertiesmodel maxlength="200">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-custome" id="excuteButton" data-style="slide-right">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> Invoice Number Sequencing</strong>
+                </div>
+                <div class="card-body">
+                    <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="tableLocation">
+                        <thead>
+                            <tr>
+                                <th>LOCATION NAME</th>
+                                <th>INVOICE NO. PREFIX</th>
+                                <th>NEXT INVOICE NUMBER</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionForm">
+                    <div class="form-group">
+                        <span id="LocationName"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" id="LocationID" ispropertiesmodel ispropertiesidmodel />
+                        <label class="col-form-label">Invoice No. Prefix</label>
+                        <input type="text" class="form-control" id="InvoiceNoPrefix" name="InvoiceNoPrefix" ispropertiesmodel maxlength="10" />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Next Invoice Number</label>
+                        <input type="number" class="form-control" id="NextInvoiceNumber" name="NextInvoiceNumber" ispropertiesmodel maxlength="10" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/invoicesreceipts.js")"></script>
+@Scripts.Render("~/Scripts/datatable")

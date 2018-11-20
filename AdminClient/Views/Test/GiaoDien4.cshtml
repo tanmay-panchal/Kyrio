@@ -1,0 +1,108 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script>
+    var prefixFileMobileAppointment = "/ContentHtml/Appointment/Action/Moblile";
+    var LinkFileMobileAppointment = {
+        AddClient: {
+            Index: prefixFileMobileAppointment + "/AddClient/Index.html",
+            ItemSearchClient: prefixFileMobileAppointment + "/AddClient/ItemSearchClient.html",
+        },
+        AddService: {
+            Index: prefixFileMobileAppointment + "/AddComboboxService/Index.html",
+            Service: prefixFileMobileAppointment + "/AddComboboxService/Service.html",
+            ServiceGroup: prefixFileMobileAppointment + "/AddComboboxService/ServiceGroup.html",
+        },
+        RepeateScheulDate: {
+            Index: prefixFileMobileAppointment + "/Repeate_ScheulDate/Index.html",
+        },
+        AppointmentService: {
+            Index: prefixFileMobileAppointment + "/AppointmentService/Index.html",
+        },
+        ContentShare: {
+            ServiceShare: prefixFileMobileAppointment + "/ContentShare/ServiceShare.html",
+        },
+        Control: {
+            Duration: prefixFileMobileAppointment + "/Control/Duration.html",
+            Staff_IsRequest: prefixFileMobileAppointment + "/Control/Staff_IsRequest.html",
+            Starttime12h: prefixFileMobileAppointment + "/Control/Starttime12h.html",
+            Starttime24h: prefixFileMobileAppointment + "/Control/Starttime24h.html",
+        },
+        DetailClient: {
+            Index: prefixFileMobileAppointment + "/DetailClient/Index.html",
+            Appointment: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Appointment/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Appointment/Item.html",
+            },
+            Info: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Info/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Info/Item.html",
+            },
+            Invoice: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Invoice/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Invoice/Item.html",
+            },
+            Product: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Product/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Product/Item.html",
+            }
+        },
+        Index: {
+            Index: prefixFileMobileAppointment + "/Index/Index.html",
+            ClientDetail: prefixFileMobileAppointment + "/Index/ClientDetail.html",
+            ClientEmpty: prefixFileMobileAppointment + "/Index/ClientEmpty.html",
+            Repeat_ScheulDate: prefixFileMobileAppointment + "/Index/Repeat_ScheulDate.html",
+            ServiceItem: prefixFileMobileAppointment + "/Index/ServiceItem.html",
+        },
+    };
+    //#region Repeate And Scheul Date
+    class MobileRepeateScheulDate {
+        constructor() {
+            this.Modal = null;
+            this.HTML = {
+                Index: null,
+            }
+        }
+
+        //#region Private
+        CreatePluginControl() {
+            this.Modal.find("#endRepeatAppointment").daterangepicker({
+                "singleDatePicker": true,
+                "opens": "center",
+                "locale": {
+                    "format": "ddd, DD MMM"
+                }
+            });
+            this.Modal.find("#scheduledDateAppointment").datepicker();
+        }
+        //#endregion
+
+        //#region Public
+        OpenModal() {
+            var that = this;
+            if (this.HTML.Index == null)
+                $.RequestAjaxText(LinkFileMobileAppointment.RepeateScheulDate.Index, function (data) { that.HTML.Index = data; });
+
+            if (that.Modal == null || that.Modal == undefined) {
+                that.Modal = $(that.HTML.Index);
+                $("body").append(that.Modal);
+                that.CreatePluginControl();
+            }
+        }
+        HideModal() {
+            this.Modal.hide();
+        }
+        RemoveModal() {
+            this.Modal.remove();
+        }
+        //#endregion
+
+    }
+    //#endregion
+    $(function () {
+        var t = new MobileRepeateScheulDate();
+        t.OpenModal();
+    })
+</script>

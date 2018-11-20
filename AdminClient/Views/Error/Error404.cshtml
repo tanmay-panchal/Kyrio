@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@model Object
+@{
+    JObject error = JObject.FromObject(Model);
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Kyrio Error">
+        <meta name="author" content="MAPLE JSC">
+        <meta name="keyword" content="Kyrio Error">
+        <title>@error["TitleWeb"]</title>
+        @Styles.Render("~/Style/index")
+        @Scripts.Render("~/Scripts/loadHeaderIndex")
+    </head>
+    <body class="app flex-row align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="clearfix">
+                        <h1 class="float-left display-3 mr-4">@error["TitleWeb"]</h1>
+                        @Html.Raw(error["ContentError"].ToString())
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @Scripts.Render("~/Scripts/loadfooterIndex")
+    </body>
+</html>
+}

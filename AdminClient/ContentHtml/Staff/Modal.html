@@ -1,0 +1,210 @@
+﻿<div class="modal fade " id="modalStaff" ismodal>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="staffForm">
+                    <div class="row">
+                        <div class="col-md-12 mb-12">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#detailsStaff" role="tab" aria-controls="details">DETAILS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#locationStaff" role="tab" aria-controls="staff">LOCATIONS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#serviceStaff" role="tab" aria-controls="resources">SERVICES</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#commissionStaff" role="tab" aria-controls="distribution ">COMMISSION</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade active show" id="detailsStaff" role="tabpanel">
+                                    <input type="hidden" id="UserID" name="UserID" ispropertiesidmodel ispropertiesmodel />
+                                    <div class="row">
+                                        <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                                            <div class="row">
+                                                <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                                                    <div class="form-group">
+                                                        <label class="col-form-label">FIRST NAME</label>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="icon-user"></i></span>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="FirstName" name="FirstName" ispropertiesmodel>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                                                    <div class="form-group">
+                                                        <label class="col-form-label">LAST NAME</label>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="icon-user"></i></span>
+                                                            </div>
+                                                            <input type="text" class="form-control" id="LastName" name="LastName" ispropertiesmodel>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">MOBILE NUMBER</label>
+                                                <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" placeholder="91 234 56 78" ispropertiesmodel>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">EMAIL</label>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="icon-envelope"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="Email" name="Email" ispropertiesmodel>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">USER PERMISSION</label>
+                                                <select style="width: 100%" id="RoleID" name="RoleID" ispropertiesmodel urlselection="/Home/GetRoleBaseId"></select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="switch switch-icon switch-pill switch-primary">
+                                                    <input type="checkbox" class="switch-input" id="EnableAppointmentBooking" name="EnableAppointmentBooking" ispropertiesmodel>
+                                                    <span class="switch-label" data-on="" data-off=""></span>
+                                                    <span class="switch-handle"></span>
+                                                </label>
+                                                <label class="col-form-label">ENABLE APPOINTMENT BOOKINGS</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">NOTES</label>
+                                                <textarea id="Notes" name="Notes" rows="10" placeholder="Add private notes viewable in staff settings only (optional)" class="form-control" ispropertiesmodel></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6 p-0 pr-md-3">
+                                                    <label class="col-form-label">EMPLOYMENT START DATE</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="StartDate" name="StartDate" />
+                                                        <span class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="fa fa-caret-down"></i>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6 p-0 pr-md-3">
+                                                    <label class="col-form-label">EMPLOYMENT END DATE</label>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="EndDate" name="EndDate" />
+                                                        <span class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="fa fa-caret-down"></i>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="containtAppointmentColor">
+                                                <label class="col-form-label">APPOINTMENT COLOR</label>
+                                                <div class="input-group mb-4" id="colorGroup">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="locationStaff" role="tabpanel" style="max-height:60vh; overflow-y:auto; overflow-x:hidden">
+                                    <div class="row">
+                                        <div class="col-fhd-12 col-xlg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="col-fhd-12 col-xlg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <input type="checkbox" id="checkAllLocation" />
+                                                    <label class="col-form-label">Select All</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="containtLocation"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="serviceStaff" role="tabpanel" style="max-height:60vh; overflow-y:auto; overflow-x:hidden">
+                                    <div class="row">
+                                        <div class="col-fhd-12 col-xlg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="col-fhd-12 col-xlg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <input type="checkbox" id="checkAllService" /> <label class="col-form-label">Select All</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="containtService"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="commissionStaff" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-12 col-12">
+                                            <div class="form-group">
+                                                <label class="col-form-label">SERVICE COMMISSION</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="fa fa-percent"></i>
+                                                        </span>
+                                                    </span>
+                                                    <input type="text" class="form-control" id="ServiceCommission" name="ServiceCommission" isnumber ispropertiesmodel />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-12">
+                                            <div class="form-group">
+                                                <label class="col-form-label">PRODUCT COMMISSION</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="fa fa-percent"></i>
+                                                        </span>
+                                                    </span>
+                                                    <input type="text" class="form-control" id="ProductCommission" name="ProductCommission" isnumber ispropertiesmodel />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-12 col-12">
+                                            <div class="form-group">
+                                                <label class="col-form-label">VOUCHER SALES COMMISSION</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="fa fa-percent"></i>
+                                                        </span>
+                                                    </span>
+                                                    <input type="text" class="form-control" id="VoucherSalesCommission" name="VoucherSalesCommission" isnumber ispropertiesmodel />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-2 col-sm-12 col-12">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteServiceButton" data-style="slide-right">DELETE</button>
+                </div>
+                <div class="col-md-3 col-sm-12 col-12">
+                    <button type="button" class="btn btn-info btn-block active" id="resetPassswordButton" data-style="slide-right">SEND RESET PASSWORD EMAIL</button>
+                </div>
+                <div class="col-md-3 col-sm-12 col-12"></div>
+                <div class="col-md-2 col-sm-12 col-12">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-md-2 col-sm-12 col-12">
+                    <button type="button" class="btn btn-block btn-success" id="actionServiceButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

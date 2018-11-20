@@ -1,0 +1,207 @@
+﻿<link href="@Url.Content("~/Extension/css/datepicker-mode.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+<div class="col-12 p-0 form-group">
+    <div class="col-12 p-0 form-group pt-2 analytics mb-3">
+        <div class="col-12 m-0 col-md-3 col-xl-2 p-0 pr-2 form-group">
+            <select class="form-control" id="locationSearch"></select>
+        </div>
+        <div class="col-12 m-0 col-md-3 col-xl-2 p-0 pr-2 form-group">
+            <select class="form-control" id="staffSearch"></select>
+        </div>
+        <div class="col-12 m-0 col-md-6 col-xl-8 p-0 form-group d-flex justify-content-end containt-datepicker">
+            <div class="input-group datepicker">
+                <span class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </span>
+                <input type="text" class="form-control text-center" readonly id="datepickerSearch" />
+            </div>
+            <div class="group-button-mode">
+                <button type="button" class="btn btn-secondary active" aria-pressed="true" id="buttonModeDay">Day</button>
+                <button type="button" class="btn btn-secondary active" aria-pressed="true" id="buttonModeMonth">Month</button>
+                <button type="button" class="btn btn-secondary active" aria-pressed="true" id="buttonModeYear">Year</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 form-control p-0 mb-3">
+        <div class="_3On2_c" style="display: flex; flex-flow: row wrap;">
+            <div class="_2mPFMy wZ-aDY _1Na1WU" style="display: flex; flex-direction: column;">
+                <div class="_1p62pX _12x_kp _1__4JE _1Se3mW _2Z2DqX">Total Appointments</div>
+                <div>
+                    <div class="_1p62pX _1i_G43 _2SACmK _1MEjgb" id="TotalAppointments"></div>
+                    <div class="_1p62pX _3y3xr- _2xtCX5 _3D_WMD _4VOijb" id="AppointmentsPre">
+
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Completed</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="AppointmentsComplete"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="AppointmentsCompletePercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Not Completed</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="AppointmentsNotCompleted"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="AppointmentsNotCompletedPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Canceled</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="AppointmentsCanceled"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="AppointmentsCanceledPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">No Show</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="AppointmentsNoShow"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="AppointmentsNoShowPercent"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_2mPFMy wZ-aDY _1Na1WU" style="display: flex; flex-direction: column;">
+                <div class="_1p62pX _12x_kp _1__4JE _1Se3mW _2Z2DqX">Online Appointments</div>
+                <div>
+                    <div class="_1p62pX _1i_G43 _2SACmK _1MEjgb" id="TotalOnlineAppointments"></div>
+                    <div class="_1p62pX _3y3xr- _2xtCX5 _3D_WMD _4VOijb" id="OnlineAppointmentsPre">
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Completed</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="OnlineAppointmentsComplete"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="OnlineAppointmentsCompletePercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Not Completed</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="OnlineAppointmentsNotCompleted"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="OnlineAppointmentsNotCompletedPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Canceled</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="OnlineAppointmentsCanceled"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="OnlineAppointmentsCanceledPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">No Show</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="OnlineAppointmentsNoShow"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="OnlineAppointmentsNoShowPercent"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_2mPFMy wZ-aDY _1Na1WU" style="display: flex; flex-direction: column;">
+                <div class="_1p62pX _12x_kp _1__4JE _1Se3mW _2Z2DqX">Occupancy</div>
+                <div>
+                    <div class="_1p62pX _1i_G43 _2SACmK _1MEjgb" id="OccupancyPercent"></div>
+                    <div class="_1p62pX _3y3xr- _2xtCX5 _3D_WMD _4VOijb" id="OccupancyPre">
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Working Hours</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="WorkingHours"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Booked Hours</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="BookedHours"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="BookedHoursPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Blocked Hours</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="BlockedHours"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="BlockedHoursPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Unbooked Hours</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="UnbookedHours"></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="UnbookedHoursPercent"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_2mPFMy wZ-aDY _1Na1WU" style="display: flex; flex-direction: column;">
+                <div class="_1p62pX _12x_kp _1__4JE _1Se3mW _2Z2DqX">Total Sales</div>
+                <div>
+                    <div class="_1p62pX _1i_G43 _2SACmK _1MEjgb">
+                        <span id="TotalSales"></span>
+                    </div>
+                    <div class="_1p62pX _3y3xr- _2xtCX5 _3D_WMD _4VOijb" id="TotalSalesPre">
+
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Services</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM"><span id="Services"></span></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="ServicesPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Products</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM"><span id="Products"></span></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="ProductsPercent"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_2mPFMy wZ-aDY _1Na1WU" style="display: flex; flex-direction: column;">
+                <div class="_1p62pX _12x_kp _1__4JE _1Se3mW _2Z2DqX">Average Sale</div>
+                <div>
+                    <div class="_1p62pX _1i_G43 _2SACmK _1MEjgb"><span id="AverageSale"></span></div>
+                    <div class="_1p62pX _3y3xr- _2xtCX5 _3D_WMD _4VOijb" id="AverageSalePre">
+                        
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Sales Count</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="SalesCount"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Av. Service Sale</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM"><span id="AvServiceSale"></span></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Av. Product Sale</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM"><span id="AvProductSale"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_2mPFMy wZ-aDY _1Na1WU" style="display: flex; flex-direction: column;">
+                <div class="_1p62pX _12x_kp _1__4JE _1Se3mW _2Z2DqX">Client Retention (Sales)</div>
+                <div>
+                    <div class="_1p62pX _1i_G43 _2SACmK _1MEjgb" id="ClientRetention"></div>
+                    <div class="_1p62pX _3y3xr- _2xtCX5 _3D_WMD _1RHwD-" id="ClientRetentionPre">
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Returning</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM"><span id="Returning"></span></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="ReturningPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">New</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM"><span id="New"></span></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="NewPercent"></div>
+                    </div>
+                    <div>
+                        <div class="_1p62pX Gu73WK _22ZlXM">Walk-In</div>
+                        <div class="_1p62pX Bn74AK _22ZlXM"><span id="WalkIn"></span></div>
+                        <div class="_1p62pX Bn74AK _22ZlXM" id="WalkInPercent">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 form-control p-0 mb-3">
+        <div class="card m-0">
+            <div class="card-header">
+                <p class="text-capitalize font-weight-bold">Total Appointments</p>
+            </div>
+            <div class="card-body pt-2">
+                <canvas id="chartTotalAppointments"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 form-control p-0 mb-3">
+        <div class="card m-0">
+            <div class="card-header">
+                <p class="text-capitalize font-weight-bold">Total Sales</p>
+            </div>
+            <div class="card-body pt-2">
+                <canvas id="chartTotalSales"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/Chart.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/datepicker-mode.js")"></script>
+<script src="@Url.Content("~/Scripts/report/analytics/dashboard.js")"></script>

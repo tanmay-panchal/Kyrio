@@ -1,0 +1,65 @@
+﻿<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> Staff Notifications</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="busiessForm">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                                <label class="switch switch-lg switch-3d switch-primary">
+                                                    <input type="checkbox" class="switch-input" id="config_sn_enabled" name="config_sn_enabled" ispropertiesmodel>
+                                                    <span class="switch-label"></span>
+                                                    <span class="switch-handle"></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group col-fhd-10 col-xlg-10 col-md-10 col-sm-12 col-xs-10">
+                                                <h3>Enable Staff Notifications</h3>
+                                                <p>Automatically send booking notifications to staff members.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="groupsetting">
+                                    <h5>New online bookings</h5>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Send email notification with booking details each time an online booking is made</label>
+                                        <div class="form-group">
+                                            <input type="checkbox" checked id="config_sn_members_enabled" name="config_sn_members_enabled" ispropertiesmodel />
+                                            <label class="col-form-label">SEND TO STAFF MEMBERS BOOKED</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="checkbox" checked id="config_sn_custom_enabled" name="config_sn_custom_enabled" ispropertiesmodel />
+                                            <label class="col-form-label">SEND TO SPECIFIC EMAIL ADDRESS</label>
+                                        </div>
+                                        <input type="text" class="form-control" id="config_sn_custom_emails" name="config_sn_custom_emails" ispropertiesmodel maxlength="100" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-custome" id="excuteButton" data-style="slide-right">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/staffnotifications.js")"></script>

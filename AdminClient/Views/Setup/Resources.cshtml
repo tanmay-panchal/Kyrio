@@ -1,0 +1,128 @@
+﻿@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<div class="animated fadeIn">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <select class="form-control" style="width: 100%" id="LocationIDIndex" name="LocationIDIndex"></select>
+            </div>
+        </div>
+    </div>
+    <div class="card" id="divTable">
+        <div class="card-body">
+            <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="datatable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>RESOURCE NAME</th>
+                        <th>DESCRIPTION</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" id="nodata">
+        <div style="text-align:center!important; margin-left:auto; margin-right:auto">
+            <p style="opacity: .7; font-size:60px">
+                <i class="fa fa-bed fa-lg mt-4"></i>
+            </p>
+            <h3 class="m-b-10">No Resources Here</h3>
+            <p>
+                This location has no resources yet, use the button above to add new resources here.
+            </p>
+        </div>
+        <div class="col-md-12" style="display:flex; align-items:center;justify-content:center">
+            <button type="button" class="btn btn-block btn-success" style="width:120px" id="btnNew" data-style="slide-right">New Resource</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <input type="hidden" name="dLocationID" id="dLocationID" value="@ViewBag.LocationID" />
+        <input type="hidden" name="dLocationName" id="dLocationName" value="@ViewBag.LocationName" />
+        <div style="" class="containtButtonFooter" id="containtButtonCreate">
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active show" id="detail-tab" data-toggle="tab" href="#detail" role="tab" aria-controls="detail" aria-selected="true">DETAILS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" role="tab" aria-controls="service" aria-selected="false">SERVICES</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTab1Content">
+                        <div class="tab-pane fade active show" id="detail" role="tabpanel" aria-labelledby="detail-tab">
+                            <form novalidate="novalidate" id="actionForm">
+                                <div class="form-group">
+                                    <input type="hidden" id="ResourceID" ispropertiesmodel ispropertiesidmodel />
+                                    <label class="col-form-label">RESOURCE NAME</label>
+                                    <input type="text" class="form-control" id="ResourceName" name="ResourceName" placeholder="e.g Massage Room" ispropertiesmodel maxlength="200" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">DESCRIPTION</label>
+                                    <textarea class="form-control" rows="3" id="Description" name="Description" placeholder="Description" ispropertiesmodel maxlength="400"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">LOCATION</label>
+                                    <select style="width: 100%" id="LocationID" urlselection="/Home/GetLocationBaseId" name="LocationID" ispropertiesmodel></select>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="service-tab">
+                            <div class="alert alert-info" id="hasservice">
+                                Below are services that can be booked with this resource. you can set which services are assigned on your services page.
+                            </div>
+                            <div class="form-group" id="containService"></div>
+                            <div class="row" id="noservice">
+                                <div style="text-align:center!important; margin-left:auto; margin-right:auto">
+                                    <p style="opacity: .7; font-size:60px">
+                                        <i class="fa fa-bed fa-lg mt-4"></i>
+                                    </p>
+                                    <div style="text-align:center"><h4>No Services Assigned</h4></div>
+                                    <p>There are no services that can be booked with this resource yet. You can assign services to this resource on your services page.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteButton">DELETE</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/resources.js")"></script>

@@ -1,0 +1,310 @@
+﻿@model List<AdminClient.Models.Config>
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> Admin Settings</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="AdminSettingsForm">
+                                <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active show" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">SMS & EMAIL SERVER</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">SIGN UP</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">EMAIL WHEN RESET PASSWORD</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">EMAIL WHEN CHANGE EMAIL</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab5-tab" data-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">DEFAULT BOOKING ONLINE</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab6-tab" data-toggle="tab" href="#tab6" role="tab" aria-controls="tab6" aria-selected="false">APPOINTMENT</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab7-tab" data-toggle="tab" href="#tab7" role="tab" aria-controls="tab7" aria-selected="false">EMAIL WHEN ONLINE BOOKING</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab8-tab" data-toggle="tab" href="#tab8" role="tab" aria-controls="tab8" aria-selected="false">OTHER</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tab9-tab" data-toggle="tab" href="#tab9" role="tab" aria-controls="tab9" aria-selected="false">EMAIL WHEN CREATE STAFF</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTab1Content">
+                                    <div class="tab-pane fade active show" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <h5>AMAZON SMS</h5>
+                                                    <label class="col-form-label" id="lblSMSAccessKeyID">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "SMSAccessKeyID").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" id="SMSAccessKeyID" name="SMSAccessKeyID" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SMSAccessKeyID").Value" ispropertiesmodel />
+                                                    </div>
+                                                    <label class="col-form-label" id="lblSMSSecretAccessKeyID">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "SMSSecretAccessKeyID").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" id="SMSSecretAccessKeyID" name="SMSSecretAccessKeyID" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SMSSecretAccessKeyID").Value" ispropertiesmodel />
+                                                    </div>
+                                                    <label class="col-form-label" id="lblSMSSenderID">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "SMSSenderID").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" id="SMSSenderID" name="SMSSenderID" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SMSSenderID").Value" ispropertiesmodel />
+                                                    </div>
+                                                    </br>
+                                                    <h5>EMAIL SERVER</h5>
+                                                    <label class="col-form-label" id="lblUseSES">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "UseSES").Description
+                                                    </label>
+                                                    <div>
+                                                        @{ Boolean useSES = (Convert.ToInt32(Model.SingleOrDefault(n => n.ConfigID == "UseSES").Value)) == 1;}
+                                                        <input type="radio" name="useSES" id="UseSES" @( useSES ? "checked" : "") ispropertiesmodel /> Yes
+                                                        <input type="radio" name="useSES" @( !useSES ? "checked" : "") /> No
+                                                    </div>
+
+                                                    <label class="col-form-label" id="lblServerName">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "ServerName").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" id="ServerName" name="ServerName" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "ServerName").Value" ispropertiesmodel required="required" />
+                                                    </div>
+                                                    <label class="col-form-label" id="lblPassword">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "Password").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="password" id="Password" name="Password" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "Password").Value" ispropertiesmodel required="required" />
+                                                    </div>
+
+                                                    <label class="col-form-label" id="lblEmailServer">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "EmailServer").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" id="EmailServer" name="EmailServer" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "EmailServer").Value" ispropertiesmodel required="required" />
+                                                    </div>
+                                                    <label class="col-form-label" id="lblSMTP">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "SMTP").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="number" id="SMTP" name="SMTP" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SMTP").Value" ispropertiesmodel required="required" />
+                                                    </div>
+
+                                                    <label class="col-form-label" id="lblUseSSLAdmin">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "UseSSLAdmin").Description
+                                                    </label>
+                                                    <div>
+                                                        @{ Boolean useSSLAdmin = (Convert.ToInt32(Model.SingleOrDefault(n => n.ConfigID == "UseSSLAdmin").Value)) == 1;}
+                                                        <input type="radio" name="useSSLAdmin" id="UseSSLAdmin" @( useSSLAdmin ? "checked" : "") ispropertiesmodel /> Yes
+                                                        <input type="radio" name="useSSLAdmin" @( !useSSLAdmin ? "checked" : "") /> No
+                                                    </div>
+                                                    <label class="col-form-label" id="lblSiteName">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "SiteName").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" id="SiteName" name="SiteName" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SiteName").Value" ispropertiesmodel required="required" />
+                                                    </div>
+                                                    <label class="col-form-label" id="lblBrandName">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "BrandName").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" id="BrandName" name="BrandName" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "BrandName").Value" ispropertiesmodel required="required" />
+                                                    </div>
+                                                    <label class="col-form-label" id="lblSiteEmail">
+                                                        @Model.SingleOrDefault(n => n.ConfigID == "SiteEmail").Description
+                                                    </label>
+                                                    <div>
+                                                        <input type="text" id="SiteEmail" name="SiteEmail" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SiteEmail").Value" ispropertiesmodel required="required" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblDefauleDayExpire">@Model.SingleOrDefault(n => n.ConfigID == "DefauleDayExpire").Description</label>
+                                            <input type="number" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "DefauleDayExpire").Value" id="DefauleDayExpire" name="DefauleDayExpire" ispropertiesmodel maxlength="10">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblSendNewRegisterToEmail">@Model.SingleOrDefault(n => n.ConfigID == "SendNewRegisterToEmail").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SendNewRegisterToEmail").Value" id="SendNewRegisterToEmail" name="SendNewRegisterToEmail" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblSubjectEmailWhenCreateAccount">@Model.SingleOrDefault(n => n.ConfigID == "SubjectEmailWhenCreateAccount").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SubjectEmailWhenCreateAccount").Value" id="SubjectEmailWhenCreateAccount" name="SubjectEmailWhenCreateAccount" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblBodyEmailWhenCreateAccount">@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailWhenCreateAccount").Description</label>
+                                            <textarea class="form-control" rows="15" id="BodyEmailWhenCreateAccount" name="BodyEmailWhenCreateAccount" ispropertiesmodel>@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailWhenCreateAccount").Value</textarea>
+                                        </div>
+                                        <div class="tips-text">
+                                            <p>Please use parameter: <br>@@CompanyName <br>@@Email<br> @@FirstName<br> @@LastName</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblSubjectEmailWhenResetPassword">@Model.SingleOrDefault(n => n.ConfigID == "SubjectEmailWhenResetPassword").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SubjectEmailWhenResetPassword").Value" id="SubjectEmailWhenResetPassword" name="SubjectEmailWhenResetPassword" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblBodyEmailWhenResetPassword">@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailWhenResetPassword").Description</label>
+                                            <textarea class="form-control" rows="15" id="BodyEmailWhenResetPassword" name="BodyEmailWhenResetPassword" ispropertiesmodel>@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailWhenResetPassword").Value</textarea>
+                                        </div>
+                                        <div class="tips-text">
+                                            <p>Please use parameter: <br>@@Link<br> @@Email <br>@@FirstName<br> @@LastName</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblSubjectEmailWhenChangeEmail">@Model.SingleOrDefault(n => n.ConfigID == "SubjectEmailWhenChangeEmail").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SubjectEmailWhenChangeEmail").Value" id="SubjectEmailWhenChangeEmail" name="SubjectEmailWhenChangeEmail" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblBodyEmailWhenChangeEmail">@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailWhenChangeEmail").Description</label>
+                                            <textarea class="form-control" rows="15" id="BodyEmailWhenChangeEmail" name="BodyEmailWhenChangeEmail" ispropertiesmodel>@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailWhenChangeEmail").Value</textarea>
+                                        </div>
+                                        <div class="tips-text">
+                                            <p>Please use parameter: <br>@@OldEmail <br>@@NewEmail <br>@@FirstName <br> @@LastName</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+                                        <label class="col-form-label" id="lblbooking_page_link">
+                                            @Model.SingleOrDefault(n => n.ConfigID == "booking_page_link").Description
+                                        </label>
+                                        <div>
+                                            <input type="text" id="booking_page_link" name="booking_page_link" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "booking_page_link").Value" ispropertiesmodel required="required" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblcode_button_booking">@Model.SingleOrDefault(n => n.ConfigID == "code_button_booking").Description</label>
+                                            <textarea class="form-control" rows="10" id="code_button_booking" name="code_button_booking" ispropertiesmodel>@Model.SingleOrDefault(n => n.ConfigID == "code_button_booking").Value</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblcode_embed_booking_widget">@Model.SingleOrDefault(n => n.ConfigID == "code_embed_booking_widget").Description</label>
+                                            <textarea class="form-control" rows="5" id="code_embed_booking_widget" name="code_embed_booking_widget" ispropertiesmodel>@Model.SingleOrDefault(n => n.ConfigID == "code_embed_booking_widget").Value</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
+                                        <div class="form-group">
+                                            <input type="text" value="@Model.SingleOrDefault(n=>n.ConfigID == "ColorAppointmentArrived").Value" id="ColorAppointmentArrived" name="ColorAppointmentArrived" ispropertiesmodel iscolorpicker />
+                                            <label class="col-form-label" style="font-weight:bold" id="lblColorAppointmentArrived">@Model.SingleOrDefault(n => n.ConfigID == "ColorAppointmentArrived").Description</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" value="@Model.SingleOrDefault(n=>n.ConfigID == "ColorAppointmentCompleted").Value" id="ColorAppointmentCompleted" name="ColorAppointmentCompleted" ispropertiesmodel iscolorpicker />
+                                            <label class="col-form-label" style="font-weight:bold" id="lblColorAppointmentCompleted">@Model.SingleOrDefault(n => n.ConfigID == "ColorAppointmentCompleted").Description</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" value="@Model.SingleOrDefault(n=>n.ConfigID == "ColorAppointmentConfirmed").Value" id="ColorAppointmentConfirmed" name="ColorAppointmentConfirmed" ispropertiesmodel iscolorpicker />
+                                            <label class="col-form-label" style="font-weight:bold" id="lblColorAppointmentConfirmed">@Model.SingleOrDefault(n => n.ConfigID == "ColorAppointmentConfirmed").Description</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" value="@Model.SingleOrDefault(n=>n.ConfigID == "ColorAppointmentNew").Value" id="ColorAppointmentNew" name="ColorAppointmentNew" ispropertiesmodel iscolorpicker />
+                                            <label class="col-form-label" style="font-weight:bold" id="lblColorAppointmentNew">@Model.SingleOrDefault(n => n.ConfigID == "ColorAppointmentNew").Description</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" value="@Model.SingleOrDefault(n=>n.ConfigID == "ColorAppointmentNoShow").Value" id="ColorAppointmentNoShow" name="ColorAppointmentNoShow" ispropertiesmodel iscolorpicker />
+                                            <label class="col-form-label" style="font-weight:bold" id="lblColorAppointmentNoShow">@Model.SingleOrDefault(n => n.ConfigID == "ColorAppointmentNoShow").Description</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" value="@Model.SingleOrDefault(n=>n.ConfigID == "ColorAppointmentStarted").Value" id="ColorAppointmentStarted" name="ColorAppointmentStarted" ispropertiesmodel iscolorpicker />
+                                            <label class="col-form-label" style="font-weight:bold" id="lblColorAppointmentStarted">@Model.SingleOrDefault(n => n.ConfigID == "ColorAppointmentStarted").Description</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" value="@Model.SingleOrDefault(n=>n.ConfigID == "ColorAppointmentCancelled").Value" id="ColorAppointmentCancelled" name="ColorAppointmentCancelled" ispropertiesmodel iscolorpicker />
+                                            <label class="col-form-label" style="font-weight:bold" id="lblColorAppointmentCancelled">@Model.SingleOrDefault(n => n.ConfigID == "ColorAppointmentCancelled").Description</label>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="tab7-tab">
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblSubjectEmailAppointmentConfirm">@Model.SingleOrDefault(n => n.ConfigID == "SubjectEmailAppointmentConfirm").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SubjectEmailAppointmentConfirm").Value" id="SubjectEmailAppointmentConfirm" name="SubjectEmailAppointmentConfirm" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblBodyEmailAppointmentConfirm">@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailAppointmentConfirm").Description</label>
+                                            <textarea class="form-control" rows="15" id="BodyEmailAppointmentConfirm" name="BodyEmailAppointmentConfirm" ispropertiesmodel>@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailAppointmentConfirm").Value</textarea>
+                                        </div>
+                                        <div class="tips-text">
+                                            <p>
+                                                Please use parameter: <br>USER_FIRST_NAME &nbsp;&nbsp;&nbsp;&nbsp; USER_LAST_NAME
+                                                <br>
+                                                SERVICE_NAME &nbsp;&nbsp;&nbsp;&nbsp; STAFF_FIRST_NAME &nbsp;&nbsp;&nbsp;&nbsp; STAFF_LAST_NAME &nbsp;&nbsp;&nbsp;&nbsp; BOOKING_DATE_TIME
+                                                <br>
+                                                BUSINESS_NAME &nbsp;&nbsp;&nbsp;&nbsp; LOCATION_NAME &nbsp;&nbsp;&nbsp;&nbsp; LOCATION_ADDRESS &nbsp;&nbsp;&nbsp;&nbsp; LOCATION_CITY
+                                                <br>
+                                                CLIENT_FIRST_NAME &nbsp;&nbsp;&nbsp;&nbsp; CLIENT_LAST_NAME &nbsp;&nbsp;&nbsp;&nbsp; CLIENT_EMAIL &nbsp;&nbsp;&nbsp;&nbsp; CLIENT_MOBILE
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab8" role="tabpanel" aria-labelledby="tab8-tab">
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblMessageAlertWhenExpire">@Model.SingleOrDefault(n => n.ConfigID == "MessageAlertWhenExpire").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "MessageAlertWhenExpire").Value" id="MessageAlertWhenExpire" name="MessageAlertWhenExpire" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="tips-text">
+                                            <p>
+                                                Please use parameter: <br>PACKAGENAME &nbsp;&nbsp;&nbsp;&nbsp; DAYLEFT &nbsp;&nbsp;&nbsp;&nbsp; EMAILSALE
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblEmailSale">@Model.SingleOrDefault(n => n.ConfigID == "EmailSale").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "EmailSale").Value" id="EmailSale" name="EmailSale" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblFaceBookAppID">@Model.SingleOrDefault(n => n.ConfigID == "FaceBookAppID").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "FaceBookAppID").Value" id="FaceBookAppID" name="FaceBookAppID" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblTemplateBodyEmail">@Model.SingleOrDefault(n => n.ConfigID == "TemplateBodyEmail").Description</label>
+                                            <textarea class="form-control" rows="15" id="TemplateBodyEmail" name="TemplateBodyEmail" ispropertiesmodel>@Model.SingleOrDefault(n => n.ConfigID == "TemplateBodyEmail").Value</textarea>
+                                        </div>
+                                        <div class="tips-text">
+                                            <p>Please use parameter: @@Content</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab9" role="tabpanel" aria-labelledby="tab9-tab">
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblSubjectEmailWhenCreateStaff">@Model.SingleOrDefault(n => n.ConfigID == "SubjectEmailWhenCreateStaff").Description</label>
+                                            <input type="text" class="form-control" value="@Model.SingleOrDefault(n=>n.ConfigID == "SubjectEmailWhenCreateStaff").Value" id="SubjectEmailWhenCreateStaff" name="SubjectEmailWhenCreateStaff" ispropertiesmodel maxlength="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label" style="font-weight:bold" id="lblBodyEmailWhenCreateStaff">@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailWhenCreateStaff").Description</label>
+                                            <textarea class="form-control" rows="15" id="BodyEmailWhenCreateStaff" name="BodyEmailWhenCreateStaff" ispropertiesmodel>@Model.SingleOrDefault(n => n.ConfigID == "BodyEmailWhenCreateStaff").Value</textarea>
+                                        </div>
+                                        <div class="tips-text">
+                                            <p>Please use parameter: <br> @@CompanyName <br>@@FirstName<br> @@LastName</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12"><button type="button" class="btn btn-custome" id="excuteButton" data-style="slide-right">Save Changes</button></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/admin/sitesetup.js")"></script>

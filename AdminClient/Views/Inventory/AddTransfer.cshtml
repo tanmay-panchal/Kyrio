@@ -1,0 +1,243 @@
+﻿@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/jquery-boostrap-modal-wizard.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<div class="modal fade modal-fullsrceen" id="actionModalMainTransfer" style="background-color:#F7F7F8">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" id="btnCloseModal" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <form novalidate="novalidate" id="actionFormTransfer">
+                        <div class="row" id="divSelectSourceLocation">
+                            <div class="col-12" style="margin-top:10px"><label id="titleSourceLocation">Select a location to transfer product stock from</label></div>
+                            <div class="col-12" id="divSourceLocation">
+
+                            </div>
+                        </div>
+                        <div class="row" id="divSelectLocation">
+                            <div class="col-12" style="margin-top:10px"><label>Select the location to deliver to</label></div>
+                            <div class="col-12" id="divLocation">
+                            </div>
+                        </div>
+                        <div class="row" id="divTransfer">
+                            <div class="col-md-12">
+                                <div class="col-md-9">
+                                    <div class="card">
+                                        <div class="card-body" id="addTransferDetail">
+                                            <div class="col-md-12" id="divNoDataProduct">
+                                                <h1 style="font-size:24px; font-weight:300; text-align:center">You haven't added any product to your transfer yet.</h1>
+                                            </div>
+                                            <div class="col-md-12" id="divTableData">
+                                                <table class="table table-responsive-sm table-sm datatable no-footer" id="tableAddProduct">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="text-align:left">PRODUCT</th>
+                                                            <th style="text-align:left">AVAILABLE QTY.</th>
+                                                            <th style="text-align:left">TRANSFER QTY.</th>
+                                                            <th style="text-align:left">AVG. COST</th>
+                                                            <th style="text-align:left">TOTAL COST</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-12" style="margin-top:20px">
+                                                <div class="col-md-4">
+
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button type="button" class="btn btn-block btn-outline-primary" id="btnAddProduct"><i class="fa fa-plus"></i> Add Product</button>
+                                                </div>
+                                                <div class="col-md-4">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body" id="viewTransferDetail">
+                                            <div class="col-md-12" id="divOrderMaster">
+                                                <div class="col-md-12"><h2 id="OrderStatus" style="text-align:center"></h2></div>
+                                                <div class="col-md-12" style="text-align:center"><span id="OrderRemark"></span></div>
+                                                <div class="col-md-12" style="margin-top:15px">
+                                                    <div class="col-md-6" style="display:flex; align-items:flex-end;justify-content:flex-end"><button type="button" id="btnEmailOrder" class="btn btn-block btn-outline-secondary" style="width:150px; font-weight:bold">EMAIL TRANSFER</button></div>
+                                                    <div class="col-md-6" style="display:flex; align-items:flex-start;justify-content:flex-start"><button type="button" id="btnDownloadPDFOrder" class="btn btn-block btn-outline-secondary" style="width:150px; font-weight:bold">DOWNLOAD PDF</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12" id="divTableData">
+                                                <table class="table table-responsive-sm table-sm datatable no-footer" id="tableViewProduct" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="text-align:left">PRODUCT</th>
+                                                            <th style="text-align:left">TRANSFER QTY.</th>
+                                                            <th style="text-align:left">RECEIVED QTY.</th>
+                                                            <th style="text-align:left">SUPPLY PRICE</th>
+                                                            <th style="text-align:left">TOTAL COST</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="col-md-12" style="padding:10px 10px 10px 10px; border:1px solid #c2cfd6">
+                                        <div class="col-md-12">
+                                            <h5 id="SupplierName"></h5>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="Street"></h7>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="Suburb"></h7>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="City"></h7>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="State"></h7>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="ZipCode"></h7>
+                                            <hr />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>DELIVER TO</h5>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h6 id="LocationName"></h6>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="StreetAddress"></h7>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="APT"></h7>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="LCity"></h7>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="LState"></h7>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h7 id="LZipCode"></h7>
+                                            <hr />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-5">Transfer Total:</div>
+                                            <input type="hidden" id="OrderID" value="@ViewBag.OrderID" />
+                                            <div class="col-md-7"><h5 style="text-align:right" id="TotalAmount"></h5></div>
+                                        </div>
+                                        <div class="col-md-12" style="margin-top:15px" id="divbtnCreateTransfer">
+                                            <button type="button" id="btnCreateTransfer" style="font-weight:bold" name="btnCreateTransfer" class="btn btn-block btn-primary active" aria-pressed="true">CREATE TRANSFER</button>
+                                        </div>
+                                        <div class="col-md-12" style="margin-top:15px" id="divbtnReceiveStockTransfer">
+                                            <button type="button" id="btnReceiveStockTransfer" style="font-weight:bold" name="btnReceiveStockTransfer" class="btn btn-block btn-success active" aria-pressed="true">RECEIVE STOCK</button>
+                                        </div>
+                                        <div class="col-md-12" style="margin-top:15px" id="divbtnCancelTransfer">
+                                            <button type="button" id="btnCancelTransfer" style="font-weight:bold" name="btnCancelTransfer" class="btn btn-block btn-danger active" aria-pressed="true">CANCEL TRANSFER</button>
+                                        </div>
+                                        <div class="col-md-12" style="margin-top:15px" id="divbtnCloseTransfer">
+                                            <button type="button" id="btnCloseTransfer" style="font-weight:bold" name="btnCloseTransfer" class="btn btn-block btn-primary active" aria-pressed="true">CLOSE</button>
+                                        </div>
+                                        <div class="col-md-12" style="margin-top:15px" id="divbtnConfirmReceiveTransfer">
+                                            <button type="button" id="btnConfirmReceiveTransfer" style="font-weight:bold" name="btnConfirmReceiveTransfer" class="btn btn-block btn-primary active" aria-pressed="true">CONFIRM</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="modal fade show modal-wizard" id="modalAddProductTransfer">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="prevModalWizard"></span>
+                <h3 class="modal-title" id="TitleModalAddProduct"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body p-0">
+                <input type="hidden" id="StockType" />
+                <div class="col-12" style="margin-top:10px"><label id="selectlocation"></label></div>
+
+                <form novalidate="novalidate" id="formModalWizard">
+                    <div class="col-12 p-4 search-modal-wizard">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" id="txtSearch" class="form-control" placeholder="Scan barcode or search any item">
+                        </div>
+                    </div>
+                    <div class="col-12" id="divCategory">
+
+                    </div>
+                    <div class="col-12" id="divProduct">
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actionModalSendEmail" ismodal>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModalSendEmail"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionFormSendEmail">
+                    <div class="form-group">
+                        <label class="col-form-label">RECIPIENT EMAIL ADDRESS</label>
+                        <input type="text" class="form-control" id="ToEmail" name="ToEmail" maxlength="200" placeholder="mail@example.com" />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">SENDER EMAIL ADDRESS</label>
+                        <input type="text" class="form-control" id="FromEmail" name="FromEmail" maxlength="200" placeholder="mail@example.com" />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">MESSAGE SUBJECT</label>
+                        <input type="text" class="form-control" id="EmailSubject" name="EmailSubject" maxlength="200" />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">MESSAGE CONTENT</label>
+                        <textarea class="form-control" rows="5" id="EmailContent" name="EmailContent" maxlength="400"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="btnSendEmail" data-style="slide-right" isbuttonsave>SEND EMAIL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/jquery.inputmask.bundle.min.js")"></script>
+@Scripts.Render("~/Scripts/datatable")
+@Scripts.Render("~/Scripts/PNotify")
+<script src="@Url.Content("~/Scripts/inventory/addtransfer.js")"></script>

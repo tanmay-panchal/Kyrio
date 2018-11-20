@@ -1,0 +1,194 @@
+﻿<div class="modal fade modal-fullsrceen" id="actionModal" ismodal style="z-index:2000">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">New Client</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionForm">
+                    <div class="card-group mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="hidden" id="ClientID" ispropertiesmodel ispropertiesidmodel />
+                                            <label class="col-form-label">First name</label>
+                                            <input type="text" class="form-control" id="FirstName" name="FirstName" maxlength="100" ispropertiesmodel>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Last name</label>
+                                            <input type="text" class="form-control" id="LastName" name="LastName" maxlength="100" ispropertiesmodel>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Mobile</label>
+                                            <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" maxlength="50" ispropertiesmodel>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Telephone</label>
+                                            <input type="text" class="form-control" id="Telephone" name="Telephone" maxlength="50" ispropertiesmodel>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Email</label>
+                                            <input type="text" class="form-control" id="Email" name="Email" maxlength="100" ispropertiesmodel>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">Appointment notification type</label>
+                                            <select class="form-control" style="width: 100%" id="AppointmentNotificationType" name="AppointmentNotificationType" ispropertiesmodel>
+                                                <option value="marketing_none">Don't send notifications</option>
+                                                <option value="marketing_email">Email</option>
+                                                <option value="marketing_sms">SMS</option>
+                                                <option value="marketing_both">Email & SMS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="AcceptMarketingNotifications" name="AcceptMarketingNotifications" ispropertiesmodel />
+                                            <label class="col-form-label">Accepts marketing notifications</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active show" id="personalinfo-tab" data-toggle="tab" href="#personalinfo" role="tab" aria-controls="personalinfo" aria-selected="true">PERSONAL INFO</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="address-tab" data-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="false">ADDRESS</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTab1Content">
+                                            <div class="tab-pane fade active show" id="personalinfo" role="tabpanel" aria-labelledby="personalinfo-tab">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Gender</label>
+                                                            <select class="form-control" style="width: 100%" id="Gender" name="Gender" ispropertiesmodel>
+                                                                <option value="gender_male">Male</option>
+                                                                <option value="gender_female">Female</option>
+                                                                <option value="gender_unknown">Unknown</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Referral source</label>
+                                                            <select class="form-control" style="width: 100%" id="ReferralSource" name="ReferralSource" urlselection="/Home/GetReferralSourceBaseId" ispropertiesmodel></select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Birthday</label>
+                                                            <input type="text" class="form-control" id="DateOfBirth" name="DateOfBirth" ispropertiesmodel isdate formatdate="" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">&nbsp;</label>
+                                                            <br />
+                                                            <label class="col-form-label"><a href="#" id="setyear">Set year</a></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <div>
+                                                                <label>&nbsp;</label>
+                                                            </div>
+                                                            <input type="checkbox" id="DisplayOnAllBookings" name="DisplayOnAllBookings" ispropertiesmodel />
+                                                            <label class="col-form-label">Display on all bookings</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Client notes</label>
+                                                            <input type="text" class="form-control" id="ClientNotes" name="ClientNotes" ispropertiesmodel maxlength="400">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Address</label>
+                                                            <input type="text" class="form-control" id="Address" name="Address" ispropertiesmodel maxlength="400">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Suburb</label>
+                                                            <input type="text" class="form-control" id="Suburb" name="Suburb" ispropertiesmodel maxlength="100">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">City</label>
+                                                            <input type="text" class="form-control" id="City" name="City" ispropertiesmodel maxlength="100">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">State</label>
+                                                            <input type="text" class="form-control" id="State" name="State" ispropertiesmodel maxlength="50">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Zip/PostCode</label>
+                                                            <input type="text" class="form-control" id="PostCode" name="PostCode" ispropertiesmodel maxlength="50">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row" style="padding:15px">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteButton">DELETE</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" id="actionButtonCancel" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right" isbuttonsave>SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

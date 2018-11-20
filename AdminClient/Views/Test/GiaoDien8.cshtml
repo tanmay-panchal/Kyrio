@@ -1,0 +1,410 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+<div class="modal fade d-block show modal-main modal modal-mobile" id="modalMain">
+    <div class="modal-dialog" role="document" style="position:fixed">
+        <div class="modal-content">
+            <div class="modal-header b-0">
+                <h3 class="modal-title" id="titleModalMain"></h3>
+                <button type="button" class="close" aria-label="Close" id="closeModalMain">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <form novalidate="novalidate" id="formModalMain">
+                    <div class="col-12 form-group p-0">
+                        <div class="col-12 form-group pt-3 mt-3">
+                            <div class="col-12 form-group p-0">
+                                <h3 class="text-left font-weight-bold text-capitalize">add services</h3>
+                            </div>
+                            <div class="col-12 form-group p-0 border-bottom">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center" type="button">Add a service <i class="fa fa-plus"></i></button>
+                            </div>
+                            <div class="col-12 form-group p-0 pt-2 pb-2">
+                                <p class="text-capitalize mb-0 mt-1">staff</p>
+                                <div class="input-group input-group-select">
+                                    <span class="input-group-prepend" style="position:absolute; height: 35px; width: 20px; top: 0; z-index: 500; left: 0">
+                                        <span class="input-group-text pointer b-0 bg-white pl-0 pr-1 text-left">
+                                            <input type="checkbox" name="IsRequest" class="d-none" />
+                                            <i class="fa font-lg font-weight-bold"></i>
+                                        </span>
+                                    </span>
+                                    <select class="form-control" name="StaffID" style="padding-left: 20px">
+                                        <option value="0">Tra Thi</option>
+                                        <option value="1">Staff 01 01</option>
+                                        <option value="2">Staff 03 03</option>
+                                        <option value="3">Staff 04</option>
+                                        <option value="4">Đoàn Nguyễn Hải Hưng</option>
+                                        <option value="5">test 2001</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 form-group p-0 pt-2 pb-2">
+                                <div class="col-6 form-group p-0 pr-2">
+                                    <p class="text-capitalize mb-0 mt-1">start time</p>
+                                    <div class="input-group input-group-select">
+                                        <select class="form-control" name="StaffID" style="border: none;padding-right: 35px; width: 100%; border-bottom: 1px solid #c2cfd6;">
+                                            <option value="0" selected>00:00</option>
+                                            <option value="300">00:05</option>
+                                            <option value="600">00:10</option>
+                                            <option value="900">00:15</option>
+                                            <option value="1200">00:20</option>
+                                            <option value="1500">00:25</option>
+                                            <option value="1800">00:30</option>
+                                            <option value="2100">00:35</option>
+                                            <option value="2400">00:40</option>
+                                            <option value="2700">00:45</option>
+                                            <option value="3000">00:50</option>
+                                            <option value="3300">00:55</option>
+                                            <option value="3600">01:00</option>
+                                            <option value="3900">01:05</option>
+                                            <option value="4200">01:10</option>
+                                            <option value="4500">01:15</option>
+                                            <option value="4800">01:20</option>
+                                            <option value="5100">01:25</option>
+                                            <option value="5400">01:30</option>
+                                            <option value="5700">01:35</option>
+                                            <option value="6000">01:40</option>
+                                            <option value="6300">01:45</option>
+                                            <option value="6600">01:50</option>
+                                            <option value="6900">01:55</option>
+                                            <option value="7200">02:00</option>
+                                            <option value="7500">02:05</option>
+                                            <option value="7800">02:10</option>
+                                            <option value="8100">02:15</option>
+                                            <option value="8400">02:20</option>
+                                            <option value="8700">02:25</option>
+                                            <option value="9000">02:30</option>
+                                            <option value="9300">02:35</option>
+                                            <option value="9600">02:40</option>
+                                            <option value="9900">02:45</option>
+                                            <option value="10200">02:50</option>
+                                            <option value="10500">02:55</option>
+                                            <option value="10800">03:00</option>
+                                            <option value="11100">03:05</option>
+                                            <option value="11400">03:10</option>
+                                            <option value="11700">03:15</option>
+                                            <option value="12000">03:20</option>
+                                            <option value="12300">03:25</option>
+                                            <option value="12600">03:30</option>
+                                            <option value="12900">03:35</option>
+                                            <option value="13200">03:40</option>
+                                            <option value="13500">03:45</option>
+                                            <option value="13800">03:50</option>
+                                            <option value="14100">03:55</option>
+                                            <option value="14400">04:00</option>
+                                            <option value="14700">04:05</option>
+                                            <option value="15000">04:10</option>
+                                            <option value="15300">04:15</option>
+                                            <option value="15600">04:20</option>
+                                            <option value="15900">04:25</option>
+                                            <option value="16200">04:30</option>
+                                            <option value="16500">04:35</option>
+                                            <option value="16800">04:40</option>
+                                            <option value="17100">04:45</option>
+                                            <option value="17400">04:50</option>
+                                            <option value="17700">04:55</option>
+                                            <option value="18000">05:00</option>
+                                            <option value="18300">05:05</option>
+                                            <option value="18600">05:10</option>
+                                            <option value="18900">05:15</option>
+                                            <option value="19200">05:20</option>
+                                            <option value="19500">05:25</option>
+                                            <option value="19800">05:30</option>
+                                            <option value="20100">05:35</option>
+                                            <option value="20400">05:40</option>
+                                            <option value="20700">05:45</option>
+                                            <option value="21000">05:50</option>
+                                            <option value="21300">05:55</option>
+                                            <option value="21600">06:00</option>
+                                            <option value="21900">06:05</option>
+                                            <option value="22200">06:10</option>
+                                            <option value="22500">06:15</option>
+                                            <option value="22800">06:20</option>
+                                            <option value="23100">06:25</option>
+                                            <option value="23400">06:30</option>
+                                            <option value="23700">06:35</option>
+                                            <option value="24000">06:40</option>
+                                            <option value="24300">06:45</option>
+                                            <option value="24600">06:50</option>
+                                            <option value="24900">06:55</option>
+                                            <option value="25200">07:00</option>
+                                            <option value="25500">07:05</option>
+                                            <option value="25800">07:10</option>
+                                            <option value="26100">07:15</option>
+                                            <option value="26400">07:20</option>
+                                            <option value="26700">07:25</option>
+                                            <option value="27000">07:30</option>
+                                            <option value="27300">07:35</option>
+                                            <option value="27600">07:40</option>
+                                            <option value="27900">07:45</option>
+                                            <option value="28200">07:50</option>
+                                            <option value="28500">07:55</option>
+                                            <option value="28800">08:00</option>
+                                            <option value="29100">08:05</option>
+                                            <option value="29400">08:10</option>
+                                            <option value="29700">08:15</option>
+                                            <option value="30000">08:20</option>
+                                            <option value="30300">08:25</option>
+                                            <option value="30600">08:30</option>
+                                            <option value="30900">08:35</option>
+                                            <option value="31200">08:40</option>
+                                            <option value="31500">08:45</option>
+                                            <option value="31800">08:50</option>
+                                            <option value="32100">08:55</option>
+                                            <option value="32400">09:00</option>
+                                            <option value="32700">09:05</option>
+                                            <option value="33000">09:10</option>
+                                            <option value="33300">09:15</option>
+                                            <option value="33600">09:20</option>
+                                            <option value="33900">09:25</option>
+                                            <option value="34200">09:30</option>
+                                            <option value="34500">09:35</option>
+                                            <option value="34800">09:40</option>
+                                            <option value="35100">09:45</option>
+                                            <option value="35400">09:50</option>
+                                            <option value="35700">09:55</option>
+                                            <option value="36000">10:00</option>
+                                            <option value="36300">10:05</option>
+                                            <option value="36600">10:10</option>
+                                            <option value="36900">10:15</option>
+                                            <option value="37200">10:20</option>
+                                            <option value="37500">10:25</option>
+                                            <option value="37800">10:30</option>
+                                            <option value="38100">10:35</option>
+                                            <option value="38400">10:40</option>
+                                            <option value="38700">10:45</option>
+                                            <option value="39000">10:50</option>
+                                            <option value="39300">10:55</option>
+                                            <option value="39600">11:00</option>
+                                            <option value="39900">11:05</option>
+                                            <option value="40200">11:10</option>
+                                            <option value="40500">11:15</option>
+                                            <option value="40800">11:20</option>
+                                            <option value="41100">11:25</option>
+                                            <option value="41400">11:30</option>
+                                            <option value="41700">11:35</option>
+                                            <option value="42000">11:40</option>
+                                            <option value="42300">11:45</option>
+                                            <option value="42600">11:50</option>
+                                            <option value="42900">11:55</option>
+                                            <option value="43200">12:00</option>
+                                            <option value="43500">12:05</option>
+                                            <option value="43800">12:10</option>
+                                            <option value="44100">12:15</option>
+                                            <option value="44400">12:20</option>
+                                            <option value="44700">12:25</option>
+                                            <option value="45000">12:30</option>
+                                            <option value="45300">12:35</option>
+                                            <option value="45600">12:40</option>
+                                            <option value="45900">12:45</option>
+                                            <option value="46200">12:50</option>
+                                            <option value="46500">12:55</option>
+                                            <option value="46800">13:00</option>
+                                            <option value="47100">13:05</option>
+                                            <option value="47400">13:10</option>
+                                            <option value="47700">13:15</option>
+                                            <option value="48000">13:20</option>
+                                            <option value="48300">13:25</option>
+                                            <option value="48600">13:30</option>
+                                            <option value="48900">13:35</option>
+                                            <option value="49200">13:40</option>
+                                            <option value="49500">13:45</option>
+                                            <option value="49800">13:50</option>
+                                            <option value="50100">13:55</option>
+                                            <option value="50400">14:00</option>
+                                            <option value="50700">14:05</option>
+                                            <option value="51000">14:10</option>
+                                            <option value="51300">14:15</option>
+                                            <option value="51600">14:20</option>
+                                            <option value="51900">14:25</option>
+                                            <option value="52200">14:30</option>
+                                            <option value="52500">14:35</option>
+                                            <option value="52800">14:40</option>
+                                            <option value="53100">14:45</option>
+                                            <option value="53400">14:50</option>
+                                            <option value="53700">14:55</option>
+                                            <option value="54000">15:00</option>
+                                            <option value="54300">15:05</option>
+                                            <option value="54600">15:10</option>
+                                            <option value="54900">15:15</option>
+                                            <option value="55200">15:20</option>
+                                            <option value="55500">15:25</option>
+                                            <option value="55800">15:30</option>
+                                            <option value="56100">15:35</option>
+                                            <option value="56400">15:40</option>
+                                            <option value="56700">15:45</option>
+                                            <option value="57000">15:50</option>
+                                            <option value="57300">15:55</option>
+                                            <option value="57600">16:00</option>
+                                            <option value="57900">16:05</option>
+                                            <option value="58200">16:10</option>
+                                            <option value="58500">16:15</option>
+                                            <option value="58800">16:20</option>
+                                            <option value="59100">16:25</option>
+                                            <option value="59400">16:30</option>
+                                            <option value="59700">16:35</option>
+                                            <option value="60000">16:40</option>
+                                            <option value="60300">16:45</option>
+                                            <option value="60600">16:50</option>
+                                            <option value="60900">16:55</option>
+                                            <option value="61200">17:00</option>
+                                            <option value="61500">17:05</option>
+                                            <option value="61800">17:10</option>
+                                            <option value="62100">17:15</option>
+                                            <option value="62400">17:20</option>
+                                            <option value="62700">17:25</option>
+                                            <option value="63000">17:30</option>
+                                            <option value="63300">17:35</option>
+                                            <option value="63600">17:40</option>
+                                            <option value="63900">17:45</option>
+                                            <option value="64200">17:50</option>
+                                            <option value="64500">17:55</option>
+                                            <option value="64800">18:00</option>
+                                            <option value="65100">18:05</option>
+                                            <option value="65400">18:10</option>
+                                            <option value="65700">18:15</option>
+                                            <option value="66000">18:20</option>
+                                            <option value="66300">18:25</option>
+                                            <option value="66600">18:30</option>
+                                            <option value="66900">18:35</option>
+                                            <option value="67200">18:40</option>
+                                            <option value="67500">18:45</option>
+                                            <option value="67800">18:50</option>
+                                            <option value="68100">18:55</option>
+                                            <option value="68400">19:00</option>
+                                            <option value="68700">19:05</option>
+                                            <option value="69000">19:10</option>
+                                            <option value="69300">19:15</option>
+                                            <option value="69600">19:20</option>
+                                            <option value="69900">19:25</option>
+                                            <option value="70200">19:30</option>
+                                            <option value="70500">19:35</option>
+                                            <option value="70800">19:40</option>
+                                            <option value="71100">19:45</option>
+                                            <option value="71400">19:50</option>
+                                            <option value="71700">19:55</option>
+                                            <option value="72000">20:00</option>
+                                            <option value="72300">20:05</option>
+                                            <option value="72600">20:10</option>
+                                            <option value="72900">20:15</option>
+                                            <option value="73200">20:20</option>
+                                            <option value="73500">20:25</option>
+                                            <option value="73800">20:30</option>
+                                            <option value="74100">20:35</option>
+                                            <option value="74400">20:40</option>
+                                            <option value="74700">20:45</option>
+                                            <option value="75000">20:50</option>
+                                            <option value="75300">20:55</option>
+                                            <option value="75600">21:00</option>
+                                            <option value="75900">21:05</option>
+                                            <option value="76200">21:10</option>
+                                            <option value="76500">21:15</option>
+                                            <option value="76800">21:20</option>
+                                            <option value="77100">21:25</option>
+                                            <option value="77400">21:30</option>
+                                            <option value="77700">21:35</option>
+                                            <option value="78000">21:40</option>
+                                            <option value="78300">21:45</option>
+                                            <option value="78600">21:50</option>
+                                            <option value="78900">21:55</option>
+                                            <option value="79200">22:00</option>
+                                            <option value="79500">22:05</option>
+                                            <option value="79800">22:10</option>
+                                            <option value="80100">22:15</option>
+                                            <option value="80400">22:20</option>
+                                            <option value="80700">22:25</option>
+                                            <option value="81000">22:30</option>
+                                            <option value="81300">22:35</option>
+                                            <option value="81600">22:40</option>
+                                            <option value="81900">22:45</option>
+                                            <option value="82200">22:50</option>
+                                            <option value="82500">22:55</option>
+                                            <option value="82800">23:00</option>
+                                            <option value="83100">23:05</option>
+                                            <option value="83400">23:10</option>
+                                            <option value="83700">23:15</option>
+                                            <option value="84000">23:20</option>
+                                            <option value="84300">23:25</option>
+                                            <option value="84600">23:30</option>
+                                            <option value="84900">23:35</option>
+                                            <option value="85200">23:40</option>
+                                            <option value="85500">23:45</option>
+                                            <option value="85800">23:50</option>
+                                            <option value="86100">23:55</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group p-0 pl-2">
+                                    <p class="text-capitalize mb-0 mt-1">duration</p>
+                                    <div class="input-group input-group-select">
+                                        <select class="form-control" name="StaffID" style="border: none;padding-right: 35px; width: 100%; border-bottom: 1px solid #c2cfd6;">
+                                            <option value="300" selected>5min</option>
+                                            <option value="600">10min</option>
+                                            <option value="900">15min</option>
+                                            <option value="1200">20min</option>
+                                            <option value="1500">25min</option>
+                                            <option value="1800">30min</option>
+                                            <option value="2100">35min</option>
+                                            <option value="2400">40min</option>
+                                            <option value="2700">45min</option>
+                                            <option value="3000">50min</option>
+                                            <option value="3300">55min</option>
+                                            <option value="3600">1h</option>
+                                            <option value="3900">1h 5min</option>
+                                            <option value="4200">1h 10min</option>
+                                            <option value="4500">1h 15min</option>
+                                            <option value="4800">1h 20min</option>
+                                            <option value="5100">1h 25min</option>
+                                            <option value="5400">1h 30min</option>
+                                            <option value="5700">1h 35min</option>
+                                            <option value="6000">1h 40min</option>
+                                            <option value="6300">1h 45min</option>
+                                            <option value="6600">1h 50min</option>
+                                            <option value="6900">1h 55min</option>
+                                            <option value="7200">2h</option>
+                                            <option value="8100">2h 15min</option>
+                                            <option value="9000">2h 30min</option>
+                                            <option value="9900">2h 45min</option>
+                                            <option value="10800">3h</option>
+                                            <option value="11700">3h 15min</option>
+                                            <option value="12600">3h 30min</option>
+                                            <option value="13500">3h 45min</option>
+                                            <option value="14400">4h</option>
+                                            <option value="16200">4h 30min</option>
+                                            <option value="18000">5h</option>
+                                            <option value="19800">5h 30min</option>
+                                            <option value="21600">6h</option>
+                                            <option value="23400">6h 30min</option>
+                                            <option value="25200">7h</option>
+                                            <option value="27000">7h 30min</option>
+                                            <option value="28800">8h</option>
+                                            <option value="32400">9h</option>
+                                            <option value="36000">10h</option>
+                                            <option value="39600">11h</option>
+                                            <option value="43200">12h</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 form-group fixed-bottom border-top pt-3 bg-white">
+                        <div class="col-12 form-group p-0">
+                            <button class="btn btn-block btn-dark active text-uppercase" type="button" aria-pressed="true">save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("[name='IsRequest']:last").closest(".input-group-prepend").click(function () {
+            var checkBox = $(this).find("[name='IsRequest']")[0];
+            checkBox.checked = !checkBox.checked;
+        })
+    })
+</script>

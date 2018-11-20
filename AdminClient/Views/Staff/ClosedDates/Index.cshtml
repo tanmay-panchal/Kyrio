@@ -1,0 +1,106 @@
+﻿<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="closeDayform">
+                    <div class="form-group" id="containtTable" style="display:none">
+                        <div class="col-md-12">
+                            <button type="button" name="createCloseDay" class="btn btn-custome float-right active hidden-xlg hidden-lg hidden-fhd hidden-rt hidden-rt15 hidden-8k hidden-uhd hidden-4k" aria-pressed="true" style="margin-right: 10px"><i class="fa fa-plus"></i></button>
+                            <button type="button" name="createCloseDay" class="btn btn-custome float-right active hidden-xs" aria-pressed="true" style="margin-right: 10px">New Closed Date</button>
+                        </div>
+                        <div class="col-md-12 containtTable">
+                            <table class="table table-sm datatable no-footer" id="tableCloseDay">
+                                <thead>
+                                    <tr>
+                                        <th>DATE RANGE</th>
+                                        <th>NO OF DAYS</th>
+                                        <th>LOCATIONS</th>
+                                        <th>DESCRIPTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group" id="containtNotification" style="display:none">
+                        @Html.Partial("/Views/Shared/notification/calendar_notification1.cshtml", new
+                   {
+                       Title = "Closed Dates",
+                       Content = "List the dates your business is closed for public holidays, maintenance or any other reason. Clients will not be able to place online bookings during these days."
+                   })
+                        <div class="form-group" id="containtNotification">
+                            <div class="col-md-12 containtNotification offset-sm-2 offset-md-3 offset-lg-4 col-rt-offset-5  col-fhd-offset-4">
+                                <button type="button" class="btn btn-custome active" aria-pressed="true" name="createCloseDay">New Closed Date</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="excuteCloseDate" ismodal>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h3 id="TitleModalCloseDate" class="text-center"></h3>
+                    <div class="alert alert-primary" role="alert">
+                        Online bookings can not be placed during closed dates.
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="excuteFormCloseDay">
+                    <div class="form-group col-12 p-0">
+                        <input type="hidden" id="ClosedDateID" name="ClosedDateID" />
+                        <label class="col-form-label">Start - End</label>
+                        <div class="input-group">
+                            <span class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" id="RangerCloseDate" name="RangerCloseDate">
+                        </div>
+                    </div>
+                    <div class="form-group col-12 p-0">
+                        <label class="col-form-label">DESCRIPTION</label>
+                        <input type="text" class="form-control" id="Description" name="Description">
+                    </div>
+                    <div class="form-group col-12 p-0">
+                        <div class="col-fhd-12 col-xlg-12 col-md-12 col-sm-12 col-xs-12">
+                            <input type="checkbox" id="checkAllCloseDate" /> <strong style="margin-left: 5px">All Locations</strong>
+                        </div>
+                    </div>
+                    <div class="form-group col-12 p-0 overflow-y" style="max-height: calc(100vh - 500px);" id="containtCloseDay"></div>
+                </form>
+            </div>
+            <div class="modal-footer text-right">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-danger btn-block active" id="deleteButtonCloseDay" data-style="slide-right">DELETE</button>
+                    </div>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                    </div>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-block btn-success" id="excuteButtonCloseDay" data-style="slide-right" isbuttonsave>SAVE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--#region Include JS-->
+<script src="@Url.Content("~/Scripts/staff/closeddates/index.js")"></script>
+<!--#endregion-->

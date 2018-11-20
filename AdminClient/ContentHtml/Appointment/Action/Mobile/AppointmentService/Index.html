@@ -1,0 +1,32 @@
+﻿<div class="modal fade show modal-main modal modal-mobile" id="modalService">
+    <div class="modal-dialog" role="document" style="position:fixed">
+        <div class="modal-content">
+            <div class="modal-header b-0">
+                <h3 class="modal-title"></h3>
+                <button type="button" class="close" name="closeModal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <form novalidate="novalidate" id="formModalMain">
+                    <div class="col-12 form-group p-0">
+                        <div class="col-12 form-group pt-3 mt-3">
+                            <div class="col-12 form-group p-0">
+                                <h3 class="text-left font-weight-bold text-capitalize" name="titleModal">add services</h3>
+                            </div>
+                            @ContentControlService
+                            <div class="col-12 form-group p-0 border-bottom pt-4 mt-2" id="removeService" style="display: none">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center text-capitalize text-danger" type="button" id="removeAppintmentService">remove service <i class="fa fa-remove"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 form-group fixed-bottom border-top pt-3 bg-white">
+                        <div class="col-12 form-group p-0">
+                            <button class="btn btn-block btn-dark active text-uppercase" type="button" aria-pressed="true" id="buttonSaveAppointmentService">save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

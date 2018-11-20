@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--#region Head-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Kyrio">
+    <meta name="author" content="MAPLE JSC">
+    <meta name="keyword" content="Kyrio">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Kyrio</title>
+    @Styles.Render("~/Style/index")
+    @Scripts.Render("~/Scripts/loadHeaderIndex")
+    <link href="@Url.Content("~/Extension/css/online_booking.css")" rel="stylesheet" />
+</head>
+<!--#endregion-->
+<!--#region Body-->
+<body>
+    @RenderBody()
+    @Scripts.Render("~/Scripts/loadfooterIndex")
+</body>
+<!--#endregion-->
+
+</html>

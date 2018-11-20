@@ -1,0 +1,65 @@
+﻿<!--#region Include CSS-->
+@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+<!--#endregion-->
+<!--#region Html-->
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group" id="containtTable">
+                <div class="col-md-12 containtTable">
+                    <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="table">
+                        <thead>
+                            <tr>
+                                <th>TIME SENT</th>
+                                <th>CLIENT</th>
+                                <th>APPOINTMENT</th>
+                                <th>DESTINATION</th>
+                                <th>TYPE</th>
+                                <th>MESSAGE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="containtButtonCreate">
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+<!--#region Modal-->
+<div class="modal fade" id="actionModal" ismodal>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">View Message</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="height: 60vh">
+                <iframe style="width:100%; height: 100%; border:none" id="frame"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+<!--#region Include JS-->
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Scripts/message.js")"></script>
+<!--#endregion-->

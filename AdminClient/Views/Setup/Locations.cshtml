@@ -1,0 +1,127 @@
+﻿@model AdminClient.Models.Country
+<!--#region Include CSS-->
+@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<!--#endregion-->
+
+<!--#region Html-->
+<input type="hidden" id="CountryCode" value="@Model.CountryCode" />
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="tableLocation">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>LOCATION NAME</th>
+                        <th>ADDRESS</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div id="containtButtonCreate">
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actionModal" ismodal>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionForm">
+                    <div class="form-group">
+                        <input type="hidden" id="LocationID" ispropertiesmodel ispropertiesidmodel />
+                        <label class="col-form-label">LOCATION NAME</label>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="icon-map"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="LocationName" name="LocationName" placeholder="e.g Downtown Branch" ispropertiesmodel maxlength="200" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">CONTACT NUMBER</label>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="icon-phone"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="ContactNumber" name="ContactNumber" ispropertiesmodel maxlength="50" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">CONTACT EMAIL</label>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="icon-envelope"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="ContactEmail" name="ContactEmail" ispropertiesmodel maxlength="50" />
+                        </div>
+                        <small class="text-muted">Replies to client appointment notifications will go to this email.</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">STREET ADDRESS</label>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="icon-graph"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="StreetAddress" name="StreetAddress" ispropertiesmodel maxlength="200" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">APT, SUITE, BLDG. (OPTIONAL)</label>
+                        <input type="text" class="form-control" id="APT" name="APT" ispropertiesmodel maxlength="200" />
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-fhd-4 col-xlg-4 col-md-4 col-sm-12 col-xs-4">
+                            <label class="col-form-label">CITY</label>
+                            <input type="text" class="form-control" id="CITY" name="CITY" placeholder="CITY" ispropertiesmodel maxlength="200" />
+                        </div>
+                        <div class="form-group col-fhd-4 col-xlg-4 col-md-4 col-sm-12 col-xs-4">
+                            <label class="col-form-label">STATE</label>
+                            <input type="text" class="form-control" id="STATE" name="STATE" placeholder="STATE" ispropertiesmodel maxlength="200" />
+                        </div>
+                        <div class="form-group col-fhd-4 col-xlg-4 col-md-4 col-sm-12 col-xs-4">
+                            <label class="col-form-label">ZIP CODE</label>
+                            <input type="text" class="form-control" id="ZipCode" name="ZipCode" placeholder="ZIP CODE" ispropertiesmodel maxlength="50" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" checked id="EnableOnlineBooking" name="EnableOnlineBooking" ispropertiesmodel />
+                        <label class="col-form-label">ENABLE ONLINE BOOKINGS</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteButton">DELETE</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right" isbuttonsave>SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+
+<!--#region Include JS-->
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/locations.js")"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAFok6rdVRJr0szpgN7dLTF2Q-FxA8-5o&libraries=places&callback=initAutocomplete" async defer></script>
+<!--#endregion-->

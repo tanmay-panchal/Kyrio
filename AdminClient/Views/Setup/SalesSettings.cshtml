@@ -1,0 +1,55 @@
+﻿<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> Sales Settings</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="busiessForm">
+                                <h4>Staff Commissions</h4>
+                                <div class="form-group">
+                                    <input type="checkbox" checked id="business_commission_before_discount" name="business_commission_before_discount" ispropertiesmodel />
+                                    <label class="col-form-label">CALCULATE BY ITEM SALE PRICE BEFORE DISCOUNT</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" checked id="business_commission_after_tax" name="business_commission_after_tax" ispropertiesmodel />
+                                    <label class="col-form-label">CALCULATE BY ITEM SALE PRICE INCLUDING TAX</label>
+                                </div>
+                                <hr />
+                                <h4>Vouchers</h4>
+                                <div class="form-group">
+                                    <label class="col-form-label">DEFAULT EXPIRY PERIOD</label>
+                                    <select class="form-control" style="width: 100%" id="business_voucher_expiration_period" name="business_voucher_expiration_period" ispropertiesmodel>
+                                        <option value="months_1">1 Month</option>
+                                        <option value="months_2">2 Months</option>
+                                        <option value="months_3">3 Months</option>
+                                        <option value="months_6">6 Months</option>
+                                        <option value="years_1">1 Year</option>
+                                        <option value="never">No Expiry</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-custome" id="excuteButton" data-style="slide-right">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/salessettings.js")"></script>

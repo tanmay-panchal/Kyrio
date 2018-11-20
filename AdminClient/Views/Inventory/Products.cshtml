@@ -1,0 +1,75 @@
+﻿<div class="card" id="divTable" style="display:none">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="formProduct">
+                    <div class="col-md-12">
+                        <div class="form-group containtControl">
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                <select style="width: 100%" id="FilterBrandID" name="FilterBrandID"></select>
+                            </div>
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                <select style="width: 100%" id="FilterCategoryID" name="FilterCategoryID"></select>
+                            </div>
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                <select style="width: 100%" id="FilterSupplierID" name="FilterSupplierID"></select>
+                            </div>
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                <button type="button" name="btnView" id="btnView" class="btn btn-square btn-block btn-info" style="width:80px">View</button>
+                            </div>
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2 float-right">
+                                <button type="button" class="btn btn-info dropdown-toggle" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Export
+                                </button>
+                                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
+                                    <a class="dropdown-item" href="#" style="padding:0px" id="buttonExcel"></a>
+                                    <a class="dropdown-item" href="#" id="buttonCVX" style="padding:0px"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 containtTable">
+                            <table class="table table-sm datatable no-footer" style="width:100%" id="table">
+                                <thead>
+                                    <tr>
+                                        <th>PRODUCT NAME</th>
+                                        <th>BARCODE</th>
+                                        <th>RETAIL PRICE</th>
+                                        <th>STOCK ON HAND</th>
+                                        <th>UPDATEED AT</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="divNoData" style="display:none">
+    <div style="text-align:center!important; margin-left:auto; margin-right:auto">
+        <p style="opacity: .7; font-size:60px">
+            <i class="fa fa-cube fa-lg mt-4"></i>
+        </p>
+        <h3 class="m-b-10">Add New Products</h3>
+        <p>
+            Have you got stuff you want to sell? No sweat - you can add your retail products here and sell them with an existing appointment or as one-off items. Too easy!
+        </p>
+    </div>
+    <div class="col-md-12" style="display:flex; align-items:center;justify-content:center">
+        <button type="button" class="btn btn-block btn-success" style="width:120px" id="btnNew" data-style="slide-right">New Product</button>
+    </div>
+</div>
+<div class="row">
+    <div id="containtButtonCreate">
+    </div>
+</div>
+<!--#region Modal-->
+@Html.Partial("/Views/Inventory/AddProduct.cshtml")
+<!--#endregion-->
+<!--#region Include JS-->
+<script src="@Url.Content("~/Scripts/inventory/product.js")"></script>
+<!--#endregion-->

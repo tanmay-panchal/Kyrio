@@ -1,0 +1,122 @@
+﻿<div class="col-md-12">
+    <div id="formReport">
+        <div class="form-group containtControl">
+            <div class="form-group col-fhd-4 col-xlg-4 col-md-4 col-sm-12 col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                    </span>
+                    <input name="searchDate" id="searchDate" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                <select style="width: 100%" id="LocationID" name="LocationID"></select>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                <select style="width: 100%" id="StaffID" name="StaffID"></select>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                <button type="button" name="btnView" id="btnView" class="btn btn-square btn-block btn-info" style="width:80px;">View</button>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+            </div>
+            <button type="button" class="btn btn-info dropdown-toggle" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Export
+            </button>
+            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
+                <a class="dropdown-item" href="#" style="padding:0px" id="buttonExcel"></a>
+                <a class="dropdown-item" href="#" id="buttonCSV" style="padding:0px"></a>
+                <a class="dropdown-item" href="#" id="buttonPDF" style="padding:0px"></a>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12"><h6 id="txtfilter"></h6>
+        <div class="col-md-12">
+            <h5>Commission by staff</h5>
+            <div class="col-md-12 containtTable">
+                <table class="table table-sm datatable no-footer" id="table1" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Staff Member</th>
+                            <th>Service Sales Total</th>
+                            <th>Service Commission</th>
+                            <th>Product Sales Total</th>
+                            <th>Product Commission</th>
+                            <th>Voucher Sales Total</th>
+                            <th>Voucher Commission</th>
+                            <th>Commission Total</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <h5>Commission by service</h5>
+            <div class="col-md-12 containtTable">
+                <table class="table table-sm datatable no-footer" id="table2" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Service Name</th>
+                            <th>Qty</th>
+                            <th>Sales Amount</th>
+                            <th>Refund Amount</th>
+                            <th>Sales Total</th>
+                            <th>Avg. Sales Price</th>
+                            <th>Commission Total</th>
+                            <th>Avg. Commission </th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <h5>Commission by product</h5>
+            <div class="col-md-12 containtTable">
+                <table class="table table-sm datatable no-footer" id="table3" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Qty</th>
+                            <th>Sales Amount</th>
+                            <th>Refund Amount</th>
+                            <th>Sales Total</th>
+                            <th>Avg. Sales Price</th>
+                            <th>Commission Total</th>
+                            <th>Avg. Commission </th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <h5>Commission by voucher</h5>
+            <div class="col-md-12 containtTable">
+                <table class="table table-sm datatable no-footer" id="table4" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Voucher Name</th>
+                            <th>Qty</th>
+                            <th>Sales Amount</th>
+                            <th>Refund Amount</th>
+                            <th>Sales Total</th>
+                            <th>Avg. Sales Price</th>
+                            <th>Commission Total</th>
+                            <th>Avg. Commission </th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="@Url.Content("~/Scripts/report/analytics/commissionstaffsummary.js")"></script>

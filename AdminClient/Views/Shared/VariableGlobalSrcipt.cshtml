@@ -1,0 +1,92 @@
+﻿@using AdminClient.Models
+@using AdminClient.Models.ExcuteData
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
+@using System.Resources;
+@using System.Collections;
+@using System.Globalization;
+
+@if (Session["AccountLogin"] != null && Session["Business"] != null && Session["VariableGlobalSrcipt"] != null)
+{
+    User u = (User)Session["AccountLogin"];
+
+    if (u.BusinessID != 0)
+    {
+        Business b = (Business)Session["Business"];
+        JObject caches = JObject.FromObject((Object)Session["VariableGlobalSrcipt"]);
+
+
+        ResourceManager MyResourceClass = new ResourceManager("Resources.Enum", System.Reflection.Assembly.Load("App_GlobalResources"));
+        // Get a set of resources appropriate to
+        // the culture defined by the browser
+        ResourceSet resourceSet = MyResourceClass.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+
+        <script type="text/javascript">
+            Window.BusinessBeginningOfWeek = "@Html.Raw(caches["BusinessBeginningOfWeek"])";
+            Window.BusinessDefaultCalendarView = "@Html.Raw(caches["BusinessDefaultCalendarView"])";
+            Window.BusinessTimeSlotMinutes = "@Html.Raw(caches["BusinessTimeSlotMinutes"])";
+            Window.BusinessAppointmentColorSource = "@Html.Raw(caches["BusinessAppointmentColorSource"])";
+            Window.config_tax_calculation = "@Html.Raw(caches["config_tax_calculation"])";
+            Window.business_voucher_expiration_period = "@Html.Raw(caches["business_voucher_expiration_period"])";
+            Window.customInvoiceTitle = "@Html.Raw(caches["customInvoiceTitle"])";
+            Window.printReceipts = "@Html.Raw(caches["printReceipts"])";
+            Window.receiptMessage = "@Html.Raw(caches["receiptMessage"])";
+            Window.saleCustomHeader1 = "@Html.Raw(caches["saleCustomHeader1"])";
+            Window.saleCustomHeader2 = "@Html.Raw(caches["saleCustomHeader2"])";
+            Window.saleShowCustomerAddress = "@Html.Raw(caches["saleShowCustomerAddress"])";
+            Window.saleShowCustomerInfo = "@Html.Raw(caches["saleShowCustomerInfo"])";
+            Window.TimeFormat = "@Html.Raw(caches["TimeFormat"])";
+            Window.CurrencyCode = "@Html.Raw(caches["CurrencyCode"])";
+            Window.CurrencySymbol = "@Html.Raw(caches["CurrencySymbol"])";
+            Window.booking_page_link = "@Html.Raw(caches["BookingPageLink"])";
+            Window.FaceBookAppID = "@Html.Raw(caches["FaceBookAppID"])";
+            Window.FormatDateJS = "@Html.Raw(caches["FormatDateJS"])";
+            Window.FormatDateMonthNameJS= "@Html.Raw(caches["FormatDateMonthNameJS"])";
+            Window.FormatDayAndMonthNameJS= "@Html.Raw(caches["FormatDayAndMonthNameJS"])";
+            Window.FormatDateCS = "@Html.Raw(caches["FormatDateCS"])";
+            Window.CountryCode = "@Html.Raw(caches["CountryCode"])";
+            Window.Language = "@Html.Raw(caches["Language"])";
+            Window.FormatStringAmount = "@Html.Raw(caches["FormatStringAmount"])";
+            Window.NumberDecimal = "@Html.Raw(caches["NumberDecimal"])";
+            Window.FormatDateWithDayOfWeekJS = "@Html.Raw(caches["FormatDateWithDayOfWeekJS"])";
+            Window.FormatTimeJS = "@Html.Raw(caches["FormatTimeJS"])";
+            Window.FormatDateWithTimeJS = "@Html.Raw(caches["FormatDateWithTimeJS"])";
+            Window.CountryID = "@Html.Raw(caches["CountryID"])";
+            Window.StatusScheul = @Html.Raw(caches["StatusScheul"]);
+            Window.BusinessEmail= "@Html.Raw(caches["BusinessEmail"])";
+            Window.BusinessName= "@Html.Raw(caches["BusinessName"])";
+            Window.TimeZone = "@Html.Raw(caches["TimeZone"])";
+            Window.UserID = "@u.UserID";
+            Window.BusinessID = "@b.BusinessID";
+            Window.SiteName = "@Html.Raw(caches["SiteName"])";
+            Window.BrandName = "@Html.Raw(caches["BrandName"])";
+
+            var ResourcesEnum={};
+            @foreach (DictionaryEntry res in resourceSet)
+        {
+            @:ResourcesEnum.@res.Key = "@Html.Raw(
+        HttpUtility.JavaScriptStringEncode(res.Value.ToString()))";
+                                                                                                                                                                                                        }
+            Window.ResourcesEnum = ResourcesEnum;
+
+        </script>
+    }
+
+}
+else
+{
+    <script type="text/javascript">
+        Window.BusinessBeginningOfWeek = 1;
+        Window.FormatStringAmount = "#,##0.00";
+        Window.FormatDateJS = "DD/MM/YYYY";
+        Window.FormatDateMonthNameJS = "DD MMM YYYY";
+        Window.FormatDayAndMonthNameJS = "DD MMM";
+        Window.FormatDateWithDayOfWeekJS = "dddd, DD MMM YYYY";
+        Window.FormatDateWithDayOfWeekCS = "ddd, dd MMM yyyy";
+        Window.FormatDateCS = "dd/MM/yyyy";
+        Window.FormatTimeCS = "HH:mm";
+        Window.TimeZone = moment.tz.guess();
+        Window.CurrencySymbol = "$";
+        Window.NumberDecimal = 2;
+    </script>
+}

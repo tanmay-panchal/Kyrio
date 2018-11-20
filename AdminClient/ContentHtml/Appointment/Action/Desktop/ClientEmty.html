@@ -1,0 +1,31 @@
+﻿<div class="col-12 form-group p-0 m-0 d-flex flex-column">
+    <div class="p-4 border-bottom bg-light align-items-start">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text ">
+                    <i class="fa fa-search"></i>
+                </span>
+            </div>
+            <input type="text" name="searchClient" class="form-control" placeholder="Add client">
+        </div>
+    </div>
+    <div class="p-0 d-flex flex-wrap align-items-end flex-column" style="flex-grow:1" id="listClientEmty">
+        <div class="col-12 p-0 d-flex flex-wrap justify-content-center align-items-start" style="padding-top: 50px !important;">
+            <div style="margin-left: 80px; margin-right: 80px">
+                <span style="display:block;text-align:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91 91" style="max-height: 88px; max-width: 88px;"><g fill="none" fill-rule="evenodd"><circle fill="#E1EFFC" cx="46" cy="46" r="44"></circle><g transform="translate(.436 .436)" fill-rule="nonzero"><circle fill="#FFF" opacity=".6864" cx="33.8346" cy="33.8346" r="25.3759"></circle><path d="M40.8835 31.015c0 3.8882-3.1622 7.049-7.049 7.049-3.8867 0-7.0488-3.1608-7.0488-7.049 0-3.8881 3.1621-7.0488 7.0489-7.0488 3.8867 0 7.0489 3.1607 7.0489 7.0488z" fill="#FFF"></path><path d="M46.5226 47.9323v7.8666c-3.736 2.171-8.064 3.4116-12.688 3.4116-4.624 0-8.952-1.2406-12.688-3.4116v-7.8666c0-3.1156 2.5235-5.639 5.6391-5.639h14.0978c3.1156 0 5.639 2.5234 5.639 5.639z" fill="#F5A623"></path><path fill="#A4ADBA" d="M66.2594 60.6203l-5.6391 5.6391 1.4098 4.2293 18.327 18.327h5.6391l2.8196-2.8195v-5.639L70.4888 62.03z"></path><path d="M33.8346 16.9173h1.4098v-2.8196h-1.4098c-10.8835 0-19.7369 8.8534-19.7369 19.7369v1.4098h2.8196v-1.4098c0-9.3285 7.5888-16.9173 16.9173-16.9173z" fill="#0C3847"></path><path d="M65.8788 59.0061l-2.439 2.4403-9.7246-9.7246c4.2773-4.7481 6.9051-11.009 6.9051-17.8872 0-14.7702-12.0155-26.7857-26.7857-26.7857-14.7702 0-26.7857 12.0155-26.7857 26.7857 0 14.7702 12.0155 26.7857 26.7857 26.7857 6.8783 0 13.139-2.6278 17.8872-6.905l9.7246 9.7245-2.4389 2.439 1.7904 5.3726 18.9756 18.9742h6.8064l3.6457-3.6457v-6.8064L71.25 60.7979l-5.3712-1.7918zM9.8684 33.8346c0-13.2152 10.751-23.9662 23.9662-23.9662 13.2152 0 23.9662 10.751 23.9662 23.9662 0 7.9427-3.8995 14.9746-9.8685 19.3379v-5.2402c0-3.8867-3.162-7.0488-7.0488-7.0488H26.7858c-3.8868 0-7.049 3.162-7.049 7.0488v5.2402c-5.969-4.3633-9.8684-11.3952-9.8684-19.338zm12.688 21.1353v-7.0376c0-2.3317 1.8975-4.2293 4.2293-4.2293h5.6391v8.4587h2.8196V43.703h5.639c2.3318 0 4.2294 1.8976 4.2294 4.2293V54.97c-3.3637 1.8017-7.2026 2.8309-11.2782 2.8309-4.0757 0-7.9145-1.0292-11.2782-2.8309zM66.64 62.2345L68.9366 63l-5.938 5.938-.7655-2.2951 4.407-4.4084zm20.766 23.178l-1.9934 1.9935h-4.4718L64.7284 71.1936l6.4652-6.4652L87.406 80.9408v4.4718z" fill="#24334A"></path><path d="M25.376 31.015c0 4.665 3.7936 8.4587 8.4586 8.4587 4.665 0 8.4586-3.7937 8.4586-8.4587 0-4.665-3.7937-8.4586-8.4586-8.4586-4.665 0-8.4587 3.7937-8.4587 8.4586zm14.0977 0c0 3.11-2.5292 5.6391-5.6391 5.6391-3.11 0-5.6391-2.5291-5.6391-5.639 0-3.11 2.5291-5.6392 5.639-5.6392 3.11 0 5.6392 2.5292 5.6392 5.6391z" fill="#0C3847"></path></g></g></svg></span>
+                <span style="text-align:center; display: flex">Use the search to add a client, or keep empty to save as walk-in.</span>
+            </div>
+        </div>
+        <div class="col-12 d-flex flex-wrap justify-content-center" style="flex-grow:1; "></div>
+        <div class="col-12 p-4 border-top d-flex flex-wrap align-items-end">
+            <div class="col-12 text-center" id="containtTotal">
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-block btn-light active" aria-pressed="true" id="saveButtonCheckOut">EXPRESS CHECKOUT</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-block btn-success active" aria-pressed="true" id="saveButton">SAVE APPOINTMENT</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿<div class="form-group d-none" id="NotifyNoScheduled">
+    <div class="col-md-12 containtNotification offset-sm-2 offset-md-3 offset-lg-4 col-rt-offset-5  col-fhd-offset-4">
+        <div class="col-md-12">
+            @Html.Partial("/Views/Shared/img/icon_calendar.cshtml")
+        </div>
+        <p class="h3">No Scheduled Staff</p>
+        <p>
+            There are no staff working on this day, switch to the all staff view instead.
+        </p>
+        <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-light" id="alowShowCanlendar">SHOW ALL STAFF</button>
+            <button type="button" class="btn btn-custome" onclick="location.href = '/Staff/Index'">EDIT WORK HOURS</button>
+        </div>
+    </div>
+</div>

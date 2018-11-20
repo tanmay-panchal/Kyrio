@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="/Content/coretheme.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="print-invoice-containt">
+        <div class="title-print-invoice">
+            <h3>@BusinessName</h3>
+            <p>@Location</p>
+            <p>@Line1</p>
+            <p>@Line2</p>
+        </div>
+        <div class="title-print-invoice">
+            <h3>@InvoiceNo</h3>
+            <p>@InvoiceDate</p>
+            <p>@InvoiceDesc</p>
+        </div>
+        Client
+        <div class="body-print-invoice">
+            <div class="row-invoice">
+                @ClientName
+                @Email
+                @MobileNumber
+                @Address
+            </div>
+            <div class="row-invoice">
+                @InvoiceDetail
+            </div>
+            <div class="row-invoice">
+                @TaxDetail
+            </div>
+            <div class="row-invoice">
+                <div class="d-flex">
+                    <p>Total</p>
+                    <p style="flex:1; text-align:right">@TotalValue</p>
+                </div>
+            </div>
+            <div class="row-invoice">
+                @InvoiceContaint
+            </div>
+            <div class="row-invoice">
+                <div style="display:@displayChange">
+                    <p>Change</p>
+                    <p style="flex:1; text-align:right">@ChangeValue</p>
+                </div>
+                <div class="d-flex">
+                    <h4>Balance</h4>
+                    <h4 style="flex:1; text-align:right">@BalanceValue</h4>
+                </div>
+            </div>
+            <p style="text-align:center">@Line3</p>
+        </div>
+    </div>
+</body>
+</html>

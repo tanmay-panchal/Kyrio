@@ -1,0 +1,83 @@
+﻿<div class="card mx-4">
+    <form id="registerForm">
+        <div class="card-header p-4">
+            <h1 style="text-align:center">Software for Salons & Spas</h1>
+        </div>
+        <div class="card-body p-4" style="padding-bottom: 0px !important">
+            <p class="text-muted">LOGIN DETAILS</p>
+            <div class="row">
+                <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="First Name" name="FirstName" id="FirstName">
+                    </div>
+                </div>
+                <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Last Name" name="LastName" id="LastName">
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-envelope"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" id="Email" name="Email">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                </div>
+                <input type="password" class="form-control" placeholder="Password" id="Password" name="Password">
+            </div>
+        </div>
+        <div class="card-body p-4" style="padding-top: 15px !important; border-top: 1px solid #c2cfd6;">
+            <p class="text-muted">BUSINESS DETAILS</p>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-briefcase"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Company name" id="CompanyName" name="CompanyName">
+            </div>
+            <div class="input-group mb-3">
+                <select style="width: 100%" id="BusinessTypeID" urlselection="/Home/GetBusinessTypeBaseId" name="BusinessTypeID"></select>
+            </div>
+            <div class="input-group mb-3">
+                <select style="width: 100%" id="CountryID" urlselection="/Home/GetCountryBaseIdAttatchTimeZone" name="CountryID"></select>
+            </div>
+            <div class="row">
+                <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                    <div class="input-group mb-3">
+                        <select style="width: 100%" id="TimeZoneID" urlselection="/Home/GetTimeZoneBaseId" name="TimeZoneID"></select>
+                    </div>
+                </div>
+                <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                    <div class="input-group mb-3">
+                        <select style="width: 100%" id="CurrencyCode" urlselection="/Home/GetCurrencyBaseId" name="CurrencyCode"></select>
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="buttonExcuteRegister" class="btn btn-block btn-custome" data-style="slide-right" isbuttonexcute>Create Account</button>
+        </div>
+        <div class="card-footer p-4">
+            <div class="row">
+                <div class="col-12" style="text-align:center">
+                    <span>By creating your account you agree to the</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" style="text-align:center">
+                    <button type="button" class="btn btn-link active" style="padding-top: 1px; padding-right: 0px">Terms, Privacy</button>
+                    <span> and </span>
+                    <button type="button" class="btn btn-link active" style="padding-top: 1px; padding-right: 0px; padding-left: 0px">Merchant Agreement</button>
+                    <span> policies.</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

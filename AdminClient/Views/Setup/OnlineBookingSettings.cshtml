@@ -1,0 +1,134 @@
+﻿<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> Online Booking Settings</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="busiessForm">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                                <label class="switch switch-lg switch-3d switch-primary">
+                                                    <input type="checkbox" class="switch-input" id="business_online_booking" name="business_online_booking" ispropertiesmodel>
+                                                    <span class="switch-label"></span>
+                                                    <span class="switch-handle"></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group col-fhd-10 col-xlg-10 col-md-10 col-sm-12 col-xs-10">
+                                                <h3>Online Booking Tools</h3>
+                                                <p>Receive online bookings from clients directly through your website, Facebook and more.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="groupsetting">
+                                    <h5>Booking Availabilty</h5>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Clients can book appointments up to x in advance.</label>
+                                        <select class="form-control" style="width: 100%" id="business_advance_notice_time_in_seconds" name="business_advance_notice_time_in_seconds" ispropertiesmodel>
+                                            <option value="0">None</option>
+                                            <option value="3600">1 Hour</option>
+                                            <option value="7200">2 Hours</option>
+                                            <option value="10800">3 Hours</option>
+                                            <option value="14400">4 Hours</option>
+                                            <option value="18000">5 Hours</option>
+                                            <option value="21600">6 Hours</option>
+                                            <option value="25200">7 Hours</option>
+                                            <option value="28800">8 Hours</option>
+                                            <option value="32400">9 Hours</option>
+                                            <option value="36000">10 Hours</option>
+                                            <option value="39600">11 Hours</option>
+                                            <option value="43200">12 Hours</option>
+                                            <option value="46800">13 Hours</option>
+                                            <option value="50400">14 Hours</option>
+                                            <option value="54000">15 Hours</option>
+                                            <option value="57600">16 Hours</option>
+                                            <option value="61200">17 Hours</option>
+                                            <option value="64800">18 Hours</option>
+                                            <option value="68400">19 Hours</option>
+                                            <option value="72000">20 Hours</option>
+                                            <option value="75600">21 Hours</option>
+                                            <option value="79200">22 Hours</option>
+                                            <option value="82800">23 Hours</option>
+                                            <option value="86400">24 Hours</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Clients can book appointments no more than in y the future.</label>
+                                        <select class="form-control" style="width: 100%" id="business_widget_max_advance_time_in_months" name="business_widget_max_advance_time_in_months" ispropertiesmodel>
+                                            <option value="6">6 Months</option>
+                                            <option value="5">5 Months</option>
+                                            <option value="4">4 Months</option>
+                                            <option value="3">3 Months</option>
+                                            <option value="2">2 Months</option>
+                                            <option value="1">1 Month</option>
+                                        </select>
+                                    </div>
+                                    <h5>Cancellation Notice</h5>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Allow clients to cancel up to z in advance.</label>
+                                        <select class="form-control" style="width: 100%" id="business_cancellation_time" name="business_cancellation_time" ispropertiesmodel>
+                                            <option value="0">None</option>
+                                            <option value="1">1 Hour</option>
+                                            <option value="2">2 Hours</option>
+                                            <option value="3">3 Hours</option>
+                                            <option value="4">4 Hours</option>
+                                            <option value="5">5 Hours</option>
+                                            <option value="6">6 Hours</option>
+                                            <option value="7">7 Hours</option>
+                                            <option value="8">8 Hours</option>
+                                            <option value="9">9 Hours</option>
+                                            <option value="10">10 Hours</option>
+                                            <option value="11">11 Hours</option>
+                                            <option value="12">12 Hours</option>
+                                            <option value="13">13 Hours</option>
+                                            <option value="14">14 Hours</option>
+                                            <option value="15">15 Hours</option>
+                                            <option value="16">16 Hours</option>
+                                            <option value="17">17 Hours</option>
+                                            <option value="18">18 Hours</option>
+                                            <option value="19">19 Hours</option>
+                                            <option value="20">20 Hours</option>
+                                            <option value="21">21 Hours</option>
+                                            <option value="22">22 Hours</option>
+                                            <option value="23">23 Hours</option>
+                                            <option value="24">24 Hours</option>
+                                            <option value="48">48 Hours</option>
+                                        </select>
+                                    </div>
+                                    <h5>Booking Policy</h5>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Display custom booking policy info</label>
+                                        <textarea class="form-control" rows="3" id="business_cancellation_policy" name="business_cancellation_policy" placeholder="e.g. please arrive 10 mins early" ispropertiesmodel maxlength="400"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" checked id="business_widget_allows_employee_selection" name="business_widget_allows_employee_selection" ispropertiesmodel />
+                                        <label class="col-form-label">ALLOW CLIENTS TO SELECT STAFF MEMBERS</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-custome" id="excuteButton" data-style="slide-right">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/onlinebookingsettings.js")"></script>

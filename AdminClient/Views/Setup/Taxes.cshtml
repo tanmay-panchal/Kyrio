@@ -1,0 +1,158 @@
+﻿@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            <strong>Tax Rates</strong>
+        </div>
+        <div class="card-body">
+            <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="table">
+                <thead>
+                    <tr>
+                        <th>TAX NAME</th>
+                        <th>RATE</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <strong>Tax Calculation</strong>
+        </div>
+        <div class="card-body">
+            <div>
+                <p>
+                    Your retail prices are <span id="taxcalculation"></span>.
+                </p>
+                <div class="col-12"><button type="button" class="btn btn-custome" id="changetaxcalculation" data-style="slide-right">Change this setting</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="containtButtonFooter" id="containtButtonCreate">
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionForm">
+                    <div class="form-group">
+                        <input type="hidden" id="TaxID" ispropertiesmodel ispropertiesidmodel />
+                        <label class="col-form-label">TAX NAME</label>
+                        <input type="text" class="form-control" id="TaxName" name="TaxName" placeholder="e.g VAT" ispropertiesmodel maxlength="200" />
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="appendedInput">RATE</label>
+                        <div class="controls">
+                            <div class="input-group">
+                                <input id="TaxRate" name="TaxRate" class="form-control" size="16" type="number" ispropertiesmodel maxlength="5">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteButton">DELETE</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="modal fade" id="actionModalSetting">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Change Tax Calculation</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionFormSetting">
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        <div class="row">
+                            <div class="col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-12" style="font-size:30px; text-align:center">
+                                <i class="fa fa-warning fa-lg"></i>
+                            </div>
+                            <div class="col-fhd-10 col-xlg-10 col-md-10 col-sm-12 col-xs-12">This change will have a big impact on your sales. Make sure you understand all implications</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <input type="radio" name="config_tax_calculation" id="config_tax_calculation" value="exclude" />
+                                <h5 style="padding-left:10px">Retail Prices Exclude Tax</h5>
+                            </div>
+                            <div>
+                                <p>If selected, all taxes will be calculated using this formula:</p>
+                                <p style="font-weight:bold">Tax = Retail * Tax Rate</p>
+                                <p>For example: 20% tax on a $10.00 item comes to $2.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <input type="radio" name="config_tax_calculation" value="include" />
+                                <h5 style="padding-left:10px">Retail Prices Include Tax</h5>
+                            </div>
+                            <div>
+                                <p>If selected, all taxes will be calculated using this formula:</p>
+                                <p style="font-weight:bold">Tax = (Tax Rate * Retail Price) / (1 + Tax Rate)</p>
+                                <p>For example: 20% tax on a $10.00 item comes to $1.67</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButtonSaveSetting" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/taxes.js")"></script>

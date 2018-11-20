@@ -1,0 +1,179 @@
+﻿@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<div class="animated fadeIn">
+    <div class="col-md-12">
+        <div class="form-control col-12 p-0 d-flex justify-content-end pb-1 b-0">
+            <button type="button" class="btn btn-danger active" id="deleteMuliButton">DELETE</button>
+        </div>
+        <div class="form-control col-12 p-0 containtTable pt-2">
+            <table class="table table-responsive-sm table-striped table-sm datatable no-footer" id="table" style="width:100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Company Name</th>
+                        <th>Email</th>
+                        <th>Business Type</th>
+                        <th>Country</th>
+                        <th>Contact Number</th>
+                        <th>Create Date</th>
+                        <th>Expire date</th>
+                        <th>Package</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade modal-fullsrceen" id="actionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active show" id="business-tab" data-toggle="tab" href="#business" role="tab" aria-controls="business" aria-selected="true">BUSINESS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="location-tab" data-toggle="tab" href="#location" role="tab" aria-controls="location" aria-selected="false">LOCATION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="location-tab" data-toggle="tab" href="#tabUser" role="tab" aria-controls="location" aria-selected="false">USER</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTab1Content">
+                    <div class="tab-pane fade active show" id="business" role="tabpanel" aria-labelledby="business-tab">
+                        <form novalidate="novalidate" id="busiessForm">
+                            <div class="form-group">
+                                <input type="hidden" id="BusinessID" name="BusinessID" ispropertiesmodel ispropertiesidmodel />
+                                <label class="col-form-label">BUSINESS NAME</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="icon-user"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="CompanyName" name="CompanyName" placeholder="Company Name" ispropertiesmodel maxlength="200">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-form-label">DESCRIPTION</label>
+                                <textarea class="form-control" rows="2" id="Description" name="Description" placeholder="Description" ispropertiesmodel maxlength="400"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">ADDRESS</label>
+                                <textarea class="form-control" rows="2" id="Address" name="Address" placeholder="Address" ispropertiesmodel maxlength="400"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">WEBSITE</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="icon-globe"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="Website" name="Website" placeholder="Website" ispropertiesmodel maxlength="100">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">PACKAGE</label>
+                                    <select style="width: 100%" id="PackageID" urlselection="/Home/GetPackageBaseId" name="PackageID" ispropertiesmodel></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">EXPIRE DATE</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-calendar"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="ExpireDate" isdate name="ExpireDate" ispropertiesmodel formatdate="DD/MM/YYYY" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">CONTACT NUMBER</label>
+                                    <input type="text" class="form-control" id="ContactNumber" name="ContactNumber" placeholder="91 234 56 78" ispropertiesmodel>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">BUSINESS TYPE</label>
+                                    <select style="width: 100%" id="BusinessTypeID" urlselection="/Home/GetBusinessTypeBaseId" name="BusinessTypeID" ispropertiesmodel></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">TIME ZONE</label>
+                                    <select style="width: 100%" id="TimeZoneID" urlselection="/Home/GetTimeZoneBaseId" name="TimeZoneID" ispropertiesmodel></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">TIME FORMAT</label>
+                                    <select style="width: 100%" id="TimeFormat" urlselection="/Home/GetTimeFormatBaseId" name="TimeFormat" ispropertiesmodel></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">COUNTRY</label>
+                                    <select style="width: 100%" id="CountryID" urlselection="/Home/GetCountryBaseId" name="CountryID" ispropertiesmodel></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">CURRENCY</label>
+                                    <select style="width: 100%" id="CurrencyCode" urlselection="/Home/GetCurrencyBaseId" name="CurrencyCode" ispropertiesmodel></select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                        <div class="form-group" id="containLocation"></div>
+                    </div>
+                    <div class="tab-pane fade p-0" id="tabUser" role="tabpanel" aria-labelledby="location-tab">
+                        <table class="table table-responsive-sm table-sm datatable no-footer" id="tableUser" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>User Name</th>
+                                    <th>Date Registered</th>
+                                    <th>Role</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+@Scripts.Render("~/Scripts/inputmask")
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/admin/business.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAFok6rdVRJr0szpgN7dLTF2Q-FxA8-5o&libraries=places&callback=initAutocomplete" async defer></script>

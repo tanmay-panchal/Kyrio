@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e8192f15c57478c87ce1a9e17a9add0" Name="Diagram1">
+        <EntityTypeShape EntityType="KYRIOModel.BusinessType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYRIOModel.Country" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYRIOModel.Currency" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYRIOModel.TimeZone" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYRIOModel.Config" Width="1.5" PointX="5.375" PointY="5.5" />
+        <EntityTypeShape EntityType="KYRIOModel.ResetPassword" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="KYRIOModel.TimeFormat" Width="1.5" PointX="6.625" PointY="7.875" />
+        <EntityTypeShape EntityType="KYRIOModel.Location" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="KYRIOModel.DefaultColor" Width="2.375" PointX="8.875" PointY="7.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Role" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="KYRIOModel.StatusUser" Width="2.75" PointX="9.5" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.TreatmentType" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Resource" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KYRIOModel.ServiceGroup" Width="3.125" PointX="11.75" PointY="10.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Dial_Code" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Service" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ServiceDuration" Width="1.5" PointX="8.375" PointY="12.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ServiceStaff" Width="1.5" PointX="14.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Duration" Width="1.5" PointX="14.375" PointY="7.75" />
+        <EntityTypeShape EntityType="KYRIOModel.AvailableFor" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="KYRIOModel.AppointmentColor" Width="2.625" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ExtraTimeType" Width="2.625" PointX="10.25" PointY="14.5" />
+        <EntityTypeShape EntityType="KYRIOModel.PricingType" Width="1.875" PointX="12.125" PointY="16.125" />
+        <EntityTypeShape EntityType="KYRIOModel.TimeSlotInterval" Width="1.5" PointX="13.875" PointY="14.375" />
+        <EntityTypeShape EntityType="KYRIOModel.Tooltip" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.VoucherExpiryPeriod" Width="2.125" PointX="15.375" PointY="10.75" />
+        <EntityTypeShape EntityType="KYRIOModel.CancellationReason" Width="1.5" PointX="16.375" PointY="6.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Discount" Width="1.5" PointX="7.375" PointY="16.75" />
+        <EntityTypeShape EntityType="KYRIOModel.PaymentType" Width="1.5" PointX="16.375" PointY="13.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ReferralSource" Width="1.5" PointX="3.375" PointY="17.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Tax" Width="1.5" PointX="9.375" PointY="17.75" />
+        <EntityTypeShape EntityType="KYRIOModel.TaxLocation" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ServiceResource" Width="1.5" PointX="4.875" PointY="14.25" />
+        <EntityTypeShape EntityType="KYRIOModel.User" Width="1.5" PointX="16.375" PointY="17.75" />
+        <EntityTypeShape EntityType="KYRIOModel.UserLocation" Width="2.375" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="KYRIOModel.UserWorkingHour" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ClosedDate" Width="1.5" PointX="18.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ClosedDate_Location" Width="1.5" PointX="18.375" PointY="7.75" />
+        <EntityTypeShape EntityType="KYRIOModel.BusinessSetting" Width="1.5" PointX="18.375" PointY="10.75" />
+        <EntityTypeShape EntityType="KYRIOModel.LogException" Width="1.5" PointX="11.375" PointY="18.75" />
+        <EntityTypeShape EntityType="KYRIOModel.LangString" Width="1.5" PointX="18.375" PointY="13.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Business" Width="1.5" PointX="13.375" PointY="18.75" />
+        <EntityTypeShape EntityType="KYRIOModel.AppointmentService" Width="1.5" PointX="19.625" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Client" Width="1.5" PointX="20.375" PointY="5.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Function" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Brand" Width="1.5" PointX="20.375" PointY="13.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Category" Width="1.5" PointX="20.375" PointY="17.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Order" Width="1.5" PointX="3.375" PointY="21.75" />
+        <EntityTypeShape EntityType="KYRIOModel.OrderProduct" Width="1.5" PointX="5.375" PointY="21.75" />
+        <EntityTypeShape EntityType="KYRIOModel.PermissionLevel" Width="1.5" PointX="7.375" PointY="21.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Product" Width="1.5" PointX="20.375" PointY="21.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ProductStockMovement" Width="1.875" PointX="22" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Invoice" Width="1.5" PointX="22.375" PointY="5.75" />
+        <EntityTypeShape EntityType="KYRIOModel.InvoiceDetail" Width="2" PointX="9.375" PointY="22.75" />
+        <EntityTypeShape EntityType="KYRIOModel.InvoicePayment" Width="1.5" PointX="22.375" PointY="11.75" />
+        <EntityTypeShape EntityType="KYRIOModel.InvoiceTip" Width="1.5" PointX="22.375" PointY="15.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Supplier" Width="1.5" PointX="22.375" PointY="19.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Voucher" Width="1.5" PointX="0.75" PointY="23.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Message" Width="1.5" PointX="12.375" PointY="23.75" />
+        <EntityTypeShape EntityType="KYRIOModel.ProductLocation" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_PRODUCT" Width="1.5" PointX="24.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_PRODUCT_BUSINESS" Width="1.5" PointX="14.375" PointY="24.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_SERVICE" Width="1.5" PointX="24.375" PointY="11.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_PRODUCT_STOCK_MOVEMENT" Width="1.5" PointX="16.375" PointY="24.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_ORDER" Width="1.5" PointX="24.375" PointY="18.75" />
+        <EntityTypeShape EntityType="KYRIOModel.BlockTime" Width="1.5" PointX="5.375" PointY="25.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_INVOICE_PAYMENT" Width="1.5" PointX="18.375" PointY="27.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_CLIENT" Width="1.5" PointX="20.375" PointY="27.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_TBL_USER_WORKING_HOUR" Width="1.5" PointX="26.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_VOUCHER" Width="1.5" PointX="28.375" PointY="23.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_APPOINTMENT_SERVICE" Width="1.5" PointX="28.875" PointY="14.375" />
+        <EntityTypeShape EntityType="KYRIOModel.V_TBL_APPOINTMENT_SERVICE" Width="1.5" PointX="28.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_INVOICE_DETAIL" Width="1.5" PointX="3.375" PointY="29.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_INVOICE" Width="1.5" PointX="26.375" PointY="5.75" />
+        <EntityTypeShape EntityType="KYRIOModel.TBL_SMS" Width="1.5" PointX="28.375" PointY="5.75" />
+        <EntityTypeShape EntityType="KYRIOModel.TBL_APPOINTMENT_REMINDER" Width="1.5" PointX="28.375" PointY="9.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_BUSINESS" Width="1.5" PointX="5.375" PointY="29.75" />
+        <EntityTypeShape EntityType="KYRIOModel.SYS_PACKAGE" Width="1.5" PointX="30.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_APPOINTMENT_REMINDER" Width="1.5" PointX="0.75" PointY="30.75" />
+        <EntityTypeShape EntityType="KYRIOModel.V_MESSAGE" Width="1.5" PointX="30.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KYRIOModel.Appointment" Width="1.5" PointX="30.375" PointY="23.75" />
+        <EntityTypeShape EntityType="KYRIOModel.UpdateHistory" Width="1.5" PointX="30.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

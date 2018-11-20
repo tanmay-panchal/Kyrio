@@ -1,0 +1,297 @@
+﻿@using AdminClient.Controllers.Global;
+<!DOCTYPE html>
+<html lang="en">
+<!--#region Head-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Kyrio">
+    <meta name="author" content="MAPLE JSC">
+    <meta name="keyword" content="Kyrio">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Kyrio</title>
+    @Styles.Render("~/Style/index")
+    @Scripts.Render("~/Scripts/loadHeaderIndex")
+    <script src="~/Scripts/global/mainExcute.js"></script>
+    <link href="~/Content/kyrio.css" rel="stylesheet" />
+</head>
+<!--#endregion-->
+<!--#region Body-->
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+
+    <!--#region header body-->
+    <header class="app-header navbar">
+
+        <!--#region header left-->
+        <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button" style="z-index:2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--#endregion-->
+        <!--#region header right(breadcrumb, menu header)-->
+        <!--breadcrumb-->
+        <ul class="nav navbar-nav d-md-down-none mr-auto breadcrumb"></ul>
+        <!--menu header-->
+        <ul class="nav navbar-nav ml-auto" style="padding-right: 20px; z-index:2">
+            @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.appointments)) == true && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.clients)) == true)
+            {
+                    <li class="nav-item d-md-down-none">
+                        <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="searchScheul">
+                            <i class="icon-magnifier"></i>
+                        </a>
+                    </li>
+                }
+            }
+            <li class="nav-item d-md-down-none">
+                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon-bell"></i>
+                    <span class="badge badge-pill badge-warning" id="count-message-destop"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg overflow-y" id="container-message-destop" style="max-height: calc(100vh - 30px)"></div>
+            </li>
+            <li class="nav-item dropdown d-md-down-none">
+                <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon-user"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
+                    <a href="/User/MySetting" class="dropdown-item">
+                        <i class="icon-settings text-success"></i> My Settings
+                    </a>
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.account_setup)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.client_settings)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.point_of_sale)) == false)
+                        {
+
+                        }
+                        else
+                        {
+                    <a href="/Setup/Index" class="dropdown-item">
+                        <i class="icon-user text-warning"></i> Account Setup
+                    </a>
+                        }
+                    }
+                    <a href="#" class="dropdown-item">
+                        <i class="icon-support text-info"></i> Contact Support
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <i class="icon-earphones text-primary"></i> Help Center
+                    </a>
+                    <a href="#" class="dropdown-item" id="logoutAccount">
+                        <i class="icon-logout text-danger"></i> Logout
+                    </a>
+                </div>
+            </li>
+            <button class="navbar-toggler aside-menu-toggler navbar-mobile" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </ul>
+        <!--#endregion-->
+
+    </header>
+    <!--#endregion-->
+    <!--#region containt body-->
+    <div class="app-body">
+
+        <!--#region Menu Main-->
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.home)))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Index"><i class="icon-chart"></i> Home</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.own_calendar)))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Calendar/Index"><i class="icon-calendar"></i> Calendar</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.appointments)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.invoices)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.daily_sales)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.vouchers)) == false)
+                        {
+                        }
+                        else
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Reports/Sales"><i class="icon-notebook"></i> Sales</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.clients)))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Clients/Index"><i class="icon-bubbles"></i> Clients</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.messages)))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Messages/Index"><i class="icon-envelope"></i> Messages</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.closed_dates)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.permission_levels)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.working_hours)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.staff_members)) == false)
+                        {
+
+                        }
+                        else
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Staff/Index"><i class="icon-user"></i> Staff</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.services)))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Service/Index"><i class="icon-calculator"></i> Services</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.products)))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Inventory/Inventory"><i class="icon-briefcase"></i> Inventory</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.all_reports)))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Reports/Analytics"><i class="icon-graph"></i> Analytics</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.online_booking)))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/OnlineBookingSetting/Index"><i class="icon-cloud-download"></i> Online Booking</a>
+                    </li>}
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.account_setup)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.client_settings)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.point_of_sale)) == false)
+                        {
+
+                        }
+                        else
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Setup/Index"><i class="icon-settings"></i> Setup</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction("Business"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/HomeAdmin/Index"><i class="icon-home"></i> Home</a>
+                            </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction("Business"))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Business/Index"><i class="icon-info"></i> Business</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction("Business"))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/UpdateHistory/Index"><i class="icon-info"></i> Update History</a>
+                    </li>
+                        }
+                    }
+                    @{ if (CheckPermision.CheckPermissionFunction("Business"))
+                        {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/AdminSetting/Index"><i class="icon-settings"></i> Settings</a>
+                    </li>
+                        }
+                    }
+                </ul>
+            </nav>
+            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+        </div>
+        <!--#endregion-->
+        <!--#region Main content -->
+        <main id="main" class="main">
+            <div class="container-fluid p-md-2 p-0" style="padding-top: 20px">
+                @RenderBody()
+            </div>
+        </main>
+        <!--#endregion-->
+        <!--#region footer main-->
+        <aside class="aside-menu navbar-mobile">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#timeline" role="tab">
+                        <i class="icon-magnifier"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#container-message-mobile" role="tab">
+                        <i class="icon-bell"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                        <i class="icon-user"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="timeline" role="tabpanel"></div>
+                <div class="tab-pane p-3" id="container-message-mobile" role="tabpanel"></div>
+                <div class="tab-pane p-3" id="settings" role="tabpanel">
+                    <div class="message">
+                        <a href="/User/MySetting" class="dropdown-item">
+                            <i class="icon-settings text-success"></i> My Settings
+                        </a>
+                    </div>
+
+                    @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.account_setup)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.client_settings)) == false && CheckPermision.CheckPermissionFunction(nameof(Resources.Function.point_of_sale)) == false)
+                        {
+                        }
+                        else
+                        {
+                    <div class="message">
+                        <a href="/Setup/Index" class="dropdown-item">
+                            <i class="icon-user text-warning"></i> Account Setup
+                        </a>
+                    </div>
+                        }
+                    }
+                    <div class="message">
+                        <a href="#" class="dropdown-item">
+                            <i class="icon-support text-info"></i> Contact Support
+                        </a>
+                    </div>
+                    <div class="message">
+                        <a href="#" class="dropdown-item">
+                            <i class="icon-earphones text-primary"></i> Help Center
+                        </a>
+                    </div>
+                    <div class="message">
+                        <a href="#" class="dropdown-item" id="logoutAccount">
+                            <i class="icon-logout text-danger"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--#endregion-->
+
+    </div>
+    <!--#endregion-->
+    @Html.Partial("/Views/Shared/VariableGlobalSrcipt.cshtml")
+    @Scripts.Render("~/Scripts/loadfooterIndex")
+</body>
+<!--#endregion-->
+
+</html>

@@ -1,0 +1,48 @@
+﻿<div class="modal fade show modal-main modal modal-mobile">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header b-0">
+                <button type="button" class="close" name="closeModal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="col-12 form-group p-0 overflow-y" style="max-height: calc(100vh - 135px)">
+                    <div class="col-12 form-group">
+                        <h3 class="text-left font-weight-bold text-capitalize">update appointment</h3>
+                    </div>
+                    <div class="col-12 form-group">
+                        <p class="font-xs m-0">You have edited a repeating appointment. Select which appointments should be update: </p>
+                    </div>
+                    <div class="col-12 form-group p-0 border-bottom" name="container-opitionSaveUpdateAppointment">
+                        <div class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center">
+                            <p class="m-0">Update this appointment only</p>
+                            <input type="radio" name="opitionSaveUpdateAppointment" valueopition="0" checked class="d-none" />
+                            <p name="check-opition-button" class="m-0 border rounded-circle d-flex align-items-center justify-content-center" style="min-height: 50px; min-width: 50px; width: 50px; height: 50px;">
+                                <i class="fa fa-check fa-lg text-white"></i>
+                            </p>                        </div>
+                    </div>
+                    <div class="col-12 form-group p-0 border-bottom" name="container-opitionSaveUpdateAppointment">
+                        <div class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center">
+                            <p class="m-0">Update all upcoming appointments</p>
+                            <input type="radio" name="opitionSaveUpdateAppointment" valueopition="1" class="d-none" />
+                            <p class="m-0 border rounded-circle d-flex align-items-center justify-content-center" name="check-opition-button" style="min-height: 50px; min-width: 50px; width: 50px; height: 50px;">                         
+                                <i class="fa fa-check fa-lg text-white"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 form-group fixed-bottom border-top pt-4 bg-white">
+                    <div class="col-12 form-group p-0">
+                        <div class="col-6 form-group p-0 pr-2">
+                            <button class="btn btn-outline-primary btn-block text-uppercase" type="button" name="closeModal">cancel</button>
+                        </div>
+                        <div class="col-6 form-group p-0">
+                            <button class="btn btn-block btn-dark active text-uppercase" type="button" aria-pressed="true" id="saveUpdateAppointment">update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,511 @@
+﻿<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/chart.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/gauge.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<form novalidate="novalidate" id="actionForm">
+    <div class="container-fluid">
+        <div id="ui-view">
+            <div>
+                @if (ViewBag.home == true)
+                {
+                    <div class="animated fadeIn">
+                        @if (ViewBag.IsAdmin == true)
+                        {
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3">
+                                    <select class="form-control" style="width: 100%" id="CountryID" name="CountryID"></select>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+
+                                </div>
+                            </div>
+
+                            <div class="card card-accent-info">
+                                <div class="card-header" style="font-weight:bold">
+                                    NET SALE
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card text-white bg-danger">
+                                                <div class="card-header">
+                                                    Total
+                                                </div>
+                                                <div class="card-body pb-0">
+                                                    <div class="text-value"><h2 id="admin_totalsale"></h2></div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="text-value"><h5 style="text-align:right; color:black">&nbsp;</h5></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card text-white bg-primary">
+                                                <div class="card-header">
+                                                    Today
+                                                </div>
+                                                <div class="card-body pb-0">
+                                                    <div class="text-value"><h2 id="admin_today"></h2></div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="text-value"><h5 id="admin_yesterday" style="text-align:right; color:black"></h5></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card text-white bg-info">
+                                                <div class="card-header">
+                                                    This week
+                                                </div>
+                                                <div class="card-body pb-0">
+                                                    <div class="text-value"><h2 id="admin_thisweek"></h2></div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="text-value"><h5 id="admin_preweek" style="text-align:right; color:black"></h5></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card text-white bg-info">
+                                                <div class="card-header">
+                                                    This month
+                                                </div>
+                                                <div class="card-body pb-0">
+                                                    <div class="text-value"><h2 id="admin_thismonth"></h2></div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="text-value"><h5 id="admin_premonth" style="text-align:right; color:black"></h5></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-accent-warning">
+                                <div class="card-header" style="font-weight:bold">
+                                    CLIENTS
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card text-white bg-info">
+                                                <div class="card-body">
+                                                    <div class="h1 text-muted text-right mb-4">
+                                                        <i class="icon-people"></i>
+                                                    </div>
+                                                    <div class="text-value"><h2 id="admin_totalclient"></h2></div>
+                                                    <small class="text-muted text-uppercase font-weight-bold">Total</small>
+                                                    <div class="progress progress-white progress-xs mt-3">
+                                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card text-white bg-success">
+                                                <div class="card-body">
+                                                    <div class="h1 text-muted text-right mb-4">
+                                                        <i class="icon-user-follow"></i>
+                                                    </div>
+                                                    <div class="text-value"><h2 id="admin_newclient"></h2></div>
+                                                    <small class="text-muted text-uppercase font-weight-bold">New</small>
+                                                    <div class="progress progress-white progress-xs mt-3">
+                                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card text-white bg-primary">
+                                                <div class="card-body">
+                                                    <div class="h1 text-muted text-right mb-4">
+                                                        <i class="icon-user-following"></i>
+                                                    </div>
+                                                    <div class="text-value"><h2 id="admin_paidclient"></h2></div>
+                                                    <small class="text-muted text-uppercase font-weight-bold">Paid</small>
+                                                    <div class="progress progress-white progress-xs mt-3">
+                                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card text-white bg-warning">
+                                                <div class="card-body">
+                                                    <div class="h1 text-muted text-right mb-4">
+                                                        <i class="icon-user-unfollow"></i>
+                                                    </div>
+                                                    <div class="text-value"><h2 id="admin_expireclient"></h2></div>
+                                                    <small class="text-muted text-uppercase font-weight-bold">Expired</small>
+                                                    <div class="progress progress-white progress-xs mt-3">
+                                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-accent-danger">
+                                <div class="card-header" style="font-weight:bold">
+                                    ORDER
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card">
+                                                <div class="card-body p-0 d-flex align-items-center">
+                                                    <i class="fa fa-automobile bg-primary p-4 font-2xl mr-3"></i>
+                                                    <div>
+                                                        <div class="text-value-sm text-primary"><h2 id="admin_totalorder"></h2></div>
+                                                        <div class="text-muted text-uppercase font-weight-bold small">Total</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card">
+                                                <div class="card-body p-0 d-flex align-items-center">
+                                                    <i class="fa fa-file-text-o bg-info p-4 font-2xl mr-3"></i>
+                                                    <div>
+                                                        <div class="text-value-sm text-primary"><h2 id="admin_neworder"></h2></div>
+                                                        <div class="text-muted text-uppercase font-weight-bold small">New</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card">
+                                                <div class="card-body p-0 d-flex align-items-center">
+                                                    <i class="fa fa-arrow-circle-o-right bg-warning p-4 font-2xl mr-3"></i>
+                                                    <div>
+                                                        <div class="text-value-sm text-primary"><h2 id="admin_inprogress"></h2></div>
+                                                        <div class="text-muted text-uppercase font-weight-bold small">Inprogress</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="card">
+                                                <div class="card-body p-0 d-flex align-items-center">
+                                                    <i class="fa fa-thumbs-o-up bg-danger p-4 font-2xl mr-3"></i>
+                                                    <div>
+                                                        <div class="text-value-sm text-primary"><h2 id="admin_finished"></h2></div>
+                                                        <div class="text-muted text-uppercase font-weight-bold small">Finished</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                        @if (ViewBag.IsClient == true || ViewBag.IsCustomer == true)
+                        {
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3">
+                                    <select class="form-control" style="width: 100%" id="LocationID" name="LocationID"></select>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+
+                                </div>
+                            </div>
+                            <div class="row">&nbsp;</div>
+
+                            if (ViewBag.IsClient == true)
+                            {
+                                <div class="card card-accent-info">
+                                    <div class="card-header" style="font-weight:bold">
+                                        NET SALE
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card text-white bg-danger">
+                                                    <div class="card-header">
+                                                        Total
+                                                    </div>
+                                                    <div class="card-body pb-0">
+                                                        <div class="text-value"><h2 id="client_totalsale"></h2></div>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <div class="text-value"><h5 style="text-align:right; color:black">&nbsp;</h5></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card text-white bg-primary">
+                                                    <div class="card-header">
+                                                        Today
+                                                    </div>
+                                                    <div class="card-body pb-0">
+                                                        <div class="text-value"><h2 id="client_today"></h2></div>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <div class="text-value"><h5 id="client_yesterday" style="text-align:right; color:black"></h5></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card text-white bg-info">
+                                                    <div class="card-header">
+                                                        This week
+                                                    </div>
+                                                    <div class="card-body pb-0">
+                                                        <div class="text-value"><h2 id="client_thisweek"></h2></div>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <div class="text-value"><h5 id="client_preweek" style="text-align:right; color:black"></h5></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card text-white bg-info">
+                                                    <div class="card-header">
+                                                        This month
+                                                    </div>
+                                                    <div class="card-body pb-0">
+                                                        <div class="text-value"><h2 id="client_thismonth"></h2></div>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <div class="text-value"><h5 id="client_premonth" style="text-align:right; color:black"></h5></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-accent-warning">
+                                    <div class="card-header" style="font-weight:bold">
+                                        CUSTOMERS
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card text-white bg-info">
+                                                    <div class="card-body">
+                                                        <div class="h1 text-muted text-right mb-4">
+                                                            <i class="icon-people"></i>
+                                                        </div>
+                                                        <div class="text-value"><h2 id="client_totalcustomer"></h2></div>
+                                                        <small class="text-muted text-uppercase font-weight-bold">Total</small>
+                                                        <div class="progress progress-white progress-xs mt-3">
+                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card text-white bg-success">
+                                                    <div class="card-body">
+                                                        <div class="h1 text-muted text-right mb-4">
+                                                            <i class="icon-home"></i>
+                                                        </div>
+                                                        <div class="text-value"><h2 id="client_contractdealer"></h2></div>
+                                                        <small class="text-muted text-uppercase font-weight-bold">Contract Dealers</small>
+                                                        <div class="progress progress-white progress-xs mt-3">
+                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card text-white bg-primary">
+                                                    <div class="card-body">
+                                                        <div class="h1 text-muted text-right mb-4">
+                                                            <i class="icon-user-following"></i>
+                                                        </div>
+                                                        <div class="text-value"><h2 id="client_companies"></h2></div>
+                                                        <small class="text-muted text-uppercase font-weight-bold">Companies</small>
+                                                        <div class="progress progress-white progress-xs mt-3">
+                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card text-white bg-warning">
+                                                    <div class="card-body">
+                                                        <div class="h1 text-muted text-right mb-4">
+                                                            <i class="icon-user"></i>
+                                                        </div>
+                                                        <div class="text-value"><h2 id="client_individuals"></h2></div>
+                                                        <small class="text-muted text-uppercase font-weight-bold">Individuals</small>
+                                                        <div class="progress progress-white progress-xs mt-3">
+                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-accent-danger">
+                                    <div class="card-header" style="font-weight:bold">
+                                        ORDER
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-body p-0 d-flex align-items-center">
+                                                        <i class="fa fa-automobile bg-primary p-4 font-2xl mr-3"></i>
+                                                        <div>
+                                                            <div class="text-value-sm text-primary"><h2 id="client_totalorder"></h2></div>
+                                                            <div class="text-muted text-uppercase font-weight-bold small">Total</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-body p-0 d-flex align-items-center">
+                                                        <i class="fa fa-file-text-o bg-info p-4 font-2xl mr-3"></i>
+                                                        <div>
+                                                            <div class="text-value-sm text-primary"><h2 id="client_neworder"></h2></div>
+                                                            <div class="text-muted text-uppercase font-weight-bold small">New</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-body p-0 d-flex align-items-center">
+                                                        <i class="fa fa-arrow-circle-o-right bg-warning p-4 font-2xl mr-3"></i>
+                                                        <div>
+                                                            <div class="text-value-sm text-primary"><h2 id="client_inprogress"></h2></div>
+                                                            <div class="text-muted text-uppercase font-weight-bold small">Inprogress</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-body p-0 d-flex align-items-center">
+                                                        <i class="fa fa-thumbs-o-up bg-danger p-4 font-2xl mr-3"></i>
+                                                        <div>
+                                                            <div class="text-value-sm text-primary"><h2 id="client_finished"></h2></div>
+                                                            <div class="text-muted text-uppercase font-weight-bold small">Finished</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            if (ViewBag.IsCustomer == true)
+                            {
+                                <div class="card card-accent-danger">
+                                    <div class="card-header" style="font-weight:bold">
+                                        ORDER
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-body p-0 d-flex align-items-center">
+                                                        <i class="fa fa-automobile bg-primary p-4 font-2xl mr-3"></i>
+                                                        <div>
+                                                            <div class="text-value-sm text-primary"><h2 id="customer_totalorder"></h2></div>
+                                                            <div class="text-muted text-uppercase font-weight-bold small">Total</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-body p-0 d-flex align-items-center">
+                                                        <i class="fa fa-file-text-o bg-info p-4 font-2xl mr-3"></i>
+                                                        <div>
+                                                            <div class="text-value-sm text-primary"><h2 id="customer_neworder"></h2></div>
+                                                            <div class="text-muted text-uppercase font-weight-bold small">New</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-body p-0 d-flex align-items-center">
+                                                        <i class="fa fa-arrow-circle-o-right bg-warning p-4 font-2xl mr-3"></i>
+                                                        <div>
+                                                            <div class="text-value-sm text-primary"><h2 id="customer_inprogress"></h2></div>
+                                                            <div class="text-muted text-uppercase font-weight-bold small">Inprogress</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-body p-0 d-flex align-items-center">
+                                                        <i class="fa fa-thumbs-o-up bg-danger p-4 font-2xl mr-3"></i>
+                                                        <div>
+                                                            <div class="text-value-sm text-primary"><h2 id="customer_finished"></h2></div>
+                                                            <div class="text-muted text-uppercase font-weight-bold small">Finished</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/Chart.min.js")"></script>
+<script src="@Url.Content("~/Scripts/homeAdmin.js")">></script>
+<script src="@Url.Content("~/Extension/js/gauge.min.js")"></script>

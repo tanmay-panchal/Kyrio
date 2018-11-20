@@ -1,0 +1,82 @@
+﻿<div class="modal fade modal-fullsrceen show" id="modalAppointmentView" style="display: block">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" data-select2-id="26">
+            <div class="modal-header">
+                <h3 class="modal-title">View Appointment</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0" data-select2-id="25">
+                <form novalidate="novalidate" id="appointmentViewForm">
+                    <div class="row col-12 p-0 mb-0 m-0" isdestop>
+                        <div class="content-left p-0" id="contentLeft">
+                            <div class="body-content-left m-auto view-appointment">
+                                <div class="form-group col-12 p-0 position-relative">
+                                    <h4 class="mb-1">@ScheduleDate</h4>
+                                    @RepeatText
+                                    @ContaintService
+                                    @ContaintAppointmentHistory
+                                </div>
+                            </div>
+                            <div class="form-group modal-backdrop fade show flex-column position-absolute" id="detailClientBackdropContentRight" style="z-index: 3000; display: none">
+                                <div style="flex-grow:1" class="row">
+                                    <div class="mx-auto my-auto">
+                                        <button type="button" class="btn btn-block btn-info active mx-auto btn-circle" aria-pressed="true" id="buttonCloseDetailClient"><i class="fa fa-close d-block"></i> <span class="d-block">ESC</span></button>
+                                        <p class="text-white">CLICK TO CLOSE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-0 position-relative m-0 row content-right" id="contentRight">
+                            <div class="col-12 form-group p-0 m-0 d-flex flex-column">
+                                <div class="p-2" id="detailClient" style="cursor:pointer;">
+                                    <div class="col-12 p-0">
+                                        <div class="float-left p-2"><button type="button" class="btn btn-block btn-info btn-circle-client disabled" aria-pressed="true">@Represent</button></div>
+                                        <div class="float-left p-2">
+                                            <div class="form-group"><h3 class="p-1">@FullName</h3></div>
+                                            <div class="col-12 p-0"><span>@Description</span></div>
+                                        </div>
+                                        <button class="btn float-right mr-2 mt-3 bg-white" type="button"><i class="fa fa-caret-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <span>@ClientNote</span>
+                                </div>
+                                <div class="justify-content-center d-flex flex-row" style="background-color: #F7F7F8;padding: 24px 16px; align-items: center">
+                                    <div class="dropdown float-right mr-2" id="containtDropdowStatus">
+                                        @ButtonStatus
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" x-placement="bottom-start" style="width: 270px; color: #67768C; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-155px, 35px, 0px);">
+                                            @DropDownButtonStatus
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-0 d-flex flex-column" style="flex-grow:1">
+                                    <div class="col-12 p-0 d-flex justify-content-center" style="flex-grow:1;">
+                                        <div class="col-12 p-0 d-flex flex-column align-items-center pt-3">
+                                            @InoviceContaint
+                                        </div>
+                                    </div>
+                                    <div class="col-12 p-4 border-top d-flex flex-wrap align-items-end">
+                                        <div class="col-12 text-center" id="containtTotal">@TotalFooter</div>
+                                        <div class="col-6 d-flex justify-content-center">
+                                            <div class="dropdown">
+                                                <a class="btn dropdown-toggle btn-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MORE OPTIONS</a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" x-placement="bottom-start" style="margin-bottom: 5px; min-width:0px; position: absolute; will-change: transform; right: 0px; top: 0px; left: 0px; transform: translate3d(-155px, 35px, 0px);">
+                                                    @ArrayButtonFooter
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            @ButtonLeft
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,451 @@
+﻿<link href="@Url.Content("~/Extension/css/jquery-boostrap-modal-wizard.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+
+<div class="_2uCs3H">
+    <div class="_2MKSLP _3pyG_c _171qQI">
+        <div class="_3WYyn5" style="position: relative;">
+            <div style="visibility: hidden; height: 0px;"></div>
+        </div>
+    </div>
+    <div>
+        <div class="_2GveWK _3fwefj">
+            <div class="tCGsZl" style="display: flex; flex-direction: column; flex-shrink: 1; flex-grow: 1;">
+                <header class="_2MOTTd">
+                    <div class="qQ2mF7 hOEdLx _3kNNhl">
+                        <h2 class="_1qRCLp _2I5xvM _1OSdXv XJ4mVR drDWkR" id="titleViewInvoice"></h2>
+                        <div role="button" class="_1TG8o8 _1jCX7X _1Is13S _148Kg3 _1FszNF" id="closeModalMain">
+                            <span class="_2FSeuB _240vE8 RCcMXQ _3G1j0F EDA0Qt"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M17 1.914L16.086 1 9 8.086 1.914 1 1 1.914 8.086 9 1 16.086l.914.914L9 9.914 16.086 17l.914-.914L9.914 9z"></path></svg></span>
+                        </div>
+                    </div>
+                </header>
+                <div class="_26Q8ey _1JCZG7" style="display: flex; flex-direction: column;">
+                    <input type="hidden" name="UserID" id="UserID" value="@ViewBag.UserID">
+                    <input type="hidden" name="InvoiceID" id="InvoiceID" value="@ViewBag.InvoiceID">
+                    <input type="hidden" name="IsPay" id="IsPay" value="@ViewBag.IsPay">
+                    <input type="hidden" name="ClientID" id="ClientID" value="0">
+                    <div class="_21M7Mi" style="display: flex; flex-direction: column; flex-grow: 1;">
+                        <div class="MfJrdE">
+                            <div class="_3DPR-A" style="display: flex; flex-direction: column;">
+                                <div class="_33L2x1" style="display: flex; flex-direction: column; flex-grow: 1;">
+                                    <div class="_3WPtE1 _29-y5-" style="flex-shrink: 0;">
+                                        <div class="_2mPFMy _1Ov_P6 wYOsSC _1MZkOc _1FszNF" style="display: flex; flex-direction: column;">
+                                            <div class="_1XwSO8" id="divLineInfo">
+                                                <div class="_1IfTWu _2FiXkU">
+                                                    <div class="_1qweJU" id="txtClientLetter"></div>
+                                                </div>
+                                                <div class="_3qWQ5O" style="flex-grow: 1;">
+                                                    <div class="_1p62pX _1fJZma _1dni2P" id="txtClientName"></div>
+                                                    <div class="_1p62pX _6j50cy" id="txtClientInfo"></div>
+                                                </div>
+                                                <span class="_2FSeuB _240vE8 _3Qrtyt RCcMXQ" id="openClientDetail" style="display:none">
+                                                    <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6.684 13.762l-.458-.48c-.15-.168-.226-.362-.226-.585 0-.227.075-.42.226-.578L9.196 9l-2.97-3.12C6.076 5.723 6 5.53 6 5.304c0-.223.075-.417.226-.584l.458-.476C6.84 4.08 7.024 4 7.24 4c.22 0 .404.08.55.244l3.978 4.178c.155.154.232.347.232.578 0 .227-.077.422-.232.584L7.79 13.762c-.15.16-.334.238-.55.238-.21 0-.397-.08-.556-.238z"></path>
+                                                    </svg>
+                                                </span>
+                                                <div id="btnMoreOptionClient" class="btn-group" role="group" style="display:none">
+
+                                                    <button id="btnGroupDrop1" type="button" class="_JXDTj _28JDiI _1FszNF _3ttzJg _2DZ1oJ _26WQGn _311OLi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                        <span class="_2FSeuB _240vE8 RCcMXQ">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 6"><g><circle cx="3" cy="3" r="3"></circle><circle cx="11" cy="3" r="3"></circle><circle cx="19" cy="3" r="3"></circle></g></svg>
+                                                        </span>
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
+                                                        <a class="dropdown-item" href="#" id="btnEditClientDetails">Edit client details</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="_2mPFMy _1Ov_P6 wYOsSC _3NWBbj" style="display: flex; flex-direction: column;">
+                                            <div id="divInvoiceStatus" style="display:none"><span class="_3GjCeD GbRcyD" id="txtInvoiceStatus"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="EkfoHS" style="display: flex; flex-direction: column; flex-shrink: 1; flex-grow: 1;" id="divInvoiceLeft">
+                                        <div id="divCompleted" class="_2mPFMy _2A57zv _26Afzt" style="display: none; flex-direction: column; flex-shrink: 0; flex-grow: 1; align-items: center;">
+                                            <div>
+                                                <span class="_2FSeuB _240vE8 _1XHbNX RCcMXQ GX_sxb">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                                        <path stroke-linecap="round" d="M69.195 16.985A37.328 37.328 0 0 0 50.5 12C29.79 12 13 28.79 13 49.5S29.79 87 50.5 87 88 70.21 88 49.5a37.327 37.327 0 0 0-5.07-18.842"></path>
+                                                        <path stroke-linecap="round" d="M31.5 50.5l12.496 12.485a1 1 0 0 0 1.485-.08l31.367-38.923"></path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="_1p62pX _3y3xr- _2xtCX5 _2Z6BiZ" data-qa="invoice-status-text">
+                                                Completed
+                                            </div>
+                                            <div class="_2sgxd4">
+                                                <div class="_1p62pX _3y3xr-" id="txtCompleteNote"></div>
+                                            </div>
+                                            <div class="divRebook" style="display:none">
+                                            </div>
+                                        </div>
+                                        <div id="divUnpaid" class="_2mPFMy _2A57zv _26Afzt" style="display: none; flex-direction: column; flex-shrink: 0; flex-grow: 1; align-items: center;">
+                                            <div>
+                                                <span class="_2FSeuB _240vE8 RCcMXQ GX_sxb _155kuP">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                                        <path stroke-linecap="round" d="M31.299 50H68.7"></path>
+                                                        <circle cx="50" cy="50" r="37.5"></circle>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="_1p62pX _3y3xr- _2xtCX5 _2Z6BiZ" data-qa="invoice-status-text" id="txtInvoiceStatusText">
+                                            </div>
+                                            <button class="lSL4HL _1FszNF _3V6zo- _2DZ1oJ _26WQGn" id="btnPayNow">Pay now</button>
+                                            <div class="divRebook">
+                                            </div>
+                                        </div>
+                                        <div id="divRefund" class="_2mPFMy _2A57zv _26Afzt" style="display: none; flex-direction: column; flex-shrink: 0; flex-grow: 1; align-items: center;">
+                                            <div>
+                                                <span class="_2FSeuB _240vE8 RCcMXQ GX_sxb VYyKW_">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                                        <circle cx="50" cy="50" r="37.5"></circle>
+                                                        <path stroke-linecap="round" d="M71.295 46.873H37.28l8.66-8.677a3.132 3.132 0 0 0 0-4.423 3.117 3.117 0 0 0-4.415 0L27.538 47.79a3.132 3.132 0 0 0 0 4.423l13.987 14.015a3.11 3.11 0 0 0 2.207.916 3.11 3.11 0 0 0 2.207-.916 3.132 3.132 0 0 0 0-4.423l-8.66-8.676h34.015c1.724 0 3.122-1.4 3.122-3.128a3.124 3.124 0 0 0-3.121-3.127z"></path>
+                                                    </svg>
+                                                </span>
+                                            </div><div class="_1p62pX _3y3xr- _2xtCX5 _2Z6BiZ" data-qa="invoice-status-text">Refund Sale</div>
+                                            <div class="_2sgxd4">
+                                                <div class="_1p62pX _3y3xr-" id="txtRefundNote">
+
+                                                </div>
+                                            </div>
+                                            <div class="divRebook">
+                                            </div>
+                                        </div>
+                                        <div id="divGroupSendEmail" class="_1P28qq" style="display: flex; flex-direction: column; flex-shrink: 0;">
+                                            <form class="_2mPFMy _2A57zv" novalidate="novalidate" name="form-invoice-send-email" id="form-invoice-send-email" me>
+                                                <div class="oGWWx1" style="display: flex; flex-direction: row;">
+                                                    <div class="dX40sN _56dZd5 _2MJCFa" style="display: flex; flex-direction: column-reverse;">
+                                                        <div class="_1RtXmI">
+                                                            <input type="text" class="_190Ggi" placeholder="Email address" name="email" id="email" autocomplete="off" maxlength="200">
+                                                        </div>
+                                                        <span class="_3bYu1W">Send Invoice</span>
+                                                    </div>
+                                                    <button type="button" class="_16Sgxk _1FszNF _3V6zo- _21vMqN _2DZ1oJ _26WQGn" id="btnSendInvoice">
+                                                        <span class="_2FSeuB _240vE8 _11rtve _1TK8J_ _3PX3kC">
+                                                            <svg viewBox="0 0 20 17" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M.692.707l-.01 6.18 13.241 1.765-13.24 1.765.009 6.179L19.22 8.652z"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div id="divGroupMoreOption" class="XVFBAE">
+                                            <div style="display: flex; flex-direction: row;">
+                                                <div class="dropdown bg-info btn-block float-right mr-2 show">
+                                                    <a class="btn btn-block dropdown-toggle bg-info" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MORE OPTIONS</a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" x-placement="top-start" style="position: absolute; right: 0px; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -87px, 0px);">
+                                                        <a class="dropdown-item text-center" id="btnDownload" href="#">Download</a>
+                                                        <a class="dropdown-item text-center" id="btnPrint" href="#">Print</a>
+                                                        <a class="text-center dropdown-item" id="btnRefund" href="#" style="color:red">Refund</a>
+                                                        <a class="text-center dropdown-item" id="btnVoid" href="#" style="color:red">Void</a>
+                                                    </div>
+                                                </div>
+                                                <button class="_1FszNF _3ttzJg _2DZ1oJ _26WQGn" data-qa="close-invoice-button" style="flex-basis: 50%;" id="btnClose">Close</button>
+                                            </div>
+                                        </div>
+                                        <div id="divClientDetail" class="_1mW557 _24Etms Og5mGw aBweod" direction="down" style="display: flex; flex-direction: column; flex-grow: 1; transform: translateX(100%);">
+                                            <div class="_2hndFf aBweod">
+                                                <div class="_2mPFMy _2A57zv WIMY4c _2F28mx _2vLnid" style="display: flex; flex-direction: row; flex-shrink: 0;">
+                                                    <div class="_1S6SdX">
+                                                        <div class="_2dsC8j" id="divClientTotalBookings"></div>Total Bookings
+                                                    </div>
+                                                    <div class="_1S6SdX">
+                                                        <div class="_2dsC8j" id="divClientTotalSales"></div>Total Sales
+                                                    </div>
+                                                </div>
+                                                <div class="_2mPFMy _2A57zv _1uoK7S wYOsSC" style="display: flex; flex-direction: column; flex-grow: 1;">
+                                                    <div class="_1TmAb0">
+                                                        <div class="_17lw1N _2TEJLM">
+                                                            <div class="_3tLC6e">
+                                                                <ul class="_1kjIZN" data-qa="navtabs">
+                                                                    <li class="_3lXzHJ Eg7S9h _1EP1xU" data-qa="navtabs-item">
+                                                                        <button class="_3z4sRB _304-pG _1FszNF" id="btnTabAppointments">Appointments</button>
+                                                                    </li>
+                                                                    <li class="_3lXzHJ Eg7S9h _1EP1xU" data-qa="navtabs-item">
+                                                                        <button class="_3z4sRB _304-pG _1FszNF" id="btnTabProducts">Products</button>
+                                                                    </li>
+                                                                    <li class="_3lXzHJ Eg7S9h _1EP1xU" data-qa="navtabs-item">
+                                                                        <button class="_3z4sRB _304-pG _1FszNF" id="btnTabInvoices">Invoices</button>
+                                                                    </li>
+                                                                    <li class="_3lXzHJ Eg7S9h _1EP1xU" data-qa="navtabs-item">
+                                                                        <button class="_3z4sRB _304-pG _1FszNF" id="btnTabInfo">Info</button>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="_3jCEmE">
+                                                            <div class="_64bJQJ" id="divTabAppointment">
+                                                                <div class="_1mW557">
+                                                                    <div class="_2hndFf">
+                                                                        <div class="_2ASo5U">
+                                                                            <div class="_2mPFMy ex0yBB _1Ov_P6 TnZx2m" style="display: flex; flex-direction: column;">
+                                                                                <div class="_1p62pX _1aB64u" id="divClientUpcoming"></div>
+                                                                            </div>
+                                                                            <div class="oqg2j7" id="divClientAppointmentUpcoming">
+
+                                                                            </div>
+                                                                            <div class="_2mPFMy ex0yBB _1Ov_P6 TnZx2m" style="display: flex; flex-direction: column;">
+                                                                                <div class="_1p62pX _1aB64u" id="divClientPast"></div>
+                                                                            </div>
+                                                                            <div class="oqg2j7" id="divClientAppointmentPast">
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="_1nM1bd">
+                                                                        <div class="_2Nn7vB"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="QnkByR _2iEC8H" style="display: none; flex-direction: column; flex-grow: 1;" id="divTabProduct">
+                                                                <div class="G3nSFh" style="display: flex; flex-direction: column; flex-grow: 1;" id="divClientProduct">
+                                                                </div>
+                                                            </div>
+                                                            <div class="ts-pXO" style="display: flex; flex-direction: column; flex-grow: 1;" id="divTabInvoice">
+                                                                <div class="QnkByR _1J3Fl9" style="display: flex; flex-direction: column; flex-grow: 1;">
+                                                                    <div class="G3nSFh" style="display: flex; flex-direction: column; flex-grow: 1;" id="divClientInvoice">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="_2mPFMy _1Ov_P6 ex0yBB" style="display: none; flex-direction: column; flex-grow: 1;" id="divTabInfo">
+                                                                <div class="_2ygkyH">
+                                                                    <div class="DhHnXz" id="divClientInfo">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="_1nM1bd">
+                                                <div class="_2Nn7vB"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="_3TDpe6" style="display: none; flex-direction: column; flex-grow: 1;" id="divPaymentLeft">
+                                        <form novalidate="" data-qa="form-checkout-payment" style="display: flex; flex-direction: column; flex-shrink: 0; flex-grow: 1;">
+                                            <div class="_2mPFMy _2A57zv _3f9WE3" style="display: flex; flex-direction: column;">
+                                                <label class="dX40sN _56dZd5 _1IZu-F _3Gkl9Q _1IohBQ" data-qa="checkout-amount-input" style="display: flex; flex-direction: column-reverse;">
+                                                    <div class="_1RtXmI" style="display: flex; flex-direction: row;">
+                                                        <span class="FSmq0F" id="spanCurrencySymbol"></span>
+                                                        <input class="_190Ggi _1duaTJ" id="Pay" inputmode="numeric" type="number" min="0" style="text-align:center">
+                                                    </div>
+                                                    <span class="_3bYu1W">Pay</span>
+                                                </label>
+                                                <div class="qy1Ro3" style="display: flex; flex-flow: row wrap;" id="divPaymentMethod">
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="XVFBAE">
+                                            <div style="display: flex; flex-direction: row;">
+                                                <div class="dropdown bg-info btn-block float-right mr-2 show">
+                                                    <a class="btn btn-block dropdown-toggle bg-info" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MORE OPTION</a>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" x-placement="top-start" style="position: absolute; right: 0px; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -87px, 0px);">
+                                                        <a class="dropdown-item text-center" id="btnSaveUnpaid" href="#">Save Unpaid</a>
+                                                        <a class="dropdown-item text-center" id="btnSavePartPaid" href="#">Save Part-Paid</a>
+                                                        <a class="dropdown-item text-center" id="btnInvoiceDetails" href="#">Payment Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="divFullPaymentLeft" class="_2mPFMy _2A57zv _2MH2GO _18sOUM" direction="down" style="display: none; flex-direction: column; flex-grow: 1; align-items: center;">
+                                        <div class="_1bwTkP _2vz9Ut" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                            <span class="_2FSeuB _240vE8 _1f4Nir">
+                                                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle cx="20" cy="20" r="20" fill="#EBF5FD"></circle><path fill="#A4ADBA" fill-rule="nonzero" d="M27.429 35.429V32h3.428z"></path><path fill="#FFF" fill-rule="nonzero" d="M8 3.429h23.429v27.428h-4.686v4.572H8V22.857z"></path><g fill="#DCDDDE" fill-rule="nonzero"><path d="M24.114 11.429h3.314v3.429h-3.314zM17.486 11.429H20.8v3.429h-3.314zM10.857 11.429h3.314v3.429h-3.314z"></path></g><g fill="#0C3847" fill-rule="nonzero"><path d="M24.429 15.429h4.714v-4h-4.714v4zm1.178-2.858h2.357v1.715h-2.357V12.57zM17.357 11.429v4h4.714v-4h-4.714zm3.536 2.857h-2.357V12.57h2.357v1.715zM15 11.429h-4.714v4H15v-4zm-1.179 2.857h-2.357V12.57h2.357v1.715z"></path></g><g fill="#0C3847" fill-rule="nonzero"><path d="M10.286 18.857h16.57V20h-16.57zM10.286 21.143h11.876v1.143H10.286zM10.286 23.428h14.638v1.143H10.286zM10.286 25.714h11.048v1.143H10.286z"></path></g><path d="M6.857 22.857v13.714h20.237L32 31.665V2.285H6.857v20.572zM27.43 34.621V32h2.62l-2.62 2.62zM8 3.429h22.857v27.428h-4.571v4.572H8v-32z" fill="#24334A" fill-rule="nonzero"></path></g></svg>
+                                            </span>
+                                            <div class="_1p62pX _3y3xr- _2xtCX5 _8oDmNh">
+                                                Full payment has been added
+                                            </div>
+                                        </div>
+                                        <button id="btnCompleteSale" class="llIfVd _1luUp5 _1xEJA9 _1FszNF _3V6zo- _2DZ1oJ _26WQGn _3V6zo- _2DZ1oJ _26WQGn" style="flex-shrink: 0;">
+                                            Complete Sale
+                                        </button>
+                                        <a class="_3kGP5h _1FszNF _2T3dvr _26KSgC" id="btnBackToPayment">
+                                            <span class="_2FSeuB _240vE8 RCcMXQ _25R4LF _1GV8a7"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M8.80367158,16.7638261 C9.06544281,17.0467987 9.06544281,17.5049548 8.80367158,17.7879275 C8.54229164,18.0704815 8.11774488,18.0709001 7.85597365,17.7879275 L0.196328421,9.51223382 C-0.0654428068,9.22926119 -0.0654428068,8.77068646 0.196328421,8.48771383 L7.85577801,0.212229473 C8.11754924,-0.0707431577 8.54170471,-0.0707431577 8.80347594,0.212229473 C9.06524716,0.495202104 9.06524716,0.953567534 8.80406287,1.23633087 L1.81841007,9.00007847 L8.80367158,16.7638261 Z"></path></svg></span>Back to payments
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="_1hUf2x" style="flex-grow: 1;">
+                                <div class="_1Rmr-3" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                    <div class="_2mPFMy cZi_Fp" style="display: flex; flex-direction: column; flex-shrink: 0; flex-grow: 1;">
+                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                            <div class="_1p62pX _2T7dkK" id="txtInvoiceNo"></div>
+                                            <div class="_1p62pX _12JJaY" id="txtInvoiceDate"></div>
+                                            <div class="_1p62pX _12JJaY" id="txtRefundOrgInvoice"></div>
+                                        </div>
+                                        <div class="f-N0F2 _263zQk" style="display: flex; flex-direction: column;" id="divInvoiceDetail">
+
+                                        </div>
+                                        <div class="f-N0F2" style="display: flex; flex-direction: column;">
+                                            <div class="_1liZ7q" style="display: flex; flex-direction: column;">
+                                                <div style="display: flex; flex-direction: row; flex-grow: 1; justify-content: space-between;">
+                                                    <div class="_1p62pX i3ajAS">Subtotal</div>
+                                                    <div class="_1p62pX i3ajAS"><span id="subtotal"></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="_1liZ7q" style="display: flex; flex-direction: column;" id="divTaxDetail">
+
+                                            </div>
+                                        </div>
+                                        <div class="f-N0F2" style="display: flex; flex-direction: column;">
+                                            <div class="_1liZ7q" style="display: flex; flex-direction: column;">
+                                                <div data-qa="invoice-total" style="display: flex; flex-direction: row; flex-grow: 1; justify-content: space-between;">
+                                                    <div class="_1p62pX i3ajAS">Total</div>
+                                                    <div class="_1p62pX i3ajAS"><span id="total"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="f-N0F2" style="display: none; flex-direction: column;" id="divLinePayment">
+
+                                        </div>
+                                        <div class="f-N0F2 _2ZyAQW _1ymzn7" style="display: flex; flex-direction: column;">
+                                            <div class="_1liZ7q" style="display: flex; flex-direction: column;">
+                                                <div id="divChange" style="display: none; flex-direction: row; flex-grow: 1; justify-content: space-between; margin-bottom: 14px;">
+                                                    <div class="_1p62pX i3ajAS">Change</div><div class="_1p62pX i3ajAS">
+                                                        <span id="ChangeAmount"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="_1liZ7q" style="display: flex; flex-direction: column;">
+                                                <div type="invoiceSummary" data-qa="invoice-balance" style="display: flex; flex-direction: row; flex-grow: 1; justify-content: space-between;">
+                                                    <div class="_1p62pX i3ajAS">Balance</div>
+                                                    <div class="_1p62pX i3ajAS"><span id="balance"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divHideLeft">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalVoidInvoice">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Void Invoice</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionFormDelete">
+                    <h6>Are you sure you want to delete this invoice?</h6>
+                    <div id="divVoidItem"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="btnVoidInvoice">VOID INVOICE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="actionModalRedeemVoucher" ismodal>
+    <div class="modal-dialog" role="document" style="max-width:448px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="Title">Redeem Voucher</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px">
+                <form novalidate="novalidate" id="formRedeemVoucher">
+                    <div class="col-12 search-modal-wizard">
+                        <div class="input-group-prepend" style="margin-bottom:10px;margin-top:10px">
+                            <span class="input-group-text">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" id="txtSearchVoucherCode" class="form-control" style="min-height:42px; text-transform:uppercase" autocomplete="off" placeholder="Enter Voucher Code">
+                            <input type="hidden" id="VoucherID" />
+                            <input type="hidden" id="ServiceID" />
+                        </div>
+                    </div>
+                    <div class="col-12" style="display:block; padding:10px 10px 10px 10px">
+                        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" id="divSearchVoucherCode">
+                            <span style="width: 88px;height: 88px;">
+                                <svg viewBox="0 0 98 88" xmlns="http://www.w3.org/2000/svg"><g><circle cx="44" cy="44" r="44" transform="translate(4)" fill="#DEEDFB" opacity=".47"></circle><path fill="#F5A623" d="M3 22h94v46H3z"></path><path fill="#FFF5E0" d="M25 22h73v46H25z"></path><path d="M94.981 19H28.293l-4.043 4.077L20.21 19H2.021A2.03 2.03 0 0 0 0 21.039v48.924C0 71.09.905 72 2.022 72h18.187l4.041-4.073L28.293 72h66.688C96.097 72 97 71.09 97 69.963V21.04A2.028 2.028 0 0 0 94.981 19zm-2.02 48.927H29.965l-2.857-2.884-2.859-2.885-2.857 2.885-2.856 2.884H4.043v-44.85h14.494l2.856 2.883 2.857 2.882 2.86-2.882 2.856-2.883H92.96v44.85z" fill="#24334A" fill-rule="nonzero"></path><path d="M52.001 30a8.001 8.001 0 1 0 0 15.998A8.001 8.001 0 0 0 52 30zm0 12A4.006 4.006 0 0 1 48 38c0-2.206 1.796-4 4.002-4 2.206 0 4 1.794 4 4 0 2.205-1.794 4-4 4zM68 46a8 8 0 1 0 0 16c4.418 0 8-3.586 8-8.003A7.999 7.999 0 0 0 68 46zm0 11.998a4.002 4.002 0 0 1-3.999-4 4 4 0 0 1 4-3.997 4 4 0 0 1 3.998 3.996A4.001 4.001 0 0 1 68 57.998z" fill="#24334A" fill-rule="nonzero"></path><path d="M74 30c-.551 0-1.053.23-1.416.604L44.586 59.478A2.088 2.088 0 0 0 44 60.934c0 1.141.896 2.066 2 2.066a1.98 1.98 0 0 0 1.416-.605L75.414 33.52A2.08 2.08 0 0 0 76 32.062C76 30.924 75.103 30 74 30zm-49.502 2a2.5 2.5 0 1 0 .005 5.002A2.5 2.5 0 0 0 24.498 32zm0 7a2.5 2.5 0 1 0 .005 5.002A2.5 2.5 0 0 0 24.498 39zm0 9a2.501 2.501 0 0 0 0 5 2.5 2.5 0 1 0 0-5zm0 8a2.5 2.5 0 1 0 .004 5 2.5 2.5 0 0 0-.004-5z" fill="#24334A" fill-rule="nonzero"></path></g></svg>
+                            </span>
+                            <div>Check an existing voucher status & balance</div>
+                        </div>
+                        <div style="display: none; flex-direction: column; justify-content: center; align-items: center;" id="divNotFoundVoucher">
+                            <span style="width: 88px;height: 88px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 91 91"><defs><path d="M43.7218 45.7152l9.7246 9.7246-2.4389 2.439 1.7904 5.3726 18.9756 18.9742h6.8064l3.6457-3.6457v-6.8064L63.25 52.7979l-5.4278-1.3448-2.4888 2.0044-9.5922-9.0884M60.9366 55l-5.938 5.938-.7655-2.2951 4.407-4.4084L60.9365 55zm16.476 24.406h-4.4718L56.7284 63.1936l6.4652-6.4652L79.406 72.9408v4.4718l-1.9934 1.9934z" id="a"></path></defs><g fill="none" fill-rule="evenodd"><circle fill="#E1EFFC" cx="46" cy="46" r="44"></circle><g transform="translate(8.436 8.436)" fill-rule="nonzero"><circle fill="#FFF" opacity=".6864" cx="25.8346" cy="25.8346" r="25.3759"></circle><path fill="#A4ADBA" d="M58.2594 52.6203l-5.6391 5.6391 1.4098 4.2293 18.327 18.327h5.6391l2.8196-2.8195v-5.639L62.4888 54.03z"></path><use fill="#24334A" xlink:href="#a"></use></g><circle stroke="#24334A" stroke-width="3" cx="34" cy="34" r="26"></circle></g></svg></span>
+                            <div>No vouchers found</div>
+                        </div>
+                        <div class="_2mPFMy _1rEZZi _1Ov_P6" style="display: none; flex-direction: column;" id="divFoundVoucher">
+                            <div class="_1pkd0Y" style="display: flex; flex-direction: column; align-items: center;">
+                                <div class="_3jdRwj" style="display: flex; flex-direction: column; align-items: center;">
+                                    <div class="yG2ZtS" style="display: flex; flex-direction: row; justify-content: center;">
+                                        <div class="_1p62pX _3y3xr- _2xtCX5" style="line-height: 28px;font-size: 24px; margin-bottom:12px" id="divVoucherType">
+                                        </div>
+                                    </div>
+                                    <div class="_1p62pX _3y3xr- _2xtCX5 _2m_1_Q" id="divVoucherServiceName"></div>
+                                </div>
+                                <div class="_1p62pX _3y3xr- _324SDZ" id="divMessageVoucher" style="display:none; text-align:center"></div>
+                                <label class="dX40sN _56dZd5 _1IZu-F _3Gkl9Q _2ISFB6" id="lblRedeemInput" style="display: flex; flex-direction: column-reverse; align-self: stretch;">
+                                    <div class="_1RtXmI" style="display: flex; flex-direction: row;">
+                                        <span class="FSmq0F" id="txtCurrency"></span>
+                                        <input class="_190Ggi _1duaTJ" id="txtPayAmount" name="txtPayAmount" inputmode="numeric" type="number" min="0" step="1" value="0" style="padding-left: 2ch; width: 6ch;">
+                                    </div>
+                                    <span class="_3bYu1W">Redemption Amount</span>
+                                </label>
+                                <button type="button" class="_2wtmYU _2Bn9Xa _1FszNF _23tAim _3zG3Wy _2DZ1oJ _26WQGn" id="btnRedeem" style="flex-grow: 1;">
+                                    <div class="_2nLI4N">Redeem Voucher</div>
+                                </button>
+                                <div class="_1NmZTn">
+                                    <div class="_2DSnqv" id="txtVoucherType"></div>
+                                </div>
+                            </div>
+                            <div class="_1p62pX eF4o5n _1oWyGf" style="margin-top:20px">Voucher History</div><div class="_1Qi2g5">
+                                <div class="_1p62pX _3y3xr-" id="txtExpire"></div>
+                                <div class="_1p62pX _3y3xr-" id="txtPurchase">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("/Views/Clients/Add.cshtml")
+<script src="@Url.Content("~/Extension/js/jquery-boostrap-modal-wizard.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/calendar/viewsale.js")"></script>
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")

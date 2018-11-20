@@ -1,0 +1,46 @@
+﻿<div class="modal fade modal-wizard">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="prevModalWizard">
+                    <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.80367158,16.7638261 C9.06544281,17.0467987 9.06544281,17.5049548 8.80367158,17.7879275 C8.54229164,18.0704815 8.11774488,18.0709001 7.85597365,17.7879275 L0.196328421,9.51223382 C-0.0654428068,9.22926119 -0.0654428068,8.77068646 0.196328421,8.48771383 L7.85577801,0.212229473 C8.11754924,-0.0707431577 8.54170471,-0.0707431577 8.80347594,0.212229473 C9.06524716,0.495202104 9.06524716,0.953567534 8.80406287,1.23633087 L1.81841007,9.00007847 L8.80367158,16.7638261 Z"></path>
+                    </svg>
+                </span>
+                <h3 class="modal-title">Gift Voucher</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="formModalGiftVoucher">
+                    <div class="form-group">
+                        <label class="col-form-label">Voucher Value</label>
+                        <input type="number" min="0" id="value" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Expiry Period</label>
+                        <select class="form-control" id="expiry">
+                            <option value="months_1">1 Month</option>
+                            <option value="months_2">2 Months</option>
+                            <option value="months_3">3 Months</option>
+                            <option value="months_6">6 Months</option>
+                            <option value="years_1">1 Year</option>
+                            <option value="end_of_month">End of this month</option>
+                            <option value="custom">Specific Date</option>
+                            <option value="never">No Expiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="display:none" id="ExpiryManual" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-12">
+                    <button type="button" class="btn btn-block btn-success" id="addButtonGiftVoucher" data-dismiss="modal">ADD GIFT VOUCHER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

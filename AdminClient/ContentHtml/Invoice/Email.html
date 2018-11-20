@@ -1,0 +1,48 @@
+﻿<div style="color: #2C2C2C">
+    <style>
+        p {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+        }
+    </style>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <h3>@BusinessName</h3>
+        <p>@Location</p>
+    </div>
+    <div style="text-align:center; margin-bottom: 40px;">
+        <h3>@InvoiceNo</h3>
+        <p>@InvoiceDate</p>
+        <p>@InvoiceDesc</p>
+    </div>
+    <div style="border-top: 1px solid black">
+        <div style="border-bottom: 1px solid black">
+            @InvoiceDetail
+        </div>
+        <div style="border-bottom: 1px solid black; padding-bottom: 2px">
+            @TaxDetail
+        </div>
+        <div style="border-bottom: 1px solid black; padding-bottom: 2px">
+            <div style="display:flex">
+                <p>Total</p>
+                <p style="flex:1; text-align:right">@TotalValue</p>
+            </div>
+        </div>
+        <div style="border-bottom: 1px solid black; padding-bottom: 2px">
+            @InvoiceContaint
+        </div>
+        <div style="padding-bottom: 2px">
+            <div style="display:@displayChange">
+                <p>Change</p>
+                <p style="flex:1; text-align:right">@ChangeValue</p>
+            </div>
+            <div style="display:flex">
+                <h4>Balance</h4>
+                <h4 style="flex:1; text-align:right">@BalanceValue</h4>
+            </div>
+        </div>
+    </div>
+</div>

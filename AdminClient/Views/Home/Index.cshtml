@@ -1,0 +1,224 @@
+﻿@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<div class="col-12 form-group p-0 containt-home">
+    <div class="col-12 form-group p-0 containt-chart">
+        <div class="col-12 col-xl-6 form-group p-0 p-md-2 m-0  pb-4">
+            <div class="card m-0">
+                <div class="card-header">
+                    <div class="col-12 col-xl-6 p-0 text-center text-xl-left pt-1">
+                        <p class="text-uppercase font-weight-bold">recent sales</p>
+                    </div>
+                    <div class="col-12 col-xl-3 p-1">
+                        <select class="form-control" id="locationRecentSale" name="locationRecentSale"></select>
+                    </div>
+                    <div class="col-12 col-xl-3 p-1">
+                        <select class="form-control" id="rangeDateRecentSale" name="rangeDateRecentSale">
+                            <option value="7" selected>Last 7 Days</option>
+                            <option value="30">Last 30 Days</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-body pt-2">
+                    <div class="col-12 p-0 form-group title-chart" id="titleChartRecentSale">
+                        <div class="col-12 col-xl-4 title-sum">
+                            <p class="font-weight-bold mb-0" id="sumAppointments"></p>
+                            <p class="font-weight-normal mb-2">Appointments</p>
+                        </div>
+                        <div class="col-12 col-xl-4 tilte-appointment">
+                            <p class="font-weight-bold mb-0" id="sumAppointmentsValue"></p>
+                            <p class="font-weight-normal mb-2">Appointments value</p>
+                        </div>
+                        <div class="col-12 col-xl-4 tilte-sale">
+                            <p class="font-weight-bold mb-0" id="sumSalesValue"></p>
+                            <p class="font-weight-normal mb-2">Sales value</p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0 form-group">
+                        <canvas id="chartRecentSale"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card d-none m-0" name="notify">
+                <div class="card-header text-center text-xl-left">
+                    <p class="text-uppercase font-weight-bold">recent sales</p>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <h1><i class="fa fa-bar-chart fa-lg"></i></h1>
+                        <h3 class="text-capitalize">Your Sale is Empty</h3>
+                        <p>Make some invoice for sale data to appear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 form-group p-0 p-md-2 m-0  pb-4">
+            <div class="card m-0">
+                <div class="card-header">
+                    <div class="col-12 col-xl-6 p-0 text-center text-xl-left pt-1">
+                        <p class="text-uppercase font-weight-bold">upcoming appointments</p>
+                    </div>
+                    <div class="col-12 col-xl-3 p-1">
+                        <select class="form-control" id="locationUpcomingAppointment" name="locationUpcomingAppointment"></select>
+                    </div>
+                    <div class="col-12 col-xl-3 p-1">
+                        <select class="form-control" id="rangeDateUpcomingAppointment" name="rangeDateUpcomingAppointment">
+                            <option value="7" selected>Next 7 Days</option>
+                            <option value="30">Next 30 Days</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-body pt-2">
+                    <div class="col-12 p-0 form-group title-chart" id="titleChartUpcomingAppointment">
+                        <div class="col-12 col-xl-4 title-sum">
+                            <p class="font-weight-bold mb-0" id="sumAppointmentsBooked"></p>
+                            <p class="font-weight-normal mb-2">Appointments Booked</p>
+                        </div>
+                        <div class="col-12 col-xl-4 tilte-confirmed">
+                            <p class="font-weight-bold mb-0" id="sumConfirmed"></p>
+                            <p class="font-weight-normal mb-2">Confirmed</p>
+                        </div>
+                        <div class="col-12 col-xl-4 tilte-canceled">
+                            <p class="font-weight-bold mb-0" id="sumCancelled"></p>
+                            <p class="font-weight-normal mb-2">Cancelled</p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0 form-group">
+                        <canvas id="chartUpcomingAppointment"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card d-none m-0" name="notify">
+                <div class="card-header text-center text-xl-left">
+                    <p class="text-uppercase font-weight-bold">upcoming appointments</p>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <h1><i class="fa fa-bar-chart fa-lg"></i></h1>
+                        <h3 class="text-capitalize">Your Schedule is Empty</h3>
+                        <p>Make some appointments for schedule data to appear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 form-group p-0 containt-info">
+        <div class="col-12 col-xl-6 form-group p-0 p-md-2 m-0  pb-4">
+            <div class="card m-0">
+                <div class="card-header text-center text-xl-left">
+                    <p class="text-uppercase font-weight-bold">APPOINTMENTS ACTIVITY</p>
+                </div>
+                <div class="card-body p-0" id="containtAppointmentActivity">
+                </div>
+            </div>
+            <div class="card d-none m-0" name="notify">
+                <div class="card-header text-center text-xl-left">
+                    <p class="text-uppercase font-weight-bold">APPOINTMENTS ACTIVITY</p>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <h1><i class="fa fa-history fa-lg"></i></h1>
+                        <h3 class="text-capitalize">No Recent Activity</h3>
+                        <p>Visit the <a href="/Calendar/Index" class="btn-link p-0">Calendar</a> section to add some appointments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 form-group p-0 p-md-2 m-0  pb-4">
+            <div class="card m-0">
+                <div class="card-header text-center text-xl-left">
+                    <p class="text-uppercase font-weight-bold">TODAY'S NEXT APPOINTMENTS</p>
+                </div>
+                <div class="card-body p-0" id="containtAppointmentToday">
+                </div>
+            </div>
+            <div class="card d-none m-0" name="notify">
+                <div class="card-header text-center text-xl-left">
+                    <p class="text-uppercase font-weight-bold">TODAY'S NEXT APPOINTMENTS</p>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <h1><i class="fa fa-calendar fa-lg"></i></h1>
+                        <h3 class="text-capitalize">No Appointments Today</h3>
+                        <p>Visit the <a href="/Calendar/Index" class="btn-link p-0">Calendar</a> section to add some appointments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 form-group p-0 containt-table">
+        <div class="col-12 col-xl-6 form-group p-0 p-md-2 m-0  pb-4">
+            <div class="card m-0">
+                <div class="card-body p-0">
+                    <table class="table" id="tableTopService">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="text-uppercase text-left">TOP SERVICES</th>
+                                <th class="text-uppercase text-right">THIS MONTH</th>
+                                <th class="text-uppercase text-right">LAST MONTH</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card d-none m-0" name="notify">
+                <div class="card-header text-center text-xl-left">
+                    <p class="text-uppercase font-weight-bold">TOP SERVICES</p>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p class="p-0 m-0">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" style="height: 75px;">
+                                    <path style="fill:#757575;" d="M22,5c0-1.93-1.57-3.5-3.5-3.5S15,3.07,15,5c0,1.251,0.666,2.343,1.656,2.962l-1.24,4.547c-0.568,0.014-1.098,0.17-1.568,0.425l-2.281-2.281C11.834,10.158,12,9.601,12,9c0-1.93-1.57-3.5-3.5-3.5S5,7.07,5,9c0,1.107,0.527,2.084,1.332,2.727l-1.521,3.805C4.707,15.521,4.606,15.5,4.5,15.5C2.57,15.5,1,17.07,1,19s1.57,3.5,3.5,3.5S8,20.93,8,19c0-1.107-0.527-2.084-1.332-2.727l1.521-3.805C8.293,12.479,8.394,12.5,8.5,12.5c0.601,0,1.158-0.166,1.652-0.434l2.281,2.281C12.166,14.842,12,15.399,12,16c0,1.93,1.57,3.5,3.5,3.5S19,17.93,19,16c0-1.251-0.666-2.343-1.656-2.962l1.24-4.547C20.475,8.445,22,6.9,22,5z M4.5,20.5C3.673,20.5,3,19.827,3,19s0.673-1.5,1.5-1.5S6,18.173,6,19S5.327,20.5,4.5,20.5z M18.5,3.5C19.327,3.5,20,4.173,20,5s-0.673,1.5-1.5,1.5S17,5.827,17,5S17.673,3.5,18.5,3.5z M8.5,7.5C9.327,7.5,10,8.173,10,9s-0.673,1.5-1.5,1.5S7,9.827,7,9S7.673,7.5,8.5,7.5z M15.5,17.5c-0.827,0-1.5-0.673-1.5-1.5s0.673-1.5,1.5-1.5S17,15.173,17,16S16.327,17.5,15.5,17.5z"></path>
+                                </svg>
+                            </span>
+                        </p>
+                        <h3 class="text-capitalize">No Sales This Month</h3>
+                        <p>Create some invoices for sales data to appear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 form-group p-0 p-md-2 m-0">
+            <div class="card m-0">
+                <div class="card-body p-0">
+                    <table class="table" id="tableTopStaff" width="100%">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="text-uppercase text-left">TOP STAFF</th>
+                                <th class="text-uppercase text-right">THIS MONTH</th>
+                                <th class="text-uppercase text-right">LAST MONTH</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card d-none m-0" name="notify">
+                <div class="card-header text-center text-xl-left">
+                    <p class="text-uppercase font-weight-bold">TOP STAFF</p>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p class="p-0 m-0">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" style="height: 75px;">
+                                    <path style="fill:#757575;" d="M22,5c0-1.93-1.57-3.5-3.5-3.5S15,3.07,15,5c0,1.251,0.666,2.343,1.656,2.962l-1.24,4.547c-0.568,0.014-1.098,0.17-1.568,0.425l-2.281-2.281C11.834,10.158,12,9.601,12,9c0-1.93-1.57-3.5-3.5-3.5S5,7.07,5,9c0,1.107,0.527,2.084,1.332,2.727l-1.521,3.805C4.707,15.521,4.606,15.5,4.5,15.5C2.57,15.5,1,17.07,1,19s1.57,3.5,3.5,3.5S8,20.93,8,19c0-1.107-0.527-2.084-1.332-2.727l1.521-3.805C8.293,12.479,8.394,12.5,8.5,12.5c0.601,0,1.158-0.166,1.652-0.434l2.281,2.281C12.166,14.842,12,15.399,12,16c0,1.93,1.57,3.5,3.5,3.5S19,17.93,19,16c0-1.251-0.666-2.343-1.656-2.962l1.24-4.547C20.475,8.445,22,6.9,22,5z M4.5,20.5C3.673,20.5,3,19.827,3,19s0.673-1.5,1.5-1.5S6,18.173,6,19S5.327,20.5,4.5,20.5z M18.5,3.5C19.327,3.5,20,4.173,20,5s-0.673,1.5-1.5,1.5S17,5.827,17,5S17.673,3.5,18.5,3.5z M8.5,7.5C9.327,7.5,10,8.173,10,9s-0.673,1.5-1.5,1.5S7,9.827,7,9S7.673,7.5,8.5,7.5z M15.5,17.5c-0.827,0-1.5-0.673-1.5-1.5s0.673-1.5,1.5-1.5S17,15.173,17,16S16.327,17.5,15.5,17.5z"></path>
+                                </svg>
+                            </span>
+                        </p>
+                        <h3 class="text-capitalize">No Sales This Month</h3>
+                        <p>Create some invoices for sales data to appear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/Chart.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Scripts/home.js")"></script>

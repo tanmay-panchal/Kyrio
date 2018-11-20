@@ -1,0 +1,185 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+<div class="modal fade d-block show modal-main modal modal-mobile" id="modalMain">
+    <div class="modal-dialog" role="document" style="position:fixed">
+        <div class="modal-content">
+            <div class="modal-header b-0">
+                <h3 class="modal-title" id="titleModalMain"></h3>
+                <button type="button" class="close" aria-label="Close" id="closeModalMain">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <form novalidate="novalidate" id="formModalMain">
+                    <div class="col-12 form-group p-0 overflow-y" style="max-height: calc(100vh - 104px)">
+                        <div class="col-12 form-group pt-3">
+                            <div class="col-12 form-group p-0">
+                                <h3 class="text-left font-weight-bold mb-0">19 Nov 2018</h3>
+                                <p class="m-0 small">Monday at 13:00</p>
+                            </div>
+                            <div class="col-12 form-group p-0 pt-2">
+                                <button class="btn btn-block bg-white text-left d-flex justify-content-between align-items-center border" type="button" style="border-radius: 20px;">
+                                    <p class="m-0 border rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="height: 28px;width: 28px;">
+                                        <i class="fa fa-star"></i>
+                                    </p>
+                                    <p class="m-0 text-uppercase font-weight-bold">new appointment</p>
+                                    <i class="fa fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="col-12 form-group p-0 border-bottom pt-2 mb-0">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center" type="button">
+                                    <div class="d-flex">
+                                        <p class="mb-1 text-uppercase border rounded-circle text-light font-weight-bold bg-info d-flex align-items-center justify-content-center font-xl" style="min-height: 50px; min-width: 50px; width: 50px; height: 50px;">Đ</p>
+                                        <div class="pl-3">
+                                            <p class="mb-0">Đoàn Nguyễn Hải Hưng</p>
+                                            <p class="mb-1 small">haihung2410@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <i class="fa fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="col-12 form-group p-0 border-bottom pt-2 mb-0">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex align-items-center" type="button">
+                                    <p class="mb-1 text-uppercase border rounded-circle text-light font-weight-bold bg-secondary d-flex align-items-center justify-content-center" style="min-height: 50px; min-width: 50px; width: 50px; height: 50px;">
+                                        <i class="fa fa-user-o font-xl"></i>
+                                    </p>
+                                    <div class="pl-3">
+                                        <p class="mb-0">Walk-ln</p>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-12 form-group p-0 border-bottom">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center" type="button">
+                                    <p class="mb-0">Fully paid invoice 2</p>
+                                    <i class="fa fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-12 form-group pt-4 mt-2">
+                            <div class="col-12 form-group p-0">
+                                <h3 class="text-left font-weight-bold text-capitalize mb-0">appointment details</h3>
+                            </div>
+                            <div class="col-12 form-group p-0 border-bottom">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center" type="button">
+                                    <div>
+                                        <p class="mb-0 small">13:00</p>
+                                        <p class="mb-0">Service 1</p>
+                                        <p class="mb-0 small">12, 1h with Đoàn Nguyễn Hải Hưng</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 small">đ 1</p>
+                                        <p class="mb-0">đ 2</p>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-12 form-group p-0 border-bottom">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center" type="button">
+                                    <div>
+                                        <p class="mb-0 small">13:00</p>
+                                        <p class="mb-0">Service 1</p>
+                                        <p class="mb-0 small">12, 1h with Đoàn Nguyễn Hải Hưng</p>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 small">đ 1</p>
+                                        <p class="mb-0">đ 2</p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-12 form-group pt-4 mt-2">
+                            <div class="col-12 form-group p-0">
+                                <h3 class="text-left font-weight-bold text-capitalize mb-0">appointment history</h3>
+                            </div>
+                            <div class="col-12 form-group p-0 border-bottom">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex flex-column" type="button">
+                                    <p class="mb-0 small">Sun, 18 Nov 2018 at 15:01</p>
+                                    <p class="mb-0">Inovice created by Tra Thi</p>
+                                </button>
+                            </div>
+                            <div class="col-12 form-group p-0 border-bottom">
+                                <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex flex-column" type="button">
+                                    <p class="mb-0">Fri, 16 Nov 2018 at 16:54</p>
+                                    <p class="mb-0">Booked by Tra Thi with ref #E43D717E</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 form-group fixed-bottom border-top pt-4 bg-white">
+                        <div class="col-12 form-group p-0">
+                            <h5 class="text-center font-weight-bold">Total: đ3 (4h 30 min)</h5>
+                        </div>
+                        <div class="col-12 form-group p-0">
+                            <div class="col-6 form-group p-0 pr-2">
+                                <button class="btn btn-outline-primary btn-block text-uppercase" type="button">more options</button>
+                            </div>
+                            <div class="col-6 form-group p-0">
+                                <button class="btn btn-block btn-dark active text-uppercase" type="button" aria-pressed="true">complete now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none full-screen flex-column justify-content-end">
+                        <div style="min-width:100vw; z-index: 2;" class="p-2">
+                            <div class="col-12 form-group p-0 m-0">
+                                <button class="btn btn-block bg-white text-left d-flex justify-content-between align-items-center border font-xl rounded" type="button">
+                                    <p class="m-0 border rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="height: 35px;width: 35px;">
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                    </p>
+                                    <p class="m-0 text-uppercase font-weight-bold text-dark">confirmed</p>
+                                    <p class="m-0"></p>
+                                </button>
+                            </div>
+                            <div class="col-12 form-group p-0 m-0">
+                                <button class="btn btn-block bg-white text-left d-flex justify-content-between align-items-center border font-xl rounded" type="button">
+                                    <p class="m-0 border rounded-circle bg-warning text-white d-flex align-items-center justify-content-center" style="height: 35px;width: 35px;">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </p>
+                                    <p class="m-0 text-uppercase font-weight-bold text-dark">arrived</p>
+                                    <p class="m-0"></p>
+                                </button>
+                            </div>
+                            <div class="col-12 form-group p-0 m-0">
+                                <button class="btn btn-block bg-white text-left font-xl d-flex justify-content-between align-items-center border rounded" type="button">
+                                    <p class="m-0 border rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="height: 35px;width: 35px;">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </p>
+                                    <p class="m-0 text-uppercase font-weight-bold text-dark">started</p>
+                                    <p class="m-0"></p>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="min-width:100vw; z-index: 2;" class="p-2">
+                            <button type="button" class="p-3 font-weight-bold font-xl btn btn-block bg-white text-dark border rounded" name="closeModal">Close</button>
+                        </div>
+                        <div name="full-screen conver-button" class="bg-dark position-absolute" style="z-index:1; opacity: 0.5; top:0; left:0;bottom:0;right:0;"></div>
+                    </div>
+                    <div class="d-none full-screen flex-column justify-content-end">
+                        <div style="min-width:100vw; z-index: 2;" class="p-2">
+                            <div class="col-12 form-group p-0 m-0">
+                                <button type="button" class="font-weight-bold p-3 font-xl btn btn-block bg-white text-dark border rounded text-capitalize">edit appointment</button>
+                            </div>
+                            <div class="col-12 form-group p-0 m-0">
+                                <button type="button" class="font-weight-bold p-3 font-xl btn btn-block bg-white text-dark border rounded text-capitalize">reschedule</button>
+                            </div>
+                            <div class="col-12 form-group p-0 m-0">
+                                <button type="button" class="font-weight-bold p-3 font-xl btn btn-block bg-white text-danger border rounded text-capitalize">cancel</button>
+                            </div>
+                            <div class="col-12 form-group p-0 m-0">
+                                <button type="button" class="font-weight-bold p-3 font-xl btn btn-block bg-white text-danger border rounded text-capitalize">no show</button>
+                            </div>
+                        </div>
+                        <div style="min-width:100vw; z-index: 2;" class="p-2">
+                            <button type="button" class="p-3 font-weight-bold font-xl btn btn-block bg-white text-dark border rounded" name="closeModal">Close</button>
+                        </div>
+                        <div name="full-screen conver-button" class="bg-dark position-absolute" style="z-index:1; opacity: 0.5; top:0; left:0;bottom:0;right:0;"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+
+    })
+</script>

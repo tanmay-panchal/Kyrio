@@ -1,0 +1,52 @@
+﻿<div class="modal fade show modal-main modal modal-mobile" id="modalIndex">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header b-0">
+                <button type="button" class="close" name="closeModal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="col-12 form-group p-0 overflow-y" style="max-height: calc(100vh - 135px)">
+                    <div class="col-12 form-group pt-3 mb-4">
+                        <div class="col-12 form-group p-0">
+                            <h3 class="text-left font-weight-bold text-capitalize" id="titleModal">new appointment</h3>
+                        </div>
+                        <div class="col-12 form-group p-0 border-bottom" id="container-client-index"></div>
+                        <div class="col-12 form-group p-0 border-bottom pt-2" id="container-repeat-scheulDate-index"></div>
+                    </div>
+                    <div class="col-12 form-group pt-3 mt-3 pb-2">
+                        <div class="col-12 form-group p-0">
+                            <h3 class="text-left font-weight-bold text-capitalize">services</h3>
+                        </div>
+                        <div id="container-service" class="col-12 form-group p-0"></div>
+                        <div class="col-12 form-group p-0 border-bottom" id="container-addAppointmentService">
+                            <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center text-capitalize" id="addAppointmentService" type="button">add another service <i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-12 form-group pt-3 mt-3">
+                        <div class="col-12 form-group p-0">
+                            <h3 class="text-left font-weight-bold text-capitalize">notes</h3>
+                        </div>
+                        <div class="col-12 form-group p-0 pb-2 border-bottom">
+                            <textarea placeholder="Notes visible to staff only" class="form-control border-0 pb-0" id="noteAppointment"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 form-group fixed-bottom border-top pt-4 bg-white">
+                    <div class="col-12 form-group p-0">
+                        <h5 class="text-center font-weight-bold" id="totalIndex"></h5>
+                    </div>
+                    <div class="col-12 form-group p-0">
+                        <div class="col-6 form-group p-0 pr-2">
+                            <button class="btn btn-outline-primary btn-block text-uppercase" type="button" id="checkoutAppointment">express checkout</button>
+                        </div>
+                        <div class="col-6 form-group p-0">
+                            <button class="btn btn-block btn-dark active text-uppercase" type="button" aria-pressed="true" id="saveAppointment">save appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

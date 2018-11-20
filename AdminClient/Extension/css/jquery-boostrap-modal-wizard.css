@@ -1,0 +1,102 @@
+﻿.search-modal-wizard {
+    background-color: #FBFBFB;
+    border-bottom: 1px solid #EEF0F2;
+}
+
+    .search-modal-wizard .input-group-prepend {
+        border: 1px solid #EEF0F2;
+    }
+
+        .search-modal-wizard .input-group-prepend span {
+            background-color: white !important;
+            border: none;
+        }
+
+    .search-modal-wizard input, .search-modal-wizard .input-group span {
+        border: none;
+    }
+
+.empty-modal-wizard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+}
+
+    .empty-modal-wizard p {
+        padding-top: 30px;
+        color: #67768C;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 500;
+    }
+
+    .empty-modal-wizard svg {
+        width: 88px;
+        height: 88px;
+        min-width: 88px;
+        min-height: 88px;
+    }
+
+.item-modal-wizard {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEF0F2;
+    cursor: pointer;
+}
+
+    .item-modal-wizard:hover {
+        background-color: rgb(251,251,251);
+    }
+
+    .item-modal-wizard div:first-child {
+        padding-left: 0px;
+    }
+
+    .item-modal-wizard div:last-child {
+        padding-right: 0px;
+    }
+
+    .item-modal-wizard svg {
+        height: 21px;
+    }
+
+.prevModalWizard {
+    float: left;
+    padding-top: 5px;
+    fill: #A4ADBA;
+    cursor: pointer;
+}
+
+    .prevModalWizard svg {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+    }
+
+    .prevModalWizard:hover {
+        fill: black;
+    }
+
+.modal-wizard .modal-header {
+    min-height: 70px;
+}
+
+.modal-wizard .modal-body {
+    overflow-y: auto;
+}
+
+.loading-modal-wizard {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    background-color: white;
+    opacity: 1;
+}
+.loading-modal-wizard .sk-circle{
+   margin-top: 50%;
+}

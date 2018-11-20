@@ -1,0 +1,45 @@
+﻿<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+@Styles.Render("~/Style/fullcalendar")
+<div class="animated fadeIn">
+    <div class="card b-0 m-0">
+        <div class="card-body p-0">
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="workinghourform">
+                        <div class="col-md-12 p-0">
+                            @Html.Partial("/Views/Calendar/Schedul/Header.cshtml")
+                            @Html.Partial("/Views/Calendar/Schedul/Calendar.cshtml")
+                            <div id="notifyScheul" class="nofity-scheul">
+                                <!--#region Notify-->
+                                @Html.Partial("/Views/Calendar/Notify/NoScheduled.cshtml")
+                                @Html.Partial("/Views/Calendar/Notify/NoStaff.cshtml")
+                                <!--#endregion-->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="containtButtonCreate"></div>
+    </div>
+</div>
+<!--#region Modal-->
+@Html.Partial("/Views/Clients/Add.cshtml")
+<!--#endregion-->
+@Scripts.Render("~/Scripts/fullcalendar")
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Scripts/calendar/index.js")"></script>
+<script src="@Url.Content("~/Scripts/calendar/schedul.js")"></script>
+<script src="@Url.Content("~/Scripts/client/popup-client.js")"></script>

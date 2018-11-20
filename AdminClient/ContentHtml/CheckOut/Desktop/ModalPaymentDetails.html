@@ -1,0 +1,25 @@
+﻿<div class="modal fade modal-wizard">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Payment Details</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="formModalInvoiceDetails">
+                    <div class="form-group">
+                        <label class="col-form-label">Payment received by</label>
+                        <select class="form-control" id="staffModalInvoiceDetails" urlselection="/Home/GetUserBaseId"></select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-12">
+                    <button type="button" class="btn btn-block btn-success" id="saveModalInvoiceDetailsButton" data-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

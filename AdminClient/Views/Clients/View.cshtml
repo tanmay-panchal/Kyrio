@@ -1,0 +1,236 @@
+﻿@model AdminClient.Models.V_CLIENT
+@using Newtonsoft.Json.Linq
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+<!--#endregion-->
+<!--#region Html-->
+<div class="animated fadeIn">
+    <div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="text-align:center">
+                                <div class="src-modules-clients-components-ClientProfileCard__avatar__1Ub8V src-components-Avatar-CustomerAvatar__self__2FiXk" style="display:inline-block">
+                                    <div class="src-components-Avatar-CustomerAvatar__alphaNumPlaceholder__1qweJ src-components-Avatar-CustomerAvatar__veryLarge__3Z1JP">
+                                        @Model.FirstName.Substring(0, 1)
+                                    </div>
+                                </div>
+                                <input type="hidden" id="ViewClientID" value="@Model.ClientID" />
+                                <input type="hidden" id="MobileNumberDialCode" value="@Model.MobileNumberDialCode" />
+                                <input type="hidden" id="TelephoneDialCode" value="@Model.TelephoneDialCode" />
+                                <div class="row" style="display:block;margin-top:15px">@(Model.FirstName + " " + Model.LastName)</div>
+                                <div class="row" style="margin-top:15px">
+                                    <div class="col-6 col-sm-4 col-md mb-3 mb-xl-0 text-center">
+                                        @{if (Model.Appointments == 0)
+                                            {
+                                                <button type="button" class="btn btn-sm btn-pill btn-primary">New Client</button>
+                                            }
+                                        }
+                                        @{if (Model.NoShows == 1)
+                                            {
+                                                <button type="button" class="btn btn-sm btn-pill btn-danger">@Model.NoShows No show</button>
+                                            }
+                                        }
+                                        @{if (Model.NoShows > 1)
+                                            {
+                                                <button type="button" class="btn btn-sm btn-pill btn-danger">@Model.NoShows No shows</button>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:15px">
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            MORE OPTIONS
+                                        </button>
+                                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
+                                            <a class="dropdown-item" id="btnEditClient">Edit</a>
+                                            <a class="dropdown-item" style="color:red" id="btnDeleteClient">Delete</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" id="btnNewAppointment" name="btnNewAppointment" class="btn btn-custome active hidden-xs hidden-sm hidden-md" aria-pressed="true">NEW APPOINTMENT</button>
+                                    </div>
+                                </div>
+                            </div>
+                            @{ if (Model.ClientNotes != null && Model.ClientNotes != "")
+                                {
+                                    <div class="row" style="margin-top:15px">
+                                        <label class="form-control" style="border:0px">@Model.ClientNotes</label>
+                                    </div>
+                                }
+                            }
+                            @{ if (Model.MobileNumber != null && Model.MobileNumber != "")
+                                {
+                                    <div class="form-group" style="margin-top:0px">
+                                        <div class="row">
+                                            <label class="col-form-label">Mobile</label>
+                                            <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@("+" + Model.MobileNumberDialCode + " " + Model.MobileNumber)</label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @{ if (Model.Telephone != null && Model.Telephone != "")
+                                {
+                                    <div class="form-group" style="margin-top:0px">
+                                        <div class="row">
+                                            <label class="col-form-label">Telephone</label>
+                                            <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@("+" + Model.TelephoneDialCode + Model.Telephone)</label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @{ if (Model.Email != null && Model.Email != "")
+                                {
+                                    <div class="form-group" style="margin-top:0px">
+                                        <div class="row">
+                                            <label class="col-form-label">Email</label>
+                                            <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Model.Email</label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @{ if ((Model.Address != null && Model.Address != "") || (Model.Suburb != null && Model.Suburb != "") || (Model.City != null && Model.City != "") || (Model.State != null && Model.State != "") || (Model.PostCode != null && Model.PostCode != ""))
+                                {
+                                    <div class="form-group" style="margin-top:0px">
+                                        <div class="row" style="padding-top:0px">
+                                            <label class="col-form-label">Address</label>
+                                            @if ((Model.Address != null && Model.Address != ""))
+                                            {
+                                                <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Model.Address</label>
+                                            }
+                                            @if ((Model.Suburb != null && Model.Suburb != ""))
+                                            {
+                                                <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Model.Suburb</label>
+                                            }
+                                            @if ((Model.City != null && Model.City != ""))
+                                            {
+                                                <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Model.City</label>
+                                            }
+                                            @if ((Model.State != null && Model.State != ""))
+                                            {
+                                                <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Model.State</label>
+                                            }
+                                            @if ((Model.PostCode != null && Model.PostCode != ""))
+                                            {
+                                                <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Model.PostCode</label>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @{ if (Model.DateOfBirth != null)
+                                {
+                                    <div class="form-group" style="margin-top:0px">
+                                        <div class="row">
+                                            <label class="col-form-label">Date Of Birth</label>
+                                            @if (Model.DateOfBirth.Value.Year == 1900)
+                                            {
+                                                <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Convert.ToDateTime(Model.DateOfBirth).ToString("dd-MM")</label>
+                                            }
+                                            else
+                                            {
+                                                <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Convert.ToDateTime(Model.DateOfBirth).ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatDateCS"].ToString())</label>
+                                            }
+                                            
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            @{ if (Model.Gender != null && Model.Gender != "gender_unknown")
+                                {
+                                    <div class="form-group" style="margin-top:0px">
+                                        <div class="row">
+                                            <label class="col-form-label">Gender</label>
+                                            <label class="form-control" style="border:0px;padding-top:0px;padding-bottom:0px">@Resources.Enum.ResourceManager.GetString(Model.Gender)</label>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-group mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="h1 text-muted text-right mb-4">
+                                    <i class="icon-basket-loaded"></i>
+                                </div>
+                                <div class="text-value">@(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["CurrencySymbol"].ToString() + Model.TotalSales.ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatStringAmount"].ToString()))</div>
+                                <small class="text-muted text-uppercase font-weight-bold">Total Sales</small>
+                                <div class="progress progress-xs mt-3 mb-0">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="h1 text-muted text-right mb-4">
+                                    <i class="icon-book-open"></i>
+                                </div>
+                                <div class="text-value">@(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["CurrencySymbol"].ToString() + Model.Outstanding.ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatStringAmount"].ToString()))</div>
+                                <small class="text-muted text-uppercase font-weight-bold">Outstanding</small>
+                                <div class="progress progress-xs mt-3 mb-0">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-group mb-4">
+                        <div class="card">
+                            <div class="card-body" style="text-align:center">
+                                <div class="text-value" style="font-weight:bold">@Model.Appointments</div>
+                                <small class="text-muted text-uppercase font-weight-bold">All bookings</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align:center">
+                                <div class="text-value" style="font-weight:bold">@Model.Completed</div>
+                                <small class="text-muted text-uppercase font-weight-bold">Completed</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align:center">
+                                <div class="text-value" style="font-weight:bold">@Model.Cancelled</div>
+                                <small class="text-muted text-uppercase font-weight-bold">Cancelled</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align:center">
+                                <div class="text-value" style="font-weight:bold">@Model.NoShows</div>
+                                <small class="text-muted text-uppercase font-weight-bold">No Shows</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-group mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="col" id="divHistoryClient">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+<!--#region Modal-->
+@Html.Partial("/Views/Clients/Add.cshtml")
+<!--#endregion-->
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/client/view.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")

@@ -1,0 +1,189 @@
+﻿<!--#region Html-->
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card b-a-1 mt-4">
+                <div class="card-body">
+                    <div class="col-12">
+                        <h2><strong>Finances</strong></h2>
+                        <p class="text-muted">Monitor your overall finances including sales, refunds, taxes, payments and more</p>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/FinancesSummary'" class="btn btn-link btn-block text-left">Finances summary</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/PaymentsSummary'" class="btn btn-link btn-block text-left">Payments summary</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/PaymentsLog'" class="btn btn-link btn-block text-left">Payments log</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/TaxesSummary'" class="btn btn-link btn-block text-left">Taxes summary</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/TipsCollected'" class="btn btn-link btn-block text-left">Tips collected</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/DiscountSummary'" class="btn btn-link btn-block text-left">Discount summary</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" onclick="location.href = '/Reports/OutstandingInvoices'" class="btn btn-link btn-block text-left">Outstanding invoices</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card b-a-1">
+                <div class="card-body">
+                    <div class="col-12">
+                        <h2><strong>Inventory</strong></h2>
+                        <p class="text-muted">Monitor product stock levels and adjustments made, analyse product sales performance, consumption costs and more</p>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/StockonHand'" class="btn btn-link btn-block text-left">Stock on hand</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/ProductSalesPerformance'" class="btn btn-link btn-block text-left">Product sales performance</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/StockMovementLog'" class="btn btn-link btn-block text-left">Stock movement log</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/StockMovementSummary'" class="btn btn-link btn-block text-left">Stock movement summary</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" onclick="location.href = '/Reports/ProductConsumption'" class="btn btn-link btn-block text-left">Product consumption</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card b-a-1">
+                <div class="card-body">
+                    <div class="col-12">
+                        <h2><strong>Appointments</strong></h2>
+                        <p class="text-muted">View projected revenues of upcoming appointments, track cancellation rates and reasons</p>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/AppointmentsSummary'" class="btn btn-link btn-block text-left">Appointments summary</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" onclick="location.href = '/Reports/AppointmentCancel'" class="btn btn-link btn-block text-left">Appointment cancellations</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card b-a-1">
+                <div class="card-body">
+                    <div class="col-12">
+                        <h2><strong>Clients</strong></h2>
+                        <p class="text-muted">Gain insights into how clients interact with your business and who your top spenders are</p>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/ClientList'" class="btn btn-link btn-block text-left">Client list</button>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="button" onclick="location.href = '/Reports/ClientRetention'" class="btn btn-link btn-block text-left">Client retention</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card b-a-1 mt-4">
+                <div class="card-body">
+                    <div class="col-12">
+                        <h2><strong>Sales</strong></h2>
+                        <p class="text-muted">Analyse the performance of your business by comparing sales across products, staff, channels and more</p>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByItem'" class="btn btn-link btn-block text-left">Sales by item</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByType'" class="btn btn-link btn-block text-left">Sales by type</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByService'" class="btn btn-link btn-block text-left">Sales by service</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByProduct'" class="btn btn-link btn-block text-left">Sales by product</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByLocation'" class="btn btn-link btn-block text-left">Sales by location</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByChannel'" class="btn btn-link btn-block text-left">Sales by channel</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByClient'" class="btn btn-link btn-block text-left">Sales by client</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByStaffBreakdown'" class="btn btn-link btn-block text-left">Sales by staff breakdown</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByStaff'" class="btn btn-link btn-block text-left">Sales by staff</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByHour'" class="btn btn-link btn-block text-left">Sales by hour</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByHoursofDay'" class="btn btn-link btn-block text-left">Sales by hour of day</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByDay'" class="btn btn-link btn-block text-left">Sales by day</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByMonth'" class="btn btn-link btn-block text-left">Sales by month</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByQuarter'" class="btn btn-link btn-block text-left">Sales by quarter</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/SalesByYear'" class="btn btn-link btn-block text-left">Sales by year</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" onclick="location.href = '/Reports/SalesLog'" class="btn btn-link btn-block text-left">Sales log</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card b-a-1">
+                <div class="card-body">
+                    <div class="col-12">
+                        <h2><strong>Vouchers</strong></h2>
+                        <p class="text-muted">Track your total outstanding liability as well as voucher sales and redemption activity</p>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/VouchersOutstanding'" class="btn btn-link btn-block text-left">Vouchers outstanding balance</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/VouchersSales'" class="btn btn-link btn-block text-left">Vouchers sales</button>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="button" onclick="location.href = '/Reports/VoucherRedemptions'" class="btn btn-link btn-block text-left">Voucher redemptions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card b-a-1">
+                <div class="card-body">
+                    <div class="col-12">
+                        <h2><strong>Staffs</strong></h2>
+                        <p class="text-muted">View your team's performance, hours worked as well as commission and tip earnings</p>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/StaffWorkingHours'" class="btn btn-link btn-block text-left">Staff working hours</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/TipsByStaff'" class="btn btn-link btn-block text-left">Tips by staff</button>
+                        </div>
+                        <div class="form-group b-b-1">
+                            <button type="button" onclick="location.href = '/Reports/CommissionStaffSummary'" class="btn btn-link btn-block text-left">Staff commission summary</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" onclick="location.href = '/Reports/CommissionStaffDetailed'" class="btn btn-link btn-block text-left">Staff commission detailed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--#endregion-->
+<!--#region Include JS-->
+<!--#endregion-->

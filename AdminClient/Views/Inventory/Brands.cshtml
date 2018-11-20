@@ -1,0 +1,82 @@
+﻿<div class="card" id="divTable" style="display:none">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="formBrand">
+                    <div class="col-md-12">
+                        <div class="col-md-12 containtTable">
+                            <table class="table table-sm datatable no-footer" style="width:100%" id="table">
+                                <thead>
+                                    <tr>
+                                        <th>BRAND NAME</th>
+                                        <th>PRODUCTS ASSIGNED</th>
+                                        <th>UPDATEED AT</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="divNoData" style="display:none">
+    <div style="text-align:center!important; margin-left:auto; margin-right:auto">
+        <p style="opacity: .7; font-size:60px">
+            <i class="fa fa-amazon fa-lg mt-4"></i>
+        </p>
+        <h3 class="m-b-10">Add Product Brands</h3>
+        <p>
+            Setup your brand names here, and link them to your products. Too easy!
+        </p>
+    </div>
+    <div class="col-md-12" style="display:flex; align-items:center;justify-content:center">
+        <button type="button" class="btn btn-block btn-success" style="width:120px" id="btnNew" data-style="slide-right">New Brand</button>
+    </div>
+</div>
+<div class="row">
+    <div id="containtButtonCreate">
+    </div>
+</div>
+<div class="modal fade" id="actionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <form novalidate="novalidate" id="actionForm">
+                        <div class="form-group">
+                            <input type="hidden" id="BrandID" ispropertiesmodel ispropertiesidmodel />
+                            <label class="col-form-label">BRAND NAME</label>
+                            <input type="text" class="form-control" id="BrandName" name="BrandName" placeholder="e.g Kyrio" ispropertiesmodel maxlength="200" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteButton">DELETE</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!--#region Include JS-->
+<script src="@Url.Content("~/Scripts/inventory/brand.js")"></script>
+<!--#endregion-->

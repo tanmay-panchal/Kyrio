@@ -1,0 +1,214 @@
+﻿<link href="@Url.Content("~/Extension/css/jquery-boostrap-modal-wizard.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+<div class="_2GveWK _3fwefj">
+    <div class="tCGsZl" style="display: flex; flex-direction: column; flex-shrink: 1; flex-grow: 1;">
+        <header class="_2MOTTd">
+            <div class="qQ2mF7 hOEdLx _3kNNhl">
+                <h2 class="_1qRCLp _2I5xvM _1OSdXv XJ4mVR drDWkR">Checkout</h2>
+                <div role="button" class="_1TG8o8 _1jCX7X _1Is13S _148Kg3 _1FszNF" id="closeModalMain">
+                    <span class="_2FSeuB _240vE8 RCcMXQ _3G1j0F EDA0Qt">
+                        <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M17 1.914L16.086 1 9 8.086 1.914 1 1 1.914 8.086 9 1 16.086l.914.914L9 9.914 16.086 17l.914-.914L9.914 9z"></path></svg>
+                    </span>
+                </div>
+            </div>
+        </header>
+        <div class="_26Q8ey _1JCZG7" style="display: flex; flex-direction: column;">
+            <div class="_21M7Mi" style="display: flex; flex-direction: column; flex-grow: 1;">
+                <div class="MfJrdE">
+                    <input type="hidden" name="ClientID" id="ClientID" value="0">
+                    <input type="hidden" name="UserID" id="UserID" value="@ViewBag.UserID">
+                    <input type="hidden" name="AppointmentID" id="AppointmentID" value="@ViewBag.AppointmentID">
+                    <input type="hidden" name="InvoiceID" id="InvoiceID" value="@ViewBag.InvoiceID">
+                    <input type="hidden" name="IsRefund" id="IsRefund" value="@ViewBag.IsRefund">
+                    <input type="hidden" name="Notes" id="Notes" value="">
+                    <div class="_3DPR-A" style="display: flex; flex-direction: column;" id="contentRight">
+                        <div class="_33L2x1" style="display: flex; flex-direction: column; flex-grow: 1;">
+                            <div class="col-12 form-group p-0 m-0 d-flex flex-column">
+                                <div class="p-4 border-bottom bg-light align-items-start">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text ">
+                                                <i class="fa fa-search"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" name="searchClient" class="form-control" placeholder="Add client">
+                                    </div>
+                                </div>
+                                <div style="display:none" id="divPay">
+                                    <div class="p-0 d-flex flex-column" style="flex-grow:1;">
+                                        <div class="form-group" style="display:flex; align-items:center; justify-content:center">
+                                            <label class="col-form-label" for="appendedInput" style="text-align:center; display:flex">Pay</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text bg-white border-right-0" id="CurrencySymbol" style="height:60px; font-weight:bold; font-size:xx-large"></span>
+                                                    </div>
+                                                    <input id="Pay" name="Pay" class="form-control border-left-0" size="16" type="number" min="0" maxlength="5" style="height:60px; font-weight:bold; font-size:xx-large; text-align:center">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-4" style="flex-grow:1;" id="divPaymentMethod">
+                                        </div>
+                                        <div class="border-top p-4">
+                                            <div class="dropdown bg-info btn-block float-right mr-2 show">
+                                                <a class="btn btn-block dropdown-toggle bg-info" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MORE OPTION</a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" x-placement="top-start" style="position: absolute; right: 0px; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -87px, 0px);">
+                                                    <a class="dropdown-item text-center" id="btnSavePartPaid" href="#">Save Part-Paid</a>
+                                                    <a class="dropdown-item text-center" id="btnSaveUnpaid" href="#">Save Unpaid</a>
+                                                    <a class="text-center dropdown-item" id="btnInvoiceDetails" href="#">Invoice Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display:none" id="divFullPay">
+                                    <div class="border-top p-4">
+                                        <button style="font-weight:bold" type="button" class="btn btn-block btn-success" id="btnCompleteSale">COMPLETE SALE</button>
+                                        <button style="font-weight:bold; display:none" type="button" class="btn btn-block btn-danger" id="btnRefundNow">REFUND NOW</button>
+                                    </div>
+                                    <div style="text-align:center">
+                                        <button type="button" class="btn btn-link" id="btnBackToPayment"><i class="icon-arrow-left icons font-2xl"></i> Back to payments</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_3DPR-A" style="display: none; flex-direction: column;" id="contentSearch">
+
+                    </div>
+                    <div class="_1hUf2x" style="flex-grow: 1;" id="contentLeft">
+                        <div class="_1Rmr-3" style="display: flex; flex-direction: column;">
+                            <div class="m-auto text-center no-order align-self-center" style="display:none">
+                                @Html.Partial("/Views/Calendar/Notify/NoOrder.cshtml")
+                                <p>Your Order is empty. You haven't added any items yet</p>
+                                <button type="button" class="btn btn-success" name="addItemButton" id="addItemButton2"><i class="fa fa-plus"></i> ADD ITEM TO SALE</button>
+                            </div>
+                            <div class="order-detail" style="display:none">
+                                <div class="col-12 overflow-y" id="containtItem" style="flex-basis: calc(100vh - 351px);">
+
+                                </div>
+                                <div class="col-12 d-flex justify-content-between order-total align-self-end">
+                                    <button type="button" class="btn btn-link" id="addItemButton"><i class="fa fa-plus"></i> Add Item to sale</button>
+                                    <div class="col-6 p-0 d-flex flex-column justify-content-end">
+                                        <div class="p-0 d-flex justify-content-between">
+                                            <span>SubTotal</span>
+                                            <span id="SubTotalBeForeTax"></span>
+                                        </div>
+                                        <div id="divTaxDetail">
+
+                                        </div>
+                                        <hr />
+                                        <div class="p-0 d-flex justify-content-between">
+                                            <span>Total</span>
+                                            <span id="Total"></span>
+                                        </div>
+                                        <hr />
+                                        <div class="p-0 d-flex justify-content-between">
+                                            <button type="button" class="btn btn-link p-0" id="openModalTip">Tips</button>
+                                            <span id="TipAmount">0</span>
+                                        </div>
+                                        <div id="divPayment"></div>
+                                        <hr />
+                                        <div class="p-0 d-flex justify-content-between">
+                                            <h4><strong>Balance</strong></h4>
+                                            <h4 id="Balance"><strong></strong></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divHideLeft">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="_3TDpe6">
+            <span class="YD8xyG _17C7ha k-W-vh">
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="actionModalRedeemVoucher" ismodal>
+    <div class="modal-dialog" role="document" style="max-width:448px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="Title">Redeem Voucher</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px">
+                <form novalidate="novalidate" id="formRedeemVoucher">
+                    <div class="col-12 search-modal-wizard">
+                        <div class="input-group-prepend" style="margin-bottom:10px;margin-top:10px">
+                            <span class="input-group-text">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" id="txtSearchVoucherCode" class="form-control" style="min-height:42px; text-transform:uppercase" autocomplete="off" placeholder="Enter Voucher Code">
+                            <input type="hidden" id="VoucherID" />
+                            <input type="hidden" id="ServiceID" />
+                        </div>
+                    </div>
+                    <div class="col-12" style="display:block; padding:10px 10px 10px 10px">
+                        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" id="divSearchVoucherCode">
+                            <span style="width: 88px;height: 88px;">
+                                <svg viewBox="0 0 98 88" xmlns="http://www.w3.org/2000/svg"><g><circle cx="44" cy="44" r="44" transform="translate(4)" fill="#DEEDFB" opacity=".47"></circle><path fill="#F5A623" d="M3 22h94v46H3z"></path><path fill="#FFF5E0" d="M25 22h73v46H25z"></path><path d="M94.981 19H28.293l-4.043 4.077L20.21 19H2.021A2.03 2.03 0 0 0 0 21.039v48.924C0 71.09.905 72 2.022 72h18.187l4.041-4.073L28.293 72h66.688C96.097 72 97 71.09 97 69.963V21.04A2.028 2.028 0 0 0 94.981 19zm-2.02 48.927H29.965l-2.857-2.884-2.859-2.885-2.857 2.885-2.856 2.884H4.043v-44.85h14.494l2.856 2.883 2.857 2.882 2.86-2.882 2.856-2.883H92.96v44.85z" fill="#24334A" fill-rule="nonzero"></path><path d="M52.001 30a8.001 8.001 0 1 0 0 15.998A8.001 8.001 0 0 0 52 30zm0 12A4.006 4.006 0 0 1 48 38c0-2.206 1.796-4 4.002-4 2.206 0 4 1.794 4 4 0 2.205-1.794 4-4 4zM68 46a8 8 0 1 0 0 16c4.418 0 8-3.586 8-8.003A7.999 7.999 0 0 0 68 46zm0 11.998a4.002 4.002 0 0 1-3.999-4 4 4 0 0 1 4-3.997 4 4 0 0 1 3.998 3.996A4.001 4.001 0 0 1 68 57.998z" fill="#24334A" fill-rule="nonzero"></path><path d="M74 30c-.551 0-1.053.23-1.416.604L44.586 59.478A2.088 2.088 0 0 0 44 60.934c0 1.141.896 2.066 2 2.066a1.98 1.98 0 0 0 1.416-.605L75.414 33.52A2.08 2.08 0 0 0 76 32.062C76 30.924 75.103 30 74 30zm-49.502 2a2.5 2.5 0 1 0 .005 5.002A2.5 2.5 0 0 0 24.498 32zm0 7a2.5 2.5 0 1 0 .005 5.002A2.5 2.5 0 0 0 24.498 39zm0 9a2.501 2.501 0 0 0 0 5 2.5 2.5 0 1 0 0-5zm0 8a2.5 2.5 0 1 0 .004 5 2.5 2.5 0 0 0-.004-5z" fill="#24334A" fill-rule="nonzero"></path></g></svg>
+                            </span>
+                            <div>Check an existing voucher status & balance</div>
+                        </div>
+                        <div style="display: none; flex-direction: column; justify-content: center; align-items: center;" id="divNotFoundVoucher">
+                            <span style="width: 88px;height: 88px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 91 91"><defs><path d="M43.7218 45.7152l9.7246 9.7246-2.4389 2.439 1.7904 5.3726 18.9756 18.9742h6.8064l3.6457-3.6457v-6.8064L63.25 52.7979l-5.4278-1.3448-2.4888 2.0044-9.5922-9.0884M60.9366 55l-5.938 5.938-.7655-2.2951 4.407-4.4084L60.9365 55zm16.476 24.406h-4.4718L56.7284 63.1936l6.4652-6.4652L79.406 72.9408v4.4718l-1.9934 1.9934z" id="a"></path></defs><g fill="none" fill-rule="evenodd"><circle fill="#E1EFFC" cx="46" cy="46" r="44"></circle><g transform="translate(8.436 8.436)" fill-rule="nonzero"><circle fill="#FFF" opacity=".6864" cx="25.8346" cy="25.8346" r="25.3759"></circle><path fill="#A4ADBA" d="M58.2594 52.6203l-5.6391 5.6391 1.4098 4.2293 18.327 18.327h5.6391l2.8196-2.8195v-5.639L62.4888 54.03z"></path><use fill="#24334A" xlink:href="#a"></use></g><circle stroke="#24334A" stroke-width="3" cx="34" cy="34" r="26"></circle></g></svg></span>
+                            <div>No vouchers found</div>
+                        </div>
+                        <div class="_2mPFMy _1rEZZi _1Ov_P6" style="display: none; flex-direction: column;" id="divFoundVoucher">
+                            <div class="_1pkd0Y" style="display: flex; flex-direction: column; align-items: center;">
+                                <div class="_3jdRwj" style="display: flex; flex-direction: column; align-items: center;">
+                                    <div class="yG2ZtS" style="display: flex; flex-direction: row; justify-content: center;">
+                                        <div class="_1p62pX _3y3xr- _2xtCX5" style="line-height: 28px;font-size: 24px; margin-bottom:12px" id="divVoucherType">
+                                        </div>
+                                    </div>
+                                    <div class="_1p62pX _3y3xr- _2xtCX5 _2m_1_Q" id="divVoucherServiceName"></div>
+                                </div>
+                                <div class="_1p62pX _3y3xr- _324SDZ" id="divMessageVoucher" style="display:none; text-align:center"></div>
+                                <label class="dX40sN _56dZd5 _1IZu-F _3Gkl9Q _2ISFB6" id="lblRedeemInput" style="display: flex; flex-direction: column-reverse; align-self: stretch;">
+                                    <div class="_1RtXmI" style="display: flex; flex-direction: row;">
+                                        <span class="FSmq0F" id="txtCurrency"></span>
+                                        <input class="_190Ggi _1duaTJ" id="txtPayAmount" name="txtPayAmount" inputmode="numeric" type="number" min="0" step="1" value="0" style="padding-left: 2ch; width: 6ch;">
+                                    </div>
+                                    <span class="_3bYu1W">Redemption Amount</span>
+                                </label>
+                                <button type="button" class="_2wtmYU _2Bn9Xa _1FszNF _23tAim _3zG3Wy _2DZ1oJ _26WQGn" id="btnRedeem" style="flex-grow: 1;">
+                                    <div class="_2nLI4N">Redeem Voucher</div>
+                                </button>
+                                <div class="_1NmZTn">
+                                    <div class="_2DSnqv" id="txtVoucherType"></div>
+                                </div>
+                            </div>
+                            <div class="_1p62pX eF4o5n _1oWyGf" style="margin-top:20px">Voucher History</div><div class="_1Qi2g5">
+                                <div class="_1p62pX _3y3xr-" id="txtExpire"></div>
+                                <div class="_1p62pX _3y3xr-" id="txtPurchase">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/jquery-boostrap-modal-wizard.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/calendar/addsale_v2.js")"></script>
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")

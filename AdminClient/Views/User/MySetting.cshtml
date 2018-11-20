@@ -1,0 +1,101 @@
+﻿@model AdminClient.Models.User
+<!--#region Include CSS-->
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<!--#endregion-->
+
+<!--#region Html-->
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> My Settings</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="settingForm">
+                                <div class="row">
+                                    <input type="hidden" value="@Model.DialCode" id="DialCode" name="DialCode" />
+                                    <div class="form-group col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                                        <label class="col-form-label">First name</label>
+                                        <div class="input-group mb-4">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-user"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First name" value="@Model.FirstName">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-fhd-6 col-xlg-6 col-md-6 col-sm-12 col-xs-6">
+                                        <label class="col-form-label">Last name</label>
+                                        <div class="input-group mb-4">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="icon-user"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last name" value="@Model.LastName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Mobile Number</label>
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" id="MobileNumber" name="MobileNumber" value="@Model.MobileNumber">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Email</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-envelope"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="Email" name="Email" placeholder="Email" value="@Model.Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Current Password</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-lock"></i></span>
+                                        </div>
+                                        <input type="password" class="form-control" id="OldPassword" name="OldPassword" placeholder="Current Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">New Password</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-lock"></i></span>
+                                        </div>
+                                        <input type="password" class="form-control" id="NewPassword" name="NewPassword" placeholder="New Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Verify Password</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-lock"></i></span>
+                                        </div>
+                                        <input type="password" class="form-control" id="VerifyPassword" name="VerifyPassword" placeholder="Verify Password">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-custome" id="excuteButton">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+
+<!--#region Include JS-->
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Scripts/user/mysetting.js")"></script>
+<!--#endregion-->

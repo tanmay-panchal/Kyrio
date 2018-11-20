@@ -1,0 +1,184 @@
+﻿<div class="card" id="divTable" style="display:none">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="formSupplier">
+                    <div class="col-md-12">
+                        <div class="col-md-12 containtTable">
+                            <table class="table table-sm datatable no-footer" style="width:100%" id="table">
+                                <thead>
+                                    <tr>
+                                        <th>SUPPLIER NAME</th>
+                                        <th>PHONE</th>
+                                        <th>EMAIL</th>
+                                        <th>PRODUCTS ASSIGNED</th>
+                                        <th>UPDATEED AT</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="divNoData" style="display:none">
+    <div style="text-align:center!important; margin-left:auto; margin-right:auto">
+        <p style="opacity: .7; font-size:60px">
+            <i class="fa fa-group fa-lg mt-4"></i>
+        </p>
+        <h3 class="m-b-10">Add Product Suppliers</h3>
+        <p>
+            Setup your product suppliers here, to keep track of details needed for purchase orders.
+        </p>
+    </div>
+    <div class="col-md-12" style="display:flex; align-items:center;justify-content:center">
+        <button type="button" class="btn btn-block btn-success" style="width:120px" id="btnNew" data-style="slide-right">New Supplier</button>
+    </div>
+</div>
+<div class="row">
+    <div id="containtButtonCreate">
+    </div>
+</div>
+<div class="modal fade modal-fullsrceen" id="actionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <form novalidate="novalidate" id="actionForm">
+                        <div class="col-md-6">
+                            <h5>Supplier Details</h5>
+                            <div class="form-group">
+                                <input type="hidden" id="SupplierID" ispropertiesmodel ispropertiesidmodel />
+                                <label class="col-form-label">SUPPLIER NAME</label>
+                                <input type="text" class="form-control" id="SupplierName" name="SupplierName" placeholder="e.g Kyrio" ispropertiesmodel maxlength="200" />
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">SUPPLIER DESCRIPTION</label>
+                                <textarea class="form-control" rows="3" id="Description" name="Description" placeholder="" ispropertiesmodel maxlength="400"></textarea>
+                            </div>
+                            <h5>Contact Information</h5>
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">FIRST NAME</label>
+                                        <input type="text" class="form-control" id="FirtName" name="FirtName" placeholder="e.g John" ispropertiesmodel maxlength="100" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-form-label">MOBILE NUMBER</label>
+                                        <input type="text" class="form-control" id="MobileNumber" name="MobileNumber" placeholder="" ispropertiesmodel maxlength="50" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-form-label">TELEPHONE</label>
+                                        <input type="text" class="form-control" id="Telephone" name="Telephone" placeholder="" ispropertiesmodel maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">LAST NAME</label>
+                                        <input type="text" class="form-control" id="LastName" name="LastName" placeholder="e.g Doe" ispropertiesmodel maxlength="100" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-form-label">EMAIL</label>
+                                        <input type="text" class="form-control" id="Email" name="Email" placeholder="" ispropertiesmodel maxlength="50" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-form-label">WEBSITE</label>
+                                        <input type="text" class="form-control" id="Website" name="Website" placeholder="" ispropertiesmodel maxlength="50" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                                <h5>Physical Address</h5>
+                                <div class="form-group">
+                                    <label class="col-form-label">STREET</label>
+                                    <textarea class="form-control" rows="3" id="Street" name="Street" placeholder="" ispropertiesmodel maxlength="400"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">SUBURB</label>
+                                    <input type="text" class="form-control" id="Suburb" name="Suburb" placeholder="" ispropertiesmodel maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">CITY</label>
+                                    <input type="text" class="form-control" id="City" name="City" placeholder="" ispropertiesmodel maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">STATE</label>
+                                    <input type="text" class="form-control" id="State" name="State" placeholder="" ispropertiesmodel maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">ZIP / POST CODE</label>
+                                    <input type="text" class="form-control" id="ZipCode" name="ZipCode" placeholder="" ispropertiesmodel maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">COUNTRY</label>
+                                    <select style="width: 100%" id="CountryID" urlselection="/Home/GetCountryBaseId" name="CountryID" ispropertiesmodel></select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" id="SameAsPostalAddress" name="SameAsPostalAddress" ispropertiesmodel />
+                                    <label class="col-form-label">SAME AS POSTAL ADDRESS</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="divPostalAddress" name="divPostalAddress">
+                                <h5>Postal Address</h5>
+                                <div class="form-group">
+                                    <label class="col-form-label">STREET</label>
+                                    <textarea class="form-control" rows="3" id="PStreet" name="PStreet" placeholder="" ispropertiesmodel maxlength="400"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">SUBURB</label>
+                                    <input type="text" class="form-control" id="PSuburb" name="PSuburb" placeholder="" ispropertiesmodel maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">CITY</label>
+                                    <input type="text" class="form-control" id="PCity" name="PCity" placeholder="" ispropertiesmodel maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">STATE</label>
+                                    <input type="text" class="form-control" id="PState" name="PState" placeholder="" ispropertiesmodel maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">ZIP / POST CODE</label>
+                                    <input type="text" class="form-control" id="PZipCode" name="PZipCode" placeholder="" ispropertiesmodel maxlength="100" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">COUNTRY</label>
+                                    <select style="width: 100%" id="PCountryID" urlselection="/Home/GetCountryBaseId" name="PCountryID" ispropertiesmodel></select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteButton">DELETE</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!--#region Include JS-->
+<script src="@Url.Content("~/Scripts/inventory/supplier.js")"></script>
+<!--#endregion-->

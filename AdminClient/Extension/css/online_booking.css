@@ -1,0 +1,2602 @@
+.intl-tel-input .flag {
+    width: 20px;
+    background: url(//cdn-static.shedul.com/assets/flags-0d100f398338bd655212c0c50a9d164da6497376ac13486d66412893b2746a89.png);
+}
+
+    .intl-tel-input .flag.be {
+        width: 18px;
+    }
+
+    .intl-tel-input .flag.ch {
+        width: 15px;
+    }
+
+    .intl-tel-input .flag.mc {
+        width: 19px;
+    }
+
+    .intl-tel-input .flag.ne {
+        width: 18px;
+    }
+
+    .intl-tel-input .flag.np {
+        width: 13px;
+    }
+
+    .intl-tel-input .flag.va {
+        width: 15px;
+    }
+
+.intl-tel-input .ac {
+    height: 10px;
+    background-position: 0 0;
+}
+
+.intl-tel-input .ad {
+    height: 14px;
+    background-position: -22px 0;
+}
+
+.intl-tel-input .ae {
+    height: 10px;
+    background-position: -44px 0;
+}
+
+.intl-tel-input .af {
+    height: 14px;
+    background-position: -66px 0;
+}
+
+.intl-tel-input .ag {
+    height: 14px;
+    background-position: -88px 0;
+}
+
+.intl-tel-input .ai {
+    height: 10px;
+    background-position: -110px 0;
+}
+
+.intl-tel-input .al {
+    height: 15px;
+    background-position: -132px 0;
+}
+
+.intl-tel-input .am {
+    height: 10px;
+    background-position: -154px 0;
+}
+
+.intl-tel-input .ao {
+    height: 14px;
+    background-position: -176px 0;
+}
+
+.intl-tel-input .aq {
+    height: 14px;
+    background-position: -198px 0;
+}
+
+.intl-tel-input .ar {
+    height: 13px;
+    background-position: -220px 0;
+}
+
+.intl-tel-input .as {
+    height: 10px;
+    background-position: -242px 0;
+}
+
+.intl-tel-input .at {
+    height: 14px;
+    background-position: -264px 0;
+}
+
+.intl-tel-input .au {
+    height: 10px;
+    background-position: -286px 0;
+}
+
+.intl-tel-input .aw {
+    height: 14px;
+    background-position: -308px 0;
+}
+
+.intl-tel-input .ax {
+    height: 13px;
+    background-position: -330px 0;
+}
+
+.intl-tel-input .az {
+    height: 10px;
+    background-position: -352px 0;
+}
+
+.intl-tel-input .ba {
+    height: 10px;
+    background-position: -374px 0;
+}
+
+.intl-tel-input .bb {
+    height: 14px;
+    background-position: -396px 0;
+}
+
+.intl-tel-input .bd {
+    height: 12px;
+    background-position: -418px 0;
+}
+
+.intl-tel-input .be {
+    height: 15px;
+    background-position: -440px 0;
+}
+
+.intl-tel-input .bf {
+    height: 14px;
+    background-position: -460px 0;
+}
+
+.intl-tel-input .bg {
+    height: 12px;
+    background-position: -482px 0;
+}
+
+.intl-tel-input .bh {
+    height: 12px;
+    background-position: -504px 0;
+}
+
+.intl-tel-input .bi {
+    height: 12px;
+    background-position: -526px 0;
+}
+
+.intl-tel-input .bj {
+    height: 14px;
+    background-position: -548px 0;
+}
+
+.intl-tel-input .bl {
+    height: 14px;
+    background-position: -570px 0;
+}
+
+.intl-tel-input .bm {
+    height: 10px;
+    background-position: -592px 0;
+}
+
+.intl-tel-input .bn {
+    height: 10px;
+    background-position: -614px 0;
+}
+
+.intl-tel-input .bo {
+    height: 14px;
+    background-position: -636px 0;
+}
+
+.intl-tel-input .bq {
+    height: 14px;
+    background-position: -658px 0;
+}
+
+.intl-tel-input .br {
+    height: 14px;
+    background-position: -680px 0;
+}
+
+.intl-tel-input .bs {
+    height: 10px;
+    background-position: -702px 0;
+}
+
+.intl-tel-input .bt {
+    height: 14px;
+    background-position: -724px 0;
+}
+
+.intl-tel-input .bv {
+    height: 15px;
+    background-position: -746px 0;
+}
+
+.intl-tel-input .bw {
+    height: 14px;
+    background-position: -768px 0;
+}
+
+.intl-tel-input .by {
+    height: 10px;
+    background-position: -790px 0;
+}
+
+.intl-tel-input .bz {
+    height: 14px;
+    background-position: -812px 0;
+}
+
+.intl-tel-input .ca {
+    height: 10px;
+    background-position: -834px 0;
+}
+
+.intl-tel-input .cc {
+    height: 10px;
+    background-position: -856px 0;
+}
+
+.intl-tel-input .cd {
+    height: 15px;
+    background-position: -878px 0;
+}
+
+.intl-tel-input .cf {
+    height: 14px;
+    background-position: -900px 0;
+}
+
+.intl-tel-input .cg {
+    height: 14px;
+    background-position: -922px 0;
+}
+
+.intl-tel-input .ch {
+    height: 15px;
+    background-position: -944px 0;
+}
+
+.intl-tel-input .ci {
+    height: 14px;
+    background-position: -961px 0;
+}
+
+.intl-tel-input .ck {
+    height: 10px;
+    background-position: -983px 0;
+}
+
+.intl-tel-input .cl {
+    height: 14px;
+    background-position: -1005px 0;
+}
+
+.intl-tel-input .cm {
+    height: 14px;
+    background-position: -1027px 0;
+}
+
+.intl-tel-input .cn {
+    height: 14px;
+    background-position: -1049px 0;
+}
+
+.intl-tel-input .co {
+    height: 14px;
+    background-position: -1071px 0;
+}
+
+.intl-tel-input .cp {
+    height: 14px;
+    background-position: -1093px 0;
+}
+
+.intl-tel-input .cr {
+    height: 12px;
+    background-position: -1115px 0;
+}
+
+.intl-tel-input .cu {
+    height: 10px;
+    background-position: -1137px 0;
+}
+
+.intl-tel-input .cv {
+    height: 12px;
+    background-position: -1159px 0;
+}
+
+.intl-tel-input .cw {
+    height: 14px;
+    background-position: -1181px 0;
+}
+
+.intl-tel-input .cx {
+    height: 10px;
+    background-position: -1203px 0;
+}
+
+.intl-tel-input .cy {
+    height: 13px;
+    background-position: -1225px 0;
+}
+
+.intl-tel-input .cz {
+    height: 14px;
+    background-position: -1247px 0;
+}
+
+.intl-tel-input .de {
+    height: 12px;
+    background-position: -1269px 0;
+}
+
+.intl-tel-input .dg {
+    height: 10px;
+    background-position: -1291px 0;
+}
+
+.intl-tel-input .dj {
+    height: 14px;
+    background-position: -1313px 0;
+}
+
+.intl-tel-input .dk {
+    height: 15px;
+    background-position: -1335px 0;
+}
+
+.intl-tel-input .dm {
+    height: 10px;
+    background-position: -1357px 0;
+}
+
+.intl-tel-input .do {
+    height: 13px;
+    background-position: -1379px 0;
+}
+
+.intl-tel-input .dz {
+    height: 14px;
+    background-position: -1401px 0;
+}
+
+.intl-tel-input .ea {
+    height: 14px;
+    background-position: -1423px 0;
+}
+
+.intl-tel-input .ec {
+    height: 14px;
+    background-position: -1445px 0;
+}
+
+.intl-tel-input .ee {
+    height: 13px;
+    background-position: -1467px 0;
+}
+
+.intl-tel-input .eg {
+    height: 14px;
+    background-position: -1489px 0;
+}
+
+.intl-tel-input .eh {
+    height: 10px;
+    background-position: -1511px 0;
+}
+
+.intl-tel-input .er {
+    height: 10px;
+    background-position: -1533px 0;
+}
+
+.intl-tel-input .es {
+    height: 14px;
+    background-position: -1555px 0;
+}
+
+.intl-tel-input .et {
+    height: 10px;
+    background-position: -1577px 0;
+}
+
+.intl-tel-input .eu {
+    height: 14px;
+    background-position: -1599px 0;
+}
+
+.intl-tel-input .fi {
+    height: 12px;
+    background-position: -1621px 0;
+}
+
+.intl-tel-input .fj {
+    height: 10px;
+    background-position: -1643px 0;
+}
+
+.intl-tel-input .fk {
+    height: 10px;
+    background-position: -1665px 0;
+}
+
+.intl-tel-input .fm {
+    height: 11px;
+    background-position: -1687px 0;
+}
+
+.intl-tel-input .fo {
+    height: 15px;
+    background-position: -1709px 0;
+}
+
+.intl-tel-input .fr {
+    height: 14px;
+    background-position: -1731px 0;
+}
+
+.intl-tel-input .ga {
+    height: 15px;
+    background-position: -1753px 0;
+}
+
+.intl-tel-input .gb {
+    height: 10px;
+    background-position: -1775px 0;
+}
+
+.intl-tel-input .gd {
+    height: 12px;
+    background-position: -1797px 0;
+}
+
+.intl-tel-input .ge {
+    height: 14px;
+    background-position: -1819px 0;
+}
+
+.intl-tel-input .gf {
+    height: 14px;
+    background-position: -1841px 0;
+}
+
+.intl-tel-input .gg {
+    height: 14px;
+    background-position: -1863px 0;
+}
+
+.intl-tel-input .gh {
+    height: 14px;
+    background-position: -1885px 0;
+}
+
+.intl-tel-input .gi {
+    height: 10px;
+    background-position: -1907px 0;
+}
+
+.intl-tel-input .gl {
+    height: 14px;
+    background-position: -1929px 0;
+}
+
+.intl-tel-input .gm {
+    height: 14px;
+    background-position: -1951px 0;
+}
+
+.intl-tel-input .gn {
+    height: 14px;
+    background-position: -1973px 0;
+}
+
+.intl-tel-input .gp {
+    height: 14px;
+    background-position: -1995px 0;
+}
+
+.intl-tel-input .gq {
+    height: 14px;
+    background-position: -2017px 0;
+}
+
+.intl-tel-input .gr {
+    height: 14px;
+    background-position: -2039px 0;
+}
+
+.intl-tel-input .gs {
+    height: 10px;
+    background-position: -2061px 0;
+}
+
+.intl-tel-input .gt {
+    height: 13px;
+    background-position: -2083px 0;
+}
+
+.intl-tel-input .gu {
+    height: 11px;
+    background-position: -2105px 0;
+}
+
+.intl-tel-input .gw {
+    height: 10px;
+    background-position: -2127px 0;
+}
+
+.intl-tel-input .gy {
+    height: 12px;
+    background-position: -2149px 0;
+}
+
+.intl-tel-input .hk {
+    height: 14px;
+    background-position: -2171px 0;
+}
+
+.intl-tel-input .hm {
+    height: 10px;
+    background-position: -2193px 0;
+}
+
+.intl-tel-input .hn {
+    height: 10px;
+    background-position: -2215px 0;
+}
+
+.intl-tel-input .hr {
+    height: 10px;
+    background-position: -2237px 0;
+}
+
+.intl-tel-input .ht {
+    height: 12px;
+    background-position: -2259px 0;
+}
+
+.intl-tel-input .hu {
+    height: 10px;
+    background-position: -2281px 0;
+}
+
+.intl-tel-input .ic {
+    height: 14px;
+    background-position: -2303px 0;
+}
+
+.intl-tel-input .id {
+    height: 14px;
+    background-position: -2325px 0;
+}
+
+.intl-tel-input .ie {
+    height: 10px;
+    background-position: -2347px 0;
+}
+
+.intl-tel-input .il {
+    height: 15px;
+    background-position: -2369px 0;
+}
+
+.intl-tel-input .im {
+    height: 10px;
+    background-position: -2391px 0;
+}
+
+.intl-tel-input .in {
+    height: 14px;
+    background-position: -2413px 0;
+}
+
+.intl-tel-input .io {
+    height: 10px;
+    background-position: -2435px 0;
+}
+
+.intl-tel-input .iq {
+    height: 14px;
+    background-position: -2457px 0;
+}
+
+.intl-tel-input .ir {
+    height: 12px;
+    background-position: -2479px 0;
+}
+
+.intl-tel-input .is {
+    height: 15px;
+    background-position: -2501px 0;
+}
+
+.intl-tel-input .it {
+    height: 14px;
+    background-position: -2523px 0;
+}
+
+.intl-tel-input .je {
+    height: 12px;
+    background-position: -2545px 0;
+}
+
+.intl-tel-input .jm {
+    height: 10px;
+    background-position: -2567px 0;
+}
+
+.intl-tel-input .jo {
+    height: 10px;
+    background-position: -2589px 0;
+}
+
+.intl-tel-input .jp {
+    height: 14px;
+    background-position: -2611px 0;
+}
+
+.intl-tel-input .ke {
+    height: 14px;
+    background-position: -2633px 0;
+}
+
+.intl-tel-input .kg {
+    height: 12px;
+    background-position: -2655px 0;
+}
+
+.intl-tel-input .kh {
+    height: 13px;
+    background-position: -2677px 0;
+}
+
+.intl-tel-input .ki {
+    height: 10px;
+    background-position: -2699px 0;
+}
+
+.intl-tel-input .km {
+    height: 12px;
+    background-position: -2721px 0;
+}
+
+.intl-tel-input .kn {
+    height: 14px;
+    background-position: -2743px 0;
+}
+
+.intl-tel-input .kp {
+    height: 10px;
+    background-position: -2765px 0;
+}
+
+.intl-tel-input .kr {
+    height: 14px;
+    background-position: -2787px 0;
+}
+
+.intl-tel-input .kw {
+    height: 10px;
+    background-position: -2809px 0;
+}
+
+.intl-tel-input .ky {
+    height: 10px;
+    background-position: -2831px 0;
+}
+
+.intl-tel-input .kz {
+    height: 10px;
+    background-position: -2853px 0;
+}
+
+.intl-tel-input .la {
+    height: 14px;
+    background-position: -2875px 0;
+}
+
+.intl-tel-input .lb {
+    height: 14px;
+    background-position: -2897px 0;
+}
+
+.intl-tel-input .lc {
+    height: 10px;
+    background-position: -2919px 0;
+}
+
+.intl-tel-input .li {
+    height: 12px;
+    background-position: -2941px 0;
+}
+
+.intl-tel-input .lk {
+    height: 10px;
+    background-position: -2963px 0;
+}
+
+.intl-tel-input .lr {
+    height: 11px;
+    background-position: -2985px 0;
+}
+
+.intl-tel-input .ls {
+    height: 14px;
+    background-position: -3007px 0;
+}
+
+.intl-tel-input .lt {
+    height: 12px;
+    background-position: -3029px 0;
+}
+
+.intl-tel-input .lu {
+    height: 12px;
+    background-position: -3051px 0;
+}
+
+.intl-tel-input .lv {
+    height: 10px;
+    background-position: -3073px 0;
+}
+
+.intl-tel-input .ly {
+    height: 10px;
+    background-position: -3095px 0;
+}
+
+.intl-tel-input .ma {
+    height: 14px;
+    background-position: -3117px 0;
+}
+
+.intl-tel-input .mc {
+    height: 15px;
+    background-position: -3139px 0;
+}
+
+.intl-tel-input .md {
+    height: 10px;
+    background-position: -3160px 0;
+}
+
+.intl-tel-input .me {
+    height: 10px;
+    background-position: -3182px 0;
+}
+
+.intl-tel-input .mf {
+    height: 14px;
+    background-position: -3204px 0;
+}
+
+.intl-tel-input .mg {
+    height: 14px;
+    background-position: -3226px 0;
+}
+
+.intl-tel-input .mh {
+    height: 11px;
+    background-position: -3248px 0;
+}
+
+.intl-tel-input .mk {
+    height: 10px;
+    background-position: -3270px 0;
+}
+
+.intl-tel-input .ml {
+    height: 14px;
+    background-position: -3292px 0;
+}
+
+.intl-tel-input .mm {
+    height: 14px;
+    background-position: -3314px 0;
+}
+
+.intl-tel-input .mn {
+    height: 10px;
+    background-position: -3336px 0;
+}
+
+.intl-tel-input .mo {
+    height: 14px;
+    background-position: -3358px 0;
+}
+
+.intl-tel-input .mp {
+    height: 10px;
+    background-position: -3380px 0;
+}
+
+.intl-tel-input .mq {
+    height: 14px;
+    background-position: -3402px 0;
+}
+
+.intl-tel-input .mr {
+    height: 14px;
+    background-position: -3424px 0;
+}
+
+.intl-tel-input .ms {
+    height: 10px;
+    background-position: -3446px 0;
+}
+
+.intl-tel-input .mt {
+    height: 14px;
+    background-position: -3468px 0;
+}
+
+.intl-tel-input .mu {
+    height: 14px;
+    background-position: -3490px 0;
+}
+
+.intl-tel-input .mv {
+    height: 14px;
+    background-position: -3512px 0;
+}
+
+.intl-tel-input .mw {
+    height: 14px;
+    background-position: -3534px 0;
+}
+
+.intl-tel-input .mx {
+    height: 12px;
+    background-position: -3556px 0;
+}
+
+.intl-tel-input .my {
+    height: 10px;
+    background-position: -3578px 0;
+}
+
+.intl-tel-input .mz {
+    height: 14px;
+    background-position: -3600px 0;
+}
+
+.intl-tel-input .na {
+    height: 14px;
+    background-position: -3622px 0;
+}
+
+.intl-tel-input .nc {
+    height: 10px;
+    background-position: -3644px 0;
+}
+
+.intl-tel-input .ne {
+    height: 15px;
+    background-position: -3666px 0;
+}
+
+.intl-tel-input .nf {
+    height: 10px;
+    background-position: -3686px 0;
+}
+
+.intl-tel-input .ng {
+    height: 10px;
+    background-position: -3708px 0;
+}
+
+.intl-tel-input .ni {
+    height: 12px;
+    background-position: -3730px 0;
+}
+
+.intl-tel-input .nl {
+    height: 14px;
+    background-position: -3752px 0;
+}
+
+.intl-tel-input .no {
+    height: 15px;
+    background-position: -3774px 0;
+}
+
+.intl-tel-input .np {
+    height: 15px;
+    background-position: -3796px 0;
+}
+
+.intl-tel-input .nr {
+    height: 10px;
+    background-position: -3811px 0;
+}
+
+.intl-tel-input .nu {
+    height: 10px;
+    background-position: -3833px 0;
+}
+
+.intl-tel-input .nz {
+    height: 10px;
+    background-position: -3855px 0;
+}
+
+.intl-tel-input .om {
+    height: 10px;
+    background-position: -3877px 0;
+}
+
+.intl-tel-input .pa {
+    height: 14px;
+    background-position: -3899px 0;
+}
+
+.intl-tel-input .pe {
+    height: 14px;
+    background-position: -3921px 0;
+}
+
+.intl-tel-input .pf {
+    height: 14px;
+    background-position: -3943px 0;
+}
+
+.intl-tel-input .pg {
+    height: 15px;
+    background-position: -3965px 0;
+}
+
+.intl-tel-input .ph {
+    height: 10px;
+    background-position: -3987px 0;
+}
+
+.intl-tel-input .pk {
+    height: 14px;
+    background-position: -4009px 0;
+}
+
+.intl-tel-input .pl {
+    height: 13px;
+    background-position: -4031px 0;
+}
+
+.intl-tel-input .pm {
+    height: 14px;
+    background-position: -4053px 0;
+}
+
+.intl-tel-input .pn {
+    height: 10px;
+    background-position: -4075px 0;
+}
+
+.intl-tel-input .pr {
+    height: 14px;
+    background-position: -4097px 0;
+}
+
+.intl-tel-input .ps {
+    height: 10px;
+    background-position: -4119px 0;
+}
+
+.intl-tel-input .pt {
+    height: 14px;
+    background-position: -4141px 0;
+}
+
+.intl-tel-input .pw {
+    height: 13px;
+    background-position: -4163px 0;
+}
+
+.intl-tel-input .py {
+    height: 11px;
+    background-position: -4185px 0;
+}
+
+.intl-tel-input .qa {
+    height: 8px;
+    background-position: -4207px 0;
+}
+
+.intl-tel-input .re {
+    height: 14px;
+    background-position: -4229px 0;
+}
+
+.intl-tel-input .ro {
+    height: 14px;
+    background-position: -4251px 0;
+}
+
+.intl-tel-input .rs {
+    height: 14px;
+    background-position: -4273px 0;
+}
+
+.intl-tel-input .ru {
+    height: 14px;
+    background-position: -4295px 0;
+}
+
+.intl-tel-input .rw {
+    height: 14px;
+    background-position: -4317px 0;
+}
+
+.intl-tel-input .sa {
+    height: 14px;
+    background-position: -4339px 0;
+}
+
+.intl-tel-input .sb {
+    height: 10px;
+    background-position: -4361px 0;
+}
+
+.intl-tel-input .sc {
+    height: 10px;
+    background-position: -4383px 0;
+}
+
+.intl-tel-input .sd {
+    height: 10px;
+    background-position: -4405px 0;
+}
+
+.intl-tel-input .se {
+    height: 13px;
+    background-position: -4427px 0;
+}
+
+.intl-tel-input .sg {
+    height: 14px;
+    background-position: -4449px 0;
+}
+
+.intl-tel-input .sh {
+    height: 10px;
+    background-position: -4471px 0;
+}
+
+.intl-tel-input .si {
+    height: 10px;
+    background-position: -4493px 0;
+}
+
+.intl-tel-input .sj {
+    height: 15px;
+    background-position: -4515px 0;
+}
+
+.intl-tel-input .sk {
+    height: 14px;
+    background-position: -4537px 0;
+}
+
+.intl-tel-input .sl {
+    height: 14px;
+    background-position: -4559px 0;
+}
+
+.intl-tel-input .sm {
+    height: 15px;
+    background-position: -4581px 0;
+}
+
+.intl-tel-input .sn {
+    height: 14px;
+    background-position: -4603px 0;
+}
+
+.intl-tel-input .so {
+    height: 14px;
+    background-position: -4625px 0;
+}
+
+.intl-tel-input .sr {
+    height: 14px;
+    background-position: -4647px 0;
+}
+
+.intl-tel-input .ss {
+    height: 10px;
+    background-position: -4669px 0;
+}
+
+.intl-tel-input .st {
+    height: 10px;
+    background-position: -4691px 0;
+}
+
+.intl-tel-input .sv {
+    height: 12px;
+    background-position: -4713px 0;
+}
+
+.intl-tel-input .sx {
+    height: 14px;
+    background-position: -4735px 0;
+}
+
+.intl-tel-input .sy {
+    height: 14px;
+    background-position: -4757px 0;
+}
+
+.intl-tel-input .sz {
+    height: 14px;
+    background-position: -4779px 0;
+}
+
+.intl-tel-input .ta {
+    height: 10px;
+    background-position: -4801px 0;
+}
+
+.intl-tel-input .tc {
+    height: 10px;
+    background-position: -4823px 0;
+}
+
+.intl-tel-input .td {
+    height: 14px;
+    background-position: -4845px 0;
+}
+
+.intl-tel-input .tf {
+    height: 14px;
+    background-position: -4867px 0;
+}
+
+.intl-tel-input .tg {
+    height: 13px;
+    background-position: -4889px 0;
+}
+
+.intl-tel-input .th {
+    height: 14px;
+    background-position: -4911px 0;
+}
+
+.intl-tel-input .tj {
+    height: 10px;
+    background-position: -4933px 0;
+}
+
+.intl-tel-input .tk {
+    height: 10px;
+    background-position: -4955px 0;
+}
+
+.intl-tel-input .tl {
+    height: 10px;
+    background-position: -4977px 0;
+}
+
+.intl-tel-input .tm {
+    height: 14px;
+    background-position: -4999px 0;
+}
+
+.intl-tel-input .tn {
+    height: 14px;
+    background-position: -5021px 0;
+}
+
+.intl-tel-input .to {
+    height: 10px;
+    background-position: -5043px 0;
+}
+
+.intl-tel-input .tr {
+    height: 14px;
+    background-position: -5065px 0;
+}
+
+.intl-tel-input .tt {
+    height: 12px;
+    background-position: -5087px 0;
+}
+
+.intl-tel-input .tv {
+    height: 10px;
+    background-position: -5109px 0;
+}
+
+.intl-tel-input .tw {
+    height: 14px;
+    background-position: -5131px 0;
+}
+
+.intl-tel-input .tz {
+    height: 14px;
+    background-position: -5153px 0;
+}
+
+.intl-tel-input .ua {
+    height: 14px;
+    background-position: -5175px 0;
+}
+
+.intl-tel-input .ug {
+    height: 14px;
+    background-position: -5197px 0;
+}
+
+.intl-tel-input .um {
+    height: 11px;
+    background-position: -5219px 0;
+}
+
+.intl-tel-input .us {
+    height: 11px;
+    background-position: -5241px 0;
+}
+
+.intl-tel-input .uy {
+    height: 14px;
+    background-position: -5263px 0;
+}
+
+.intl-tel-input .uz {
+    height: 10px;
+    background-position: -5285px 0;
+}
+
+.intl-tel-input .va {
+    height: 15px;
+    background-position: -5307px 0;
+}
+
+.intl-tel-input .vc {
+    height: 14px;
+    background-position: -5324px 0;
+}
+
+.intl-tel-input .ve {
+    height: 14px;
+    background-position: -5346px 0;
+}
+
+.intl-tel-input .vg {
+    height: 10px;
+    background-position: -5368px 0;
+}
+
+.intl-tel-input .vi {
+    height: 14px;
+    background-position: -5390px 0;
+}
+
+.intl-tel-input .vn {
+    height: 14px;
+    background-position: -5412px 0;
+}
+
+.intl-tel-input .vu {
+    height: 12px;
+    background-position: -5434px 0;
+}
+
+.intl-tel-input .wf {
+    height: 14px;
+    background-position: -5456px 0;
+}
+
+.intl-tel-input .ws {
+    height: 10px;
+    background-position: -5478px 0;
+}
+
+.intl-tel-input .xk {
+    height: 15px;
+    background-position: -5500px 0;
+}
+
+.intl-tel-input .ye {
+    height: 14px;
+    background-position: -5522px 0;
+}
+
+.intl-tel-input .yt {
+    height: 14px;
+    background-position: -5544px 0;
+}
+
+.intl-tel-input .za {
+    height: 14px;
+    background-position: -5566px 0;
+}
+
+.intl-tel-input .zm {
+    height: 14px;
+    background-position: -5588px 0;
+}
+
+.intl-tel-input .zw {
+    height: 10px;
+    background-position: -5610px 0;
+}
+
+.intl-tel-input {
+    position: relative;
+    display: inline-block;
+}
+
+    .intl-tel-input * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .intl-tel-input .hide {
+        display: none;
+    }
+
+    .intl-tel-input .v-hide {
+        visibility: hidden;
+    }
+
+    .intl-tel-input input, .intl-tel-input input[type=text], .intl-tel-input input[type=tel] {
+        position: relative;
+        z-index: 0;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-left: 47px;
+        margin-left: 0;
+    }
+
+    .intl-tel-input .flag-dropdown {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        padding: 1px;
+    }
+
+        .intl-tel-input .flag-dropdown:hover {
+            cursor: pointer;
+        }
+
+            .intl-tel-input .flag-dropdown:hover .selected-flag {
+                background-color: rgba(0,0,0,.05);
+            }
+
+    .intl-tel-input input[disabled] + .flag-dropdown:hover {
+        cursor: default;
+    }
+
+        .intl-tel-input input[disabled] + .flag-dropdown:hover .selected-flag {
+            background-color: transparent;
+        }
+
+    .intl-tel-input .selected-flag {
+        z-index: 1;
+        position: relative;
+        width: 41px;
+        height: 100%;
+        padding: 0 0 0 5px;
+    }
+
+        .intl-tel-input .selected-flag .flag {
+            position: absolute;
+            top: 50%;
+            margin-top: -5px;
+        }
+
+        .intl-tel-input .selected-flag .arrow {
+            position: relative;
+            top: 50%;
+            margin-top: -2px;
+            left: 23px;
+            width: 0;
+            height: 0;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 4px solid #555;
+        }
+
+            .intl-tel-input .selected-flag .arrow.up {
+                border-top: 0;
+                border-bottom: 4px solid #555;
+            }
+
+    .intl-tel-input .country-list {
+        list-style: none;
+        position: absolute;
+        z-index: 2;
+        padding: 0;
+        margin: 0 0 0 -1px;
+        box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        width: 430px;
+        max-height: 200px;
+        overflow-y: scroll;
+    }
+
+        .intl-tel-input .country-list .flag {
+            display: inline-block;
+        }
+
+        .intl-tel-input .country-list .divider {
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .intl-tel-input .country-list .country {
+            padding: 5px 10px;
+        }
+
+            .intl-tel-input .country-list .country .dial-code {
+                color: #999;
+            }
+
+            .intl-tel-input .country-list .country.highlight {
+                background-color: rgba(0,0,0,.05);
+            }
+
+        .intl-tel-input .country-list .flag, .intl-tel-input .country-list .country-name {
+            margin-right: 6px;
+        }
+
+html, body, input, textarea {
+    font-family: Roboto,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background: #fff;
+    height: 100%;
+    color: #464646;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+#container {
+    height: 100%;
+    max-width: 991px;
+    margin: 0 auto;
+    overflow-y: auto;
+}
+
+    #container:before, #container:after {
+        content: "";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+
+    #container > div {
+        height: 100%;
+    }
+
+        #container > div > form {
+            height: 100%;
+        }
+
+.scrollable {
+    height: calc(100% - 80px);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.text-right {
+    text-align: right;
+}
+
+form, input, a, div {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+a {
+    color: #b6b6b6;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #6a6a6a;
+    }
+
+    a.disabled {
+        color: rgba(182,182,182,.5);
+    }
+
+        a.disabled:hover {
+            color: rgba(182,182,182,.5);
+        }
+
+    a.selected {
+        color: #6a6a6a;
+    }
+
+input.hide {
+    display: none;
+}
+
+input.hide-but-display {
+    width: 0;
+    height: 0;
+    border: 0;
+    padding: 0;
+    opacity: 0;
+    visibility: none;
+    pointer-events: none;
+    position: absolute;
+}
+
+.initially-hidden {
+    display: none;
+}
+
+.top-bar {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: center;
+    position: relative;
+    top: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    background: #fff;
+    z-index: 5;
+    max-width: 991px;
+    height: 10%;
+    min-height: 78px;
+    max-height: 78px;
+}
+
+    .top-bar .back {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+        .top-bar .back input {
+            position: relative;
+            z-index: 2;
+            background: 0 0;
+            border: 0;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: gray;
+            padding: .425em 1em;
+            font-family: Roboto,sans-serif;
+        }
+
+            .top-bar .back input:hover + svg path {
+                stroke: #000;
+            }
+
+        .top-bar .back svg {
+            height: 1.25em;
+            position: absolute;
+            left: 30%;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+            .top-bar .back svg path {
+                fill: gray;
+                stroke: gray;
+                stroke-width: 5px;
+                -webkit-transition: all ease-in-out .1s;
+                transition: all ease-in-out .1s;
+            }
+
+    .top-bar .title {
+        padding: 1em;
+    }
+
+    .top-bar .timer {
+        float: right;
+        padding: 1em;
+        color: #888;
+    }
+
+.group-name {
+    color: rgba(84,79,79,.55);
+    text-transform: uppercase;
+    margin: 1em;
+    margin-top: 2em;
+    font-weight: 500;
+}
+
+.group .item {
+    padding: .8em;
+    cursor: pointer;
+    border-top: 1px solid #eee;
+}
+
+    .group .item:hover, .group .item:focus {
+        background: #eee;
+        outline: 0;
+    }
+
+    .group .item.selected {
+        background: rgba(72,176,247,.25);
+    }
+
+        .group .item.selected .input {
+            background-image: url(//cdn-static.shedul.com/assets/online_booking/svg_checked-eb6e4aa68e52e2eaa2f194cd17e9487ee74b0aa80af5c564943ca3052fac0355.svg);
+            background-size: 45% 45%;
+            background-position: 12px;
+            background-repeat: no-repeat;
+        }
+
+    .group .item.preselected {
+        background: #f4f4f4;
+    }
+
+        .group .item.preselected .input::after {
+            display: none;
+        }
+
+        .group .item.preselected:hover {
+            background: #eee;
+        }
+
+    .group .item.without-checkbox .title {
+        margin-left: 0;
+    }
+
+    .group .item.without-checkbox .subtitle {
+        margin-left: 0;
+    }
+
+    .group .item .input {
+        float: left;
+        background: #fff;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        height: 2.5em;
+        width: 2.5em;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .group .item .input input {
+            display: none;
+        }
+
+    .group .item .input-arrow {
+        float: right;
+        height: 1.5em;
+        width: 1.5em;
+        position: relative;
+        top: .75em;
+        background-image: url(//cdn-static.shedul.com/assets/online_booking/svg_right-arrow-6be2f3045c6e48708b5b397b3bece164e32bce1511fd0e680c38d9499d206c9f.svg);
+        background-repeat: no-repeat;
+    }
+
+        .group .item .input-arrow input {
+            display: none;
+        }
+
+    .group .item .right {
+        float: right;
+        margin: 0 1em;
+        font-weight: 700;
+    }
+
+    .group .item .title {
+        margin-left: 3.5em;
+        font-size: .9375em;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .group .item .subtitle {
+        color: rgba(84,79,79,.55);
+        margin-left: 3.8em;
+        margin-top: .5em;
+        font-size: .87em;
+    }
+
+    .group .item.one-line .title {
+        margin-top: .75em;
+        margin-bottom: .75em;
+    }
+
+p.lead {
+    margin: 2em;
+    font-size: 1.25em;
+    line-height: 1.4em;
+    font-weight: 300;
+}
+
+.button {
+    display: inline-block;
+    padding: .7em 2em;
+    background: #48b0f7;
+    color: #fff;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.25em;
+}
+
+    .button:hover {
+        background: #6dc0f9;
+        color: #fff;
+    }
+
+    .button:active, .button:focus {
+        background: #3a8fc8;
+    }
+
+.summary {
+    display: table;
+    background: #2a303a;
+    color: #fff;
+    width: 100%;
+    max-width: 991px;
+    margin: 0 auto;
+}
+
+    .summary.regular {
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    .summary.floating {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .summary > div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .summary > .selection-summary {
+        padding: 1em;
+        width: 100%;
+    }
+
+        .summary > .selection-summary .text {
+            text-transform: uppercase;
+            color: gray;
+            margin-bottom: .5em;
+        }
+
+            .summary > .selection-summary .text.at-limit {
+                display: none;
+            }
+
+    .summary > .actions {
+        text-align: right;
+        background: #21262f;
+    }
+
+        .summary > .actions input {
+            background: 0 0;
+            border: 0;
+            color: #85898c;
+            text-transform: uppercase;
+            font-size: 1em;
+            cursor: pointer;
+            padding: 1.25em 3em;
+        }
+
+            .summary > .actions input:hover, .summary > .actions input:focus {
+                color: #fff;
+            }
+
+#error-presenter {
+    position: relative;
+    text-align: center;
+    padding: 1em;
+    background: #222;
+    color: #ddd;
+}
+
+    #error-presenter .error {
+        margin: .25em;
+    }
+
+    #error-presenter a.close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #aaa;
+        padding: 10px 15px;
+    }
+
+        #error-presenter a.close:hover, #error-presenter a.close:focus {
+            color: #ccc;
+        }
+
+#online-booking-services-form.at-limit .item:not(.selected) {
+    color: gray;
+}
+
+    #online-booking-services-form.at-limit .item:not(.selected):hover {
+        background: 0 0;
+    }
+
+#online-booking-services-form.at-limit .summary > .selection-summary .text.normal {
+    display: none;
+}
+
+#online-booking-services-form.at-limit .summary > .selection-summary .text.at-limit {
+    display: block;
+}
+
+#online-booking-services-form .summary {
+    display: none;
+}
+
+    #online-booking-services-form .summary .floating {
+        position: relative;
+    }
+
+#online-booking-services-form.any-items .scrollable {
+    height: calc(100% - 160px);
+}
+
+#online-booking-services-form.any-items .summary {
+    display: block;
+}
+
+#online-booking-services-form .group .item .right {
+    margin-top: 0;
+}
+
+#online-booking-services-form .group .right {
+    font-size: .9375em;
+    font-weight: 500;
+}
+
+@media(max-width:767px) {
+    #online-booking-services-form .group .right {
+        font-weight: 300;
+    }
+}
+
+#online-booking-services-form .special-price {
+    color: #ef6e68;
+}
+
+#online-booking-time-slot-form table#week-calendar {
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    top: 0;
+    background: #fff;
+    z-index: 5;
+    max-width: 991px;
+}
+
+    #online-booking-time-slot-form table#week-calendar td {
+        padding: 0;
+    }
+
+    #online-booking-time-slot-form table#week-calendar a {
+        display: block;
+    }
+
+        #online-booking-time-slot-form table#week-calendar a.arrow {
+            font-size: 3em;
+            font-family: Roboto,sans-serif;
+        }
+
+            #online-booking-time-slot-form table#week-calendar a.arrow svg {
+                height: 40px;
+            }
+
+                #online-booking-time-slot-form table#week-calendar a.arrow svg path {
+                    fill: #b6b6b6;
+                    -webkit-transition: all ease-in-out .1s;
+                    transition: all ease-in-out .1s;
+                }
+
+            #online-booking-time-slot-form table#week-calendar a.arrow.disabled svg path {
+                fill: rgba(182,182,182,.5);
+            }
+
+            #online-booking-time-slot-form table#week-calendar a.arrow.disabled:hover svg path {
+                fill: rgba(182,182,182,.5);
+            }
+
+            #online-booking-time-slot-form table#week-calendar a.arrow:hover svg path {
+                fill: #6a6a6a;
+            }
+
+    #online-booking-time-slot-form table#week-calendar .week-day-name, #online-booking-time-slot-form table#week-calendar .month-name {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    #online-booking-time-slot-form table#week-calendar .day-number {
+        display: inline-block;
+        margin: .25em;
+        padding: .5em;
+        border-radius: 100%;
+        min-width: 1em;
+        color: #6a6a6a;
+        font-weight: 700;
+    }
+
+    #online-booking-time-slot-form table#week-calendar a.disabled .day-number {
+        color: #b6b6b6;
+    }
+
+    #online-booking-time-slot-form table#week-calendar a.selected .day-number {
+        background: #48b0f7;
+        color: #fff;
+    }
+
+#online-booking-time-slot-form .time-slots-status p {
+    margin: 3em 2em .5em;
+}
+
+#online-booking-time-slot-form .time-slots-status a.button {
+    margin: .5em 2em;
+}
+
+#online-booking-time-slot-form .time-slots-status.time-slots-fetching {
+    text-align: center;
+    padding-top: 6em;
+}
+
+#online-booking-time-slot-form .time-slots-status.time-slots-fetching-error {
+    text-align: center;
+}
+
+#online-booking-time-slot-form div.time-slots-available {
+    height: calc(100% - 200px);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#online-booking-time-slot-form .try-any-employee-note {
+    text-align: center;
+    padding: 1em 2em .25em;
+    color: #6a6a6a;
+    font-size: 1.05em;
+    line-height: 1.3em;
+}
+
+#online-booking-timeout-form, #online-booking-disabled-form, #online-booking-time-slot-form .time-slots-unavailable, #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff, #online-booking-welcome {
+    text-align: center;
+}
+
+    #online-booking-timeout-form svg, #online-booking-disabled-form svg, #online-booking-time-slot-form .time-slots-unavailable svg, #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff svg, #online-booking-welcome svg {
+        height: 100px;
+        margin-top: 80px;
+    }
+
+        #online-booking-timeout-form svg path, #online-booking-disabled-form svg path, #online-booking-time-slot-form .time-slots-unavailable svg path, #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff svg path, #online-booking-welcome svg path {
+            fill: #b6b6b6;
+        }
+
+    #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff .fit-width {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff svg {
+        margin-top: 40px;
+    }
+
+@media screen and (max-height:490px) {
+    #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff svg {
+        display: none;
+    }
+}
+
+#online-booking-time-slot-form .time-slots-unavailable-for-selected-staff p {
+    margin-top: 20px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+#online-booking-time-slot-form .time-slots-unavailable-for-selected-staff .actions {
+    margin-top: 25px;
+}
+
+@media screen and (max-height:350px) {
+    #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff .actions {
+        margin-top: 15px;
+    }
+}
+
+#online-booking-time-slot-form .time-slots-unavailable-for-selected-staff .button {
+    display: block;
+    margin-top: 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@media screen and (max-width:350px) {
+    #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff .button {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+@media screen and (max-height:350px) {
+    #online-booking-time-slot-form .time-slots-unavailable-for-selected-staff .button {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+}
+
+#online-booking-disabled-form a {
+    text-decoration: underline;
+}
+
+#online-booking-complete-form {
+    text-align: center;
+}
+
+#online-booking-confirm-form .top-bar .title {
+    padding-left: 3.5em;
+}
+
+#online-booking-confirm-form .columns {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: calc(100% - 80px);
+}
+
+    #online-booking-confirm-form .columns > div {
+        float: left;
+    }
+
+        #online-booking-confirm-form .columns > div > .title {
+            color: rgba(84,79,79,.55);
+            text-transform: uppercase;
+            padding: 1em;
+            padding-left: 0;
+            margin-top: 2em;
+            border-bottom: 1px solid #eee;
+            margin: 1em;
+            font-weight: 500;
+        }
+
+    #online-booking-confirm-form .columns > .form-column {
+        width: 55%;
+    }
+
+    #online-booking-confirm-form .columns > .summary-column {
+        width: 45%;
+    }
+
+        #online-booking-confirm-form .columns > .summary-column > .title {
+            margin-bottom: 1.5em;
+        }
+
+#online-booking-confirm-form .service-item {
+    margin: 1em 0;
+}
+
+    #online-booking-confirm-form .service-item .title {
+        padding: .2em 1em;
+    }
+
+        #online-booking-confirm-form .service-item .title a {
+            font-size: 1.2em;
+            color: #464646;
+        }
+
+            #online-booking-confirm-form .service-item .title a:hover {
+                color: #000;
+            }
+
+    #online-booking-confirm-form .service-item .subtitle {
+        color: #888;
+        margin: 1em 2em;
+        display: none;
+    }
+
+    #online-booking-confirm-form .service-item .description {
+        color: #666;
+        line-height: 1.4em;
+        margin: 1em 2em;
+        display: none;
+    }
+
+    #online-booking-confirm-form .service-item.open .subtitle, #online-booking-confirm-form .service-item.open .description {
+        display: block;
+    }
+
+#online-booking-confirm-form .summary-item {
+    margin: 2em 1em;
+}
+
+    #online-booking-confirm-form .summary-item .title {
+        color: #b6b6b6;
+    }
+
+    #online-booking-confirm-form .summary-item .content {
+        font-size: 1.2em;
+        margin: .5em 1em;
+        font-weight: 300;
+    }
+
+#online-booking-confirm-form .side-by-side {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+    #online-booking-confirm-form .side-by-side .form-group {
+        float: left;
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+        #online-booking-confirm-form .side-by-side .form-group:nth-child(1) {
+            padding-right: .35em;
+        }
+
+        #online-booking-confirm-form .side-by-side .form-group:nth-child(2) {
+            padding-left: .35em;
+        }
+
+#online-booking-confirm-form .form-group {
+    padding: 0 1em .75em;
+    position: relative;
+}
+
+    #online-booking-confirm-form .form-group.hidden {
+        padding: 0;
+    }
+
+    #online-booking-confirm-form .form-group label {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 13px;
+    }
+
+    #online-booking-confirm-form .form-group input, #online-booking-confirm-form .form-group textarea {
+        font-size: 1em;
+        padding: .5em;
+        margin: .5em 0;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        resize: none;
+        border: 1px solid #c2c2c2;
+        border-radius: 2px;
+    }
+
+        #online-booking-confirm-form .form-group input:focus, #online-booking-confirm-form .form-group textarea:focus {
+            border-color: #888;
+        }
+
+    #online-booking-confirm-form .form-group.boolean {
+        position: relative;
+        padding-top: .5em;
+    }
+
+        #online-booking-confirm-form .form-group.boolean label {
+            padding-left: 1em;
+            margin-left: .5em;
+            text-transform: none;
+            color: #666;
+            font-weight: 400;
+            font-size: 1em;
+        }
+
+        #online-booking-confirm-form .form-group.boolean input {
+            position: absolute;
+            top: .75em;
+            left: 1em;
+            width: auto;
+            padding: 0;
+            margin: 0;
+        }
+
+        #online-booking-confirm-form .form-group.boolean abbr {
+            display: none;
+        }
+
+    #online-booking-confirm-form .form-group.error input, #online-booking-confirm-form .form-group.error textarea {
+        border-color: #ef6e68;
+    }
+
+    #online-booking-confirm-form .form-group.error label {
+        color: #ef6e68;
+    }
+
+    #online-booking-confirm-form .form-group .intl-tel-input {
+        width: 100%;
+        margin: .5em 0;
+    }
+
+        #online-booking-confirm-form .form-group .intl-tel-input input {
+            padding-left: 44px;
+        }
+
+    #online-booking-confirm-form .form-group abbr {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        color: #ef6e68;
+        font-size: 1.25em;
+        z-index: 1;
+    }
+
+    #online-booking-confirm-form .form-group:nth-child(1) abbr {
+        right: 15px;
+    }
+
+#online-booking-confirm-form .actions {
+    margin: .5em 1em;
+}
+
+    #online-booking-confirm-form .actions .disabled {
+        pointer-events: none;
+        opacity: .5;
+    }
+
+    #online-booking-confirm-form .actions .button {
+        -webkit-appearance: button;
+    }
+
+#online-booking-confirm-form .cancellation {
+    margin-bottom: 1em;
+}
+
+    #online-booking-confirm-form .cancellation .title {
+        font-weight: 700;
+        margin: 1em;
+    }
+
+    #online-booking-confirm-form .cancellation p {
+        color: #6a6a6a;
+        margin: .5em 1em;
+    }
+
+#online-booking-welcome input.book-now-button {
+    margin-top: 1.5em;
+    background: #48b0f7;
+    color: #fff;
+    padding: .65em 1.75em;
+    font-size: 1.2em;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+    #online-booking-welcome input.book-now-button:hover {
+        background: #6dc0f9;
+    }
+
+    #online-booking-welcome input.book-now-button:active, #online-booking-welcome input.book-now-button:focus {
+        background: #3a8fc8;
+    }
+
+#online-booking-welcome a.book-now-button {
+    margin-top: 1.5em;
+    background: #48b0f7;
+    color: #fff;
+    padding: .65em 1.75em;
+    font-size: 1.2em;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+    #online-booking-welcome a.book-now-button:hover {
+        background: #6dc0f9;
+    }
+
+    #online-booking-welcome a.book-now-button:active, #online-booking-welcome a.book-now-button:focus {
+        background: #3a8fc8;
+    }
+
+.logo-text {
+    color: #6a6a6a;
+    margin-top: 80px;
+}
+
+@media(min-width:991px) {
+    #container {
+        border-right: 1px solid #c2c2c2;
+        border-left: 1px solid #c2c2c2;
+    }
+}
+
+@media screen and (max-device-width:768px),screen and (max-width:768px) {
+    #online-booking-confirm-form .columns > .form-column, #online-booking-confirm-form .columns > .summary-column {
+        width: 100%;
+        float: none;
+    }
+}
+
+@media screen and (max-device-width:767px),screen and (max-width:767px) {
+    #container {
+        overflow-y: hidden;
+    }
+
+        #container > div {
+            height: 100%;
+        }
+
+            #container > div > form {
+                height: 100%;
+            }
+
+    .top-bar {
+        height: 9%;
+        min-height: 45px;
+        max-height: 45px;
+        position: relative;
+    }
+
+        .top-bar .title, .top-bar .timer {
+            font-size: .8em;
+            padding: .5em;
+        }
+
+        .top-bar .back input {
+            padding: 0 .75em;
+        }
+
+        .top-bar .back svg {
+            height: .6em;
+            top: 45%;
+        }
+
+    .group-name {
+        font-size: 15px;
+        margin-bottom: .5em;
+        margin-top: 1.5em;
+    }
+
+    .group .item {
+        font-weight: 300;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 12px;
+    }
+
+        .group .item .title {
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 2.5em;
+            max-width: 200px;
+        }
+
+        .group .item .subtitle {
+            font-size: 12px;
+            margin-left: 2.9em;
+        }
+
+        .group .item .input {
+            height: 1.5em;
+            width: 1.5em;
+            top: .45em;
+        }
+
+        .group .item .input-arrow {
+            height: 13px;
+            width: 13px;
+        }
+
+        .group .item .right {
+            margin-right: 0;
+        }
+
+        .group .item.selected .input:after {
+            left: 6px;
+            top: 45%;
+            width: 13px;
+        }
+
+        .group .item.selected .input {
+            background-position: 7px;
+            background-size: 50% 50%;
+        }
+
+        .group .item:last-of-type {
+            border-bottom: 1px solid #eee;
+        }
+
+    .scrollable {
+        height: calc(100% - 45px);
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #online-booking-services-form.fb-browser .scrollable {
+        height: 80%;
+    }
+
+    #online-booking-services-form.any-items .summary {
+        font-size: 12px;
+        display: table;
+        table-layout: fixed;
+    }
+
+        #online-booking-services-form.any-items .summary .selection-summary {
+            padding: .25em .75em;
+            width: 50%;
+        }
+
+        #online-booking-services-form.any-items .summary .actions {
+            text-align: center;
+        }
+
+    #online-booking-services-form.any-items .scrollable {
+        height: calc(100% - 90px);
+    }
+
+    #online-booking-services-form.any-items .regular.summary {
+        display: none;
+    }
+
+    #online-booking-services-form.any-items .floating.summary {
+        position: relative;
+    }
+
+    #online-booking-services-form.any-items.fb-browser .scrollable {
+        height: 80%;
+    }
+
+    #online-booking-services-form.any-items.fb-browser .floating.summary {
+        position: fixed;
+    }
+
+    #online-booking-time-slot-form table#week-calendar {
+        top: 0;
+        padding: 10px 0;
+        font-size: 90%;
+        position: relative;
+    }
+
+        #online-booking-time-slot-form table#week-calendar a.arrow svg {
+            height: 30px;
+        }
+
+        #online-booking-time-slot-form table#week-calendar .day-number {
+            min-width: 1.2em;
+        }
+
+    #online-booking-time-slot-form div.time-slots-available {
+        height: calc(100% - 140px);
+        overflow-y: scroll;
+    }
+
+    #online-booking-confirm-form .form-group {
+        padding-bottom: .2em;
+    }
+
+        #online-booking-confirm-form .form-group.boolean label {
+            font-size: 13px;
+        }
+
+    #online-booking-confirm-form .columns > div > .title {
+        margin: .5em 0 1em;
+        padding-bottom: 5px;
+        padding-left: 1em;
+        font-size: 15px;
+    }
+
+    #online-booking-confirm-form .side-by-side .form-group {
+        float: none;
+        width: 100%;
+    }
+
+        #online-booking-confirm-form .side-by-side .form-group:nth-child(1) {
+            padding-right: 1em;
+        }
+
+            #online-booking-confirm-form .side-by-side .form-group:nth-child(1) abbr {
+                right: 25px;
+            }
+
+        #online-booking-confirm-form .side-by-side .form-group:nth-child(2) {
+            padding-left: 1em;
+        }
+
+    #online-booking-confirm-form .actions {
+        margin-bottom: .5em;
+    }
+
+        #online-booking-confirm-form .actions .button {
+            width: 100%;
+            font-size: .9em;
+            -webkit-appearance: button;
+        }
+
+    #online-booking-confirm-form .service-item .title, #online-booking-confirm-form .service-item .content, #online-booking-confirm-form .summary-item .title, #online-booking-confirm-form .summary-item .content {
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+        #online-booking-confirm-form .service-item .title a, #online-booking-confirm-form .service-item .content a, #online-booking-confirm-form .summary-item .title a, #online-booking-confirm-form .summary-item .content a {
+            font-size: 15px;
+        }
+
+    #online-booking-confirm-form .service-item .subtitle, #online-booking-confirm-form .summary-item .subtitle {
+        font-size: 12px;
+    }
+
+    #online-booking-confirm-form .service-item {
+        margin: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #eee;
+    }
+
+        #online-booking-confirm-form .service-item.open {
+            padding-bottom: 0;
+        }
+
+    #online-booking-confirm-form .summary-item {
+        margin: 1em;
+    }
+
+    #online-booking-confirm-form .summary-column .title {
+        margin-bottom: 0 !important;
+    }
+
+    #online-booking-timeout-form svg, #online-booking-disabled-form svg, #online-booking-complete-form svg, #online-booking-time-slot-form .time-slots-unavailable svg {
+        height: 80px;
+        margin-top: 40px;
+    }
+
+    #online-booking-timeout-form p.lead, #online-booking-disabled-form p.lead, #online-booking-complete-form p.lead, #online-booking-time-slot-form .time-slots-unavailable p.lead {
+        margin: 1em 1em 1.5em;
+        font-size: 1em;
+    }
+
+        #online-booking-timeout-form p.lead br, #online-booking-disabled-form p.lead br, #online-booking-complete-form p.lead br, #online-booking-time-slot-form .time-slots-unavailable p.lead br {
+            display: none;
+        }
+
+    #online-booking-timeout-form .button-container, #online-booking-disabled-form .button-container, #online-booking-complete-form .button-container, #online-booking-time-slot-form .time-slots-unavailable .button-container {
+        padding: 0 1em;
+    }
+
+    #online-booking-timeout-form .button, #online-booking-disabled-form .button, #online-booking-complete-form .button, #online-booking-time-slot-form .time-slots-unavailable .button {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    #online-booking-timeout-form .logo-text, #online-booking-disabled-form .logo-text, #online-booking-complete-form .logo-text, #online-booking-time-slot-form .time-slots-unavailable .logo-text {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+    }
+
+        #online-booking-timeout-form .logo-text p, #online-booking-disabled-form .logo-text p, #online-booking-complete-form .logo-text p, #online-booking-time-slot-form .time-slots-unavailable .logo-text p {
+            font-size: 12px;
+        }
+
+        #online-booking-timeout-form .logo-text img, #online-booking-disabled-form .logo-text img, #online-booking-complete-form .logo-text img, #online-booking-time-slot-form .time-slots-unavailable .logo-text img {
+            width: 100px;
+        }
+
+    #online-booking-complete-form .button {
+        padding: 1em 0;
+    }
+
+    #online-booking-complete-form p.lead {
+        margin-top: 2em;
+    }
+}
+
+@media(min-width:501px) {
+    #online-booking-time-slot-form table#week-calendar.mobile-table tbody tr td:nth-child(n+7):nth-child(-n+8) {
+        display: none;
+    }
+}
+
+@media(max-width:500px) {
+    #online-booking-time-slot-form table#week-calendar:not(.mobile-week-calendar) tbody tr td:nth-child(n+7):nth-child(-n+8) {
+        display: none;
+    }
+}

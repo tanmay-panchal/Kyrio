@@ -1,0 +1,1139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A0BC620-35BE-4C41-AD8A-BC07EFDA7F68}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdminClient</RootNamespace>
+    <AssemblyName>AdminClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleNotificationService">
+      <HintPath>C:\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.SimpleNotificationService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Enum.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enum.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Function.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Function.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\HomeAdminController.cs" />
+    <Compile Include="Controllers\UpdateHistory.cs" />
+    <Compile Include="Controllers\TestController .cs" />
+    <Compile Include="Controllers\BusinessController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\AdminSettingController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\OnlineBookingsController.cs" />
+    <Compile Include="Controllers\OnlineBookingSettingController.cs" />
+    <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\Global\BaseController.cs" />
+    <Compile Include="Controllers\Global\BaseRequestAjax.cs" />
+    <Compile Include="Controllers\Global\CheckPermision.cs" />
+    <Compile Include="Controllers\Global\ReportsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\SetupController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Library\CryptorEngine.cs" />
+    <Compile Include="Library\Email.cs" />
+    <Compile Include="Library\EntityHelp.cs" />
+    <Compile Include="Library\Enum.cs" />
+    <Compile Include="Library\ExcuteFile.cs" />
+    <Compile Include="Library\XML.cs" />
+    <Compile Include="Models\Appointment.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppointmentColor.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppointmentService.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AvailableFor.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BlockTime.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Brand.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Business.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BusinessSetting.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BusinessType.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CancellationReason.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Client.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClosedDate.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClosedDate_Location.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Config.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Currency.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DefaultColor.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dial_Code.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Discount.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Duration.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExcuteData\ExcuteData_UserWorkingHour.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Message.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_AppointmentService.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Location.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Client.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_CloseDay.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_DialCode.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Resource.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Country.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Currency.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Service.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_TimeZone.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Main.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_Appointment.cs" />
+    <Compile Include="Models\ExcuteData\ExcuteData_User.cs" />
+    <Compile Include="Models\ExtraTimeType.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Function.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvoiceDetail.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvoicePayment.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvoiceTip.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LangString.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogException.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Message.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderProduct.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentType.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PermissionLevel.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PricingType.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductLocation.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductStockMovement.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReferralSource.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResetPassword.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Resource.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceDuration.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceGroup.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceResource.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceStaff.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StatusUser.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supplier.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SYS_PACKAGE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tax.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaxLocation.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_APPOINTMENT_REMINDER.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_SMS.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeFormat.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeSlotInterval.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TimeZone.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tooltip.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TreatmentType.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UpdateHistory.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserLocation.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserWorkingHour.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Voucher.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VoucherExpiryPeriod.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_APPOINTMENT_REMINDER.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_APPOINTMENT_SERVICE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_BUSINESS.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_CLIENT.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_INVOICE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_INVOICE_DETAIL.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_INVOICE_PAYMENT.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_MESSAGE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_ORDER.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_PRODUCT.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_PRODUCT_BUSINESS.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_PRODUCT_STOCK_MOVEMENT.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_SERVICE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_TBL_APPOINTMENT_SERVICE.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_TBL_USER_WORKING_HOUR.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_VOUCHER.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContentHtml\AddClient\Mobile\Index.html" />
+    <Content Include="ContentHtml\AddClient\Mobile\ItemSearchClient.html" />
+    <Content Include="ContentHtml\AddComboboxService\Mobile\Index.html" />
+    <Content Include="ContentHtml\AddComboboxService\Mobile\Service.html" />
+    <Content Include="ContentHtml\AddComboboxService\Mobile\ServiceGroup.html" />
+    <Content Include="ContentHtml\AddOrEditClient\Mobile\Index.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\StartTime24hCombobox.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\StartTime12hCombobox.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\GroupServiceCombobox.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\ServiceItemCombobox.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\Index.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\ClientSeriveItem.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\ConverContentLeft.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\ClientSearchItem.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\ClientDetailInforEmty.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\Repeat.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\ClientList.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\ClientDetail.html" />
+    <Content Include="ContentHtml\Appointment\Action\Desktop\ClientEmty.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\AppointmentService\Index.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\ContentShare\ServiceShare.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Control\Duration.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Control\Resource.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Control\Staff_IsRequest.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Control\Starttime12h.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Control\Starttime24h.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Index\AppointmentService\Item.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Index\Client\Detail.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Index\Client\Empty.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Index\index.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Index\Notify\UpdateAllOrOnly.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Index\Repeat_ScheulDate\Index.html" />
+    <Content Include="ContentHtml\Appointment\Action\Mobile\Repeate_ScheulDate\Index.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\AppointmentHistory.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ArrayButtonFooterInvoice.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ButtonStatusCancelled.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\InvoiceComplete.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\InvoiceUnpaid.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\InvoicePartUnpaid.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\NoInvoice.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ArrayButtonFooterNoShow.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ArrayButtonFooter.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ButtonStatusNoShow.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ButtonStatusArrived.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ButtonStatusConfirmed.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ButtonStatusNewAppointment.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ButtonStatusStarted.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\Index.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\TotalServiceItem.html" />
+    <Content Include="ContentHtml\Appointment\View\Desktop\ServiceItem.html" />
+    <Content Include="ContentHtml\CheckOut\Desktop\ItemTipDetail.html" />
+    <Content Include="ContentHtml\CheckOut\Desktop\ItemTip.html" />
+    <Content Include="ContentHtml\CheckOut\Desktop\ItemPayment.html" />
+    <Content Include="ContentHtml\CheckOut\Desktop\ModalPaymentDetails.html" />
+    <Content Include="ContentHtml\CheckOut\Desktop\ModalInvoiceDetails.html" />
+    <Content Include="ContentHtml\CheckOut\Desktop\ModalTip.html" />
+    <Content Include="ContentHtml\CheckOut\Desktop\ModalGiftVoucher.html" />
+    <Content Include="ContentHtml\CheckOut\Desktop\Item.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\ClientDetail.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\LineAppointments.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\NoAppointment.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\NoInvoice.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\NoProduct.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\TabAppointments.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\TabInfo.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\TabProducts.html" />
+    <Content Include="ContentHtml\Client\Desktop\Detail\Index.html" />
+    <Content Include="ContentHtml\Client\Desktop\Search\Index.html" />
+    <Content Include="ContentHtml\Client\Desktop\Search\ClientSearchItem.html" />
+    <Content Include="ContentHtml\ComboboxTime\Combobox12h.html" />
+    <Content Include="ContentHtml\ComboboxTime\Combobox24h.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Appointment\Index.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Appointment\Item.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Index.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Info\Index.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Info\Item.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Invoice\Index.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Invoice\Item.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Product\Index.html" />
+    <Content Include="ContentHtml\DetailClient\Mobile\Product\Item.html" />
+    <Content Include="ContentHtml\Invoice\Email.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentHtml\Invoice\Email_V2.html" />
+    <Content Include="ContentHtml\Search\Index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentHtml\Staff\Modal.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\kyrio.css" />
+    <Content Include="Content\coretheme.min.css" />
+    <Content Include="Content\Roboto-font\font-roboto.css" />
+    <Content Include="Extension\css\bootstrap-big-grid.min.css" />
+    <Content Include="Extension\css\bootstrap-colorpicker.css" />
+    <Content Include="Extension\css\buttons.dataTables.min.css" />
+    <Content Include="Extension\css\chart.css" />
+    <Content Include="Extension\css\chart.min.css" />
+    <Content Include="Extension\css\codemirror.min.css" />
+    <Content Include="Extension\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Extension\css\daterangepicker.css" />
+    <Content Include="Extension\css\daterangepicker.min.css" />
+    <Content Include="Extension\css\flag-icon.min.css" />
+    <Content Include="Extension\css\font-awesome.min.css" />
+    <Content Include="Extension\css\fullcalendar.min.css" />
+    <Content Include="Extension\css\fullcalendar.print.min.css" />
+    <Content Include="Extension\css\gauge.css" />
+    <Content Include="Extension\css\gauge.min.css" />
+    <Content Include="Extension\css\green.png" />
+    <Content Include="Extension\css\icheck.css" />
+    <Content Include="Extension\css\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Extension\css\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Extension\css\intlTelInput.css" />
+    <Content Include="Extension\css\ionRangeSlider.css" />
+    <Content Include="Extension\css\ionRangeSlider.min.css" />
+    <Content Include="Extension\css\jquery-boostrap-modal-wizard.css" />
+    <Content Include="Extension\css\jquery-ui.min.css" />
+    <Content Include="Extension\css\ladda-themeless.min.css" />
+    <Content Include="Extension\css\online_booking.css" />
+    <Content Include="Extension\css\PNotifyBrightTheme.css" />
+    <Content Include="Extension\css\quill.snow.min.css" />
+    <Content Include="Extension\css\rowReorder.dataTables.min.css" />
+    <Content Include="Extension\css\scheduler.min.css" />
+    <Content Include="Extension\css\select.dataTables.min.css" />
+    <Content Include="Extension\css\select2.css" />
+    <Content Include="Extension\css\select2.min.css" />
+    <Content Include="Extension\css\simple-line-icons.min.css" />
+    <Content Include="Extension\css\datepicker-mode.css" />
+    <Content Include="Extension\css\spinkit.min.css" />
+    <Content Include="Extension\css\toastr.css" />
+    <Content Include="Extension\css\toastr.min.css" />
+    <Content Include="Extension\fonts\fontawesome-webfont.svg" />
+    <Content Include="Extension\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Extension\img\green%402x.png" />
+    <Content Include="Extension\img\sprite-skin-modern.png" />
+    <Content Include="Extension\img\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Extension\img\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Extension\img\ui-bg_highlight-hard_20_0972a5_1x100.png" />
+    <Content Include="Extension\img\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Extension\img\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Extension\img\ui-bg_highlight-soft_33_003147_1x100.png" />
+    <Content Include="Extension\img\ui-bg_highlight-soft_35_222222_1x100.png" />
+    <Content Include="Extension\img\ui-bg_highlight-soft_44_444444_1x100.png" />
+    <Content Include="Extension\img\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Extension\img\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Extension\img\ui-bg_loop_25_000000_21x21.png" />
+    <Content Include="Extension\img\ui-icons_0073ea_256x240.png" />
+    <Content Include="Extension\img\ui-icons_222222_256x240.png" />
+    <Content Include="Extension\img\ui-icons_454545_256x240.png" />
+    <Content Include="Extension\img\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Extension\img\ui-icons_666666_256x240.png" />
+    <Content Include="Extension\img\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Extension\img\ui-icons_a83300_256x240.png" />
+    <Content Include="Extension\img\ui-icons_cccccc_256x240.png" />
+    <Content Include="Extension\img\ui-icons_ff0084_256x240.png" />
+    <Content Include="Extension\img\ui-icons_ffffff_256x240.png" />
+    <Content Include="Extension\js\bootstrap-colorpicker.js" />
+    <Content Include="Extension\js\dataTables.select.min.js" />
+    <Content Include="Extension\js\datepicker-mode.js" />
+    <Content Include="Extension\js\bootstrap.min.js" />
+    <Content Include="Extension\js\buttons.html5.min.js" />
+    <Content Include="Extension\js\buttons.print.min.js" />
+    <Content Include="Extension\js\Chart.min.js" />
+    <Content Include="Extension\js\codemirror.min.js" />
+    <Content Include="Extension\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Extension\js\dataTables.buttons.min.js" />
+    <Content Include="Extension\js\dataTables.rowReorder.min.js" />
+    <Content Include="Extension\js\daterangepicker.min.js" />
+    <Content Include="Extension\js\fullcalendar.min.js" />
+    <Content Include="Extension\js\gauge.min.js" />
+    <Content Include="Extension\js\gcal.min.js" />
+    <Content Include="Extension\js\icheck.min.js" />
+    <Content Include="Extension\js\inputmask.min.js" />
+    <Content Include="Extension\js\inputmask.numeric.extensions.min.js" />
+    <Content Include="Extension\js\intlTelInput.min.js" />
+    <Content Include="Extension\js\ion.rangeSlider.min.js" />
+    <Content Include="Extension\js\jquery-boostrap-modal-wizard.js" />
+    <Content Include="Extension\js\jquery-ui.min.js" />
+    <Content Include="Extension\js\jquery.dataTables.min.js" />
+    <Content Include="Extension\js\jquery.inputmask.bundle.min.js" />
+    <Content Include="Extension\js\jquery.maskedinput.min.js" />
+    <Content Include="Extension\js\jquery.min.js" />
+    <Content Include="Extension\js\jquery.number.min.js" />
+    <Content Include="Extension\js\jquery.validate.min.js" />
+    <Content Include="Extension\js\jszip.min.js" />
+    <Content Include="Extension\js\ladda.min.js" />
+    <Content Include="Extension\js\markdown.min.js" />
+    <Content Include="Extension\js\moment-timezone-with-data.min.js" />
+    <Content Include="Extension\js\moment-timezone.js" />
+    <Content Include="Extension\js\moment.min.js" />
+    <Content Include="Extension\js\Numeral-js-master\formats\bps.js" />
+    <Content Include="Extension\js\Numeral-js-master\formats\bytes.js" />
+    <Content Include="Extension\js\Numeral-js-master\formats\currency.js" />
+    <Content Include="Extension\js\Numeral-js-master\formats\exponential.js" />
+    <Content Include="Extension\js\Numeral-js-master\formats\ordinal.js" />
+    <Content Include="Extension\js\Numeral-js-master\formats\percentage.js" />
+    <Content Include="Extension\js\Numeral-js-master\formats\time.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\bg.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\chs.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\cs.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\da-dk.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\de-ch.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\de.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\en-au.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\en-gb.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\en-za.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\es-es.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\es.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\et.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\fi.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\fr-ca.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\fr-ch.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\fr.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\hu.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\it.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\ja.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\lv.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\nl-be.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\nl-nl.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\no.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\pl.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\pt-br.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\pt-pt.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\ru-ua.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\ru.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\sk.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\sl.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\th.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\tr.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\uk-ua.js" />
+    <Content Include="Extension\js\Numeral-js-master\locales\vi.js" />
+    <Content Include="Extension\js\Numeral-js-master\numeral.js" />
+    <Content Include="Extension\js\pace.min.js" />
+    <Content Include="Extension\js\pdfmake.min.js" />
+    <Content Include="Extension\js\PNotify.js" />
+    <Content Include="Extension\js\PNotifyAnimate.js" />
+    <Content Include="Extension\js\PNotifyButtons.js" />
+    <Content Include="Extension\js\PNotifyCallbacks.js" />
+    <Content Include="Extension\js\PNotifyConfirm.js" />
+    <Content Include="Extension\js\PNotifyDesktop.js" />
+    <Content Include="Extension\js\PNotifyHistory.js" />
+    <Content Include="Extension\js\PNotifyMobile.js" />
+    <Content Include="Extension\js\PNotifyNonBlock.js" />
+    <Content Include="Extension\js\PNotifyReference.js" />
+    <Content Include="Extension\js\PNotifyStyleMaterial.js" />
+    <Content Include="Extension\js\popper.min.js" />
+    <Content Include="Extension\js\purl.js" />
+    <Content Include="Extension\js\quill.min.js" />
+    <Content Include="Extension\js\scheduler.min.js" />
+    <Content Include="Extension\js\select2.min.js" />
+    <Content Include="Extension\js\spin.min.js" />
+    <Content Include="Extension\js\toastr.min.js" />
+    <Content Include="Extension\js\utils.js" />
+    <Content Include="Extension\js\vfs_fonts.js" />
+    <Content Include="Extension\js\xml.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Extension\img\flags%402x.png" />
+    <Content Include="Extension\img\flags.png" />
+    <Content Include="img\icon_calendar.png" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\welcome_1.jpg" />
+    <Content Include="img\welcome_2.jpg" />
+    <Content Include="Models\ModelEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelEntity.edmx</DependentUpon>
+      <LastGenOutput>ModelEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelEntity.edmx</DependentUpon>
+      <LastGenOutput>ModelEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\admin\updatehistory.js" />
+    <Content Include="Scripts\admin\business.js" />
+    <Content Include="Scripts\admin\package.js" />
+    <Content Include="Scripts\admin\clientnotifications.js" />
+    <Content Include="Scripts\admin\sitesetup.js" />
+    <Content Include="Scripts\calendar\AddClient\mobile-action-addClient.js" />
+    <Content Include="Scripts\calendar\AddComboboxService\mobile-action-comboboxService.js" />
+    <Content Include="Scripts\calendar\AddOrEditClient\mobile-action-addOrEditClient.js" />
+    <Content Include="Scripts\calendar\addsale_v2.js" />
+    <Content Include="Scripts\calendar\Appointment\create-appointment.js" />
+    <Content Include="Scripts\calendar\Appointment\cut-copy-appointment.js" />
+    <Content Include="Scripts\calendar\Appointment\mobile-action-appointment.js" />
+    <Content Include="Scripts\calendar\DetailClient\mobile-action-detailClient.js" />
+    <Content Include="Scripts\calendar\viewsale.js" />
+    <Content Include="Scripts\calendar\Appointment\destop-view-appointment.js" />
+    <Content Include="Scripts\calendar\Appointment\destop-action-appointment.js" />
+    <Content Include="Scripts\calendar\addsale.js" />
+    <Content Include="Scripts\calendar\client.js" />
+    <Content Include="Scripts\calendar\index.js" />
+    <Content Include="Scripts\calendar\schedul.js" />
+    <Content Include="Scripts\client\popup-client.js" />
+    <Content Include="Scripts\client\view.js" />
+    <Content Include="Scripts\coretheme.js" />
+    <Content Include="Scripts\embed_button.js" />
+    <Content Include="Scripts\global\globalFunction.js" />
+    <Content Include="Scripts\global\globalParameter.js" />
+    <Content Include="Scripts\global\mainExcute.js" />
+    <Content Include="Scripts\client\clients.js" />
+    <Content Include="Scripts\email.js" />
+    <Content Include="Scripts\homeAdmin.js" />
+    <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\inventory\addtransfer.js" />
+    <Content Include="Scripts\inventory\addorder.js" />
+    <Content Include="Scripts\inventory\adjustmentproduct.js" />
+    <Content Include="Scripts\inventory\order.js" />
+    <Content Include="Scripts\inventory\brand.js" />
+    <Content Include="Scripts\inventory\categorie.js" />
+    <Content Include="Scripts\inventory\viewproduct.js" />
+    <Content Include="Scripts\inventory\supplier.js" />
+    <Content Include="Scripts\inventory\product.js" />
+    <Content Include="Scripts\invoice\email-invoice_V2.js" />
+    <Content Include="Scripts\invoice\email-invoice.js" />
+    <Content Include="Scripts\invoice\print-invoice.js" />
+    <Content Include="Scripts\invoice\pdf-invoice.js" />
+    <Content Include="Scripts\message.js" />
+    <Content Include="Scripts\onlinebookings.js" />
+    <Content Include="Scripts\onlinebookingsetting.js" />
+    <Content Include="Scripts\login\changepassword.js" />
+    <Content Include="Scripts\login\login.js" />
+    <Content Include="Scripts\login\forgotpassword.js" />
+    <Content Include="Scripts\login\register.js" />
+    <Content Include="Scripts\login\main.js" />
+    <Content Include="Scripts\report\analytics\appointmentcancel.js" />
+    <Content Include="Scripts\report\analytics\appointmentsummary.js" />
+    <Content Include="Scripts\report\analytics\clientlist.js" />
+    <Content Include="Scripts\report\analytics\clientretention.js" />
+    <Content Include="Scripts\report\analytics\dashboard.js" />
+    <Content Include="Scripts\report\analytics\discountsummary.js" />
+    <Content Include="Scripts\report\analytics\financessummary.js" />
+    <Content Include="Scripts\report\analytics\outstandinginvoices.js" />
+    <Content Include="Scripts\report\analytics\paymentlog.js" />
+    <Content Include="Scripts\report\analytics\paymentsummary.js" />
+    <Content Include="Scripts\report\analytics\productconsumption.js" />
+    <Content Include="Scripts\report\analytics\productsales.js" />
+    <Content Include="Scripts\report\analytics\salesby.js" />
+    <Content Include="Scripts\report\analytics\hoursofday.js" />
+    <Content Include="Scripts\report\analytics\saleslog.js" />
+    <Content Include="Scripts\report\analytics\staffbreakdown.js" />
+    <Content Include="Scripts\report\analytics\commissionstaffdetailed.js" />
+    <Content Include="Scripts\report\analytics\commissionstaffsummary.js" />
+    <Content Include="Scripts\report\analytics\staffworkinghours.js" />
+    <Content Include="Scripts\report\analytics\stockmovementlog.js" />
+    <Content Include="Scripts\report\analytics\stockmovementsummary.js" />
+    <Content Include="Scripts\report\analytics\stockonhand.js" />
+    <Content Include="Scripts\report\analytics\taxessummary.js" />
+    <Content Include="Scripts\report\analytics\tipsbystaff.js" />
+    <Content Include="Scripts\report\analytics\tipscollected.js" />
+    <Content Include="Scripts\report\analytics\voucherredemptions.js" />
+    <Content Include="Scripts\report\analytics\vouchersoutstanding.js" />
+    <Content Include="Scripts\report\analytics\voucherssales.js" />
+    <Content Include="Scripts\report\appointments.js" />
+    <Content Include="Scripts\report\invoices.js" />
+    <Content Include="Scripts\report\vouchers.js" />
+    <Content Include="Scripts\report\dailysales.js" />
+    <Content Include="Scripts\service.js" />
+    <Content Include="Scripts\setup\invoicesreceipts.js" />
+    <Content Include="Scripts\setup\salessettings.js" />
+    <Content Include="Scripts\setup\discounts.js" />
+    <Content Include="Scripts\setup\clientnotifications.js" />
+    <Content Include="Scripts\setup\staffnotifications.js" />
+    <Content Include="Scripts\setup\onlinebookingsettings.js" />
+    <Content Include="Scripts\setup\calendarsettings.js" />
+    <Content Include="Scripts\setup\cancellationreasons.js" />
+    <Content Include="Scripts\setup\index.js" />
+    <Content Include="Scripts\setup\paymenttypes.js" />
+    <Content Include="Scripts\setup\referralsources.js" />
+    <Content Include="Scripts\setup\resources.js" />
+    <Content Include="Scripts\setup\locations.js" />
+    <Content Include="Scripts\setup\companydetails.js" />
+    <Content Include="Scripts\setup\taxes.js" />
+    <Content Include="Scripts\staff\closeddates\index.js" />
+    <Content Include="Scripts\staff\permissions\index.js" />
+    <Content Include="Scripts\staff\staff\ModalClass.js" />
+    <Content Include="Scripts\staff\staff\index.js" />
+    <Content Include="Scripts\staff\workinghours\excutedialogchangestaff.js" />
+    <Content Include="Scripts\staff\workinghours\excutedialogclickcell.js" />
+    <Content Include="Scripts\staff\workinghours\index.js" />
+    <Content Include="Scripts\test\clientDetail.js" />
+    <Content Include="Scripts\user\mysetting.js" />
+    <Content Include="Views\Shared\VariableGlobalSrcipt.cshtml" />
+    <Content Include="ContentHtml\Invoice\Print.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ContentHtml\Appointment\View\Mobile\" />
+    <Folder Include="FolderLanguage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Extension\css\font-awesome.css.map" />
+    <Content Include="Extension\fonts\fontawesome-webfont.eot" />
+    <Content Include="Extension\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Extension\fonts\fontawesome-webfont.woff" />
+    <Content Include="Extension\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Extension\fonts\FontAwesome.otf" />
+    <Content Include="Extension\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Extension\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Extension\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Extension\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Extension\js\jquery.min.map" />
+    <Content Include="Extension\js\popper.min.js.map" />
+    <Content Include="Extension\js\quill.min.js.map" />
+    <EntityDeploy Include="Models\ModelEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelEntity.edmx.diagram">
+      <DependentUpon>ModelEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Login\login.cshtml" />
+    <Content Include="Views\Login\register.cshtml" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmEU9fBBc4.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmSU5fBBc4.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmWUlfBBc4.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2" />
+    <Content Include="Content\Roboto-font\KFOmCnqEu92Fr1Mu4mxK.woff2" />
+    <Content Include="Content\Roboto-font\KFOmCnqEu92Fr1Mu4WxKOzY.woff2" />
+    <Content Include="Content\Roboto-font\KFOmCnqEu92Fr1Mu5mxKOzY.woff2" />
+    <Content Include="Content\Roboto-font\KFOmCnqEu92Fr1Mu72xKOzY.woff2" />
+    <Content Include="Content\Roboto-font\KFOmCnqEu92Fr1Mu7GxKOzY.woff2" />
+    <Content Include="Content\Roboto-font\KFOmCnqEu92Fr1Mu7mxKOzY.woff2" />
+    <Content Include="Content\Roboto-font\KFOmCnqEu92Fr1Mu7WxKOzY.woff2" />
+    <None Include="Properties\PublishProfiles\FILE.pubxml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\forgotpassword.cshtml" />
+    <Content Include="Views\Login\changepassword.cshtml" />
+    <Content Include="Views\User\MySetting.cshtml" />
+    <Content Include="Views\Setup\CompanyDetails.cshtml" />
+    <Content Include="Views\Setup\Index.cshtml" />
+    <Content Include="Views\Setup\Locations.cshtml" />
+    <Content Include="Views\Setup\Resources.cshtml" />
+    <Content Include="Views\Setup\CalendarSettings.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Setup\OnlineBookingSettings.cshtml" />
+    <Content Include="Views\Setup\StaffNotifications.cshtml" />
+    <Content Include="Views\Setup\ClientNotifications.cshtml" />
+    <Content Include="Views\Setup\ReferralSources.cshtml" />
+    <Content Include="Views\Service\service.cshtml" />
+    <Content Include="Views\Service\serviceGroup.cshtml" />
+    <Content Include="Views\Setup\PaymentTypes.cshtml" />
+    <Content Include="Views\Staff\ClosedDates\Index.cshtml" />
+    <Content Include="Views\Staff\Index.cshtml" />
+    <Content Include="Views\Staff\StaffMembers\Index.cshtml" />
+    <Content Include="Views\Staff\WorkingHours\Index.cshtml" />
+    <Content Include="Views\Setup\CancellationReasons.cshtml" />
+    <Content Include="Views\Setup\Taxes.cshtml" />
+    <Content Include="Views\Staff\WorkingHours\Containt.cshtml" />
+    <Content Include="Views\Staff\WorkingHours\_dialogChangeStaff.cshtml" />
+    <Content Include="Views\Staff\WorkingHours\_dialogClickCell.cshtml" />
+    <Content Include="Views\Calendar\Index.cshtml" />
+    <Content Include="Views\Shared\img\icon_calendar.cshtml" />
+    <Content Include="Views\Shared\notification\calendar_notification1.cshtml" />
+    <Content Include="Views\Shared\img\icon_calendar1.cshtml" />
+    <Content Include="Views\Shared\notification\calendar_notification.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\Error\Error500.cshtml" />
+    <Content Include="Views\Calendar\Sale\AddSale.cshtml" />
+    <Content Include="Views\Calendar\Appointment\Action.cshtml" />
+    <Content Include="Views\Shared\img\icon_delete.cshtml" />
+    <Content Include="Views\Calendar\Notify\NoStaff.cshtml" />
+    <Content Include="Views\Calendar\Notify\NoScheduled.cshtml" />
+    <Content Include="Views\Calendar\Schedul\Header.cshtml" />
+    <Content Include="Views\Calendar\Schedul\Calendar.cshtml" />
+    <Content Include="Views\Setup\Discounts.cshtml" />
+    <Content Include="Views\Setup\SalesSettings.cshtml" />
+    <Content Include="Views\Setup\InvoicesReceipts.cshtml" />
+    <Content Include="Views\OnlineBookingSetting\Index.cshtml" />
+    <Content Include="Views\Staff\Permissions\Index.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients\Add.cshtml" />
+    <Content Include="Views\Clients\View.cshtml" />
+    <Content Include="Files\ClientImport.csv" />
+    <Content Include="Views\Calendar\Appointment\View.cshtml" />
+    <Content Include="Views\Reports\Sales.cshtml" />
+    <Content Include="Views\Reports\DailySales.cshtml" />
+    <Content Include="Views\Reports\Invoices.cshtml" />
+    <Content Include="Views\Reports\Appointments.cshtml" />
+    <Content Include="Views\Reports\Vouchers.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Inventory\Inventory.cshtml" />
+    <Content Include="Views\Inventory\Products.cshtml" />
+    <Content Include="Views\Inventory\Suppliers.cshtml" />
+    <Content Include="Views\Inventory\Orders.cshtml" />
+    <Content Include="Views\Inventory\Brands.cshtml" />
+    <Content Include="Views\Inventory\Categories.cshtml" />
+    <Content Include="Views\Inventory\ViewProduct.cshtml" />
+    <Content Include="Views\Inventory\AddProduct.cshtml" />
+    <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
+    <Content Include="Views\Inventory\AdjustmentProduct.cshtml" />
+    <Content Include="Views\Inventory\AddOrder.cshtml" />
+    <Content Include="Views\Calendar\Notify\NoOrder.cshtml" />
+    <Content Include="Views\Inventory\AddTransfer.cshtml" />
+    <Content Include="Views\Reports\Analytics\Analytics.cshtml" />
+    <Content Include="Views\Reports\Analytics\Dashboard.cshtml" />
+    <Content Include="Views\Reports\Analytics\Reports.cshtml" />
+    <Content Include="Views\Reports\Analytics\SalesBy.cshtml" />
+    <Content Include="Views\OnlineBookings\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutOnlineBookings.cshtml" />
+    <Content Include="Views\Reports\Analytics\StaffBreakdown.cshtml" />
+    <Content Include="Views\Reports\Analytics\HoursofDay.cshtml" />
+    <Content Include="Views\Reports\Analytics\SalesLog.cshtml" />
+    <Content Include="Views\Reports\Analytics\StockonHand.cshtml" />
+    <Content Include="Views\Calendar\Sale\ViewSale.cshtml" />
+    <Content Include="Views\Reports\Analytics\ProductSales.cshtml" />
+    <Content Include="Views\Reports\Analytics\StockMovementLog.cshtml" />
+    <Content Include="Views\Reports\Analytics\StockMovementSummary.cshtml" />
+    <Content Include="Views\Reports\Analytics\ProductConsumption.cshtml" />
+    <Content Include="Views\Reports\Analytics\PaymentsSummary.cshtml" />
+    <Content Include="Views\Reports\Analytics\PaymentsLog.cshtml" />
+    <Content Include="Views\Reports\Analytics\TaxesSummary.cshtml" />
+    <Content Include="Views\Reports\Analytics\TipsCollected.cshtml" />
+    <Content Include="Views\Reports\Analytics\DiscountSummary.cshtml" />
+    <Content Include="Views\Reports\Analytics\OutstandingInvoices.cshtml" />
+    <Content Include="Views\Reports\Analytics\AppointmentsSummary.cshtml" />
+    <Content Include="Views\Reports\Analytics\AppointmentCancel.cshtml" />
+    <Content Include="Views\Reports\Analytics\ClientList.cshtml" />
+    <Content Include="Views\Reports\Analytics\ClientRetention.cshtml" />
+    <Content Include="Views\Reports\Analytics\VouchersOutstanding.cshtml" />
+    <Content Include="Views\Reports\Analytics\VouchersSales.cshtml" />
+    <Content Include="Views\Reports\Analytics\VoucherRedemptions.cshtml" />
+    <Content Include="Views\Reports\Analytics\StaffWorkingHours.cshtml" />
+    <Content Include="Views\Reports\Analytics\TipsByStaff.cshtml" />
+    <Content Include="Views\Reports\Analytics\CommissionStaffSummary.cshtml" />
+    <Content Include="Views\Reports\Analytics\CommissionStaffDetailed.cshtml" />
+    <Content Include="Views\Reports\Analytics\FinancesSummary.cshtml" />
+    <Content Include="Views\Admin\Business\Index.cshtml" />
+    <Content Include="Views\Calendar\Sale\AddSale_V2.cshtml" />
+    <Content Include="Views\Email\Index.cshtml" />
+    <Content Include="Views\Home\Index_Empty.cshtml" />
+    <Content Include="Views\Admin\AdminSetting\Index.cshtml" />
+    <Content Include="Views\Admin\AdminSetting\SiteSetup.cshtml" />
+    <Content Include="Views\Admin\AdminSetting\ClientNotifications.cshtml" />
+    <Content Include="Views\Admin\AdminSetting\Package.cshtml" />
+    <Content Include="Views\Admin\UpdateHistory\Index.cshtml" />
+    <Content Include="Views\Home\IndexAdmin.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Enum.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Enum.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Function.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Function.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>24072</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:24075/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,128 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+<script>
+    var prefixFileMobileAppointment = "/ContentHtml/Appointment/Action/Moblile";
+    var LinkFileMobileAppointment = {
+        AddClient: {
+            Index: prefixFileMobileAppointment + "/AddClient/Index.html",
+            ItemSearchClient: prefixFileMobileAppointment + "/AddClient/ItemSearchClient.html",
+        },
+        AddService: {
+            Index: prefixFileMobileAppointment + "/AddComboboxService/Index.html",
+            Service: prefixFileMobileAppointment + "/AddComboboxService/Service.html",
+            ServiceGroup: prefixFileMobileAppointment + "/AddComboboxService/ServiceGroup.html",
+        },
+        RepeateScheulDate: {
+            Index: prefixFileMobileAppointment + "/Repeate_ScheulDate/Index.html",
+        },
+        AppointmentService: {
+            Index: prefixFileMobileAppointment + "/AppointmentService/Index.html",
+        },
+        ContentShare: {
+            ServiceShare: prefixFileMobileAppointment + "/ContentShare/ServiceShare.html",
+        },
+        Control: {
+            Duration: prefixFileMobileAppointment + "/Control/Duration.html",
+            Staff_IsRequest: prefixFileMobileAppointment + "/Control/Staff_IsRequest.html",
+            Starttime12h: prefixFileMobileAppointment + "/Control/Starttime12h.html",
+            Starttime24h: prefixFileMobileAppointment + "/Control/Starttime24h.html",
+        },
+        DetailClient: {
+            Index: prefixFileMobileAppointment + "/DetailClient/Index.html",
+            Appointment: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Appointment/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Appointment/Item.html",
+            },
+            Info: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Info/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Info/Item.html",
+            },
+            Invoice: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Invoice/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Invoice/Item.html",
+            },
+            Product: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Product/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Product/Item.html",
+            }
+        },
+        Index: {
+            Index: prefixFileMobileAppointment + "/Index/Index.html",
+            ClientDetail: prefixFileMobileAppointment + "/Index/ClientDetail.html",
+            ClientEmpty: prefixFileMobileAppointment + "/Index/ClientEmpty.html",
+            Repeat_ScheulDate: prefixFileMobileAppointment + "/Index/Repeat_ScheulDate.html",
+            ServiceItem: prefixFileMobileAppointment + "/Index/ServiceItem.html",
+        },
+    };
+    //#region Appointment Service
+    class MobileAppointmentService {
+        constructor() {
+            this.Modal = null;
+            this.HTML = {
+                Index: null,
+                Control: {
+                    Duration: null,
+                    Staff_IsRequest: null,
+                    Starttime12h: null,
+                    Starttime24h: null,
+                },
+                ContentShare: {
+                    ServiceShare: null,
+                }
+            }
+        }
+
+        //#region Private
+        CreateEvent() {
+            this.Modal.find("[name='IsRequest']").closest(".input-group-prepend").click(function () {
+                var checkBox = $(this).find("[name='IsRequest']")[0];
+                checkBox.checked = !checkBox.checked;
+            })
+        }
+        RemoveEvent() {
+            this.Modal.find("[name='IsRequest']").closest(".input-group-prepend").off("click");
+        }
+        //#endregion
+
+        //#region Public
+        OpenModal() {
+            var that = this;
+            if (this.HTML.Index == null
+                || that.HTML.Control.Duration || that.HTML.Control.Staff_IsRequest || that.HTML.Control.Starttime12h || that.HTML.Control.Starttime24h
+                || that.HTML.ContentShare.ServiceShare) {
+                $.RequestAjaxText(LinkFileMobileAppointment.AppointmentService.Index, function (data) { that.HTML.Index = data; });
+
+                $.RequestAjaxText(LinkFileMobileAppointment.Control.Duration, function (data) { that.HTML.Control.Duration = data; });
+                $.RequestAjaxText(LinkFileMobileAppointment.Control.Staff_IsRequest, function (data) { that.HTML.Control.Staff_IsRequest = data; });
+                $.RequestAjaxText(LinkFileMobileAppointment.Control.Starttime12h, function (data) { that.HTML.Control.Starttime12h = data; });
+                $.RequestAjaxText(LinkFileMobileAppointment.Control.Starttime24h, function (data) { that.HTML.Control.Starttime24h = data; });
+
+                $.RequestAjaxText(LinkFileMobileAppointment.ContentShare.ServiceShare, function (data) { that.HTML.ContentShare.ServiceShare = data; });
+            }
+
+            if (that.Modal == null || that.Modal == undefined) {
+                var htmlContentControlService = that.HTML.ContentShare.ServiceShare.replace("@Html.Raw("@ControlStaff_IsRequest")", that.HTML.Control.Staff_IsRequest)
+                .replace("@Html.Raw("@ControlStartTime")", that.HTML.Control.Starttime24h).replace("@Html.Raw("@ControlDuration")", that.HTML.Control.Duration);
+                var html = that.HTML.Index.replace("@Html.Raw("@ContentControlService")", htmlContentControlService);
+                that.Modal = $(html);
+                $("body").append(that.Modal);
+                that.CreateEvent();
+            }
+        }
+        HideModal() {
+            this.Modal.hide();
+        }
+        RemoveModal() {
+            this.RemoveEvent();
+            this.Modal.remove();
+        }
+        //#endregion
+
+    }
+    //#endregion
+    $(function () {
+        var t = new MobileAppointmentService();
+        t.OpenModal();
+    })
+</script>

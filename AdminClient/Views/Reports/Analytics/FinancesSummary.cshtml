@@ -1,0 +1,104 @@
+﻿<!--#region Html-->
+<link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+<div class="animated fadeIn">
+    <div id="formReport">
+        <div class="form-group containtControl">
+            <div class="form-group col-fhd-4 col-xlg-4 col-md-4 col-sm-12 col-xs-4">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                    </span>
+                    <input name="searchDate" id="searchDate" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                <select style="width: 100%" id="LocationID" name="LocationID"></select>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                <button type="button" name="btnView" id="btnView" class="btn btn-square btn-block btn-info" style="width:80px;">View</button>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                <button type="button" class="btn btn-info dropdown-toggle" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Export
+                </button>
+                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
+                    <a class="dropdown-item" href="#" style="padding:0px" id="buttonExcel"></a>
+                    <a class="dropdown-item" href="#" id="buttonCSV" style="padding:0px"></a>
+                    <a class="dropdown-item" href="#" id="buttonPDF" style="padding:0px"></a>
+                </div>
+            </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div style="display: flex; flex-flow: row wrap;">
+            <div class="_3_uf01" style="display: flex; flex-flow: column nowrap; flex-basis: 50%;">
+                <div class="_2mPFMy _1XfXdG _2VoxKK">
+                    <div class="_35jn3W">Sales</div><div class="_35cX3G">
+                        <div class="_2JEBY3 _1rpjRA">Gross sales</div>
+                        <div class="_281HP7 _2JEBY3 _1rpjRA" id="GrossSales"></div>
+                    </div>
+                    <div class="_35cX3G">
+                        <div class="_2JEBY3">Discounts</div>
+                        <div class="_281HP7 _2JEBY3" id="Discounts"></div>
+                    </div>
+                    <div class="_35cX3G">
+                        <div class="_2JEBY3">Refunds</div>
+                        <div class="_281HP7 _2JEBY3" id="Refunds"></div>
+                    </div>
+                    <div class="_35cX3G _2WTCka"></div>
+                    <div class="_35cX3G">
+                        <div class="_2JEBY3 _1rpjRA">Net sales</div>
+                        <div class="_281HP7 _2JEBY3 _1rpjRA" id="NetSales"></div>
+                    </div>
+                    <div class="_35cX3G">
+                        <div class="_2JEBY3">
+                            <a class="_1FszNF SVCc33" href="/Reports/TaxesSummary">Taxes</a>
+                        </div>
+                        <div class="_281HP7 _2JEBY3" id="Taxes"></div>
+                    </div><div class="_35cX3G _2WTCka"></div>
+                    <div class="_35cX3G">
+                        <div class="_2JEBY3 _1rpjRA"><a class="_1FszNF SVCc33 _1qlFXq" href="/Reports/SalesByType">Total sales</a></div>
+                        <div class="_281HP7 _2JEBY3 _1rpjRA" id="TotalSales"></div>
+                    </div>
+                </div>
+                <div class="_2mPFMy _1XfXdG _2VoxKK">
+                    <div class="_35jn3W">Vouchers</div><div class="_35cX3G">
+                        <div class="_2JEBY3"><a class="_1FszNF SVCc33" href="/Reports/VouchersSales">Voucher sales</a></div>
+                        <div class="_281HP7 _2JEBY3" id="VoucherSales"></div>
+                    </div>
+                    <div class="_35cX3G">
+                        <div class="_2JEBY3"><a class="_1FszNF SVCc33" href="/Reports/VoucherRedemptions">Voucher redemptions</a></div>
+                        <div class="_281HP7 _2JEBY3" id="VoucherRedemptions"></div>
+                    </div><div class="_35cX3G">
+                        <div class="_2JEBY3"><a class="_1FszNF SVCc33" href="/Reports/VoucherOustanding">Vouchers outstanding balance</a></div>
+                        <div class="_281HP7 _2JEBY3" id="VoucherOutstandingBalance"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="_3_uf01" style="display: flex; flex-flow: column nowrap; flex-basis: 50%;">
+                <div class="_2mPFMy _1XfXdG _2VoxKK" id="divPaymentDetail">
+                </div>
+                <div class="_2mPFMy _1XfXdG _2VoxKK">
+                    <div class="_35jn3W">Tips</div>
+                    <div class="_35cX3G">
+                        <div class="_2JEBY3"><a class="_1FszNF SVCc33" href="/Reports/TipsCollected">Tips collected</a></div>
+                        <div class="_281HP7 _2JEBY3" id="TipsCollected"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/report/analytics/financessummary.js")"></script>
+
+<!--#endregion-->
+<!--#region Include JS-->
+<!--#endregion-->

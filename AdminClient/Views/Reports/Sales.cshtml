@@ -1,0 +1,82 @@
+﻿@using AdminClient.Controllers.Global;
+@model Int32
+<!--#region Include CSS-->
+@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+<!--#endregion-->
+<!--#region Html-->
+<div class="animated fadeIn">
+    <div class="col-md-12">
+        <section class="nav-tabs-scrollable-container reports-nav">
+            <ul class="nav nav-pills nav-main" id="myTab1" role="tablist">
+                @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.daily_sales)))
+                { 
+                 <li class="nav-item">
+                    <a class="nav-link @(Model == 1 ? "active show" : "" )" href="/Reports/DailySales" role="tab">DAILY SALES</a>
+                </li>
+                 }
+                  }
+                @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.appointments)))
+                {
+                <li class="nav-item">
+                    <a class="nav-link @(Model == 2 ? "active show" : "" )" href="/Reports/Appointments" role="tab">APPOINTMENTS</a>
+                </li>
+}
+                     }
+               @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.invoices)))
+                  { 
+                    <li class="nav-item">
+                     <a class="nav-link @(Model == 3 ? "active show" : "" )" href="/Reports/Invoices" role="tab">INVOICES</a>
+                </li>
+               }
+               }
+               @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.vouchers)))
+                  {
+
+                     <li class="nav-item">
+                           <a class="nav-link @(Model == 4 ? "active show" : "" )" href="/Reports/Vouchers" role="tab">VOUCHERS</a>
+                </li>
+               }
+               }
+            </ul>
+        </section>
+        <div class="tab-content tab-content-main" id="myTab1Content">
+            <div class="tab-pane fade active show" role="tabpanel">
+                @{
+                    String fileView = "";
+                    switch (Model)
+                    {
+                        case 1:
+
+                            fileView = "/Views/Reports/DailySales.cshtml";
+                            break;
+                        case 2:
+                            fileView = "/Views/Reports/Appointments.cshtml";
+                            break;
+                        case 3:
+                            fileView = "/Views/Reports/Invoices.cshtml";
+                            break;
+                        case 4:
+                            fileView = "/Views/Reports/Vouchers.cshtml";
+                            break;
+                    }
+                    @Html.Partial(fileView);
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--#endregion-->
+<!--#region Include JS-->
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/jquery.inputmask.bundle.min.js")"></script>
+@Scripts.Render("~/Scripts/datatable")
+@Scripts.Render("~/Scripts/PNotify")
+<!--#endregion-->

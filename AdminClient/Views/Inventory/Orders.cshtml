@@ -1,0 +1,83 @@
+﻿<div class="card" id="divTable" style="display:none">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="formOrder">
+                    <div class="col-md-12">
+                        <div class="form-group containtControl">
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                <select class="form-control" style="width: 100%" id="FilterOrderStatus" name="FilterOrderStatus">
+                                    <option value="">@Resources.Enum.order_status_all</option>
+                                    <option value="@nameof(@Resources.Enum.order_status_ordered)">@Resources.Enum.order_status_ordered</option>
+                                    <option value="@nameof(@Resources.Enum.order_status_canceled)">@Resources.Enum.order_status_canceled</option>
+                                    <option value="@nameof(@Resources.Enum.order_status_received)">@Resources.Enum.order_status_received</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                <select style="width: 100%" id="FilterLocationID" name="FilterLocationID"></select>
+                            </div>
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                <select style="width: 100%" id="FilterSupplierID" name="FilterSupplierID"></select>
+                            </div>
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                <button type="button" name="btnView" id="btnView" class="btn btn-square btn-block btn-info" style="width:80px">View</button>
+                            </div>
+                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2 float-right">
+                                <button type="button" class="btn btn-info dropdown-toggle" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Export
+                                </button>
+                                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
+                                    <a class="dropdown-item" href="#" style="padding:0px" id="buttonExcel"></a>
+                                    <a class="dropdown-item" href="#" id="buttonCVX" style="padding:0px"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 containtTable">
+                            <table class="table table-sm datatable no-footer" style="width:100%" id="table">
+                                <thead>
+                                    <tr>
+                                        <th>ORDER NO.</th>
+                                        <th>CREATED DATE</th>
+                                        <th>TYPE</th>
+                                        <th>LOCATION</th>
+                                        <th>SUPPLIER</th>
+                                        <th>STATUS</th>
+                                        <th>TOTAL COST</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="divNoData" style="display:none">
+    <div style="text-align:center!important; margin-left:auto; margin-right:auto">
+        <p style="opacity: .7; font-size:60px">
+            <i class="fa fa-cube fa-lg mt-4"></i>
+        </p>
+        <h3 class="m-b-10">Manage Stock Orders</h3>
+        <p>
+            Send purchase orders directly to your suppliers and effortlessly receive new stock deliveries
+        </p>
+    </div>
+    <div class="col-md-12" >
+        <div class="col-md-6" style="display:flex; align-items:flex-end;justify-content:flex-end"><button type="button" class="btn btn-block btn-success" style="width:120px" id="btnNewTransfer" data-style="slide-right">New Transfer</button></div>
+        <div class="col-md-6" style="display:flex; align-items:flex-start;justify-content:flex-start"><button type="button" class="btn btn-block btn-success" style="width:120px" id="btnNewOrder" data-style="slide-right">New Order</button></div>
+    </div>
+</div>
+<div class="row">
+    <div id="containtButtonCreate">
+    </div>
+</div>
+<!--#region Modal-->
+<!--#endregion-->
+<!--#region Include JS-->
+@Scripts.Render("~/Scripts/PNotify")
+<script src="@Url.Content("~/Scripts/inventory/order.js")"></script>
+<!--#endregion-->

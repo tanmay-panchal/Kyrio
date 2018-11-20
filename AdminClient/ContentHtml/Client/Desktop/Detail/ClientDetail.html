@@ -1,0 +1,103 @@
+﻿<div id="divClientDetail" class="_1mW557 _24Etms Og5mGw aBweod _33L2x1" direction="down" style="display: flex; flex-direction: column; flex-grow: 1; ">
+    <div class="p-2 align-items-start">
+        <div class="col-12 p-0">
+            <div class="float-left p-2"><button type="button" class="btn btn-block btn-info btn-circle-client disabled" aria-pressed="true">@Represent</button></div>
+            <div class="float-left p-2">
+                <div class="form-group"><h3 class="font-weight-bold">@FullName</h3></div>
+                <div class="col-12 p-0"><span>@Description</span></div>
+            </div>
+            <div class="dropdown float-right mr-2 mt-3">
+                <a class="btn-client btn dropdown-toggle btn-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-155px, 35px, 0px);">
+                    <a class="dropdown-item" href="#" id="buttonEditClient">Edit client details</a>
+                    <a class="dropdown-item text-danger" href="#" id="buttonRemoveClient">Remove form appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="_2hndFf aBweod">
+        <div class="_2mPFMy _2A57zv WIMY4c _2F28mx _2vLnid" style="display: flex; flex-direction: row; flex-shrink: 0;">
+            <div class="_1S6SdX">
+                <div class="_2dsC8j" id="divClientTotalBookings"></div>Total Bookings
+            </div>
+            <div class="_1S6SdX">
+                <div class="_2dsC8j" id="divClientTotalSales"></div>Total Sales
+            </div>
+        </div>
+        <div class="_2mPFMy _2A57zv _1uoK7S wYOsSC" style="display: flex; flex-direction: column; flex-grow: 1;" id="divMainTab">
+            <div class="_1TmAb0">
+                <div class="_17lw1N _2TEJLM">
+                    <div class="_3tLC6e">
+                        <ul class="_1kjIZN" data-qa="navtabs">
+                            <li class="_3lXzHJ Eg7S9h _1EP1xU" data-qa="navtabs-item">
+                                <button type="button" class="_3z4sRB _304-pG _1FszNF" id="btnTabAppointments">Appointments</button>
+                            </li>
+                            <li class="_3lXzHJ Eg7S9h _1EP1xU" data-qa="navtabs-item">
+                                <button type="button" class="_3z4sRB _304-pG _1FszNF" id="btnTabProducts">Products</button>
+                            </li>
+                            <li class="_3lXzHJ Eg7S9h _1EP1xU" data-qa="navtabs-item">
+                                <button type="button" class="_3z4sRB _304-pG _1FszNF" id="btnTabInvoices">Invoices</button>
+                            </li>
+                            <li class="_3lXzHJ Eg7S9h _1EP1xU" data-qa="navtabs-item" id="tabHistoryClientInfo">
+                                <button type="button" class="_3z4sRB _304-pG _1FszNF" id="btnTabInfo">Info</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="_3jCEmE">
+                    <div class="_64bJQJ" id="divTabAppointment" style="overflow-y: scroll;;">
+                        <div class="_1mW557">
+                            <div class="_2hndFf">
+                                <div class="_2ASo5U">
+                                    <div class="_2mPFMy ex0yBB _1Ov_P6 TnZx2m" style="display: flex; flex-direction: column;" id="divUpcoming">
+                                        <div class="_1p62pX _1aB64u" id="divClientUpcoming"></div>
+                                    </div>
+                                    <div class="oqg2j7" id="divClientAppointmentUpcoming">
+
+                                    </div>
+                                    <div class="_2mPFMy ex0yBB _1Ov_P6 TnZx2m" style="display: flex; flex-direction: column;" id="divPast">
+                                        <div class="_1p62pX _1aB64u" id="divClientPast"></div>
+                                    </div>
+                                    <div class="oqg2j7" id="divClientAppointmentPast">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="_1nM1bd">
+                                <div class="_2Nn7vB"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="QnkByR _2iEC8H" style="display: none; flex-direction: column; flex-grow: 1;overflow-y: scroll;" id="divTabProduct">
+                        <div class="G3nSFh" style="display: flex; flex-direction: column; flex-grow: 1;" id="divClientProduct">
+                        </div>
+                    </div>
+                    <div class="ts-pXO" style="display: flex; flex-direction: column; flex-grow: 1;overflow-y: scroll;" id="divTabInvoice">
+                        <div class="QnkByR _1J3Fl9" style="display: flex; flex-direction: column; flex-grow: 1;">
+                            <div class="G3nSFh" style="display: flex; flex-direction: column; flex-grow: 1;" id="divClientInvoice">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_2mPFMy _1Ov_P6 ex0yBB" style="display: none; flex-direction: column; flex-grow: 1;" id="divTabInfo">
+                        <div class="_2ygkyH">
+                            <div class="DhHnXz" id="divClientInfo">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="_1nM1bd">
+        <div class="_2Nn7vB"></div>
+    </div>
+    <div class="XVFBAE" id="containtFooter">
+        <div>
+            <div></div><div style="display: flex; flex-direction: row;">
+                <button type="button" id="saveButtonCheckOut" class="btn btn-light active text-uppercase" style="flex-basis: 50%; flex-grow: 1; margin-right: 16px;">Express checkout</button>
+                <button type="button" id="saveButton" class="btn btn-success active text-uppercase" style="flex-basis: 50%; flex-grow: 1;">Save appointment</button>
+            </div>
+        </div>
+    </div>
+</div>

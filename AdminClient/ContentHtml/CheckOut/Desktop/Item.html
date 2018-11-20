@@ -1,0 +1,61 @@
+﻿<div class="col-12 p-0 border containt-serivce" AppointmentServiceID="" InvoiceDetailID="" Item-Type="" Item-ID="" ItemName="" Description="" VoucherExpiryDate="" VoucherCode="" RetailPrice="" SpecialPrice="" Quantity="" OrgPrice="" Price="" PriceAfterDiscount="" PriceBeforeTax="" TaxID="" TaxRate="" TaxAmount="" SubTotal="" SubTotalBeForeTax="" Duration="" StaffID="" DiscountID="" DiscountName="" DiscountAmount="" DiscountPercent="" EnableCommission="" OnHand="" EnableStockControl="" TotalDiscount="" TotalTax="" Total="" style="background-color: rgb(255, 255, 255); border-left: 3px solid #0093EF !important;">
+    <div class="delete-service" name="deleteService">
+        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.188 4.9996l3.565-3.565a.8403.8403 0 0 0 0-1.1884.8403.8403 0 0 0-1.1883 0l-3.5651 3.565L1.4345.2462A.8403.8403 0 1 0 .246 1.4345l3.5651 3.565-3.565 3.5651A.8404.8404 0 0 0 1.4345 9.753l3.565-3.5651L8.5648 9.753a.8403.8403 0 0 0 1.1884 0 .8403.8403 0 0 0 0-1.1884L6.188 4.9996z"></path>
+        </svg>
+    </div>
+    <div class="col-12 d-flex" name="itemDetail">
+        <p style="flex-basis: 32px" name="quantityItemDisplay"></p>
+        <div class="col-12">
+            <div class="item-service col-12" name="itemService">
+                <div class="col-12 d-flex justify-content-between p-0">
+                    <strong>@ServiceName</strong>
+                    <strong id="PriceDisplay"></strong>
+                </div>
+                <div class="col-12 d-flex justify-content-between p-0">
+                    <p id="DescriptionDisplay">@Description</p>
+                    <del style="padding-right: 20px;" id="OrgPriceDisplay"></del>
+                </div>
+                
+            </div>
+            <div name="itemData" class="d-flex col-12 item-data">
+                <div style="flex-basis: 80px; padding-right: 15px;">
+                    <label class="col-form-label">Quantity</label>
+                    <input class="form-control" type="number" min="1" name="quantityItem" />
+                </div>
+                <div style="flex-basis: 140px; padding-right: 15px">
+                    <label class="col-form-label">Price</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white border-right-0">
+                                <i>@CurrencySymbol</i>
+                            </span>
+                        </div>
+                        <input class="form-control border-left-0" type="number" min="0" name="priceItem" />
+                    </div>
+                </div>
+                <div style="flex-grow: 1">
+                    <div class="col-6">
+                        <label class="col-form-label">Staff</label>
+                        <select class="form-control" name="staffItem" urlselection="/Home/GetUserBaseId"></select>
+                    </div>
+                    <div class="col-6" id="divdiscountItem">
+                        <label class="col-form-label">Discount</label>
+                        <select class="form-control" name="discountItem"></select>
+                    </div>
+                    <div class="col-6" id="divManualDiscountItem" style="display:none">
+                        <label class="col-form-label">Discount</label>
+                        <div class="input-group">
+                            <input class="form-control border-right-0" type="text" name="ManualDiscountItem" />
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white border-left-0" style="color:red" id="deleteManualDiscountItem">
+                                    x
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

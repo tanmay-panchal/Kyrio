@@ -1,0 +1,145 @@
+﻿<!--#region Include JS-->
+@using Newtonsoft.Json.Linq
+<div class="animated fadeIn">
+    <div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="hidden" id="ViewProductID" value="@ViewBag.ProductID" />
+                    <h4>@ViewBag.ProductName</h4>
+                </div>
+                <div class="col-md-6">
+                    <div style="display: flex; flex-direction: row; align-content:flex-end; align-items: flex-end;float:right">
+                        <button type="button" id="btnStockDecrease" class="btn btn-block btn-outline-primary" style="width:100px">STOCK - </button>
+                        <button type="button" id="btnStockIncrease" class="btn btn-block btn-outline-primary" style="width:100px">STOCK + </button>
+                        <button type="button" id="btnEditProduct" class="btn btn-block btn-outline-primary" style="width:80px">EDIT</button>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Barcode</div>
+                        <div class="col-md-6" style="font-weight:bold">@ViewBag.Barcode</div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">SKU</div>
+                        <div class="col-md-6" style="font-weight:bold">@ViewBag.SKU</div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Retail Price</div>
+                        <div class="col-md-6" style="font-weight:bold">
+                            @{if (ViewBag.SpecialPrice > 0 && ViewBag.RetailPrice > 0)
+                                {
+                                    <span><del>@(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["CurrencySymbol"].ToString() + @ViewBag.RetailPrice.ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatStringAmount"].ToString()))</del></span><span style="color:red; padding-left: 10px">@(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["CurrencySymbol"].ToString() + @ViewBag.SpecialPrice.ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatStringAmount"].ToString()))</span>
+                                }
+                                else
+                                {
+                                    <span>@(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["CurrencySymbol"].ToString() + @ViewBag.RetailPrice.ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatStringAmount"].ToString()))</span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Supply Price</div>
+                        <div class="col-md-6" style="font-weight:bold">@(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["CurrencySymbol"].ToString() + @ViewBag.SupplyPrice.ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatStringAmount"].ToString()))</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Total On Hand</div>
+                        <div class="col-md-6" style="font-weight:bold">@ViewBag.TotalOnHand.ToString("#,##0")</div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Total Stock Cost</div>
+                        <div class="col-md-6" style="font-weight:bold">@(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["CurrencySymbol"].ToString() + @ViewBag.TotalStockCost.ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatStringAmount"].ToString()))</div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Avg. Stock Cost</div>
+                        <div class="col-md-6" style="font-weight:bold">@(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["CurrencySymbol"].ToString() + @ViewBag.AvgStockCost.ToString(JObject.FromObject((Object)Session["VariableGlobalSrcipt"])["FormatStringAmount"].ToString()))</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Brand</div>
+                        <div class="col-md-6" style="font-weight:bold">@ViewBag.Brand</div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Category</div>
+                        <div class="col-md-6" style="font-weight:bold">@ViewBag.Category</div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6" style="text-align:right">Supplier</div>
+                        <div class="col-md-6" style="font-weight:bold">@ViewBag.Supplier</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Stock History</h4>
+            </div>
+            <div class="row" id="divTable" style="display:none">
+                <div class="row">
+                    <div class="col-md-12" style="float:right; margin-right:10px">
+                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+
+                        </div>
+                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+
+                        </div>
+                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+
+                        </div>
+                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+
+                        </div>
+                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2 float-right">
+                            <button type="button" class="btn btn-info dropdown-toggle" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Export
+                            </button>
+                            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
+                                <a class="dropdown-item" href="#" style="padding:0px" id="buttonExcel"></a>
+                                <a class="dropdown-item" href="#" id="buttonCVX" style="padding:0px"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12 containtTable">
+                            <table class="table table-sm datatable no-footer" style="width:100%" id="tableStockHistory">
+                                <thead>
+                                    <tr>
+                                        <th>TIME & DATE</th>
+                                        <th>STAFF</th>
+                                        <th>LOCATION</th>
+                                        <th>ACTION</th>
+                                        <th>QTY. ADJUSTED</th>
+                                        <th>COST PRICE</th>
+                                        <th>STOCK ON HAND</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="divNoData" style="display:none">
+                <div style="text-align:center!important; margin-left:auto; margin-right:auto">
+                    <p style="opacity: .7; font-size:60px">
+                        <i class="fa fa-cube fa-lg mt-4"></i>
+                    </p>
+                    <h3 class="m-b-10">No History Yet</h3>
+                    <p>
+                        Any sales or adjustments to this product's stock will show here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#region Modal-->
+@Html.Partial("/Views/Inventory/AddProduct.cshtml")
+@Html.Partial("/Views/Inventory/AdjustmentProduct.cshtml")
+<!--#endregion-->
+<script src="@Url.Content("~/Scripts/inventory/viewproduct.js")"></script>
+<!--#endregion-->

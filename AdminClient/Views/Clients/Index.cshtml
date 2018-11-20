@@ -1,0 +1,112 @@
+﻿<!--#region Include CSS-->
+@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<!--#endregion-->
+<!--#region Html-->
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group" id="containtTable">
+                <div class="col-md-12">
+                    <div class="row" style="padding-bottom:10px">
+                        <div class="col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10"></div>
+                        <div class="col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1">
+
+                        </div>
+                        <div class="col-4 col-sm-2 col-md-2 col-lg-2 col-xl-1">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Options
+                            </button>
+                            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
+                                <a class="dropdown-item" href="#" style="padding:0px" id="buttonExcel"></a>
+                                <a class="dropdown-item" href="#" id="buttonCVX" style="padding:0px"></a>
+                                <a class="dropdown-item" href="#" id="buttonImport" style="padding:0px">
+                                    <div class="dt-buttons">
+                                        <button class="dt-button buttons-csv buttons-html5 btn-block" id="btnDownloadImportClient" name="btnDownloadImportClient" tabindex="0" aria-controls="table">
+                                            <span><i class="fa fa-file"></i>  Import Clients</span>
+                                        </button>
+                                    </div>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 containtTable">
+                    <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Mobile number</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="containtButtonCreate">
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+<!--#region Modal-->
+<div class="modal fade" id="actionModalImport">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Import Clients To Shedul</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate">
+                    <div class="form-group">
+                        <p>
+                            Follow the simple instructions below to import clients to your Shedul account
+                        </p>
+                        <p>
+                            <ol>
+                                <li>Download your import spreadsheet using the button below</li>
+                                <li>Copy and paste your client details into the spreadsheet</li>
+                                <li>Email it back to us on info@kyrio.co and we'll add the clients to your account!</li>
+                            </ol>
+                        </p>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-block btn-success" id="actionButtonDownload" onclick="window.location.href = '/Files/ClientImport.csv'" data-style="slide-right">DOWNLOAD IMPORT FILE</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+@Html.Partial("/Views/Clients/Add.cshtml")
+<!--#endregion-->
+<!--#region Include JS-->
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Scripts/client/clients.js")"></script>
+<!--#endregion-->

@@ -1,0 +1,15 @@
+﻿@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@model Object
+@{
+    JObject notification = JObject.FromObject(Model);
+    <div class="col-md-12 containtNotification offset-sm-2 offset-md-3 offset-lg-4 col-rt-offset-5  col-fhd-offset-4">
+        <div class="col-md-12">
+            @Html.Partial("/Views/Shared/img/icon_calendar.cshtml")
+        </div>
+        <p class="h3">@notification["Title"]</p>
+        <p>
+            @Html.Raw(@notification["Content"]);
+        </p>
+    </div>
+};

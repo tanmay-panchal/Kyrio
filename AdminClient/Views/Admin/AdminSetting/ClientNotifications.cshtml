@@ -1,0 +1,312 @@
+﻿<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> Client Notifications</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <form id="busiessForm">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                                <label class="switch switch-lg switch-3d switch-primary">
+                                                    <input type="checkbox" class="switch-input" id="config_communications_enabled" name="config_communications_enabled" ispropertiesmodel>
+                                                    <span class="switch-label"></span>
+                                                    <span class="switch-handle"></span>
+                                                </label>
+                                            </div>
+                                            <div class="form-group col-fhd-10 col-xlg-10 col-md-10 col-sm-12 col-xs-10">
+                                                <h3>Enable Client Notification Messages</h3>
+                                                <p>Automatically send booking notifications for reminders, reschedules, cancelations and more.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="groupsetting">
+                                    <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active show" id="reminders-tab" data-toggle="tab" href="#reminders" role="tab" aria-controls="reminders" aria-selected="true">REMINDERS</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="confirmation-tab" data-toggle="tab" href="#confirmation" role="tab" aria-controls="confirmation" aria-selected="false">CONFIRMATION</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="reschedules-tab" data-toggle="tab" href="#reschedules" role="tab" aria-controls="reschedules" aria-selected="false">RESCHEDULES</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="cancellations-tab" data-toggle="tab" href="#cancellations" role="tab" aria-controls="cancellations" aria-selected="false">CANCELLATIONS</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="thankyous-tab" data-toggle="tab" href="#thankyous" role="tab" aria-controls="thankyous" aria-selected="false">THANK YOUS</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTab1Content">
+                                        <div class="tab-pane fade active show" id="reminders" role="tabpanel" aria-labelledby="reminders-tab">
+                                            <div class="form-group">
+                                                <input type="checkbox" id="config_reminder_notification_enabled" name="config_reminder_notification_enabled" ispropertiesmodel />
+                                                <label class="col-form-label">Enable Reminder Messages</label>
+                                            </div>
+                                            <div id="gr_config_reminder">
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <label class="col-form-label" style="font-weight:bold">SEND BY</label>
+                                                        <select class="form-control" style="width: 100%" id="config_reminders_send_by" name="config_reminders_send_by" ispropertiesmodel>
+                                                            <option value="marketing_email">Email</option>
+                                                            <option value="marketing_sms">SMS</option>
+                                                            <option value="marketing_both">Email & SMS</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="divsms_template">
+                                                    <label class="col-form-label" style="font-weight:bold">SMS TEMPLATE</label>
+                                                    <textarea class="form-control" rows="5" id="config_reminder_sms_template" name="config_reminder_sms_template" ispropertiesmodel maxlength="140"></textarea>
+                                                </div>
+                                                <div class="form-group" id="divButtonreminder_sms">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            <button type="button" id="preview_sms_reminder" tag="config_reminder_sms_template" class="btn btn-block btn-secondary">Preview message</button>
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <label class="col-form-label" style="font-weight:bold">REMINDER ADVANCE NOTICE</label>
+                                                        <select class="form-control" style="width: 100%" id="config_reminders_advance_period" name="config_reminders_advance_period" ispropertiesmodel>
+                                                            <option value="2">2 Hours</option>
+                                                            <option value="3">3 Hours</option>
+                                                            <option value="24">24 Hours</option>
+                                                            <option value="48">48 Hours</option>
+                                                        </select>
+                                                    </div>
+                                                    <hr />
+                                                </div>
+                                                <div class="form-group" id="divemail_title">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL SUBJECT</label>
+                                                    <input type="text" class="form-control" id="config_reminder_email_title" name="config_reminder_email_title" ispropertiesmodel maxlength="200">
+                                                </div>
+                                                <div class="form-group" id="divemail_template">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL TEMPLATE</label>
+                                                    <textarea class="form-control" rows="15" id="config_reminder_email_template" name="config_reminder_email_template" ispropertiesmodel maxlength="400"></textarea>
+                                                </div>
+                                                <br />
+                                                <div class="form-group" id="divButtonreminder_email">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            <button type="button" id="preview_reminder" tag="config_reminder_email_template" class="btn btn-block btn-secondary">Preview message</button>
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="confirmation-tab">
+                                            <div class="form-group">
+                                                <input type="checkbox" id="config_confirmation_notification_enabled" name="config_confirmation_notification_enabled" ispropertiesmodel />
+                                                <label class="col-form-label">Enable Confirmation Messages</label>
+                                            </div>
+                                            <div id="gr_config_confirmation">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL SUBJECT</label>
+                                                    <input type="text" class="form-control" id="config_confirmation_email_title" name="config_confirmation_email_title" ispropertiesmodel maxlength="200">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL TEMPLATE</label>
+                                                    <textarea class="form-control" rows="15" id="config_confirmation_email_template" name="config_confirmation_email_template" ispropertiesmodel maxlength="400"></textarea>
+                                                </div>
+                                                <br />
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            <button type="button" id="preview_confirmation" tag="config_confirmation_email_template" class="btn btn-block btn-secondary">Preview message</button>
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="reschedules" role="tabpanel" aria-labelledby="reschedules-tab">
+                                            <div class="form-group">
+                                                <input type="checkbox" id="config_rescheduling_notification_enabled" name="config_rescheduling_notification_enabled" ispropertiesmodel />
+                                                <label class="col-form-label">Enable Rescheduling Messages</label>
+                                            </div>
+                                            <div id="gr_config_rescheduling">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL SUBJECT</label>
+                                                    <input type="text" class="form-control" id="config_rescheduling_email_title" name="config_rescheduling_email_title" ispropertiesmodel maxlength="200">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL TEMPLATE</label>
+                                                    <textarea class="form-control" rows="15" id="config_rescheduling_email_template" name="config_rescheduling_email_template" ispropertiesmodel maxlength="400"></textarea>
+                                                </div>
+                                                <br />
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            <button type="button" id="preview_rescheduling" tag="config_rescheduling_email_template" class="btn btn-block btn-secondary">Preview message</button>
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="cancellations" role="tabpanel" aria-labelledby="cancellations-tab">
+                                            <div class="form-group">
+                                                <input type="checkbox" id="config_cancellation_notification_enabled" name="config_cancellation_notification_enabled" ispropertiesmodel />
+                                                <label class="col-form-label">Enable Cancellation Messages</label>
+                                            </div>
+                                            <div id="gr_config_cancellation">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL SUBJECT</label>
+                                                    <input type="text" class="form-control" id="config_cancellation_email_title" name="config_cancellation_email_title" ispropertiesmodel maxlength="200">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL TEMPLATE</label>
+                                                    <textarea class="form-control" rows="15" id="config_cancellation_email_template" name="config_cancellation_email_template" ispropertiesmodel maxlength="400"></textarea>
+                                                </div>
+                                                <br />
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            <button type="button" id="preview_cancellation" tag="config_cancellation_email_template" class="btn btn-block btn-secondary">Preview message</button>
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane fade" id="thankyous" role="tabpanel" aria-labelledby="thankyous-tab">
+                                            <div class="form-group">
+                                                <input type="checkbox" id="config_thank_you_notification_enabled" name="config_thank_you_notification_enabled" ispropertiesmodel />
+                                                <label class="col-form-label">Enable Thank You Messages</label>
+                                            </div>
+                                            <div id="gr_config_thank_you">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL SUBJECT</label>
+                                                    <input type="text" class="form-control" id="config_thank_you_email_title" name="config_thank_you_email_title" ispropertiesmodel maxlength="200">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-form-label" style="font-weight:bold">EMAIL TEMPLATE</label>
+                                                    <textarea class="form-control" rows="15" id="config_thank_you_email_template" name="config_thank_you_email_template" ispropertiesmodel maxlength="400"></textarea>
+                                                </div>
+                                                <br />
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            <button type="button" id="preview_thank_you" tag="config_thank_you_email_template" class="btn btn-block btn-secondary">Preview message</button>
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                                            
+                                                        </div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-white bg-primary">
+                                <div class="card-body">
+                                    <h5>
+                                        <span class="semi-bold">Messaging Settings</span>
+                                    </h5>
+                                    <div class="tips-text">
+                                        <p>Message types setup here will be automatically sent to clients. All messages generated can be easily accessed on the messages page (in your main menu).</p><p>Adjust the settings for how and when messages are sent, and edit the templates to personalise the text.</p><p>Use the below tags to include appointment details inside messages:</p><p>CLIENT_FIRST_NAME<br>CLIENT_LAST_NAME<br>STAFF_FIRST_NAME<br>STAFF_LAST_NAME</p><p>BOOKING_DATE_TIME<br>BOOKING_DATE<br>BOOKING_TIME</p><p>BOOKING_REFERENCE<br>SERVICE_NAME</p><p>BUSINESS_NAME<br>LOCATION_NAME<br>LOCATION_PHONE <br>LOCATION_ADDRESS<br>LOCATION_CITY</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12"><button type="button" class="btn btn-custome" id="excuteButton" data-style="slide-right">Save Changes</button></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actionModal" ismodal>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Preview template</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionForm">
+                    <div class="form-group" id="template"></div>
+                </form>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+                <a href="http://www.kyrio.co" style="color: #A8A6A6; font-family: Arial; font-size: 12px; line-height: 100%; text-decoration: none;" target="_blank">Powered by Kyrio</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/admin/clientnotifications.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")

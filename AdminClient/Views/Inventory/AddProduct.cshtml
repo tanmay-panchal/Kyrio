@@ -1,0 +1,162 @@
+﻿<div class="modal fade modal-fullsrceen" id="actionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <form novalidate="novalidate" id="actionForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Product Details</h4>
+                                <div class="form-group">
+                                    <input type="hidden" id="ProductID" ispropertiesmodel ispropertiesidmodel />
+                                    <label class="col-form-label">PRODUCT NAME</label>
+                                    <input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="e.g Large Shampoo" ispropertiesmodel maxlength="200" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">CATEGORY</label>
+                                    <select style="width: 100%" id="CategoryID" urlselection="/Home/GetCategoryBaseId" name="CategoryID" ispropertiesmodel></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">BRAND</label>
+                                    <select style="width: 100%" id="BrandID" urlselection="/Home/GetBrandBaseId" name="BrandID" ispropertiesmodel></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>&nbsp;</h4>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">BARCODE</label> <span> (ISBN, UPC, etc.)</span>
+                                        <input type="text" class="form-control" id="Barcode" name="Barcode" placeholder="e.g. 123456789" ispropertiesmodel maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">SKU</label><span> Stock Keeping Unit</span>
+                                        <input type="text" class="form-control" id="SKU" name="SKU" placeholder="e.g. 123456789" ispropertiesmodel maxlength="50" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">DESCRIPTION</label>
+                                    <textarea class="form-control" rows="5" id="Street" name="Street" placeholder="e.g. the world's most spectacular product" ispropertiesmodel maxlength="400"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group col-fhd-10 col-xlg-10 col-md-10 col-sm-12 col-xs-10">
+                                        <h4>Enable Retail Sales</h4>
+                                    </div>
+                                    <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                        <label class="switch switch-lg switch-3d switch-primary">
+                                            <input type="checkbox" class="switch-input" id="EnableRetailSales" name="EnableRetailSales" ispropertiesmodel>
+                                            <span class="switch-label"></span>
+                                            <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row" id="hasEnableRetailSales">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">RETAIL PRICE</label>
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="input_group_text1"></span>
+                                                    <input id="RetailPrice" name="RetailPrice" class="form-control" type="number" ispropertiesmodel>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="col-form-label">SPECIAL PRICE</label>
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="input_group_text2"></span>
+                                                    <input id="SpecialPrice" name="SpecialPrice" class="form-control" type="number" ispropertiesmodel>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">TAX</label><span> Added to prices</span>
+                                            <select style="width: 100%" id="TaxID" urlselection="/Home/GetTaxBaseId" name="TaxID" ispropertiesmodel></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="checkbox" id="EnableCommission" name="EnableCommission" ispropertiesmodel />
+                                            <label class="col-form-label">Enable commission</label>
+                                            <span>(Calculate staff commissions when this product is sold)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="noEnableRetailSales" style="text-align:center">
+                                    <span>Switch on 'Enable Retail Sales' to sell this product at checkout.</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group col-fhd-10 col-xlg-10 col-md-10 col-sm-12 col-xs-10">
+                                        <h4>Enable Stock Control</h4>
+                                    </div>
+                                    <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                                        <label class="switch switch-lg switch-3d switch-primary">
+                                            <input type="checkbox" class="switch-input" id="EnableStockControl" name="EnableStockControl" ispropertiesmodel>
+                                            <span class="switch-label"></span>
+                                            <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row" id="hasEnableStockControl">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label">SUPPLY PRICE</label>
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="input_group_text3"></span>
+                                                <input id="SupplyPrice" name="SupplyPrice" class="form-control" type="number" ispropertiesmodel>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label">SUPPLIER</label>
+                                            <select style="width: 100%" id="SupplierID" urlselection="/Home/GetSupplierBaseId" name="SupplierID" ispropertiesmodel></select>
+                                        </div>
+                                        <table class="table table-sm datatable no-footer" style="width:100%" id="tableStockLocation">
+                                            <thead>
+                                                <tr>
+                                                    <th>LOCATION</th>
+                                                    <th id="thInitialStock">INITIAL STOCK</th>
+                                                    <th>REORDER POINT</th>
+                                                    <th>REORDER QTY.</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row" id="noEnableStockControl" style="text-align:center">
+                                    <span>Switch on 'Enable Stock Control' inventory levels for this product.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteButton">DELETE</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

@@ -1,0 +1,123 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+
+<script>
+    var prefixFileMobileAppointment = "/ContentHtml/Appointment/Action/Moblile";
+    var LinkFileMobileAppointment = {
+        AddClient: {
+            Index: prefixFileMobileAppointment + "/AddClient/Index.html",
+            ItemSearchClient: prefixFileMobileAppointment + "/AddClient/ItemSearchClient.html",
+        },
+        AddComboboxService: {
+            Index: prefixFileMobileAppointment + "/AddComboboxService/Index.html",
+            Service: prefixFileMobileAppointment + "/AddComboboxService/Service.html",
+            ServiceGroup: prefixFileMobileAppointment + "/AddComboboxService/ServiceGroup.html",
+        },
+        AppointmentService: {
+            Index: prefixFileMobileAppointment + "/AppointmentService/Index.html",
+        },
+        ContentShare: {
+            ServiceShare: prefixFileMobileAppointment + "/ContentShare/ServiceShare.html",
+        },
+        Control: {
+            Duration: prefixFileMobileAppointment + "/Control/Duration.html",
+            Staff_IsRequest: prefixFileMobileAppointment + "/Control/Staff_IsRequest.html",
+            Starttime12h: prefixFileMobileAppointment + "/Control/Starttime12h.html",
+            Starttime24h: prefixFileMobileAppointment + "/Control/Starttime24h.html",
+        },
+        DetailClient: {
+            Index: prefixFileMobileAppointment + "/DetailClient/Index.html",
+            Appointment: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Appointment/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Appointment/Item.html",
+            },
+            Info: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Info/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Info/Item.html",
+            },
+            Invoice: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Invoice/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Invoice/Item.html",
+            },
+            Product: {
+                Index: prefixFileMobileAppointment + "/DetailClient/Product/Index.html",
+                Item: prefixFileMobileAppointment + "/DetailClient/Product/Item.html",
+            }
+        },
+        Index: {
+            Index: prefixFileMobileAppointment + "/Index/Index.html",
+            ClientDetail: prefixFileMobileAppointment + "/Index/ClientDetail.html",
+            ClientEmpty: prefixFileMobileAppointment + "/Index/ClientEmpty.html",
+            Repeat_ScheulDate: prefixFileMobileAppointment + "/Index/Repeat_ScheulDate.html",
+            ServiceItem: prefixFileMobileAppointment + "/Index/ServiceItem.html",
+        },
+    };
+    class MobileAddClient {
+        constructor() {
+            this.Modal = null;
+            this.HTML = {
+                Index: null,
+                ItemSearchClient: null,
+            }
+        }
+
+        //#region Private
+        CreatEvent() {
+            var that = this;
+            $("#searchClient").keyup(function () {
+                that.LoadDataSearchClient();
+            })
+        }
+        RemoveEvent() {
+            $(document).off("keyup", "#searchClient");
+        }
+        LoadDataSearchClient() {
+            var that = this;
+            var input = that.Modal.find("#searchClient");
+            var value = $.trim(input.val());
+            $.RequestAjax("/Home/GetDataClientSearch", JSON.stringify({ search: value }), function (data) {
+                $("[name='item-client-search']").remove();
+                var length = data.Result.length;
+                $.each(data.Result, function (index, item) {
+                    var mobilenumber = (item.MobileNumber == null || item.MobileNumber == "") ? "" : ("+" + item.MobileNumberDialCode + " " + item.MobileNumber);
+                    var email = (item.Email == null || item.Email == "") ? "" : item.Email;
+                    var html = that.HTML.ItemSearchClient.replace("@Html.Raw("@Border")", (index == length ? '' : 'border-bottom'))
+                          .replace("@Html.Raw("@ClientID")", item.ClientID)
+                          .replace("@Html.Raw("@Represent")", ($.trim(item.FirstName) == "" ? '' : item.FirstName.toString().charAt(0).toUpperCase()))
+                          .replace("@Html.Raw("@FullName")", ($.trim(item.FirstName) == "" ? '' : item.FirstName) + ($.trim(item.LastName) == "" ? '' : ' ' + item.LastName))
+                          .replace("@Html.Raw("@Description")", (mobilenumber == "" && email == "") ? "" : (mobilenumber == "" ? email : (email == "" ? mobilenumber : (mobilenumber + ", " + email))));
+                    that.Modal.find("#container-item-client").append(html);
+                })
+            })
+        }
+        //#endregion
+
+        //#region Public
+        OpenModal() {
+            var that = this;
+            if (this.HTML.Index == null || this.HTML.ItemSearchClient == null) {
+                $.RequestAjaxText(LinkFileMobileAppointment.AddClient.Index, function (data) { that.HTML.Index = data; });
+                $.RequestAjaxText(LinkFileMobileAppointment.AddClient.ItemSearchClient, function (data) { that.HTML.ItemSearchClient = data; });
+            }
+            if (!that.Modal) {
+                that.Modal = $(that.HTML.Index);
+                $("body").append(that.Modal);
+            }
+            that.LoadDataSearchClient();
+            that.CreatEvent();
+        }
+        HideModal() {
+            this.RemoveEvent();
+        }
+        RemoveModal() {
+            this.RemoveEvent();
+            this.Modal.remove();
+        }
+        //#endregion
+    }
+    $(function () {
+        var t = new MobileAddClient();
+        t.OpenModal();
+    })
+</script>

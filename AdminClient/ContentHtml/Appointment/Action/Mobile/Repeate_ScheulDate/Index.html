@@ -1,0 +1,96 @@
+﻿<div class="modal fade show modal-main modal modal-mobile" id="modalRepeate_ScheulDate">
+    <div class="modal-dialog" role="document" style="position:fixed">
+        <div class="modal-content">
+            <div class="modal-header b-0">
+                <h3 class="modal-title" name="titleModal"></h3>
+                <button type="button" class="close" name="closeModal">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-0 overt">
+                <form novalidate="novalidate" id="formModalMain">
+                    <div class="col-12 form-group p-0 overflow-y" style="max-height: calc(100vh - 104px)">
+                        <div class="col-12 form-group pt-3 mb-4">
+                            <div class="col-12 form-group p-0">
+                                <h3 class="text-left font-weight-bold text-capitalize">appointment date</h3>
+                            </div>
+                            <div class="col-12 form-group p-0" id="scheduledDateAppointment"></div>
+                            <div class="col-12 form-group p-0 pt-4 mt-2">
+                                <h4 class="text-left font-weight-bold text-capitalize">repeating opitons</h4>
+                            </div>
+                            <div class="col-12 form-group p-0 pt-2 pb-2">
+                                <p class="text-capitalize mb-0 mt-1 text-capitalize">frequency</p>
+                                <div class="input-group input-group-select">
+                                    <select class="form-control" id="frequencyTypeAppointment">
+                                        <option value="no-repeat">Doesn't repeat</option>
+                                        <option value="daily:1">Daily</option>
+                                        <option value="daily:2">Every 2 days</option>
+                                        <option value="daily:3">Every 3 days</option>
+                                        <option value="daily:4">Every 4 days</option>
+                                        <option value="daily:5">Every 5 days</option>
+                                        <option value="daily:6">Every 6 days</option>
+                                        <option value="daily:7">Every 7 days</option>
+                                        <option value="weekly:1">Weekly</option>
+                                        <option value="weekly:2">Every 2 weeks</option>
+                                        <option value="weekly:3">Every 3 weeks</option>
+                                        <option value="weekly:4">Every 4 weeks</option>
+                                        <option value="weekly:5">Every 5 weeks</option>
+                                        <option value="weekly:6">Every 6 weeks</option>
+                                        <option value="weekly:7">Every 7 weeks</option>
+                                        <option value="weekly:8">Every 8 weeks</option>
+                                        <option value="weekly:9">Every 9 weeks</option>
+                                        <option value="weekly:10">Every 10 weeks</option>
+                                        <option value="monthly:1">Monthly</option>
+                                        <option value="monthly:2">Every 2 months</option>
+                                        <option value="monthly:3">Every 3 months</option>
+                                        <option value="monthly:4">Every 4 months</option>
+                                        <option value="monthly:5">Every 5 months</option>
+                                        <option value="monthly:6">Every 6 months</option>
+                                        <option value="monthly:7">Every 7 months</option>
+                                        <option value="monthly:8">Every 8 months</option>
+                                        <option value="monthly:9">Every 9 months</option>
+                                        <option value="monthly:10">Every 10 months</option>
+                                        <option value="monthly:11">Every 11 months</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 form-group p-0 pt-2 pb-2" id="container-repeatCountAppointment">
+                                <p class="text-capitalize mb-0 mt-1 text-capitalize">ends</p>
+                                <div class="input-group input-group-select">
+                                    <select class="form-control" id="repeatCountAppointment">
+                                        <option value="count:2">After 2 times</option>
+                                        <option value="count:3">After 3 times</option>
+                                        <option value="count:4">After 4 times</option>
+                                        <option value="count:5">After 5 times</option>
+                                        <option value="count:6">After 6 times</option>
+                                        <option value="count:7">After 7 times</option>
+                                        <option value="count:8">After 8 times</option>
+                                        <option value="count:9">After 9 times</option>
+                                        <option value="count:10">After 10 times</option>
+                                        <option value="count:11">After 11 times</option>
+                                        <option value="count:12">After 12 times</option>
+                                        <option value="count:13">After 13 times</option>
+                                        <option value="count:14">After 14 times</option>
+                                        <option value="count:15">After 15 times</option>
+                                        <option value="count:20">After 20 times</option>
+                                        <option value="count:25">After 25 times</option>
+                                        <option value="count:30">After 30 times</option>
+                                        <option value="date">Specific date</option>
+                                        <option value="ongoing">Ongoing</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 form-group p-0 pt-2 pb-2 border-bottom" id="container-endRepeatAppointment">
+                                <p class="text-capitalize mb-0 mt-1 text-capitalize">selected date</p>
+                                <input type="text" isdate class="form-control b-0 pl-0 pr-0" id="endRepeatAppointment" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 form-group fixed-bottom border-top pt-4 bg-white">
+                        <button class="btn btn-block btn-dark active text-uppercase" type="button" aria-pressed="true" id="buttonSaveRepeateIsRequest">apply changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

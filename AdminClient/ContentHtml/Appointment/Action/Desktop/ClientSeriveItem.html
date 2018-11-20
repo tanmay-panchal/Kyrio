@@ -1,0 +1,97 @@
+﻿<div class="col-12 p-0 border containt-serivce" appointmentserviceid="0">
+    <div class="number-service"></div>
+    <div class="delete-service" name="deleteService">
+        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.188 4.9996l3.565-3.565a.8403.8403 0 0 0 0-1.1884.8403.8403 0 0 0-1.1883 0l-3.5651 3.565L1.4345.2462A.8403.8403 0 1 0 .246 1.4345l3.5651 3.565-3.565 3.5651A.8404.8404 0 0 0 1.4345 9.753l3.565-3.5651L8.5648 9.753a.8403.8403 0 0 0 1.1884 0 .8403.8403 0 0 0 0-1.1884L6.188 4.9996z"></path>
+        </svg>
+    </div>
+    <div class="form-group m-1" name="rowService1">
+        <div class="col-3">
+            <label class="col-form-label">Start time</label>
+            <select class="form-control" name="StartTime">
+                @ContentHtml
+            </select>
+        </div>
+        <div class="col-9">
+            <label class="col-form-label">Service</label>
+            <div class="input-group">
+                <input type="text" class="form-control input-select" name="ServiceID" placeholder="Choose a service" autocomplete="off" autocorrect="off" autocapitalize="none" />
+                <div class="input-group-append input-append-select">
+                    <span class="input-group-text"><i class="fa fa-caret-down"></i></span>
+                </div>
+            </div>
+            <div class="form-group container-list-service" style="display:none"></div>
+        </div>
+    </div>
+    <div class="form-group m-1" name="rowService2">
+        <div class="col-3">
+            <label class="col-form-label">Duration</label>
+            <select class="form-control" name="Duration">
+                <option value="300" selected>5min</option>
+                <option value="600">10min</option>
+                <option value="900">15min</option>
+                <option value="1200">20min</option>
+                <option value="1500">25min</option>
+                <option value="1800">30min</option>
+                <option value="2100">35min</option>
+                <option value="2400">40min</option>
+                <option value="2700">45min</option>
+                <option value="3000">50min</option>
+                <option value="3300">55min</option>
+                <option value="3600">1h</option>
+                <option value="3900">1h 5min</option>
+                <option value="4200">1h 10min</option>
+                <option value="4500">1h 15min</option>
+                <option value="4800">1h 20min</option>
+                <option value="5100">1h 25min</option>
+                <option value="5400">1h 30min</option>
+                <option value="5700">1h 35min</option>
+                <option value="6000">1h 40min</option>
+                <option value="6300">1h 45min</option>
+                <option value="6600">1h 50min</option>
+                <option value="6900">1h 55min</option>
+                <option value="7200">2h</option>
+                <option value="8100">2h 15min</option>
+                <option value="9000">2h 30min</option>
+                <option value="9900">2h 45min</option>
+                <option value="10800">3h</option>
+                <option value="11700">3h 15min</option>
+                <option value="12600">3h 30min</option>
+                <option value="13500">3h 45min</option>
+                <option value="14400">4h</option>
+                <option value="16200">4h 30min</option>
+                <option value="18000">5h</option>
+                <option value="19800">5h 30min</option>
+                <option value="21600">6h</option>
+                <option value="23400">6h 30min</option>
+                <option value="25200">7h</option>
+                <option value="27000">7h 30min</option>
+                <option value="28800">8h</option>
+                <option value="32400">9h</option>
+                <option value="36000">10h</option>
+                <option value="39600">11h</option>
+                <option value="43200">12h</option>
+            </select>
+        </div>
+        <div class="col-9">
+            <div class="d-flex col-12 p-0">
+                <div class="min-width-100 justify-content-start mr-3" name="containtStaff">
+                    <label class="col-form-label">Staff</label>
+                    <div class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text pointer">
+                                <input type="checkbox" name="IsRequest" class="d-none" />
+                                <i class="fa"></i>
+                            </span>
+                        </span>
+                        <select class="form-control" name="StaffID" urlselection="/Home/GetUserBaseId"></select>
+                    </div>
+                </div>
+                <div class="min-width-50 justify-content-end pr-3" name="containtResource" style="display:none">
+                    <label class="col-form-label">Resource</label>
+                    <select class="form-control" name="ResourceID" urlselection="/Home/GetResourceBaseId"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

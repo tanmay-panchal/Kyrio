@@ -1,0 +1,104 @@
+﻿<div class="modal fade" id="excuteDialogClickCell" ismodal>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="TitleModalClickCell">
+                    <h3 class="text-center"></h3>
+                    <span class="text-center"></span>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="excuteFormClickCell">
+                    <div class="row">
+                        <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-6 col-6 col-xs-6">
+                            <div class="form-group">
+                                <label class="col-form-label">SHIFT START</label>
+                                <div class="input-group">
+                                    <span class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </span>
+                                    <input type="text" class="form-control" id="Shift1Start" name="Shift1Start">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-fhd-6 col-xlg-6 col-md-6 col-sm-6 col-6 col-xs-6">
+                            <div class="form-group">
+                                <label class="col-form-label">SHIFT END</label>
+                                <div class="input-group">
+                                    <span class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </span>
+                                    <input type="text" class="form-control" id="Shift1End" name="Shift1End">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="containtCreateButton">
+                        <div class="col-fhd-12 col-xlg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <button type="button" class="btn btn-square btn-block btn-light" id="createShift"><i class="icon-plus icons"></i> Add another shift</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Repeat weekly</label>
+                        <label class="switch switch-icon switch-pill switch-primary">
+                            <input type="checkbox" class="switch-input" id="IsRepeat" name="IsRepeat" />
+                            <span class="switch-label" data-on="" data-off=""></span>
+                            <span class="switch-handle"></span>
+                        </label>
+                    </div>
+                    <div class="form-group" id="showHideBaseRepart">
+                        <label class="col-form-label">END REPEAT</label>
+                        <select class="form-control" id="RepeatType" name="RepeatType">
+                            <option value="ongoing" selected>Ongoing</option>
+                            <option value="specificdate">Specific date</option>
+                        </select>
+                        <div class="input-group" id="containtEndRepeat">
+                            <span class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </span>
+                            <input type="text" id="EndRepeat" name="EndRepeat" class="form-control">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="showRepeatType">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer text-right">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-danger btn-block active" id="deleteButtonClickCell" data-style="slide-right">DELETE</button>
+                    </div>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                    </div>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-block btn-custome" id="excuteButtonClickCell" data-style="slide-right" isbuttonsave>SAVE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--#region Include JS-->
+<script src="@Url.Content("~/Scripts/staff/workinghours/excutedialogclickcell.js")"></script>
+<!--#endregion-->

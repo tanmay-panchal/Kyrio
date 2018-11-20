@@ -1,0 +1,71 @@
+﻿<div class="col-12 form-group p-0 m-0 d-flex flex-column">
+    <div class="p-2 align-items-start">
+        <div class="col-12 p-0">
+            <div class="float-left p-2"><button type="button" class="btn btn-block btn-info btn-circle-client disabled" aria-pressed="true">@Represent</button></div>
+            <div class="float-left p-2">
+                <div class="form-group"><h3 class="font-weight-bold">@FullName</h3></div>
+                <div class="col-12 p-0"><span>@Description</span></div>
+            </div>
+            <div class="dropdown float-right mr-2">
+                @HtmlButtonRight
+            </div>
+        </div>
+    </div>
+    <div class="p-1 p-t-0 ">
+        <div class="col-6 p-0">
+            <div class="row">
+                <div class="mx-auto my-auto">
+                    <h4 class="text-center p-b-0"><strong>@Appointments</strong></h4>
+                    <span class="text-center">Total Bookings</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 p-0">
+            <div class="row">
+                <div class="mx-auto my-auto">
+                    <div>
+                        <h4 class="text-center p-b-0 d-inline-block"><span><strong>@CurrencySymbol</strong></span></h4>
+                        <h4 class="text-center p-b-0 d-inline-block"><span><strong> @TotalSales</strong></span></h4>
+                    </div>
+                    <span class="text-center">Total Sales</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-0 d-flex flex-wrap align-items-end flex-column" style="flex-grow:1">
+        <div class="col-12 p-0 d-flex flex-wrap justify-content-center align-items-start" style="flex-grow:1;">
+            <div class="col-12 p-0">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-toggle="tab" href="#appointments" role="tab" aria-controls="appointments" aria-selected="true">APPOINTMENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">INFO</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active show" id="appointments" role="tabpanel">
+                    </div>
+                    <div class="tab-pane fade" id="products" role="tabpanel">
+                    </div>
+                    <div class="tab-pane fade active show" id="info" role="tabpanel">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 p-4 border-top d-flex flex-wrap align-items-end" id="containtFooter">
+            <div class="col-12 text-center" id="containtTotal">
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-block btn-light active" aria-pressed="true" id="saveButtonCheckOut">EXPRESS CHECKOUT</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-block btn-success active" aria-pressed="true" id="saveButton">SAVE APPOINTMENT</button>
+            </div>
+        </div>
+    </div>
+</div>

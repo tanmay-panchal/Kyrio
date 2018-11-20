@@ -1,0 +1,2337 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutOnlineBookings.cshtml"; ;
+}
+@{
+    ViewBag.Title = "Index";
+    //style="max-width:990px;height:100%;margin:0px;overflow-y:auto;border-right:1px solid #c2c2c2;border-left:1px solid #c2c2c2;display:block"
+}
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<div id="container" style="">
+    <div id="online-booking-disabled-form" style="display:none">
+        <div class="top-bar">
+            <input type="hidden" name="previous_step" id="previous_step" value="disabled">
+            <div class="title">Bookings Unavailable</div>
+        </div>
+        <div id="error-presenter" style="display: none">
+            <a class="close" href="#">✕</a>
+        </div>
+
+        <!--?xml version="1.0" encoding="utf-8"?-->
+        <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+        <g>
+        <g id="graph">
+		</g>
+        <g id="coffee">
+		</g>
+        <g id="plant">
+		</g>
+        <g id="phone">
+		</g>
+        <g id="wifi">
+		</g>
+        <g id="call">
+		</g>
+        <g id="locker">
+		</g>
+        <g id="fram">
+		</g>
+        <g id="pad">
+		</g>
+        <g id="pen__x26__pad">
+		</g>
+        <g id="folder">
+		</g>
+        <g id="scissors">
+		</g>
+        <g id="waste_box">
+		</g>
+        <g id="files">
+		</g>
+        <g id="pen_cup">
+		</g>
+        <g id="paper-clip">
+		</g>
+        <g id="pen-ink">
+		</g>
+        <g id="paper">
+		</g>
+        <g id="pin">
+		</g>
+        <g id="employ">
+		</g>
+        <g id="employes">
+		</g>
+        <g id="employs-2">
+		</g>
+        <g id="id-card">
+		</g>
+        <g id="id-card-2">
+		</g>
+        <g id="stepler">
+		</g>
+        <g id="seal">
+		</g>
+        <g id="photo-fram">
+		</g>
+        <g id="bulb">
+		</g>
+        <g id="date">
+		</g>
+        <g id="file-right">
+		</g>
+        <g id="file-close">
+		</g>
+        <g id="drawer">
+		</g>
+        <g id="cover">
+		</g>
+        <g id="letter">
+		</g>
+        <g id="table-2">
+		</g>
+        <g id="desktop">
+		</g>
+        <g id="gum">
+		</g>
+        <g id="tub-gum">
+		</g>
+        <g id="clock_1_">
+		</g>
+        <g id="book-covers">
+		</g>
+        <g id="scale">
+		</g>
+        <g id="pencil">
+		</g>
+        <g id="table-lamp">
+		</g>
+        <g id="office-table">
+		</g>
+        <g id="littile-plant">
+		</g>
+        <g id="women">
+		</g>
+        <g id="men">
+		</g>
+        <g id="time-lap">
+		</g>
+        <g id="telephone">
+		</g>
+        <g id="edit">
+		</g>
+        <g id="save-page">
+		</g>
+        <g id="directory">
+		</g>
+        <g id="event">
+		</g>
+        <g id="calendar">
+        <g>
+        <path fill="#626262" d="M42,25.8012695V8c0-1.6542969-1.3457031-3-3-3h-7V4c0-1.6542969-1.3457031-3-3-3s-3,1.3457031-3,3v1H16
+					V4c0-1.6542969-1.3457031-3-3-3s-3,1.3457031-3,3v1H5C3.3457031,5,2,6.3457031,2,8v35c0,1.6542969,1.3457031,3,3,3h28
+					c0.109314,0,0.2097778-0.0297852,0.3082275-0.0621948C33.7001343,45.9783325,34.0975342,46,34.5,46
+					C40.8413086,46,46,40.8408203,46,34.5C46,31.0250244,44.4443359,27.9117432,42,25.8012695z M28,4c0-0.5517578,0.4487305-1,1-1
+					s1,0.4482422,1,1v4.8955078c0,0.5517578-0.4487305,1-1,1s-1-0.4482422-1-1V4z M12,4c0-0.5517578,0.4487305-1,1-1
+					s1,0.4482422,1,1v4.8955078c0,0.5517578-0.4487305,1-1,1s-1-0.4482422-1-1V4z M5,44c-0.5512695,0-1-0.4482422-1-1V8
+					c0-0.5517578,0.4487305-1,1-1h5v1.8955078c0,1.6542969,1.3457031,3,3,3s3-1.3457031,3-3V7h10v1.8955078
+					c0,1.6542969,1.3457031,3,3,3s3-1.3457031,3-3V7h7c0.5512695,0,1,0.4482422,1,1v16.4039307
+					C38.3651123,23.5097046,36.4912109,23,34.5,23c-5.8317261,0-10.6517944,4.3669434-11.390625,10H20c-0.5522461,0-1,0.4472656-1,1
+					v4c0,0.5527344,0.4477539,1,1,1s1-0.4472656,1-1v-3h2.0253296c0.1617432,3.7352905,2.1010132,7.0159912,5.0049438,9H5z M34.5,44
+					c-5.2382813,0-9.5-4.2617188-9.5-9.5s4.2617188-9.5,9.5-9.5s9.5,4.2617188,9.5,9.5S39.7382813,44,34.5,44z"></path>
+        <path fill="#626262" d="M35,34.5195313V30c0-0.5527344-0.4477539-1-1-1s-1,0.4472656-1,1v5
+					c0,0.3037109,0.1381836,0.5908203,0.3754883,0.78125l5,4C38.5595703,39.9287109,38.7802734,40,38.9995117,40
+					c0.2929688,0,0.5839844-0.1289063,0.78125-0.375c0.3452148-0.4316406,0.2753906-1.0605469-0.15625-1.40625L35,34.5195313z"></path>
+        <path fill="#626262" d="M15,14h-4c-0.5522461,0-1,0.4472656-1,1v4c0,0.5527344,0.4477539,1,1,1s1-0.4472656,1-1v-3h3
+					c0.5522461,0,1-0.4472656,1-1S15.5522461,14,15,14z"></path>
+        <path fill="#626262" d="M20,20c0.5522461,0,1-0.4472656,1-1v-3h3c0.5522461,0,1-0.4472656,1-1s-0.4477539-1-1-1h-4
+					c-0.5522461,0-1,0.4472656-1,1v4C19,19.5527344,19.4477539,20,20,20z"></path>
+        <path fill="#626262" d="M29,20c0.5522461,0,1-0.4472656,1-1v-3h3c0.5522461,0,1-0.4472656,1-1s-0.4477539-1-1-1h-4
+					c-0.5522461,0-1,0.4472656-1,1v4C28,19.5527344,28.4477539,20,29,20z"></path>
+        <path fill="#626262" d="M15,23h-4c-0.5522461,0-1,0.4472656-1,1v4c0,0.5527344,0.4477539,1,1,1s1-0.4472656,1-1v-3h3
+					c0.5522461,0,1-0.4472656,1-1S15.5522461,23,15,23z"></path>
+        <path fill="#626262" d="M20,29c0.5522461,0,1-0.4472656,1-1v-3h3c0.5522461,0,1-0.4472656,1-1s-0.4477539-1-1-1h-4
+					c-0.5522461,0-1,0.4472656-1,1v4C19,28.5527344,19.4477539,29,20,29z"></path>
+        <path fill="#626262" d="M15,33h-4c-0.5522461,0-1,0.4472656-1,1v4c0,0.5527344,0.4477539,1,1,1s1-0.4472656,1-1v-3h3
+					c0.5522461,0,1-0.4472656,1-1S15.5522461,33,15,33z"></path>
+			</g>
+		</g>
+        <g id="light">
+		</g>
+        <g id="shelf">
+		</g>
+        <g id="clock">
+		</g>
+        <g id="books">
+		</g>
+        <g id="bag">
+		</g>
+        <g id="chair">
+		</g>
+        <g id="Layer_1">
+		</g>
+	</g>
+</switch>
+</svg>
+
+        <p class="lead">
+            @ViewBag.LocationName hasn't enabled online bookings,
+            <br>
+            but you can still contact them on: <a href="mailto:@ViewBag.ContactEmail">@ViewBag.ContactEmail</a>
+        </p>
+        <div class="logo-text">
+            <p>Online bookings powered by</p>
+            <a target="_blank" href="http://www.kyrio.co"><img width="160px" src="~/img/logo.jpg" alt="Kyrio full logo light bg"></a>
+        </div>
+    </div>
+    <div id="online-booking-welcome" style="display:none">
+        <form novalidate="novalidate" class="simple_form new_online_booking_form" id="new_online_booking_form" accept-charset="UTF-8">
+            <div class="top-bar">
+                <div class="title">Online Bookings</div>
+            </div>
+            <input type="hidden" name="authenticity_token" id="authenticity_token" value="@ViewBag.Token">
+            <input type="hidden" name="BusinessID" id="BusinessID" value="@ViewBag.BusinessID">
+            <input type="hidden" name="ContactEmail" id="ContactEmail" value="@ViewBag.ContactEmail">
+            <input type="hidden" name="CountryCode" id="CountryCode" value="@ViewBag.CountryCode">
+            <input type="hidden" name="DialCode" id="DialCode" value="@ViewBag.DialCode">
+            <input type="hidden" name="CountryName" id="CountryName" value="@ViewBag.CountryName">
+            <input type="hidden" name="business_online_booking" id="business_online_booking" value="@ViewBag.business_online_booking">
+            <input type="hidden" name="business_widget_allows_employee_selection" id="business_widget_allows_employee_selection" value="@ViewBag.business_widget_allows_employee_selection">
+            <div class="lead">
+                <!--?xml version="1.0" encoding="utf-8"?-->
+                <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+                <g>
+                <g id="graph">
+		</g>
+                <g id="coffee">
+		</g>
+                <g id="plant">
+		</g>
+                <g id="phone">
+		</g>
+                <g id="wifi">
+		</g>
+                <g id="call">
+		</g>
+                <g id="locker">
+		</g>
+                <g id="fram">
+		</g>
+                <g id="pad">
+		</g>
+                <g id="pen__x26__pad">
+		</g>
+                <g id="folder">
+		</g>
+                <g id="scissors">
+		</g>
+                <g id="waste_box">
+		</g>
+                <g id="files">
+		</g>
+                <g id="pen_cup">
+		</g>
+                <g id="paper-clip">
+		</g>
+                <g id="pen-ink">
+		</g>
+                <g id="paper">
+		</g>
+                <g id="pin">
+		</g>
+                <g id="employ">
+		</g>
+                <g id="employes">
+		</g>
+                <g id="employs-2">
+		</g>
+                <g id="id-card">
+		</g>
+                <g id="id-card-2">
+		</g>
+                <g id="stepler">
+		</g>
+                <g id="seal">
+		</g>
+                <g id="photo-fram">
+		</g>
+                <g id="bulb">
+		</g>
+                <g id="date">
+		</g>
+                <g id="file-right">
+		</g>
+                <g id="file-close">
+		</g>
+                <g id="drawer">
+		</g>
+                <g id="cover">
+		</g>
+                <g id="letter">
+		</g>
+                <g id="table-2">
+		</g>
+                <g id="desktop">
+		</g>
+                <g id="gum">
+		</g>
+                <g id="tub-gum">
+		</g>
+                <g id="clock_1_">
+		</g>
+                <g id="book-covers">
+		</g>
+                <g id="scale">
+		</g>
+                <g id="pencil">
+		</g>
+                <g id="table-lamp">
+		</g>
+                <g id="office-table">
+		</g>
+                <g id="littile-plant">
+		</g>
+                <g id="women">
+		</g>
+                <g id="men">
+		</g>
+                <g id="time-lap">
+		</g>
+                <g id="telephone">
+		</g>
+                <g id="edit">
+		</g>
+                <g id="save-page">
+		</g>
+                <g id="directory">
+		</g>
+                <g id="event">
+		</g>
+                <g id="calendar">
+                <g>
+                <path fill="#626262" d="M42,25.8012695V8c0-1.6542969-1.3457031-3-3-3h-7V4c0-1.6542969-1.3457031-3-3-3s-3,1.3457031-3,3v1H16
+					V4c0-1.6542969-1.3457031-3-3-3s-3,1.3457031-3,3v1H5C3.3457031,5,2,6.3457031,2,8v35c0,1.6542969,1.3457031,3,3,3h28
+					c0.109314,0,0.2097778-0.0297852,0.3082275-0.0621948C33.7001343,45.9783325,34.0975342,46,34.5,46
+					C40.8413086,46,46,40.8408203,46,34.5C46,31.0250244,44.4443359,27.9117432,42,25.8012695z M28,4c0-0.5517578,0.4487305-1,1-1
+					s1,0.4482422,1,1v4.8955078c0,0.5517578-0.4487305,1-1,1s-1-0.4482422-1-1V4z M12,4c0-0.5517578,0.4487305-1,1-1
+					s1,0.4482422,1,1v4.8955078c0,0.5517578-0.4487305,1-1,1s-1-0.4482422-1-1V4z M5,44c-0.5512695,0-1-0.4482422-1-1V8
+					c0-0.5517578,0.4487305-1,1-1h5v1.8955078c0,1.6542969,1.3457031,3,3,3s3-1.3457031,3-3V7h10v1.8955078
+					c0,1.6542969,1.3457031,3,3,3s3-1.3457031,3-3V7h7c0.5512695,0,1,0.4482422,1,1v16.4039307
+					C38.3651123,23.5097046,36.4912109,23,34.5,23c-5.8317261,0-10.6517944,4.3669434-11.390625,10H20c-0.5522461,0-1,0.4472656-1,1
+					v4c0,0.5527344,0.4477539,1,1,1s1-0.4472656,1-1v-3h2.0253296c0.1617432,3.7352905,2.1010132,7.0159912,5.0049438,9H5z M34.5,44
+					c-5.2382813,0-9.5-4.2617188-9.5-9.5s4.2617188-9.5,9.5-9.5s9.5,4.2617188,9.5,9.5S39.7382813,44,34.5,44z"></path>
+                <path fill="#626262" d="M35,34.5195313V30c0-0.5527344-0.4477539-1-1-1s-1,0.4472656-1,1v5
+					c0,0.3037109,0.1381836,0.5908203,0.3754883,0.78125l5,4C38.5595703,39.9287109,38.7802734,40,38.9995117,40
+					c0.2929688,0,0.5839844-0.1289063,0.78125-0.375c0.3452148-0.4316406,0.2753906-1.0605469-0.15625-1.40625L35,34.5195313z"></path>
+                <path fill="#626262" d="M15,14h-4c-0.5522461,0-1,0.4472656-1,1v4c0,0.5527344,0.4477539,1,1,1s1-0.4472656,1-1v-3h3
+					c0.5522461,0,1-0.4472656,1-1S15.5522461,14,15,14z"></path>
+                <path fill="#626262" d="M20,20c0.5522461,0,1-0.4472656,1-1v-3h3c0.5522461,0,1-0.4472656,1-1s-0.4477539-1-1-1h-4
+					c-0.5522461,0-1,0.4472656-1,1v4C19,19.5527344,19.4477539,20,20,20z"></path>
+                <path fill="#626262" d="M29,20c0.5522461,0,1-0.4472656,1-1v-3h3c0.5522461,0,1-0.4472656,1-1s-0.4477539-1-1-1h-4
+					c-0.5522461,0-1,0.4472656-1,1v4C28,19.5527344,28.4477539,20,29,20z"></path>
+                <path fill="#626262" d="M15,23h-4c-0.5522461,0-1,0.4472656-1,1v4c0,0.5527344,0.4477539,1,1,1s1-0.4472656,1-1v-3h3
+					c0.5522461,0,1-0.4472656,1-1S15.5522461,23,15,23z"></path>
+                <path fill="#626262" d="M20,29c0.5522461,0,1-0.4472656,1-1v-3h3c0.5522461,0,1-0.4472656,1-1s-0.4477539-1-1-1h-4
+					c-0.5522461,0-1,0.4472656-1,1v4C19,28.5527344,19.4477539,29,20,29z"></path>
+                <path fill="#626262" d="M15,33h-4c-0.5522461,0-1,0.4472656-1,1v4c0,0.5527344,0.4477539,1,1,1s1-0.4472656,1-1v-3h3
+					c0.5522461,0,1-0.4472656,1-1S15.5522461,33,15,33z"></path>
+			</g>
+		</g>
+                <g id="light">
+		</g>
+                <g id="shelf">
+		</g>
+                <g id="clock">
+		</g>
+                <g id="books">
+		</g>
+                <g id="bag">
+		</g>
+                <g id="chair">
+		</g>
+                <g id="Layer_1">
+		</g>
+	</g>
+</switch>
+</svg>
+            </div>
+            <input type="button" name="btnBookNow" id="btnBookNow" class="book-now-button" value="Book now" />
+        </form>
+    </div>
+    <div id="online-booking-location-form" style="display:none">
+        <form novalidate="novalidate" class="simple_form new_online_booking_form" id="new_online_booking_form_location" accept-charset="UTF-8" method="post">
+            <div class="scrollable">
+                <div class="group-name">Locations</div>
+                <div class="group location-group" id="divLocation">
+
+                </div>
+                <input type="submit" name="commit" value="Next" class="hide">
+            </div>
+        </form>
+    </div>
+    <div id="online-booking-services-form" style="display:none">
+        <form novalidate="novalidate" class="simple_form new_online_booking_form" id="new_online_booking_form" accept-charset="UTF-8">
+            <input name="utf8" type="hidden" value="✓">
+            <div class="top-bar">
+                <input type="hidden" name="previous_step" id="previous_step" value="services">
+                <div class="back">
+                    <input type="button" name="btnBack" id="btnBack" value="">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+                    <g>
+                    <g id="Layer_1">
+		</g>
+                    <g id="right-rotate">
+		</g>
+                    <g id="left-rotate">
+		</g>
+                    <g id="share-down">
+		</g>
+                    <g id="share-top">
+		</g>
+                    <g id="share-both">
+		</g>
+                    <g id="share-top-right">
+		</g>
+                    <g id="share-top-left">
+		</g>
+                    <g id="share-right-down">
+		</g>
+                    <g id="share-left-down">
+		</g>
+                    <g id="recycle-arw">
+		</g>
+                    <g id="verticle-hidden-arw">
+		</g>
+                    <g id="horizontal-arw">
+		</g>
+                    <g id="verticle-arw">
+		</g>
+                    <g id="connection-arw-r">
+		</g>
+                    <g id="connection-arw-l">
+		</g>
+                    <g id="connection-arw">
+		</g>
+                    <g id="hook-left-arw">
+		</g>
+                    <g id="clock-arw">
+		</g>
+                    <g id="anti-clock-arw">
+		</g>
+                    <g id="infinity">
+		</g>
+                    <g id="sing-sang-arw">
+		</g>
+                    <g id="anti-reload">
+		</g>
+                    <g id="reload">
+		</g>
+                    <g id="double-arrow">
+		</g>
+                    <g id="single-circle-arw">
+		</g>
+                    <g id="circle-arw">
+		</g>
+                    <g id="two-side-bend-arw">
+		</g>
+                    <g id="left-blend-arw">
+		</g>
+                    <g id="right-blend-arw">
+		</g>
+                    <g id="round-extand">
+		</g>
+                    <g id="round-close-arrow">
+		</g>
+                    <g id="pluse-arrow">
+		</g>
+                    <g id="crose-arrow">
+		</g>
+                    <g id="corn-arrow">
+		</g>
+                    <g id="side-arrow">
+		</g>
+                    <g id="close-arrow-four">
+		</g>
+                    <g id="stretch-arrow">
+		</g>
+                    <g id="_x33__x2F_1-arrow">
+		</g>
+                    <g id="_x32__x2F_1-arrow">
+		</g>
+                    <g id="left-crose-rd">
+		</g>
+                    <g id="left-crose-arrow">
+		</g>
+                    <g id="left-top_arrows">
+		</g>
+                    <g id="close-arrows">
+		</g>
+                    <g id="extand-arrow">
+		</g>
+                    <g id="parallel-arrows">
+		</g>
+                    <g id="two-side_arrows">
+		</g>
+                    <g id="right-arrows">
+		</g>
+                    <g id="down-arrow-3">
+		</g>
+                    <g id="top-arrow-3">
+		</g>
+                    <g id="right-arrow-3">
+		</g>
+                    <g id="left-arrow-3">
+		</g>
+                    <g id="left-arrow-2">
+                    <g>
+                    <g>
+                    <path fill="#000000" d="M35,47c-0.256,0-0.512-0.098-0.707-0.293l-22-22c-0.391-0.391-0.391-1.023,0-1.414l22-22
+						c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L14.414,24l21.293,21.293c0.391,0.391,0.391,1.023,0,1.414
+						C35.512,46.902,35.256,47,35,47z"></path>
+				</g>
+			</g>
+		</g>
+                    <g id="right-arrow-2">
+		</g>
+                    <g id="down-arrow-2">
+		</g>
+                    <g id="top-arrow-2">
+		</g>
+                    <g id="down-arrow-1">
+		</g>
+                    <g id="top-arrow-1">
+		</g>
+                    <g id="rightarrow-1">
+		</g>
+                    <g id="left-arrow-1">
+		</g>
+                    <g id="down-play">
+		</g>
+                    <g id="top-play">
+		</g>
+                    <g id="right-play">
+		</g>
+                    <g id="left-play">
+		</g>
+                    <g id="down-arrow">
+		</g>
+                    <g id="top-arrow">
+		</g>
+                    <g id="right-arrow">
+		</g>
+                    <g id="left-arrow">
+		</g>
+                    <g id="channel">
+		</g>
+                    <g id="stop_1_">
+		</g>
+                    <g id="music-control">
+		</g>
+                    <g id="adjust-lavel">
+		</g>
+                    <g id="adjustsound">
+		</g>
+                    <g id="graph-point">
+		</g>
+                    <g id="symbol">
+		</g>
+                    <g id="visual-graph">
+		</g>
+                    <g id="visual">
+		</g>
+                    <g id="adjust">
+		</g>
+                    <g id="controal-4">
+		</g>
+                    <g id="control-3">
+		</g>
+                    <g id="control-2">
+		</g>
+                    <g id="control_1_">
+		</g>
+                    <g id="control">
+		</g>
+                    <g id="volume-increase">
+		</g>
+                    <g id="volume">
+		</g>
+                    <g id="volume-close">
+		</g>
+                    <g id="volume-minus">
+		</g>
+                    <g id="volume-pluse">
+		</g>
+                    <g id="block">
+		</g>
+                    <g id="sound">
+		</g>
+                    <g id="play-backward">
+		</g>
+                    <g id="backward">
+		</g>
+                    <g id="play">
+		</g>
+                    <g id="hold">
+		</g>
+                    <g id="stop">
+		</g>
+                    <g id="pause">
+		</g>
+                    <g id="forward">
+		</g>
+                    <g id="play-forward">
+		</g>
+                    <g id="top-bottom-arrow">
+		</g>
+                    <g id="hook-right-arw">
+		</g>
+	</g>
+</switch>
+</svg>
+
+                </div>
+                <div class="title">Book Services</div>
+            </div>
+            <div id="error-presenter" style="display: none">
+                <a class="close" href="#">✕</a>
+            </div>
+            <div class="scrollable" id="divService">
+            </div>
+            <div class="regular summary" id="divregularsummary">
+                <div class="selection-summary">
+                    <div class="text normal">
+                        You have selected
+                    </div>
+                    <div class="text at-limit">
+                        Maximum selected
+                    </div>
+                    <span class="services-total-count">0</span>
+                    <span class="services-total-items-text">item, </span>
+                    <span class="services-total-price">€0</span>
+                </div>
+                <div class="actions">
+                    <input type="submit" name="commit" id="commit" value="Book now">
+                </div>
+            </div>
+            <div class="floating summary" id="divfloatingsummary">
+                <div class="selection-summary">
+                    <div class="text normal" id="divTextNormal">
+                        You have selected
+                    </div>
+                    <div class="text at-limit" id="divMaximum">
+                        Maximum selected
+                    </div>
+                    <span class="services-total-count" id="countitem">0</span>
+                    <span class="services-total-items-text" id="itemtext"></span>
+                    <span class="services-total-price" id="totalprice"></span>
+                </div>
+                <div class="actions">
+                    <input type="button" name="commit" id="commit" value="Book now">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="online-booking-employee-form" style="display:none">
+        <form novalidate="novalidate" class="simple_form new_online_booking_form" id="new_online_booking_form" action="/online_bookings" accept-charset="UTF-8" method="post">
+            <input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="/8Fc019DlwmjTVDHkiEDJAeWt+bdUjokzaywhWEd66uM1ZDmHiZjrZBz3viU2xPgd/BCuwQlBj80yNs7Q0Wf6w=="><div class="top-bar">
+                <input type="hidden" name="previous_step" id="previous_step" value="employee">
+                <input type="submit" name="commit" value="" class="hide-but-display" tabindex="-1">
+                <div class="back">
+                    <input type="button" name="btnBack" id="btnBack" value="">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+                    <g>
+                    <g id="Layer_1">
+		</g>
+                    <g id="right-rotate">
+		</g>
+                    <g id="left-rotate">
+		</g>
+                    <g id="share-down">
+		</g>
+                    <g id="share-top">
+		</g>
+                    <g id="share-both">
+		</g>
+                    <g id="share-top-right">
+		</g>
+                    <g id="share-top-left">
+		</g>
+                    <g id="share-right-down">
+		</g>
+                    <g id="share-left-down">
+		</g>
+                    <g id="recycle-arw">
+		</g>
+                    <g id="verticle-hidden-arw">
+		</g>
+                    <g id="horizontal-arw">
+		</g>
+                    <g id="verticle-arw">
+		</g>
+                    <g id="connection-arw-r">
+		</g>
+                    <g id="connection-arw-l">
+		</g>
+                    <g id="connection-arw">
+		</g>
+                    <g id="hook-left-arw">
+		</g>
+                    <g id="clock-arw">
+		</g>
+                    <g id="anti-clock-arw">
+		</g>
+                    <g id="infinity">
+		</g>
+                    <g id="sing-sang-arw">
+		</g>
+                    <g id="anti-reload">
+		</g>
+                    <g id="reload">
+		</g>
+                    <g id="double-arrow">
+		</g>
+                    <g id="single-circle-arw">
+		</g>
+                    <g id="circle-arw">
+		</g>
+                    <g id="two-side-bend-arw">
+		</g>
+                    <g id="left-blend-arw">
+		</g>
+                    <g id="right-blend-arw">
+		</g>
+                    <g id="round-extand">
+		</g>
+                    <g id="round-close-arrow">
+		</g>
+                    <g id="pluse-arrow">
+		</g>
+                    <g id="crose-arrow">
+		</g>
+                    <g id="corn-arrow">
+		</g>
+                    <g id="side-arrow">
+		</g>
+                    <g id="close-arrow-four">
+		</g>
+                    <g id="stretch-arrow">
+		</g>
+                    <g id="_x33__x2F_1-arrow">
+		</g>
+                    <g id="_x32__x2F_1-arrow">
+		</g>
+                    <g id="left-crose-rd">
+		</g>
+                    <g id="left-crose-arrow">
+		</g>
+                    <g id="left-top_arrows">
+		</g>
+                    <g id="close-arrows">
+		</g>
+                    <g id="extand-arrow">
+		</g>
+                    <g id="parallel-arrows">
+		</g>
+                    <g id="two-side_arrows">
+		</g>
+                    <g id="right-arrows">
+		</g>
+                    <g id="down-arrow-3">
+		</g>
+                    <g id="top-arrow-3">
+		</g>
+                    <g id="right-arrow-3">
+		</g>
+                    <g id="left-arrow-3">
+		</g>
+                    <g id="left-arrow-2">
+                    <g>
+                    <g>
+                    <path fill="#000000" d="M35,47c-0.256,0-0.512-0.098-0.707-0.293l-22-22c-0.391-0.391-0.391-1.023,0-1.414l22-22
+						c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L14.414,24l21.293,21.293c0.391,0.391,0.391,1.023,0,1.414
+						C35.512,46.902,35.256,47,35,47z"></path>
+				</g>
+			</g>
+		</g>
+                    <g id="right-arrow-2">
+		</g>
+                    <g id="down-arrow-2">
+		</g>
+                    <g id="top-arrow-2">
+		</g>
+                    <g id="down-arrow-1">
+		</g>
+                    <g id="top-arrow-1">
+		</g>
+                    <g id="rightarrow-1">
+		</g>
+                    <g id="left-arrow-1">
+		</g>
+                    <g id="down-play">
+		</g>
+                    <g id="top-play">
+		</g>
+                    <g id="right-play">
+		</g>
+                    <g id="left-play">
+		</g>
+                    <g id="down-arrow">
+		</g>
+                    <g id="top-arrow">
+		</g>
+                    <g id="right-arrow">
+		</g>
+                    <g id="left-arrow">
+		</g>
+                    <g id="channel">
+		</g>
+                    <g id="stop_1_">
+		</g>
+                    <g id="music-control">
+		</g>
+                    <g id="adjust-lavel">
+		</g>
+                    <g id="adjustsound">
+		</g>
+                    <g id="graph-point">
+		</g>
+                    <g id="symbol">
+		</g>
+                    <g id="visual-graph">
+		</g>
+                    <g id="visual">
+		</g>
+                    <g id="adjust">
+		</g>
+                    <g id="controal-4">
+		</g>
+                    <g id="control-3">
+		</g>
+                    <g id="control-2">
+		</g>
+                    <g id="control_1_">
+		</g>
+                    <g id="control">
+		</g>
+                    <g id="volume-increase">
+		</g>
+                    <g id="volume">
+		</g>
+                    <g id="volume-close">
+		</g>
+                    <g id="volume-minus">
+		</g>
+                    <g id="volume-pluse">
+		</g>
+                    <g id="block">
+		</g>
+                    <g id="sound">
+		</g>
+                    <g id="play-backward">
+		</g>
+                    <g id="backward">
+		</g>
+                    <g id="play">
+		</g>
+                    <g id="hold">
+		</g>
+                    <g id="stop">
+		</g>
+                    <g id="pause">
+		</g>
+                    <g id="forward">
+		</g>
+                    <g id="play-forward">
+		</g>
+                    <g id="top-bottom-arrow">
+		</g>
+                    <g id="hook-right-arw">
+		</g>
+	</g>
+</switch>
+</svg>
+
+                </div>
+                <div class="title">Choose Staff</div>
+            </div>
+            <div id="error-presenter" style="display: none">
+                <a class="close" href="#">✕</a>
+            </div>
+            <div class="scrollable">
+                <div class="group-name">Staff members</div>
+                <div class="group employee-group" id="divStaff">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="online-booking-time-slot-form" style="display:none">
+        <form novalidate="novalidate" class="simple_form new_online_booking_form" id="new_online_booking_form" action="/online_bookings" accept-charset="UTF-8" method="post">
+            <input name="utf8" type="hidden" value="✓">
+            <div class="top-bar">
+                <input type="hidden" name="previous_step" id="previous_step" value="time_slot">
+                <input type="submit" name="commit" value="" class="hide-but-display" tabindex="-1">
+                <div class="back">
+                    <input type="button" name="btnBack" id="btnBack" value="">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+                    <g>
+                    <g id="Layer_1">
+		</g>
+                    <g id="right-rotate">
+		</g>
+                    <g id="left-rotate">
+		</g>
+                    <g id="share-down">
+		</g>
+                    <g id="share-top">
+		</g>
+                    <g id="share-both">
+		</g>
+                    <g id="share-top-right">
+		</g>
+                    <g id="share-top-left">
+		</g>
+                    <g id="share-right-down">
+		</g>
+                    <g id="share-left-down">
+		</g>
+                    <g id="recycle-arw">
+		</g>
+                    <g id="verticle-hidden-arw">
+		</g>
+                    <g id="horizontal-arw">
+		</g>
+                    <g id="verticle-arw">
+		</g>
+                    <g id="connection-arw-r">
+		</g>
+                    <g id="connection-arw-l">
+		</g>
+                    <g id="connection-arw">
+		</g>
+                    <g id="hook-left-arw">
+		</g>
+                    <g id="clock-arw">
+		</g>
+                    <g id="anti-clock-arw">
+		</g>
+                    <g id="infinity">
+		</g>
+                    <g id="sing-sang-arw">
+		</g>
+                    <g id="anti-reload">
+		</g>
+                    <g id="reload">
+		</g>
+                    <g id="double-arrow">
+		</g>
+                    <g id="single-circle-arw">
+		</g>
+                    <g id="circle-arw">
+		</g>
+                    <g id="two-side-bend-arw">
+		</g>
+                    <g id="left-blend-arw">
+		</g>
+                    <g id="right-blend-arw">
+		</g>
+                    <g id="round-extand">
+		</g>
+                    <g id="round-close-arrow">
+		</g>
+                    <g id="pluse-arrow">
+		</g>
+                    <g id="crose-arrow">
+		</g>
+                    <g id="corn-arrow">
+		</g>
+                    <g id="side-arrow">
+		</g>
+                    <g id="close-arrow-four">
+		</g>
+                    <g id="stretch-arrow">
+		</g>
+                    <g id="_x33__x2F_1-arrow">
+		</g>
+                    <g id="_x32__x2F_1-arrow">
+		</g>
+                    <g id="left-crose-rd">
+		</g>
+                    <g id="left-crose-arrow">
+		</g>
+                    <g id="left-top_arrows">
+		</g>
+                    <g id="close-arrows">
+		</g>
+                    <g id="extand-arrow">
+		</g>
+                    <g id="parallel-arrows">
+		</g>
+                    <g id="two-side_arrows">
+		</g>
+                    <g id="right-arrows">
+		</g>
+                    <g id="down-arrow-3">
+		</g>
+                    <g id="top-arrow-3">
+		</g>
+                    <g id="right-arrow-3">
+		</g>
+                    <g id="left-arrow-3">
+		</g>
+                    <g id="left-arrow-2">
+                    <g>
+                    <g>
+                    <path fill="#000000" d="M35,47c-0.256,0-0.512-0.098-0.707-0.293l-22-22c-0.391-0.391-0.391-1.023,0-1.414l22-22
+						c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L14.414,24l21.293,21.293c0.391,0.391,0.391,1.023,0,1.414
+						C35.512,46.902,35.256,47,35,47z"></path>
+				</g>
+			</g>
+		</g>
+                    <g id="right-arrow-2">
+		</g>
+                    <g id="down-arrow-2">
+		</g>
+                    <g id="top-arrow-2">
+		</g>
+                    <g id="down-arrow-1">
+		</g>
+                    <g id="top-arrow-1">
+		</g>
+                    <g id="rightarrow-1">
+		</g>
+                    <g id="left-arrow-1">
+		</g>
+                    <g id="down-play">
+		</g>
+                    <g id="top-play">
+		</g>
+                    <g id="right-play">
+		</g>
+                    <g id="left-play">
+		</g>
+                    <g id="down-arrow">
+		</g>
+                    <g id="top-arrow">
+		</g>
+                    <g id="right-arrow">
+		</g>
+                    <g id="left-arrow">
+		</g>
+                    <g id="channel">
+		</g>
+                    <g id="stop_1_">
+		</g>
+                    <g id="music-control">
+		</g>
+                    <g id="adjust-lavel">
+		</g>
+                    <g id="adjustsound">
+		</g>
+                    <g id="graph-point">
+		</g>
+                    <g id="symbol">
+		</g>
+                    <g id="visual-graph">
+		</g>
+                    <g id="visual">
+		</g>
+                    <g id="adjust">
+		</g>
+                    <g id="controal-4">
+		</g>
+                    <g id="control-3">
+		</g>
+                    <g id="control-2">
+		</g>
+                    <g id="control_1_">
+		</g>
+                    <g id="control">
+		</g>
+                    <g id="volume-increase">
+		</g>
+                    <g id="volume">
+		</g>
+                    <g id="volume-close">
+		</g>
+                    <g id="volume-minus">
+		</g>
+                    <g id="volume-pluse">
+		</g>
+                    <g id="block">
+		</g>
+                    <g id="sound">
+		</g>
+                    <g id="play-backward">
+		</g>
+                    <g id="backward">
+		</g>
+                    <g id="play">
+		</g>
+                    <g id="hold">
+		</g>
+                    <g id="stop">
+		</g>
+                    <g id="pause">
+		</g>
+                    <g id="forward">
+		</g>
+                    <g id="play-forward">
+		</g>
+                    <g id="top-bottom-arrow">
+		</g>
+                    <g id="hook-right-arw">
+		</g>
+	</g>
+</switch>
+</svg>
+
+                </div>
+                <div class="title">Date &amp; Time</div>
+            </div>
+            <div id="error-presenter" style="display: none">
+                <a class="close" href="#">✕</a>
+            </div>
+            <table class="" id="week-calendar">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class="calendar-prev-week arrow" href="#">
+                                <!--?xml version="1.0" encoding="utf-8"?-->
+                                <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+                                <g>
+                                <g id="Layer_1">
+		</g>
+                                <g id="right-rotate">
+		</g>
+                                <g id="left-rotate">
+		</g>
+                                <g id="share-down">
+		</g>
+                                <g id="share-top">
+		</g>
+                                <g id="share-both">
+		</g>
+                                <g id="share-top-right">
+		</g>
+                                <g id="share-top-left">
+		</g>
+                                <g id="share-right-down">
+		</g>
+                                <g id="share-left-down">
+		</g>
+                                <g id="recycle-arw">
+		</g>
+                                <g id="verticle-hidden-arw">
+		</g>
+                                <g id="horizontal-arw">
+		</g>
+                                <g id="verticle-arw">
+		</g>
+                                <g id="connection-arw-r">
+		</g>
+                                <g id="connection-arw-l">
+		</g>
+                                <g id="connection-arw">
+		</g>
+                                <g id="hook-left-arw">
+		</g>
+                                <g id="clock-arw">
+		</g>
+                                <g id="anti-clock-arw">
+		</g>
+                                <g id="infinity">
+		</g>
+                                <g id="sing-sang-arw">
+		</g>
+                                <g id="anti-reload">
+		</g>
+                                <g id="reload">
+		</g>
+                                <g id="double-arrow">
+		</g>
+                                <g id="single-circle-arw">
+		</g>
+                                <g id="circle-arw">
+		</g>
+                                <g id="two-side-bend-arw">
+		</g>
+                                <g id="left-blend-arw">
+		</g>
+                                <g id="right-blend-arw">
+		</g>
+                                <g id="round-extand">
+		</g>
+                                <g id="round-close-arrow">
+		</g>
+                                <g id="pluse-arrow">
+		</g>
+                                <g id="crose-arrow">
+		</g>
+                                <g id="corn-arrow">
+		</g>
+                                <g id="side-arrow">
+		</g>
+                                <g id="close-arrow-four">
+		</g>
+                                <g id="stretch-arrow">
+		</g>
+                                <g id="_x33__x2F_1-arrow">
+		</g>
+                                <g id="_x32__x2F_1-arrow">
+		</g>
+                                <g id="left-crose-rd">
+		</g>
+                                <g id="left-crose-arrow">
+		</g>
+                                <g id="left-top_arrows">
+		</g>
+                                <g id="close-arrows">
+		</g>
+                                <g id="extand-arrow">
+		</g>
+                                <g id="parallel-arrows">
+		</g>
+                                <g id="two-side_arrows">
+		</g>
+                                <g id="right-arrows">
+		</g>
+                                <g id="down-arrow-3">
+		</g>
+                                <g id="top-arrow-3">
+		</g>
+                                <g id="right-arrow-3">
+		</g>
+                                <g id="left-arrow-3">
+		</g>
+                                <g id="left-arrow-2">
+                                <g>
+                                <g>
+                                <path fill="#000000" d="M35,47c-0.256,0-0.512-0.098-0.707-0.293l-22-22c-0.391-0.391-0.391-1.023,0-1.414l22-22
+						c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L14.414,24l21.293,21.293c0.391,0.391,0.391,1.023,0,1.414
+						C35.512,46.902,35.256,47,35,47z"></path>
+				</g>
+			</g>
+		</g>
+                                <g id="right-arrow-2">
+		</g>
+                                <g id="down-arrow-2">
+		</g>
+                                <g id="top-arrow-2">
+		</g>
+                                <g id="down-arrow-1">
+		</g>
+                                <g id="top-arrow-1">
+		</g>
+                                <g id="rightarrow-1">
+		</g>
+                                <g id="left-arrow-1">
+		</g>
+                                <g id="down-play">
+		</g>
+                                <g id="top-play">
+		</g>
+                                <g id="right-play">
+		</g>
+                                <g id="left-play">
+		</g>
+                                <g id="down-arrow">
+		</g>
+                                <g id="top-arrow">
+		</g>
+                                <g id="right-arrow">
+		</g>
+                                <g id="left-arrow">
+		</g>
+                                <g id="channel">
+		</g>
+                                <g id="stop_1_">
+		</g>
+                                <g id="music-control">
+		</g>
+                                <g id="adjust-lavel">
+		</g>
+                                <g id="adjustsound">
+		</g>
+                                <g id="graph-point">
+		</g>
+                                <g id="symbol">
+		</g>
+                                <g id="visual-graph">
+		</g>
+                                <g id="visual">
+		</g>
+                                <g id="adjust">
+		</g>
+                                <g id="controal-4">
+		</g>
+                                <g id="control-3">
+		</g>
+                                <g id="control-2">
+		</g>
+                                <g id="control_1_">
+		</g>
+                                <g id="control">
+		</g>
+                                <g id="volume-increase">
+		</g>
+                                <g id="volume">
+		</g>
+                                <g id="volume-close">
+		</g>
+                                <g id="volume-minus">
+		</g>
+                                <g id="volume-pluse">
+		</g>
+                                <g id="block">
+		</g>
+                                <g id="sound">
+		</g>
+                                <g id="play-backward">
+		</g>
+                                <g id="backward">
+		</g>
+                                <g id="play">
+		</g>
+                                <g id="hold">
+		</g>
+                                <g id="stop">
+		</g>
+                                <g id="pause">
+		</g>
+                                <g id="forward">
+		</g>
+                                <g id="play-forward">
+		</g>
+                                <g id="top-bottom-arrow">
+		</g>
+                                <g id="hook-right-arw">
+		</g>
+	</g>
+</switch>
+</svg>
+
+                            </a>
+                        </td>
+                        <td>
+                            <a class="calendar-day calendar-day-0" href="#">
+                                <div class="week-day-name" date="">Sun</div>
+                                <div class="day-number">12</div>
+                                <div class="month-name">Aug</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="calendar-day calendar-day-1" href="#">
+                                <div class="week-day-name" date="">Mon</div>
+                                <div class="day-number">13</div>
+                                <div class="month-name">Aug</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="calendar-day calendar-day-2" href="#">
+                                <div class="week-day-name" date="">Tue</div>
+                                <div class="day-number">14</div>
+                                <div class="month-name">Aug</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="calendar-day calendar-day-3" href="#">
+                                <div class="week-day-name" date="">Wed</div>
+                                <div class="day-number">15</div>
+                                <div class="month-name">Aug</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="calendar-day calendar-day-4" href="#">
+                                <div class="week-day-name" date="">Thu</div>
+                                <div class="day-number">16</div>
+                                <div class="month-name">Aug</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="calendar-day calendar-day-5" href="#">
+                                <div class="week-day-name" date="">Fri</div>
+                                <div class="day-number">17</div>
+                                <div class="month-name">Aug</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="calendar-day calendar-day-6" href="#">
+                                <div class="week-day-name" date="">Sat</div>
+                                <div class="day-number">18</div>
+                                <div class="month-name">Aug</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="calendar-next-week arrow" href="#">
+                                <!--?xml version="1.0" encoding="utf-8"?-->
+                                <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+                                <g>
+                                <g id="Layer_1">
+		</g>
+                                <g id="right-rotate">
+		</g>
+                                <g id="left-rotate">
+		</g>
+                                <g id="share-down">
+		</g>
+                                <g id="share-top">
+		</g>
+                                <g id="share-both">
+		</g>
+                                <g id="share-top-right">
+		</g>
+                                <g id="share-top-left">
+		</g>
+                                <g id="share-right-down">
+		</g>
+                                <g id="share-left-down">
+		</g>
+                                <g id="recycle-arw">
+		</g>
+                                <g id="verticle-hidden-arw">
+		</g>
+                                <g id="horizontal-arw">
+		</g>
+                                <g id="verticle-arw">
+		</g>
+                                <g id="connection-arw-r">
+		</g>
+                                <g id="connection-arw-l">
+		</g>
+                                <g id="connection-arw">
+		</g>
+                                <g id="hook-left-arw">
+		</g>
+                                <g id="clock-arw">
+		</g>
+                                <g id="anti-clock-arw">
+		</g>
+                                <g id="infinity">
+		</g>
+                                <g id="sing-sang-arw">
+		</g>
+                                <g id="anti-reload">
+		</g>
+                                <g id="reload">
+		</g>
+                                <g id="double-arrow">
+		</g>
+                                <g id="single-circle-arw">
+		</g>
+                                <g id="circle-arw">
+		</g>
+                                <g id="two-side-bend-arw">
+		</g>
+                                <g id="left-blend-arw">
+		</g>
+                                <g id="right-blend-arw">
+		</g>
+                                <g id="round-extand">
+		</g>
+                                <g id="round-close-arrow">
+		</g>
+                                <g id="pluse-arrow">
+		</g>
+                                <g id="crose-arrow">
+		</g>
+                                <g id="corn-arrow">
+		</g>
+                                <g id="side-arrow">
+		</g>
+                                <g id="close-arrow-four">
+		</g>
+                                <g id="stretch-arrow">
+		</g>
+                                <g id="_x33__x2F_1-arrow">
+		</g>
+                                <g id="_x32__x2F_1-arrow">
+		</g>
+                                <g id="left-crose-rd">
+		</g>
+                                <g id="left-crose-arrow">
+		</g>
+                                <g id="left-top_arrows">
+		</g>
+                                <g id="close-arrows">
+		</g>
+                                <g id="extand-arrow">
+		</g>
+                                <g id="parallel-arrows">
+		</g>
+                                <g id="two-side_arrows">
+		</g>
+                                <g id="right-arrows">
+		</g>
+                                <g id="down-arrow-3">
+		</g>
+                                <g id="top-arrow-3">
+		</g>
+                                <g id="right-arrow-3">
+		</g>
+                                <g id="left-arrow-3">
+		</g>
+                                <g id="left-arrow-2">
+		</g>
+                                <g id="right-arrow-2">
+                                <g>
+                                <g>
+                                <path fill="#000000" d="M13,47c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L33.586,24L12.293,2.707
+						c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l22,22c0.391,0.391,0.391,1.023,0,1.414l-22,22
+						C13.512,46.902,13.256,47,13,47z"></path>
+				</g>
+			</g>
+		</g>
+                                <g id="down-arrow-2">
+		</g>
+                                <g id="top-arrow-2">
+		</g>
+                                <g id="down-arrow-1">
+		</g>
+                                <g id="top-arrow-1">
+		</g>
+                                <g id="rightarrow-1">
+		</g>
+                                <g id="left-arrow-1">
+		</g>
+                                <g id="down-play">
+		</g>
+                                <g id="top-play">
+		</g>
+                                <g id="right-play">
+		</g>
+                                <g id="left-play">
+		</g>
+                                <g id="down-arrow">
+		</g>
+                                <g id="top-arrow">
+		</g>
+                                <g id="right-arrow">
+		</g>
+                                <g id="left-arrow">
+		</g>
+                                <g id="channel">
+		</g>
+                                <g id="stop_1_">
+		</g>
+                                <g id="music-control">
+		</g>
+                                <g id="adjust-lavel">
+		</g>
+                                <g id="adjustsound">
+		</g>
+                                <g id="graph-point">
+		</g>
+                                <g id="symbol">
+		</g>
+                                <g id="visual-graph">
+		</g>
+                                <g id="visual">
+		</g>
+                                <g id="adjust">
+		</g>
+                                <g id="controal-4">
+		</g>
+                                <g id="control-3">
+		</g>
+                                <g id="control-2">
+		</g>
+                                <g id="control_1_">
+		</g>
+                                <g id="control">
+		</g>
+                                <g id="volume-increase">
+		</g>
+                                <g id="volume">
+		</g>
+                                <g id="volume-close">
+		</g>
+                                <g id="volume-minus">
+		</g>
+                                <g id="volume-pluse">
+		</g>
+                                <g id="block">
+		</g>
+                                <g id="sound">
+		</g>
+                                <g id="play-backward">
+		</g>
+                                <g id="backward">
+		</g>
+                                <g id="play">
+		</g>
+                                <g id="hold">
+		</g>
+                                <g id="stop">
+		</g>
+                                <g id="pause">
+		</g>
+                                <g id="forward">
+		</g>
+                                <g id="play-forward">
+		</g>
+                                <g id="top-bottom-arrow">
+		</g>
+                                <g id="hook-right-arw">
+		</g>
+	</g>
+</switch>
+</svg>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="time-slots-available initially-hidden" id="divtimeslotsavailable" style="display: none;">
+                <div class="group-name">
+                    <div class="default">Available Times</div>
+                </div>
+                <div class="group time-group" id="divtimeslot">
+
+                </div>
+            </div>
+            <div class="time-slots-status time-slots-unavailable initially-hidden" id="divtimeslotsunavailable" style="display: block;">
+                <!--?xml version="1.0" encoding="utf-8"?-->
+                <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g id="Layer_1">
+</g>
+<g id="medium-box">
+</g>
+<g id="minuse">
+</g>
+<g id="timer">
+</g>
+<g id="drawer-2">
+</g>
+<g id="trash-box">
+</g>
+<g id="book-label">
+</g>
+<g id="folder-label">
+</g>
+<g id="page-back">
+</g>
+<g id="close-page_1_">
+</g>
+<g id="pages">
+</g>
+<g id="list">
+</g>
+<g id="wave">
+</g>
+<g id="close-page">
+</g>
+<g id="add-page">
+</g>
+<g id="code">
+</g>
+<g id="shift-mode">
+</g>
+<g id="bookmarks_1_">
+</g>
+<g id="bookmarks">
+</g>
+<g id="open-pages">
+</g>
+<g id="note">
+</g>
+<g id="locater">
+</g>
+<g id="navigater">
+</g>
+<g id="alarm">
+</g>
+<g id="clock">
+</g>
+<g id="time-3">
+                <path fill="#000000" d="M24,46.5C11.6,46.5,1.5,36.4,1.5,24S11.6,1.5,24,1.5S46.5,11.6,46.5,24S36.4,46.5,24,46.5z M24,3.5
+		C12.7,3.5,3.5,12.7,3.5,24S12.7,44.5,24,44.5S44.5,35.3,44.5,24S35.3,3.5,24,3.5z"></path>
+                <path fill="#000000" d="M24,7c-0.3,0-0.5-0.1-0.7-0.3C23.1,6.5,23,6.3,23,6c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0
+		C24.9,5.5,25,5.7,25,6c0,0.3-0.1,0.5-0.3,0.7C24.5,6.9,24.3,7,24,7z"></path>
+                <path fill="#000000" d="M24,43c-0.3,0-0.5-0.1-0.7-0.3C23.1,42.5,23,42.3,23,42s0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0
+		c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7C24.5,42.9,24.3,43,24,43z"></path>
+                <path fill="#000000" d="M42,25c-0.3,0-0.5-0.1-0.7-0.3C41.1,24.5,41,24.3,41,24s0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0
+		c0.2,0.2,0.3,0.5,0.3,0.7s-0.1,0.5-0.3,0.7C42.5,24.9,42.3,25,42,25z"></path>
+                <path fill="#000000" d="M6,25c-0.3,0-0.5-0.1-0.7-0.3C5.1,24.5,5,24.3,5,24s0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0
+		C6.9,23.5,7,23.7,7,24s-0.1,0.5-0.3,0.7C6.5,24.9,6.3,25,6,25z"></path>
+                <path fill="#000000" d="M36.7,12.3c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0
+		c0.2,0.2,0.3,0.5,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7C37.3,12.2,37,12.3,36.7,12.3z"></path>
+                <path fill="#000000" d="M11.3,37.7c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0
+		c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7C11.8,37.6,11.5,37.7,11.3,37.7z"></path>
+                <path fill="#000000" d="M36.7,37.7c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0
+		c0.2,0.2,0.3,0.5,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7C37.3,37.6,37,37.7,36.7,37.7z"></path>
+                <path fill="#000000" d="M11.3,12.3c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0
+		c0.2,0.2,0.3,0.5,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7C11.8,12.2,11.5,12.3,11.3,12.3z"></path>
+                <path fill="#000000" d="M34,35c-0.3,0-0.5-0.1-0.7-0.3l-10-10C23.1,24.5,23,24.3,23,24V14c0-0.6,0.4-1,1-1s1,0.4,1,1v9.6l9.7,9.7
+		c0.4,0.4,0.4,1,0,1.4C34.5,34.9,34.3,35,34,35z"></path>
+</g>
+<g id="time-1">
+</g>
+<g id="time">
+</g>
+<g id="downloads">
+</g>
+<g id="uploads">
+</g>
+<g id="drawer-1">
+</g>
+<g id="mail_drawer">
+</g>
+<g id="drawer">
+</g>
+<g id="mail_1_">
+</g>
+<g id="mail-open">
+</g>
+<g id="open">
+</g>
+<g id="card">
+</g>
+<g id="mails">
+</g>
+<g id="mail">
+</g>
+<g id="drag-l-t">
+</g>
+<g id="comment">
+</g>
+<g id="folder">
+</g>
+<g id="trash">
+</g>
+<g id="report-flag">
+</g>
+<g id="setting-roll">
+</g>
+<g id="spects">
+</g>
+<g id="search_1_">
+</g>
+<g id="game-2">
+</g>
+<g id="game">
+</g>
+<g id="unloack">
+</g>
+<g id="loack">
+</g>
+<g id="settings-ui">
+</g>
+<g id="abacuse">
+</g>
+<g id="browser-check-box">
+</g>
+<g id="browser-reload">
+</g>
+<g id="browser-check">
+</g>
+<g id="browser-close">
+</g>
+<g id="browser-inus">
+</g>
+<g id="browser-add">
+</g>
+<g id="flowtting">
+</g>
+<g id="drag">
+</g>
+<g id="popup">
+</g>
+<g id="latter">
+</g>
+<g id="details">
+</g>
+<g id="blocks">
+</g>
+<g id="locate">
+</g>
+<g id="parabolla">
+</g>
+<g id="check-box">
+</g>
+<g id="slide-nav">
+</g>
+<g id="share">
+</g>
+<g id="profile">
+</g>
+<g id="settings">
+</g>
+<g id="expand">
+</g>
+<g id="image">
+</g>
+<g id="pause">
+</g>
+<g id="player">
+</g>
+<g id="imager">
+</g>
+<g id="slider">
+</g>
+<g id="slide-count">
+</g>
+<g id="progress-bar">
+</g>
+<g id="graph">
+</g>
+<g id="statistics">
+</g>
+<g id="cloud-reload">
+</g>
+<g id="cloud-down">
+</g>
+<g id="cloud-up">
+</g>
+<g id="cloud">
+</g>
+<g id="masonary">
+</g>
+<g id="column">
+</g>
+<g id="grid-block">
+</g>
+<g id="horizontal">
+</g>
+<g id="_x35_-column">
+</g>
+<g id="_x31_-column">
+</g>
+<g id="_x33_-column">
+</g>
+<g id="sidebar_1_">
+</g>
+<g id="favorite">
+</g>
+<g id="load">
+</g>
+<g id="search-list">
+</g>
+<g id="search">
+</g>
+<g id="browser_1_">
+</g>
+<g id="change-mode">
+</g>
+<g id="tick">
+</g>
+</svg>
+
+                <p class="lead">There's no availability on this date, pick another one instead.</p>
+            </div>
+            <div class="time-slots-status time-slots-fetching initially-hidden" style="display: none;">
+                <img src="//cdn-static.shedul.com/assets/pages/progress/progress-circle-complete-f5a6df30c3c3ffa7d4523cae154750e518f6da1c49d113be21f56ac60d050de6.svg" alt="Progress circle complete">
+            </div>
+            <div class="time-slots-status time-slots-fetching-error initially-hidden" style="display: none;">
+                <p>Failed to connect with the server.</p>
+                <a class="button fetch-day-again" href="#">Try again</a>
+            </div>
+            <input type="submit" name="commit" value="Next" class="hide">
+        </form>
+    </div>
+    <div id="online-booking-confirm-form" style="display:none">
+        <form novalidate="novalidate" class="simple_form new_online_booking_form" id="new_online_booking_form_confirm">
+            <div class="top-bar">
+                <div class="timer" id="divTimer">5:00</div>
+                <input type="hidden" name="previous_step" id="previous_step" value="confirm">
+                <input type="button" name="commit" value="" class="hide-but-display" tabindex="-1">
+                <div class="back">
+                    <input type="button" name="back" id="btnBack" value="">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+                    <g>
+                    <g id="Layer_1">
+		</g>
+                    <g id="right-rotate">
+		</g>
+                    <g id="left-rotate">
+		</g>
+                    <g id="share-down">
+		</g>
+                    <g id="share-top">
+		</g>
+                    <g id="share-both">
+		</g>
+                    <g id="share-top-right">
+		</g>
+                    <g id="share-top-left">
+		</g>
+                    <g id="share-right-down">
+		</g>
+                    <g id="share-left-down">
+		</g>
+                    <g id="recycle-arw">
+		</g>
+                    <g id="verticle-hidden-arw">
+		</g>
+                    <g id="horizontal-arw">
+		</g>
+                    <g id="verticle-arw">
+		</g>
+                    <g id="connection-arw-r">
+		</g>
+                    <g id="connection-arw-l">
+		</g>
+                    <g id="connection-arw">
+		</g>
+                    <g id="hook-left-arw">
+		</g>
+                    <g id="clock-arw">
+		</g>
+                    <g id="anti-clock-arw">
+		</g>
+                    <g id="infinity">
+		</g>
+                    <g id="sing-sang-arw">
+		</g>
+                    <g id="anti-reload">
+		</g>
+                    <g id="reload">
+		</g>
+                    <g id="double-arrow">
+		</g>
+                    <g id="single-circle-arw">
+		</g>
+                    <g id="circle-arw">
+		</g>
+                    <g id="two-side-bend-arw">
+		</g>
+                    <g id="left-blend-arw">
+		</g>
+                    <g id="right-blend-arw">
+		</g>
+                    <g id="round-extand">
+		</g>
+                    <g id="round-close-arrow">
+		</g>
+                    <g id="pluse-arrow">
+		</g>
+                    <g id="crose-arrow">
+		</g>
+                    <g id="corn-arrow">
+		</g>
+                    <g id="side-arrow">
+		</g>
+                    <g id="close-arrow-four">
+		</g>
+                    <g id="stretch-arrow">
+		</g>
+                    <g id="_x33__x2F_1-arrow">
+		</g>
+                    <g id="_x32__x2F_1-arrow">
+		</g>
+                    <g id="left-crose-rd">
+		</g>
+                    <g id="left-crose-arrow">
+		</g>
+                    <g id="left-top_arrows">
+		</g>
+                    <g id="close-arrows">
+		</g>
+                    <g id="extand-arrow">
+		</g>
+                    <g id="parallel-arrows">
+		</g>
+                    <g id="two-side_arrows">
+		</g>
+                    <g id="right-arrows">
+		</g>
+                    <g id="down-arrow-3">
+		</g>
+                    <g id="top-arrow-3">
+		</g>
+                    <g id="right-arrow-3">
+		</g>
+                    <g id="left-arrow-3">
+		</g>
+                    <g id="left-arrow-2">
+                    <g>
+                    <g>
+                    <path fill="#000000" d="M35,47c-0.256,0-0.512-0.098-0.707-0.293l-22-22c-0.391-0.391-0.391-1.023,0-1.414l22-22
+						c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L14.414,24l21.293,21.293c0.391,0.391,0.391,1.023,0,1.414
+						C35.512,46.902,35.256,47,35,47z"></path>
+				</g>
+			</g>
+		</g>
+                    <g id="right-arrow-2">
+		</g>
+                    <g id="down-arrow-2">
+		</g>
+                    <g id="top-arrow-2">
+		</g>
+                    <g id="down-arrow-1">
+		</g>
+                    <g id="top-arrow-1">
+		</g>
+                    <g id="rightarrow-1">
+		</g>
+                    <g id="left-arrow-1">
+		</g>
+                    <g id="down-play">
+		</g>
+                    <g id="top-play">
+		</g>
+                    <g id="right-play">
+		</g>
+                    <g id="left-play">
+		</g>
+                    <g id="down-arrow">
+		</g>
+                    <g id="top-arrow">
+		</g>
+                    <g id="right-arrow">
+		</g>
+                    <g id="left-arrow">
+		</g>
+                    <g id="channel">
+		</g>
+                    <g id="stop_1_">
+		</g>
+                    <g id="music-control">
+		</g>
+                    <g id="adjust-lavel">
+		</g>
+                    <g id="adjustsound">
+		</g>
+                    <g id="graph-point">
+		</g>
+                    <g id="symbol">
+		</g>
+                    <g id="visual-graph">
+		</g>
+                    <g id="visual">
+		</g>
+                    <g id="adjust">
+		</g>
+                    <g id="controal-4">
+		</g>
+                    <g id="control-3">
+		</g>
+                    <g id="control-2">
+		</g>
+                    <g id="control_1_">
+		</g>
+                    <g id="control">
+		</g>
+                    <g id="volume-increase">
+		</g>
+                    <g id="volume">
+		</g>
+                    <g id="volume-close">
+		</g>
+                    <g id="volume-minus">
+		</g>
+                    <g id="volume-pluse">
+		</g>
+                    <g id="block">
+		</g>
+                    <g id="sound">
+		</g>
+                    <g id="play-backward">
+		</g>
+                    <g id="backward">
+		</g>
+                    <g id="play">
+		</g>
+                    <g id="hold">
+		</g>
+                    <g id="stop">
+		</g>
+                    <g id="pause">
+		</g>
+                    <g id="forward">
+		</g>
+                    <g id="play-forward">
+		</g>
+                    <g id="top-bottom-arrow">
+		</g>
+                    <g id="hook-right-arw">
+		</g>
+	</g>
+</switch>
+</svg>
+
+                </div>
+                <div class="title">Confirm</div>
+            </div>
+            <div class="columns">
+                <div class="form-column">
+                    <div class="title">Client details</div>
+                    <div class="side-by-side">
+                        <div class="form-group string required online_booking_form_customer_first_name">
+                            <label class="control-label string required" for="online_booking_form_customer_attributes_first_name">
+                                First name (*)
+                            </label>
+                            <input maxlength="100" class="form-control string required" type="text" value="" name="online_booking_form_customer_attributes_first_name" id="online_booking_form_customer_attributes_first_name">
+                        </div>
+                        <div class="form-group string required online_booking_form_customer_last_name">
+                            <label class="control-label string required" for="online_booking_form_customer_attributes_last_name">
+                                Last name (*)
+                            </label>
+                            <input maxlength="100" class="form-control string required" type="text" value="" name="online_booking_form_customer_attributes_last_name" id="online_booking_form_customer_attributes_last_name">
+                        </div>
+                    </div>
+                    <div class="form-group email required online_booking_form_customer_email">
+                        <label class="control-label email required" for="online_booking_form_customer_attributes_email">
+                            Email (*)
+                        </label>
+                        <input maxlength="50" class="form-control string email required" type="email" value="" name="online_booking_form_customer_attributes_email" id="online_booking_form_customer_attributes_email">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label string required" for="online_booking_form_customer_attributes_normalized_contact_number">
+                            Mobile number (*)
+                        </label>
+                        <input maxlength="50" class="form-control" style="padding-left: 100px;" required="required" aria-required="true" type="text" value="" name="online_booking_form_customer_attributes_normalized_contact_number" id="online_booking_form_customer_attributes_normalized_contact_number" >
+                    </div>
+                    <div class="form-group text optional online_booking_form_notes">
+                        <label class="control-label text optional" for="online_booking_form_notes">Booking notes</label>
+                        <textarea class="form-control text optional" name="online_booking_form_notes" id="online_booking_form_notes"></textarea>
+                    </div>
+                    <div class="form-group hidden online_booking_form_cancellation_policy_agreement">
+                        <input class="form-control hidden" value="1" type="hidden" name="online_booking_form_cancellation_policy_agreement" id="online_booking_form_cancellation_policy_agreement">
+                    </div>
+                    <div class="actions">
+                        <input type="button" name="commit" value="Confirm" class="button" id="confirm-button">
+                    </div>
+                    @{if (ViewBag.ShowCancellation)
+                        {
+                            <div class="cancellation">
+                                <div class="title">By clicking 'confirm' you agree to the following policy:</div>
+                                <div class="content">
+                                    <p>@ViewBag.business_cancellation_time</p>
+                                    <p>@ViewBag.business_cancellation_policy</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="summary-column">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="online-booking-timeout-form" style="display:none">
+        <form novalidate="novalidate" class="simple_form new_online_booking_form" id="new_online_booking_form" accept-charset="UTF-8" method="post">
+            <div class="top-bar">
+                <input type="hidden" name="previous_step" id="previous_step" value="timeout">
+                <div class="title">Session Timeout</div>
+            </div>
+            <div id="error-presenter" style="display: none">
+                <a class="close" href="#">✕</a>
+            </div>
+            <!--?xml version="1.0" encoding="utf-8"?-->
+            <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<switch>
+            <g>
+            <g id="graph">
+		</g>
+            <g id="coffee">
+		</g>
+            <g id="plant">
+		</g>
+            <g id="phone">
+		</g>
+            <g id="wifi">
+		</g>
+            <g id="call">
+		</g>
+            <g id="locker">
+		</g>
+            <g id="fram">
+		</g>
+            <g id="pad">
+		</g>
+            <g id="pen__x26__pad">
+		</g>
+            <g id="folder">
+		</g>
+            <g id="scissors">
+		</g>
+            <g id="waste_box">
+		</g>
+            <g id="files">
+		</g>
+            <g id="pen_cup">
+		</g>
+            <g id="paper-clip">
+		</g>
+            <g id="pen-ink">
+		</g>
+            <g id="paper">
+		</g>
+            <g id="pin">
+		</g>
+            <g id="employ">
+		</g>
+            <g id="employes">
+		</g>
+            <g id="employs-2">
+		</g>
+            <g id="id-card">
+		</g>
+            <g id="id-card-2">
+		</g>
+            <g id="stepler">
+		</g>
+            <g id="seal">
+		</g>
+            <g id="photo-fram">
+		</g>
+            <g id="bulb">
+		</g>
+            <g id="date">
+		</g>
+            <g id="file-right">
+		</g>
+            <g id="file-close">
+		</g>
+            <g id="drawer">
+		</g>
+            <g id="cover">
+		</g>
+            <g id="letter">
+		</g>
+            <g id="table-2">
+		</g>
+            <g id="desktop">
+		</g>
+            <g id="gum">
+		</g>
+            <g id="tub-gum">
+		</g>
+            <g id="clock_1_">
+		</g>
+            <g id="book-covers">
+		</g>
+            <g id="scale">
+		</g>
+            <g id="pencil">
+		</g>
+            <g id="table-lamp">
+		</g>
+            <g id="office-table">
+		</g>
+            <g id="littile-plant">
+		</g>
+            <g id="women">
+		</g>
+            <g id="men">
+		</g>
+            <g id="time-lap">
+            <path fill="#626262" d="M28.203125,22.3837891l1.0605469-0.3183594C33.8916016,20.6767578,37,16.4980469,37,11.6679688V6h2
+				c0.5527344,0,1-0.4472656,1-1V1c0-0.5527344-0.4472656-1-1-1H9C8.4472656,0,8,0.4472656,8,1v4c0,0.5527344,0.4472656,1,1,1h2
+				v5.6679688c0,4.8300781,3.1083984,9.0087891,7.7363281,10.3974609l1.0605469,0.3183594
+				C20.5166016,22.5996094,21,23.2490234,21,24s-0.4833984,1.4003906-1.203125,1.6162109l-1.0605469,0.3183594
+				C14.1083984,27.3232422,11,31.5019531,11,36.3320313V42H9c-0.5527344,0-1,0.4472656-1,1v4c0,0.5527344,0.4472656,1,1,1h30
+				c0.5527344,0,1-0.4472656,1-1v-4c0-0.5527344-0.4472656-1-1-1h-2v-5.6679688
+				c0-4.8300781-3.1083984-9.0087891-7.7363281-10.3974609l-1.0605469-0.3183594C27.4833984,25.4003906,27,24.7509766,27,24
+				S27.4833984,22.5996094,28.203125,22.3837891z M10,2h28v2H10V2z M35,6v4.0152588
+				c-0.1657104-0.0003662-0.3322754,0.0253906-0.4873047,0.1116943c-9.6445313,5.3789063-21.1113281,2.0458984-21.2255859,2.0107422
+				c-0.0899048-0.0265503-0.1795654-0.0228271-0.2692261-0.0241089C13.0106201,11.965332,13,11.8178711,13,11.6679688V6H35z M38,46
+				H10v-2h28V46z M18.2261353,42l4.7592163-5.3544922c0.5234375-0.5859375,1.5058594-0.5859375,2.0292969,0L29.7738647,42
+				H18.2261353z M27.6289063,27.5322266l1.0605469,0.3183594C32.4638672,28.9833984,35,32.3916016,35,36.3320313V42h-2.5515137
+				l-5.9396973-6.6826172C25.8730469,34.6015625,24.9580078,34.1904297,24,34.1904297s-1.8730469,0.4111328-2.5087891,1.1269531
+				L15.5515137,42H13v-5.6679688c0-3.9404297,2.5361328-7.3486328,6.3105469-8.4814453l1.0605469-0.3183594
+				C21.9433594,27.0615234,23,25.6416016,23,24s-1.0566406-3.0615234-2.6289063-3.5322266l-1.0605469-0.3183594
+				c-2.9221191-0.8770142-5.0957642-3.1203613-5.9312744-5.9161377c1.3120728,0.3292847,4.414856,0.9864502,8.3179932,0.9864502
+				c3.963562,0,8.742981-0.6975098,13.2842407-3.0910645c-0.1896973,3.7426758-2.6660767,6.9324951-6.2920532,8.020752
+				l-1.0605469,0.3183594C26.0566406,20.9384766,25,22.3583984,25,24S26.0566406,27.0615234,27.6289063,27.5322266z"></path>
+		</g>
+            <g id="telephone">
+		</g>
+            <g id="edit">
+		</g>
+            <g id="save-page">
+		</g>
+            <g id="directory">
+		</g>
+            <g id="event">
+		</g>
+            <g id="calendar">
+		</g>
+            <g id="light">
+		</g>
+            <g id="shelf">
+		</g>
+            <g id="clock">
+		</g>
+            <g id="books">
+		</g>
+            <g id="bag">
+		</g>
+            <g id="chair">
+		</g>
+            <g id="Layer_1">
+		</g>
+	</g>
+</switch>
+</svg>
+            <p class="lead">
+                Oops! You didn't complete your booking within 5 minutes.
+                <br>
+                Don't worry, you can easily try again.
+            </p>
+            <div class="button-container">
+                <input type="submit" name="commit" value="Try Again" class="button">
+            </div>
+            <div class="logo-text">
+                <p>Online bookings powered by</p>
+                <a target="_blank" href="http://www.kyrio.co"><img width="160px" src="~/img/logo.jpg" alt="Kyrio full logo light bg"></a>
+            </div>
+        </form>
+    </div>
+    <div id="online-booking-complete-form" style="display:none">
+        <div class="top-bar">
+            <input type="hidden" name="previous_step" id="previous_step" value="complete">
+            <div class="title">Booking Completed</div>
+        </div>
+        <div id="error-presenter" style="display: none">
+            <a class="close" href="#">✕</a>
+        </div>
+
+        <p class="lead">
+            Congrats! Your booking has been created.
+            <br>
+            An e-mail with booking confirmation has been sent to @ViewBag.ContactEmail
+        </p>
+        <div class="button-container">
+            <a class="button" href="/OnlineBookings/@ViewBag.BusinessID">Make another booking</a>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/onlinebookings.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+@Scripts.Render("~/Scripts/PNotify")
+<script type="text/javascript">
+	Window.CurrencySymbol = "@ViewBag.CurrencySymbol";
+	Window.NumberDecimal = "@ViewBag.NumberDecimal";
+</script>

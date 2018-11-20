@@ -1,0 +1,37 @@
+﻿<div class="col-12 form-group p-0 border-bottom">
+    <button class="pl-0 pr-0 btn btn-block bg-white text-left d-flex justify-content-between align-items-center" type="button" name="Service">
+        <div>
+            <p class="m-0">@ServiceName</p>
+            <p class="m-0">@DesService</p>
+        </div>
+        <p class="m-0">
+            <i class="fa fa-chevron-right"></i>
+        </p>
+    </button>
+</div>
+<div class="col-12 form-group p-0 pt-2 pb-2">
+    <p class="text-capitalize mb-0 mt-1">staff</p>
+    <div class="input-group input-group-select">
+        @ControlStaff_IsRequest
+    </div>
+</div>
+<div class="col-12 form-group p-0 pt-2 pb-2" style="display: none" id="container-resouce">
+    <p class="text-capitalize mb-0 mt-1">resource</p>
+    <div class="input-group input-group-select">
+        @ControlResouce
+    </div>
+</div>
+<div class="col-12 form-group p-0 pt-2 pb-2">
+    <div class="col-6 form-group p-0 pr-2"> 
+        <p class="text-capitalize mb-0 mt-1">start time</p>
+        <div class="input-group input-group-select">
+            @ControlStartTime
+        </div>
+    </div>
+    <div class="col-6 form-group p-0 pl-2">
+        <p class="text-capitalize mb-0 mt-1">duration</p>
+        <div class="input-group input-group-select">
+            @ControlDuration
+        </div>
+    </div>
+</div>

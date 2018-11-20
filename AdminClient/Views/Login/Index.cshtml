@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_LoginPartial.cshtml";
+}
+<!--#region Include CSS-->
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<!--#endregion-->
+
+<!--#region Html-->
+<div class="col-md-8 hide" id="containLogin">
+    @Html.Partial("/Views/Login/login.cshtml")
+</div>
+<div class="col-md-7 hide" id="containRegister" style="display:none">
+    @Html.Partial("/Views/Login/register.cshtml")
+</div>
+<div class="col-md-6 hide" id="containForgotPassword" style="display:none">
+    @Html.Partial("/Views/Login/forgotpassword.cshtml")
+</div>
+<div class="col-md-6 hide" id="containChangePassword" style="display:none">
+    @Html.Partial("/Views/Login/changepassword.cshtml")
+</div>
+<!--#endregion-->
+
+<!--#region Include JS-->
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/login/main.js")"></script>
+<!--#endregion-->

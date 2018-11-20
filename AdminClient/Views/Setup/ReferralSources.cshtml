@@ -1,0 +1,76 @@
+﻿@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>NAME</th>
+                        <th>DATE ADDED</th>
+                        <th>STATUS</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="containtButtonFooter" id="containtButtonCreate">
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="actionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="actionForm">
+                    <div class="form-group">
+                        <input type="hidden" id="ReferralSourceID" ispropertiesmodel ispropertiesidmodel />
+                        <label class="col-form-label">NAME</label>
+                        <input type="text" class="form-control" id="ReferralSourceName" name="ReferralSourceName" placeholder="e.g Local promotion" ispropertiesmodel maxlength="200" />
+                    </div>
+                    <div class="form-group">
+                        <label class="switch switch-lg switch-3d switch-primary">
+                            <input type="checkbox" class="switch-input" checked id="IsActive" name="IsActive" ispropertiesmodel>
+                            <span class="switch-label"></span>
+                            <span class="switch-handle"></span>
+                        </label>
+                        
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+               
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-danger btn-block active" id="deleteButton">DELETE</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="actionButton" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+@Scripts.Render("~/Scripts/PNotify")
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/referralsources.js")"></script>

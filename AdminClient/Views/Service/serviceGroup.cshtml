@@ -1,0 +1,49 @@
+﻿<div class="modal fade" id="modalServiceGroup" ismodal>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="TitleServiceGroupModal">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form novalidate="novalidate" id="serviceGroupForm">
+                    <div class="form-group">
+                        <input type="hidden" id="ServiceGroupID" name="ServiceGroupID" ispropertiesmodel ispropertiesidmodel />
+                        <label class="col-form-label">GROUP NAME</label>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="icon-pencil"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="ServiceGroupName" name="ServiceGroupName" placeholder="e.g Hair Services" ispropertiesmodel />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">APPOINTMENT COLOR</label>
+                        <div class="input-group mb-4" id="colorGroup">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-danger btn-block active" id="deleteServiceGroupButton">DELETE</button>
+                    </div>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                    </div>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-block btn-success" id="actionServiceGroupButton" data-style="slide-right" isbuttonsave>SAVE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

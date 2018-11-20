@@ -1,0 +1,76 @@
+﻿<link href="@Url.Content("~/Extension/css/jquery-boostrap-modal-wizard.css")" rel="stylesheet" />
+<div class="modal fade show modal-wizard" id="adjustmentModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="prevModalWizard"></span>
+                <h3 class="modal-title"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body p-0">
+                <input type="hidden" id="StockType" />
+                <div class="col-12" style="margin-top:10px"><label id="selectlocation"></label></div>
+
+                <form novalidate="novalidate" id="formModalWizard">
+                    <div class="col-12" id="divLocation">
+
+                    </div>
+                    <div class="col-12" id="divdecrease" style="display:none">
+                        <div class="form-group">
+                            <label class="col-form-label">DECREASE QTY.</label>
+                            <input id="DescreaseQuantity" name="DescreaseQuantity" class="form-control" type="number">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">DECREASE REASON</label>
+                            <select class="form-control" style="width: 100%" id="DescreaseReason" name="DescreaseReason">
+                                <option value="stock_internal">Internal use</option>
+                                <option value="stock_damaged">Damaged</option>
+                                <option value="stock_out_of_date">Out of date</option>
+                                <option value="stock_adjustment_decrease">Adjustment</option>
+                                <option value="stock_other_decrease">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12" id="divincrease" style="display:none">
+                        <div class="form-group">
+                            <label class="col-form-label">INCREASE QTY.</label>
+                            <input id="IncreaseQuantity" name="IncreaseQuantity" class="form-control" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">SUPPLIER PRICE</label>
+                            <input id="SupplierPrice" name="SupplierPrice" class="form-control" type="number">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="SavePriceToNextTime" name="SavePriceToNextTime"/>
+                            <label class="col-form-label">SAVE PRICE FOR NEXT TIME</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">INCREASE REASON</label>
+                            <select class="form-control" style="width: 100%" id="IncreaseReason" name="IncreaseReason">
+                                <option value="stock_new_stock">New Stock</option>
+                                <option value="stock_return">Return</option>
+                                <option value="stock_transfer">Transfer</option>
+                                <option value="stock_adjustment">Adjustment</option>
+                                <option value="stock_other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer" style="display:none" id="modalfooter">
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs"></div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6 hidden-xs">
+                    <button type="button" class="btn btn-block btn-outline-dark" data-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-fhd-3 col-xlg-3 col-md-3 col-sm-6 col-xs-6">
+                    <button type="button" class="btn btn-block btn-success" id="btnSaveAdjustment" data-style="slide-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/inventory/adjustmentproduct.js")"></script>

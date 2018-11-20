@@ -1,0 +1,111 @@
+﻿@model AdminClient.Models.Business
+<!--#region Include CSS-->
+@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<!--#endregion-->
+<!--#region Html-->
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong><i class="icon-settings"></i> Company Details</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="busiessForm">
+                                <div class="form-group">
+                                    <label class="col-form-label">PACKAGE:</label> @ViewBag.PackageName
+                                    <br>
+                                    <label class="col-form-label">EXPIRE:</label> @ViewBag.BSExpiry
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" id="CountryCode" value="@ViewBag.CountryCode" />
+                                    <input type="hidden" id="ContactNumberDialCode" name="ContactNumberDialCode" value="@Model.ContactNumberDialCode" />
+                                    <label class="col-form-label">BUSINESS NAME</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="CompanyName" name="CompanyName" value="@Model.CompanyName" placeholder="Company Name" ispropertiesmodel maxlength="200">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">DESCRIPTION</label>
+                                    <textarea class="form-control" rows="3" id="Description" name="Description" placeholder="Description" ispropertiesmodel maxlength="400">@Model.Description</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">ADDRESS</label>
+                                    <textarea class="form-control" rows="2" id="Address" name="Address" placeholder="Address" ispropertiesmodel maxlength="400">@Model.Address</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">WEBSITE</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-globe"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="Website" name="Website" placeholder="Website" value="@Model.Website" ispropertiesmodel maxlength="100">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">CONTACT NUMBER</label>
+                                    <input type="text" class="form-control" id="ContactNumber" name="ContactNumber" placeholder="91 234 56 78" value="@Model.ContactNumber" ispropertiesmodel>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">BUSINESS TYPE</label>
+                                    <select style="width: 100%" id="BusinessTypeID" urlselection="/Home/GetBusinessTypeBaseId" name="BusinessTypeID" ispropertiesmodel>
+                                        <option value="@Model.BusinessTypeID" selected></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">TIME ZONE</label>
+                                    <select style="width: 100%" id="TimeZoneID" urlselection="/Home/GetTimeZoneBaseId" name="TimeZoneID" ispropertiesmodel>
+                                        <option value="@Model.TimeZoneID" selected></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">TIME FORMAT</label>
+                                    <select style="width: 100%" id="TimeFormat" urlselection="/Home/GetTimeFormatBaseId" name="TimeFormat" ispropertiesmodel>
+                                        <option value="@(Model.TimeFormat)" selected></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">COUNTRY</label>
+                                    <select style="width: 100%" id="CountryID" urlselection="/Home/GetCountryBaseId" name="CountryID" ispropertiesmodel disabled>
+                                        <option value="@Model.CountryID" selected></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">CURRENCY</label>
+                                    <select style="width: 100%" id="CurrencyCode" urlselection="/Home/GetCurrencyBaseId" name="CurrencyCode" ispropertiesmodel disabled>
+                                        <option value="@Model.CurrencyCode" selected></option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-custome" id="excuteButton" data-style="slide-right">Save Changes</button>
+                            <button type="button" class="btn btn-success" id="openModalOpeningHourButton">Opening Hour</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+<!--#region Include JS-->
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+@Scripts.Render("~/Scripts/datatable")
+<script src="@Url.Content("~/Extension/js/intlTelInput.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/setup/companydetails.js")"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAFok6rdVRJr0szpgN7dLTF2Q-FxA8-5o&libraries=places&callback=initAutocomplete" async defer></script>
+<!--#endregion-->

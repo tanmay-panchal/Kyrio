@@ -1,0 +1,31 @@
+﻿<div class="row col-12 p-0 mb-0 m-0 client-search-containt">
+    <div class="content-left p-0" id="contentLeft">
+        <div class="form-group modal-backdrop d-flex fade show flex-column position-absolute" id="searchBackdropContentRight" style="z-index: 3000">
+            <div style="flex-grow:1" class="row">
+                <div class="mx-auto my-auto">
+                    <button type="button" class="btn btn-block btn-info active mx-auto btn-circle" aria-pressed="true" id="buttonCloseSearchClient"><i class="fa fa-close d-block"></i> <span class="d-block">ESC</span></button>
+                    <p class="text-white">CLICK TO CLOSE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-0 position-relative m-0 row content-right">
+        <div class="col-12 form-group p-0 m-0 d-flex flex-column">
+            <div class="p-4 border-bottom bg-light" style="max-height: 84px">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text ">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                    <input type="text" name="searchClient" class="form-control" placeholder="Add client">
+                </div>
+            </div>
+            <div class="align-items-end overflow-y" id="listClientSearch" style="overflow-y: auto; position: absolute; top: 84px; left: 0px; right: 0px; bottom: 0px;">
+                <div class="form-group">
+                    <button type="button" class="btn btn-square btn-block btn-link" id="buttonCreateClient"><i class="fa fa-plus"></i> Create new client</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

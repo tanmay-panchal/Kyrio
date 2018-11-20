@@ -1,0 +1,210 @@
+﻿<!--#region Include CSS-->
+@Styles.Render("~/Style/datatable")
+<link href="@Url.Content("~/Extension/css/select2.min.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
+<link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<!--#endregion-->
+<!--#region Html-->
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills mb-1" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">BOOKING BUTTON</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">FACEBOOK</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">EMBED WIDGET</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <section class="page-wrapper">
+                        <div class="row">
+                            <div class="col-md-6 form-wrapper">
+                                <div class="online-button-section m-b-30" id="online-button-section-link">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3 class="section-title">Online Booking Page</h3>
+                                            <p>Here's the link to your very own online bookings page. Clicking this link opens your online bookings as a full page, you can link to it from your own website, email signature, basically anywhere!</p>
+                                            <p>Shedul online bookings are super easy to use and your page works great on desktop, tablets and mobiles.</p>
+                                            <h5><a target="_blank" id="booking_page_link" class="online-booking-page-link" href=""></a></h5>
+                                            <button type="button" id="copylinkbooking" class="btn btn-outline-secondary">Copy link</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="online-button-section" id="online-button-section-button">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3 class="section-title">Online Booking Button</h3>
+                                            <p>Customize a booking button to use on your own website. When clicked, the button opens a snazzy booking window right within your own webpage. Try it out by clicking the button!</p>
+                                            <p class="m-b-20">Once you've adjusted the button text and color, copy the embed code and paste your website's HTML.</p>
+                                        </div>
+                                    </div>
+                                    <form novalidate="novalidate" class="simple_form online_button_customizations" action="/online_booking_settings" accept-charset="UTF-8" method="post">
+                                        <input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="ty9gI2gIKBaAVahR4e+Zkt8Uh9d3mI9FVkCo9mscEJBfiAp6gVmX5uRQRn1zdzIGl8qCiV+1HC2Rj0RfrRuabA=="><div class="row m-b-20">
+                                            <div class="col-md-12 color-picker">
+                                                <div class="col-xs-12">
+                                                    <div class="form-group radio_buttons required online_button_customizations_color">
+                                                        <label class="col-form-label" for="colorGroup">CHOOSE COLOR</label>
+                                                        <div class="input-group mb-4" id="colorGroup">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 button-text">
+                                                <div class="form-group string required online_button_customizations_text">
+                                                    <label class="col-form-label" for="online_button_customizations_text">
+                                                        BUTTON TEXT
+                                                    </label>
+                                                    <input class="form-control string required" value="Book Now" type="text" name="online_button_customizations_text" id="online_button_customizations_text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-form-label">BUTTON PREVIEW</label>
+                                                    <div id="shedul-embed-button-link-container">
+                                                        <a id="online_button_customizations_preview" class="shedul-embed-button-link" style="overflow: visible; cursor: pointer; background: rgb(86, 181, 157); color: rgb(255, 255, 255); border: 0px; display: inline-block; outline: none; padding: 10px 15px; margin: 0px; font-family: Roboto, sans-serif; font-size: 16px; line-height: 16px; text-decoration: none; border-radius: 3px; -webkit-appearance: none; box-shadow: none;" href="">Book Now</a>
+                                                        <script>
+                                                            !function (e) { var t = "shedul-embed-button-loader", d = "https:" === e.location.protocol ? "https" : "http", n = e.getElementsByTagName("head")[0]; if (!e.getElementById(t)) { var o = e.createElement("script"), p = e.createElement("style"); o.id = t, o.src = "https://app.shedul.com/embed_button.js".replace(/^\w+/, d), p.type = "text/css", p.innerHTML = ".shedul-widget-open { position: fixed; overflow:hidden; }", n.appendChild(o), n.appendChild(p) } }(document);
+                                                        </script>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form novalidate="novalidate" class="simple_form online_button_output" action="/online_booking_settings" accept-charset="UTF-8" method="post">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group text required online_button_output_code">
+                                                    <label class="col-form-label" for="booking-button-code">
+                                                        CODE FOR YOUR WEBSITE
+                                                    </label>
+                                                    <input type="hidden" id="booking_button_code_hide" value="@ViewBag.code_button_booking"/>
+                                                    <textarea class="form-control text required" rows="3" id="booking_button_code" name="booking_button_code"></textarea>
+                                                </div>
+                                                <button type="button" id="copyembedcode" class="btn btn-outline-secondary">Copy embed code</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="row">
+                        <div class="col-sm-6 form-wrapper">
+                            <div class="m-b-30">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3 class="section-title">Facebook Page Button</h3>
+                                        <p class="m-b-25">Add an online booking button on your business page using Facebook's 'call to action' feature.</p>
+                                        <ol class="steps-list">
+                                            <li>
+                                                <h5>
+                                                    Login to your business page on Facebook
+                                                </h5>
+                                            </li>
+                                            <li>
+                                                <h5>
+                                                    Click on 'Create Call to Action' (near the cover photo)
+                                                </h5>
+                                            </li>
+                                            <li>
+                                                <h5>
+                                                    Copy and paste this URL:
+                                                    <a target="_blank" id="facebook_button_link" href=""></a>
+                                                </h5>
+                                            </li>
+                                        </ol>
+                                        <button type="button" id="copylinkfacebook" class="btn btn-outline-secondary">Copy link</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row mobile-m-b-30">
+                                <div class="col-md-12">
+                                    <h3 class="section-title">Facebook Page Tab</h3>
+                                    <p class="m-b-25">Add an online bookings tab inside your business Facebook page.</p>
+                                    <ul class="steps-list">
+                                        <li>
+                                            <h5>
+                                                Click the button below
+                                            </h5>
+                                        </li>
+                                        <li>
+                                            <h5>
+                                                Choose your Facebook page
+                                            </h5>
+                                        </li>
+                                        <li>
+                                            <h5>
+                                                Click 'Add page tab' to confirm
+                                            </h5>
+                                        </li>
+                                    </ul>
+                                    <a class="btn btn-success m-t-20 facebook-add-page-tab"  id="booking_page_link_facebook" href="">Add online bookings to Facebook</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="row">
+                        <div class="col-md-6 form-wrapper">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h3 class="section-title">Embed Booking Widget</h3>
+                                    <p>Add online bookings inside a page on your own website. Adjust the frame height to suit your page layout, then copy the embed code to add in your webpage HTML</p>
+                                </div>
+                            </div>
+                            <div class="row m-b-20">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="col-form-label">FRAME HEIGHT</label>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">px</span>
+                                            <input id="frame_height" name="frame_height" class="form-control" type="number" value="500">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-b-30">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="col-form-label">CODE FOR YOUR WEBSITE</label>
+                                        <input type="hidden" id="code_embed_booking_widget_hide" value="@ViewBag.code_embed_booking_widget" />
+                                        <textarea autocomplete="off" class="code book-button-code form-control" id="code_embed_booking_widget"></textarea>
+                                    </div>
+                                    <button type="button" id="copy_code_embed_booking_widget" class="btn btn-outline-secondary">Copy embed code</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">EMBED PREVIEW</label>
+                                    <iframe id="shedulWidget" src="" style="width: 100%; max-width: 991px; height: 500px; border: 1px solid rgb(128, 128, 128);"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+<!--#region Include JS-->
+<script src="@Url.Content("~/Extension/js/daterangepicker.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/select2.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
+<script src="@Url.Content("~/Extension/js/jquery.inputmask.bundle.min.js")"></script>
+@Scripts.Render("~/Scripts/datatable")
+@Scripts.Render("~/Scripts/PNotify")
+<script src="@Url.Content("~/Scripts/onlinebookingsetting.js")"></script>
+<!--#endregion-->
