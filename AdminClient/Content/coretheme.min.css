@@ -16449,7 +16449,8 @@ table tbody tr td {
     .date-toolbar input:disabled, .date-toolbar input:read-only {
         text-align: center;
         background-color: white;
-        border-right: none;
+        /*border-right: none;*/
+        height:40px;
     }
 
     .date-toolbar .title {
@@ -16459,6 +16460,7 @@ table tbody tr td {
         .date-toolbar .title button {
             padding-left: 10px;
             padding-right: 10px;
+            height: 40px;
         }
 
     .date-toolbar .button-today {
@@ -16468,6 +16470,7 @@ table tbody tr td {
         .date-toolbar .button-today button {
             padding-left: 10px;
             padding-right: 10px;
+            height:40px;
         }
 
     .date-toolbar .inputDate {

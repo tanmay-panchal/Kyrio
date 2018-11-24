@@ -189,6 +189,16 @@ warning 6002: The table/view 'KYRIO.dbo.SYS_DIAL_CODE' does not have a primary k
           <Property Name="VoucherExpiryPeriodName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="SortOrder" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="TBL_APPOINTMENT">
           <Key>
             <PropertyRef Name="AppointmentID" />
@@ -1840,6 +1850,317 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
           <Property Name="ModifyDateString" Type="nvarchar" MaxLength="30" />
           <Property Name="RedeemedDateString" Type="nvarchar" MaxLength="30" />
         </EntityType>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="pr_Dashboard_RecentSales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Dashboard_TodayNextAppointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="Today" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Dashboard_TopService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="pr_Dashboard_TopStaff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="pr_Dashboard_UpcomingAppointments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_DashboardAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="pr_GetStartTimeCalendar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="ModeView" Type="nvarchar" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_AppointmentsCancellations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="date" Mode="In" />
+          <Parameter Name="ToDate" Type="date" Mode="In" />
+          <Parameter Name="ByType" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_AppointmentsSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="date" Mode="In" />
+          <Parameter Name="ToDate" Type="date" Mode="In" />
+          <Parameter Name="ByType" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_ClientList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_ClientRetention" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_CommissionDetailed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_CommissionSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="ByType" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_DailySales_CashMovementSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_DailySales_TransactionSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="Date" Type="date" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_Dashboard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="Date" Type="datetime" Mode="In" />
+          <Parameter Name="Mode" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_DiscountsSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="ByType" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_OutstandingInvoices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_PaymentsLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="IncludeVoucher" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_PaymentsSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_ProductConsumptionDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="StockType" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_ProductConsumptionSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_ProductSalesPerformance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="SupplierID" Type="bigint" Mode="In" />
+          <Parameter Name="BrandID" Type="bigint" Mode="In" />
+          <Parameter Name="CategoryID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_SalesBy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="Channel" Type="nvarchar" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="ByType" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_SalesByHourOfDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_SalesByStaffBreakdown" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="Channel" Type="nvarchar" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="ItemType" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_SalesLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="IncludeVoucher" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_SalesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_SalesSummary_Payments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_StaffTips" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_StaffWorkingHours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_StockMovementLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_StockMovementSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_StockOnhand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+          <Parameter Name="SupplierID" Type="bigint" Mode="In" />
+          <Parameter Name="BrandID" Type="bigint" Mode="In" />
+          <Parameter Name="CategoryID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_TaxesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_TipsCollected" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_VoucherRedemptions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_VoucherSales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="StaffID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Report_VouchersOutstandingBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="pr_Staff_DeleteWorkingHours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+          <Parameter Name="DateWorking" Type="date" Mode="In" />
+          <Parameter Name="IsUpdateThisShift" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="pr_Staff_Generate_WorkingHours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+          <Parameter Name="IsRepeat" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="pr_Staff_UpdateWorkingHours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BusinessID" Type="bigint" Mode="In" />
+          <Parameter Name="LocationID" Type="bigint" Mode="In" />
+          <Parameter Name="UserID" Type="bigint" Mode="In" />
+          <Parameter Name="DateWorking" Type="date" Mode="In" />
+          <Parameter Name="Shift1Start" Type="datetime" Mode="In" />
+          <Parameter Name="Shift1End" Type="datetime" Mode="In" />
+          <Parameter Name="Shift2Start" Type="datetime" Mode="In" />
+          <Parameter Name="Shift2End" Type="datetime" Mode="In" />
+          <Parameter Name="IsRepeat" Type="bit" Mode="In" />
+          <Parameter Name="RepeatType" Type="nvarchar" Mode="In" />
+          <Parameter Name="EndRepeat" Type="date" Mode="In" />
+          <Parameter Name="IsUpdateThisShift" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="KYRIOModelStoreContainer">
           <EntitySet Name="SYS_APPOINTMENT_COLOR" EntityType="Self.SYS_APPOINTMENT_COLOR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_AVAILABLE_FOR" EntityType="Self.SYS_AVAILABLE_FOR" Schema="dbo" store:Type="Tables" />
@@ -1862,6 +2183,7 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
           <EntitySet Name="SYS_TOOL_TIP" EntityType="Self.SYS_TOOL_TIP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_TREATMENT_TYPE" EntityType="Self.SYS_TREATMENT_TYPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_VOUCHER_EXPIRY_PERIOD" EntityType="Self.SYS_VOUCHER_EXPIRY_PERIOD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_APPOINTMENT" EntityType="Self.TBL_APPOINTMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_APPOINTMENT_REMINDER" EntityType="Self.TBL_APPOINTMENT_REMINDER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_APPOINTMENT_SERVICE" EntityType="Self.TBL_APPOINTMENT_SERVICE" Schema="dbo" store:Type="Tables" />
@@ -2614,6 +2936,317 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
           <EntitySet Name="V_MESSAGE" EntityType="KYRIOModel.V_MESSAGE" />
           <EntitySet Name="Appointments" EntityType="KYRIOModel.Appointment" />
           <EntitySet Name="UpdateHistories" EntityType="KYRIOModel.UpdateHistory" />
+          <EntitySet Name="sysdiagrams" EntityType="KYRIOModel.sysdiagram" />
+          <FunctionImport Name="pr_Dashboard_RecentSales">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Dashboard_TodayNextAppointment" ReturnType="Collection(KYRIOModel.pr_Dashboard_TodayNextAppointment_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="Today" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Dashboard_TopService">
+          <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Dashboard_TopStaff">
+          <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Dashboard_UpcomingAppointments">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_DashboardAdmin" ReturnType="Collection(KYRIOModel.pr_DashboardAdmin_Result)">
+          <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="pr_GetStartTimeCalendar" ReturnType="Collection(DateTime)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ModeView" Mode="In" Type="String" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_AppointmentsCancellations" ReturnType="Collection(KYRIOModel.pr_Report_AppointmentsCancellations_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ByType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_AppointmentsSummary" ReturnType="Collection(KYRIOModel.pr_Report_AppointmentsSummary_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ByType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_ClientList" ReturnType="Collection(KYRIOModel.pr_Report_ClientList_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_ClientRetention" ReturnType="Collection(KYRIOModel.pr_Report_ClientRetention_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_CommissionDetailed">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_CommissionSummary">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ByType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_DailySales_CashMovementSummary">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="Date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_DailySales_TransactionSummary">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="Date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_Dashboard">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Mode" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_DiscountsSummary" ReturnType="Collection(KYRIOModel.pr_Report_DiscountsSummary_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ByType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_OutstandingInvoices" ReturnType="Collection(KYRIOModel.pr_Report_OutstandingInvoices_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_PaymentsLog" ReturnType="Collection(KYRIOModel.pr_Report_PaymentsLog_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="IncludeVoucher" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_PaymentsSummary" ReturnType="Collection(KYRIOModel.pr_Report_PaymentsSummary_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_ProductConsumptionDetail" ReturnType="Collection(KYRIOModel.pr_Report_ProductConsumptionDetail_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="StockType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_ProductConsumptionSummary" ReturnType="Collection(KYRIOModel.pr_Report_ProductConsumptionSummary_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_ProductSalesPerformance" ReturnType="Collection(KYRIOModel.pr_Report_ProductSalesPerformance_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="SupplierID" Mode="In" Type="Int64" />
+            <Parameter Name="BrandID" Mode="In" Type="Int64" />
+            <Parameter Name="CategoryID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_SalesBy" ReturnType="Collection(KYRIOModel.pr_Report_SalesBy_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="Channel" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ByType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_SalesByHourOfDay">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_SalesByStaffBreakdown">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="Channel" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ItemType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_SalesLog">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="IncludeVoucher" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_SalesSummary">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_SalesSummary_Payments" ReturnType="Collection(KYRIOModel.pr_Report_SalesSummary_Payments_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_StaffTips">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_StaffWorkingHours">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_StockMovementLog" ReturnType="Collection(KYRIOModel.pr_Report_StockMovementLog_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_StockMovementSummary">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_StockOnhand" ReturnType="Collection(KYRIOModel.pr_Report_StockOnhand_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+            <Parameter Name="SupplierID" Mode="In" Type="Int64" />
+            <Parameter Name="BrandID" Mode="In" Type="Int64" />
+            <Parameter Name="CategoryID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_TaxesSummary" ReturnType="Collection(KYRIOModel.pr_Report_TaxesSummary_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_TipsCollected" ReturnType="Collection(KYRIOModel.pr_Report_TipsCollected_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_VoucherRedemptions" ReturnType="Collection(KYRIOModel.pr_Report_VoucherRedemptions_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_VoucherSales" ReturnType="Collection(KYRIOModel.pr_Report_VoucherSales_Result)">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="StaffID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Report_VouchersOutstandingBalance">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Staff_DeleteWorkingHours">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="UserID" Mode="In" Type="Int64" />
+            <Parameter Name="DateWorking" Mode="In" Type="DateTime" />
+            <Parameter Name="IsUpdateThisShift" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Staff_Generate_WorkingHours">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="UserID" Mode="In" Type="Int64" />
+            <Parameter Name="IsRepeat" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="pr_Staff_UpdateWorkingHours">
+            <Parameter Name="BusinessID" Mode="In" Type="Int64" />
+            <Parameter Name="LocationID" Mode="In" Type="Int64" />
+            <Parameter Name="UserID" Mode="In" Type="Int64" />
+            <Parameter Name="DateWorking" Mode="In" Type="DateTime" />
+            <Parameter Name="Shift1Start" Mode="In" Type="DateTime" />
+            <Parameter Name="Shift1End" Mode="In" Type="DateTime" />
+            <Parameter Name="Shift2Start" Mode="In" Type="DateTime" />
+            <Parameter Name="Shift2End" Mode="In" Type="DateTime" />
+            <Parameter Name="IsRepeat" Mode="In" Type="Boolean" />
+            <Parameter Name="RepeatType" Mode="In" Type="String" />
+            <Parameter Name="EndRepeat" Mode="In" Type="DateTime" />
+            <Parameter Name="IsUpdateThisShift" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(KYRIOModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(KYRIOModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
         <EntityType Name="Config">
           <Key>
@@ -4363,6 +4996,280 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
           <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IsShow" Type="Boolean" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <ComplexType Name="pr_Dashboard_TodayNextAppointment_Result">
+          <Property Type="Int64" Name="AppointmentID" Nullable="false" />
+          <Property Type="DateTime" Name="StartTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="ServiceName" Nullable="true" MaxLength="406" />
+          <Property Type="Int32" Name="DurationInMinute" Nullable="true" />
+          <Property Type="String" Name="StaffName" Nullable="true" MaxLength="201" />
+          <Property Type="String" Name="LocationName" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="pr_DashboardAdmin_Result">
+          <Property Type="Decimal" Name="Total" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="Today" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TodayPer" Nullable="true" Precision="38" Scale="15" />
+          <Property Type="Decimal" Name="ThisWeek" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="ThisWeekPer" Nullable="true" Precision="38" Scale="15" />
+          <Property Type="Decimal" Name="ThisMonth" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="ThisMonthPer" Nullable="true" Precision="38" Scale="15" />
+          <Property Type="Int32" Name="BTotal" Nullable="true" />
+          <Property Type="Int32" Name="BNew" Nullable="true" />
+          <Property Type="Int32" Name="BTrial" Nullable="true" />
+          <Property Type="Int32" Name="BPaid" Nullable="true" />
+          <Property Type="Int32" Name="BExpired" Nullable="true" />
+          <Property Type="Int32" Name="ABTotal" Nullable="true" />
+          <Property Type="Int32" Name="ABNew" Nullable="true" />
+          <Property Type="Int32" Name="ABConfirmed" Nullable="true" />
+          <Property Type="Int32" Name="ABArrived" Nullable="true" />
+          <Property Type="Int32" Name="ABStarted" Nullable="true" />
+          <Property Type="Int32" Name="ABFinished" Nullable="true" />
+          <Property Type="Int32" Name="EmailSent" Nullable="true" />
+          <Property Type="Int32" Name="EmailBounced" Nullable="true" />
+          <Property Type="Int32" Name="SMSSent" Nullable="true" />
+          <Property Type="Int32" Name="SMSBounced" Nullable="true" />
+          <Property Type="Int32" Name="TotalStaff" Nullable="true" />
+          <Property Type="Int32" Name="TotalService" Nullable="true" />
+          <Property Type="Int32" Name="TotalClient" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_AppointmentsCancellations_Result">
+          <Property Type="String" Name="ReasonCancel" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Appointments" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_AppointmentsSummary_Result">
+          <Property Type="Int64" Name="StaffID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="201" />
+          <Property Type="Int32" Name="Appointments" Nullable="true" />
+          <Property Type="Decimal" Name="TotalValue" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_ClientList_Result">
+          <Property Type="Int64" Name="ClientID" Nullable="false" />
+          <Property Type="Int64" Name="BusinessID" Nullable="false" />
+          <Property Type="String" Name="ClientName" Nullable="false" MaxLength="201" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MobileNumberDialCode" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TelephoneDialCode" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Telephone" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="AppointmentNotificationType" Nullable="true" MaxLength="20" />
+          <Property Type="Boolean" Name="AcceptMarketingNotifications" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="20" />
+          <Property Type="Int64" Name="ReferralSource" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="String" Name="ClientNotes" Nullable="false" MaxLength="400" />
+          <Property Type="Boolean" Name="DisplayOnAllBookings" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="400" />
+          <Property Type="String" Name="Suburb" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="State" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="PostCode" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Appointments" Nullable="false" />
+          <Property Type="Int32" Name="CountAppointments" Nullable="false" />
+          <Property Type="Int32" Name="NoShows" Nullable="false" />
+          <Property Type="Int32" Name="Cancelled" Nullable="false" />
+          <Property Type="Int32" Name="Completed" Nullable="false" />
+          <Property Type="Decimal" Name="TotalSales" Nullable="false" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="Outstanding" Nullable="false" Precision="38" Scale="2" />
+          <Property Type="String" Name="LastLocation" Nullable="false" MaxLength="200" />
+          <Property Type="DateTime" Name="LastAppointment" Nullable="true" />
+          <Property Type="DateTime" Name="FirstInvoiceDate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="UserCreate" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="UserModify" Nullable="true" />
+          <Property Type="DateTime" Name="ModifyDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ReferralSourceName" Nullable="false" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_ClientRetention_Result">
+          <Property Type="String" Name="ClientName" Nullable="false" MaxLength="201" />
+          <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="62" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="LastAppointment" Nullable="true" />
+          <Property Type="String" Name="LastLocation" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="StaffName" Nullable="false" MaxLength="201" />
+          <Property Type="Decimal" Name="LastVisitSales" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="TotalAppointments" Nullable="false" />
+          <Property Type="Decimal" Name="TotalSales" Nullable="false" Precision="38" Scale="2" />
+          <Property Type="Int32" Name="NoShows" Nullable="false" />
+          <Property Type="Decimal" Name="Outstanding" Nullable="false" Precision="38" Scale="2" />
+          <Property Type="Int32" Name="DaysAbsent" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_DiscountsSummary_Result">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="ItemsDiscounted" Nullable="true" />
+          <Property Type="Decimal" Name="ItemsValue" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="DiscountAmount" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="DiscountRefunds" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="NetDiscounts" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_OutstandingInvoices_Result">
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LocationName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="InvoiceStatus" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="DueDate" Nullable="true" />
+          <Property Type="String" Name="OverDue" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="ClientName" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="TotalWithTip" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="AmountDue" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_PaymentsLog_Result">
+          <Property Type="DateTime" Name="PaymentDate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="PaymentNo" Nullable="false" />
+          <Property Type="String" Name="LocationName" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ClientName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ClientID" Nullable="true" MaxLength="18" />
+          <Property Type="String" Name="Staff" Nullable="true" MaxLength="201" />
+          <Property Type="String" Name="InvoiceType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PaymentTypeName" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="PaymentAmount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int64" Name="InvoiceID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_PaymentsSummary_Result">
+          <Property Type="Int64" Name="PaymentTypeID" Nullable="false" />
+          <Property Type="String" Name="PaymentTypeName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Transactions" Nullable="true" />
+          <Property Type="Decimal" Name="GrossPayments" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="Refunds" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="NetPayments" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_ProductConsumptionDetail_Result">
+          <Property Type="Int64" Name="ProductID" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Barcode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SKU" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="QuantityUsed" Nullable="true" />
+          <Property Type="Decimal" Name="TotalCost" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="AVGCostPrice" Nullable="true" Precision="38" Scale="6" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_ProductConsumptionSummary_Result">
+          <Property Type="String" Name="StockTypeName" Nullable="false" MaxLength="18" />
+          <Property Type="Decimal" Name="Value" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_ProductSalesPerformance_Result">
+          <Property Type="String" Name="ItemName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Barcode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SKU" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BrandName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="StockOnHand" Nullable="true" />
+          <Property Type="Int32" Name="QtySold" Nullable="true" />
+          <Property Type="Decimal" Name="CostGoodSold" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="NetSale" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="AVGNetSale" Nullable="true" Precision="38" Scale="6" />
+          <Property Type="Decimal" Name="Margin" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalMargin" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_SalesBy_Result">
+          <Property Type="Int64" Name="ItemID" Nullable="true" />
+          <Property Type="String" Name="ItemType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ItemName" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="ItemsSold" Nullable="true" />
+          <Property Type="Decimal" Name="GrossSales" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="Discounts" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="Refunds" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="NetSales" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="Tax" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="TotalSales" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_SalesSummary_Payments_Result">
+          <Property Type="Int64" Name="PaymentTypeID" Nullable="false" />
+          <Property Type="String" Name="PaymentTypeName" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_StockMovementLog_Result">
+          <Property Type="DateTime" Name="TransactionTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="SKU" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Barcode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="BrandName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="SupplierName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="LocationName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="StaffName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="Action" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="OrderNo" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Adjustment" Nullable="false" />
+          <Property Type="Decimal" Name="CostPrice" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="AdjustmentCost" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="StockOnHand" Nullable="false" />
+          <Property Type="Decimal" Name="StockOnHandCost" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_StockOnhand_Result">
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="LocationName" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="OnHand" Nullable="false" />
+          <Property Type="Decimal" Name="OnHandCost" Nullable="false" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="AVGCost" Nullable="true" Precision="38" Scale="6" />
+          <Property Type="Decimal" Name="TotalRetailValue" Nullable="true" Precision="29" Scale="2" />
+          <Property Type="Decimal" Name="RetailPrice" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="ReorderPoint" Nullable="false" />
+          <Property Type="Int32" Name="ReorderQty" Nullable="false" />
+          <Property Type="String" Name="Barcode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SKU" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="BrandName" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="SupplierName" Nullable="false" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_TaxesSummary_Result">
+          <Property Type="Int64" Name="TaxID" Nullable="true" />
+          <Property Type="String" Name="TaxName" Nullable="true" MaxLength="200" />
+          <Property Type="Int64" Name="LocationID" Nullable="false" />
+          <Property Type="String" Name="LocationName" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="ItemSales" Nullable="true" />
+          <Property Type="Decimal" Name="TaxRate" Nullable="true" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="TotalTax" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_TipsCollected_Result">
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LocationName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="StaffName" Nullable="false" MaxLength="201" />
+          <Property Type="Decimal" Name="TipAmount" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_VoucherRedemptions_Result">
+          <Property Type="DateTime" Name="PaymentDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="InvoiceID" Nullable="true" />
+          <Property Type="Int64" Name="ClientID" Nullable="true" />
+          <Property Type="String" Name="ClientName" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="RedeemedValue" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_Report_VoucherSales_Result">
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="InvoiceID" Nullable="false" />
+          <Property Type="String" Name="ClientName" Nullable="true" MaxLength="200" />
+          <Property Type="Int64" Name="ClientID" Nullable="true" />
+          <Property Type="Decimal" Name="IssuedValue" Nullable="true" Precision="29" Scale="2" />
+          <Property Type="Decimal" Name="Discount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalSales" Nullable="true" Precision="30" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6003,6 +6910,399 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="KYRIOModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="pr_Dashboard_RecentSales" FunctionName="KYRIOModel.Store.pr_Dashboard_RecentSales" />
+          <FunctionImportMapping FunctionImportName="pr_Dashboard_TodayNextAppointment" FunctionName="KYRIOModel.Store.pr_Dashboard_TodayNextAppointment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Dashboard_TodayNextAppointment_Result">
+                <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="DurationInMinute" ColumnName="DurationInMinute" />
+                <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Dashboard_TopService" FunctionName="KYRIOModel.Store.pr_Dashboard_TopService" />
+          <FunctionImportMapping FunctionImportName="pr_Dashboard_TopStaff" FunctionName="KYRIOModel.Store.pr_Dashboard_TopStaff" />
+          <FunctionImportMapping FunctionImportName="pr_Dashboard_UpcomingAppointments" FunctionName="KYRIOModel.Store.pr_Dashboard_UpcomingAppointments" />
+          <FunctionImportMapping FunctionImportName="pr_DashboardAdmin" FunctionName="KYRIOModel.Store.pr_DashboardAdmin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_DashboardAdmin_Result">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Today" ColumnName="Today" />
+                <ScalarProperty Name="TodayPer" ColumnName="TodayPer" />
+                <ScalarProperty Name="ThisWeek" ColumnName="ThisWeek" />
+                <ScalarProperty Name="ThisWeekPer" ColumnName="ThisWeekPer" />
+                <ScalarProperty Name="ThisMonth" ColumnName="ThisMonth" />
+                <ScalarProperty Name="ThisMonthPer" ColumnName="ThisMonthPer" />
+                <ScalarProperty Name="BTotal" ColumnName="BTotal" />
+                <ScalarProperty Name="BNew" ColumnName="BNew" />
+                <ScalarProperty Name="BTrial" ColumnName="BTrial" />
+                <ScalarProperty Name="BPaid" ColumnName="BPaid" />
+                <ScalarProperty Name="BExpired" ColumnName="BExpired" />
+                <ScalarProperty Name="ABTotal" ColumnName="ABTotal" />
+                <ScalarProperty Name="ABNew" ColumnName="ABNew" />
+                <ScalarProperty Name="ABConfirmed" ColumnName="ABConfirmed" />
+                <ScalarProperty Name="ABArrived" ColumnName="ABArrived" />
+                <ScalarProperty Name="ABStarted" ColumnName="ABStarted" />
+                <ScalarProperty Name="ABFinished" ColumnName="ABFinished" />
+                <ScalarProperty Name="EmailSent" ColumnName="EmailSent" />
+                <ScalarProperty Name="EmailBounced" ColumnName="EmailBounced" />
+                <ScalarProperty Name="SMSSent" ColumnName="SMSSent" />
+                <ScalarProperty Name="SMSBounced" ColumnName="SMSBounced" />
+                <ScalarProperty Name="TotalStaff" ColumnName="TotalStaff" />
+                <ScalarProperty Name="TotalService" ColumnName="TotalService" />
+                <ScalarProperty Name="TotalClient" ColumnName="TotalClient" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_GetStartTimeCalendar" FunctionName="KYRIOModel.Store.pr_GetStartTimeCalendar" />
+          <FunctionImportMapping FunctionImportName="pr_Report_AppointmentsCancellations" FunctionName="KYRIOModel.Store.pr_Report_AppointmentsCancellations">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_AppointmentsCancellations_Result">
+                <ScalarProperty Name="ReasonCancel" ColumnName="ReasonCancel" />
+                <ScalarProperty Name="Appointments" ColumnName="Appointments" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_AppointmentsSummary" FunctionName="KYRIOModel.Store.pr_Report_AppointmentsSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_AppointmentsSummary_Result">
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Appointments" ColumnName="Appointments" />
+                <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_ClientList" FunctionName="KYRIOModel.Store.pr_Report_ClientList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_ClientList_Result">
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MobileNumberDialCode" ColumnName="MobileNumberDialCode" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="TelephoneDialCode" ColumnName="TelephoneDialCode" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AppointmentNotificationType" ColumnName="AppointmentNotificationType" />
+                <ScalarProperty Name="AcceptMarketingNotifications" ColumnName="AcceptMarketingNotifications" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="ReferralSource" ColumnName="ReferralSource" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="ClientNotes" ColumnName="ClientNotes" />
+                <ScalarProperty Name="DisplayOnAllBookings" ColumnName="DisplayOnAllBookings" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Appointments" ColumnName="Appointments" />
+                <ScalarProperty Name="CountAppointments" ColumnName="CountAppointments" />
+                <ScalarProperty Name="NoShows" ColumnName="NoShows" />
+                <ScalarProperty Name="Cancelled" ColumnName="Cancelled" />
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+                <ScalarProperty Name="Outstanding" ColumnName="Outstanding" />
+                <ScalarProperty Name="LastLocation" ColumnName="LastLocation" />
+                <ScalarProperty Name="LastAppointment" ColumnName="LastAppointment" />
+                <ScalarProperty Name="FirstInvoiceDate" ColumnName="FirstInvoiceDate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UserModify" ColumnName="UserModify" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ReferralSourceName" ColumnName="ReferralSourceName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_ClientRetention" FunctionName="KYRIOModel.Store.pr_Report_ClientRetention">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_ClientRetention_Result">
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastAppointment" ColumnName="LastAppointment" />
+                <ScalarProperty Name="LastLocation" ColumnName="LastLocation" />
+                <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+                <ScalarProperty Name="LastVisitSales" ColumnName="LastVisitSales" />
+                <ScalarProperty Name="TotalAppointments" ColumnName="TotalAppointments" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+                <ScalarProperty Name="NoShows" ColumnName="NoShows" />
+                <ScalarProperty Name="Outstanding" ColumnName="Outstanding" />
+                <ScalarProperty Name="DaysAbsent" ColumnName="DaysAbsent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_CommissionDetailed" FunctionName="KYRIOModel.Store.pr_Report_CommissionDetailed" />
+          <FunctionImportMapping FunctionImportName="pr_Report_CommissionSummary" FunctionName="KYRIOModel.Store.pr_Report_CommissionSummary" />
+          <FunctionImportMapping FunctionImportName="pr_Report_DailySales_CashMovementSummary" FunctionName="KYRIOModel.Store.pr_Report_DailySales_CashMovementSummary" />
+          <FunctionImportMapping FunctionImportName="pr_Report_DailySales_TransactionSummary" FunctionName="KYRIOModel.Store.pr_Report_DailySales_TransactionSummary" />
+          <FunctionImportMapping FunctionImportName="pr_Report_Dashboard" FunctionName="KYRIOModel.Store.pr_Report_Dashboard" />
+          <FunctionImportMapping FunctionImportName="pr_Report_DiscountsSummary" FunctionName="KYRIOModel.Store.pr_Report_DiscountsSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_DiscountsSummary_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ItemsDiscounted" ColumnName="ItemsDiscounted" />
+                <ScalarProperty Name="ItemsValue" ColumnName="ItemsValue" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="DiscountRefunds" ColumnName="DiscountRefunds" />
+                <ScalarProperty Name="NetDiscounts" ColumnName="NetDiscounts" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_OutstandingInvoices" FunctionName="KYRIOModel.Store.pr_Report_OutstandingInvoices">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_OutstandingInvoices_Result">
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="InvoiceStatus" ColumnName="InvoiceStatus" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="OverDue" ColumnName="OverDue" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="TotalWithTip" ColumnName="TotalWithTip" />
+                <ScalarProperty Name="AmountDue" ColumnName="AmountDue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_PaymentsLog" FunctionName="KYRIOModel.Store.pr_Report_PaymentsLog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_PaymentsLog_Result">
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentNo" ColumnName="PaymentNo" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="Staff" ColumnName="Staff" />
+                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+                <ScalarProperty Name="PaymentTypeName" ColumnName="PaymentTypeName" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_PaymentsSummary" FunctionName="KYRIOModel.Store.pr_Report_PaymentsSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_PaymentsSummary_Result">
+                <ScalarProperty Name="PaymentTypeID" ColumnName="PaymentTypeID" />
+                <ScalarProperty Name="PaymentTypeName" ColumnName="PaymentTypeName" />
+                <ScalarProperty Name="Transactions" ColumnName="Transactions" />
+                <ScalarProperty Name="GrossPayments" ColumnName="GrossPayments" />
+                <ScalarProperty Name="Refunds" ColumnName="Refunds" />
+                <ScalarProperty Name="NetPayments" ColumnName="NetPayments" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_ProductConsumptionDetail" FunctionName="KYRIOModel.Store.pr_Report_ProductConsumptionDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_ProductConsumptionDetail_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="QuantityUsed" ColumnName="QuantityUsed" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="AVGCostPrice" ColumnName="AVGCostPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_ProductConsumptionSummary" FunctionName="KYRIOModel.Store.pr_Report_ProductConsumptionSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_ProductConsumptionSummary_Result">
+                <ScalarProperty Name="StockTypeName" ColumnName="StockTypeName" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_ProductSalesPerformance" FunctionName="KYRIOModel.Store.pr_Report_ProductSalesPerformance">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_ProductSalesPerformance_Result">
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="StockOnHand" ColumnName="StockOnHand" />
+                <ScalarProperty Name="QtySold" ColumnName="QtySold" />
+                <ScalarProperty Name="CostGoodSold" ColumnName="CostGoodSold" />
+                <ScalarProperty Name="NetSale" ColumnName="NetSale" />
+                <ScalarProperty Name="AVGNetSale" ColumnName="AVGNetSale" />
+                <ScalarProperty Name="Margin" ColumnName="Margin" />
+                <ScalarProperty Name="TotalMargin" ColumnName="TotalMargin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_SalesBy" FunctionName="KYRIOModel.Store.pr_Report_SalesBy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_SalesBy_Result">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemsSold" ColumnName="ItemsSold" />
+                <ScalarProperty Name="GrossSales" ColumnName="GrossSales" />
+                <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+                <ScalarProperty Name="Refunds" ColumnName="Refunds" />
+                <ScalarProperty Name="NetSales" ColumnName="NetSales" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_SalesByHourOfDay" FunctionName="KYRIOModel.Store.pr_Report_SalesByHourOfDay" />
+          <FunctionImportMapping FunctionImportName="pr_Report_SalesByStaffBreakdown" FunctionName="KYRIOModel.Store.pr_Report_SalesByStaffBreakdown" />
+          <FunctionImportMapping FunctionImportName="pr_Report_SalesLog" FunctionName="KYRIOModel.Store.pr_Report_SalesLog" />
+          <FunctionImportMapping FunctionImportName="pr_Report_SalesSummary" FunctionName="KYRIOModel.Store.pr_Report_SalesSummary" />
+          <FunctionImportMapping FunctionImportName="pr_Report_SalesSummary_Payments" FunctionName="KYRIOModel.Store.pr_Report_SalesSummary_Payments">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_SalesSummary_Payments_Result">
+                <ScalarProperty Name="PaymentTypeID" ColumnName="PaymentTypeID" />
+                <ScalarProperty Name="PaymentTypeName" ColumnName="PaymentTypeName" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_StaffTips" FunctionName="KYRIOModel.Store.pr_Report_StaffTips" />
+          <FunctionImportMapping FunctionImportName="pr_Report_StaffWorkingHours" FunctionName="KYRIOModel.Store.pr_Report_StaffWorkingHours" />
+          <FunctionImportMapping FunctionImportName="pr_Report_StockMovementLog" FunctionName="KYRIOModel.Store.pr_Report_StockMovementLog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_StockMovementLog_Result">
+                <ScalarProperty Name="TransactionTime" ColumnName="TransactionTime" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="Adjustment" ColumnName="Adjustment" />
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+                <ScalarProperty Name="AdjustmentCost" ColumnName="AdjustmentCost" />
+                <ScalarProperty Name="StockOnHand" ColumnName="StockOnHand" />
+                <ScalarProperty Name="StockOnHandCost" ColumnName="StockOnHandCost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_StockMovementSummary" FunctionName="KYRIOModel.Store.pr_Report_StockMovementSummary" />
+          <FunctionImportMapping FunctionImportName="pr_Report_StockOnhand" FunctionName="KYRIOModel.Store.pr_Report_StockOnhand">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_StockOnhand_Result">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="OnHand" ColumnName="OnHand" />
+                <ScalarProperty Name="OnHandCost" ColumnName="OnHandCost" />
+                <ScalarProperty Name="AVGCost" ColumnName="AVGCost" />
+                <ScalarProperty Name="TotalRetailValue" ColumnName="TotalRetailValue" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="ReorderPoint" ColumnName="ReorderPoint" />
+                <ScalarProperty Name="ReorderQty" ColumnName="ReorderQty" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_TaxesSummary" FunctionName="KYRIOModel.Store.pr_Report_TaxesSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_TaxesSummary_Result">
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="TaxName" ColumnName="TaxName" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="ItemSales" ColumnName="ItemSales" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="TotalTax" ColumnName="TotalTax" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_TipsCollected" FunctionName="KYRIOModel.Store.pr_Report_TipsCollected">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_TipsCollected_Result">
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+                <ScalarProperty Name="TipAmount" ColumnName="TipAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_VoucherRedemptions" FunctionName="KYRIOModel.Store.pr_Report_VoucherRedemptions">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_VoucherRedemptions_Result">
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="RedeemedValue" ColumnName="RedeemedValue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_VoucherSales" FunctionName="KYRIOModel.Store.pr_Report_VoucherSales">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.pr_Report_VoucherSales_Result">
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="IssuedValue" ColumnName="IssuedValue" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_Report_VouchersOutstandingBalance" FunctionName="KYRIOModel.Store.pr_Report_VouchersOutstandingBalance" />
+          <FunctionImportMapping FunctionImportName="pr_Staff_DeleteWorkingHours" FunctionName="KYRIOModel.Store.pr_Staff_DeleteWorkingHours" />
+          <FunctionImportMapping FunctionImportName="pr_Staff_Generate_WorkingHours" FunctionName="KYRIOModel.Store.pr_Staff_Generate_WorkingHours" />
+          <FunctionImportMapping FunctionImportName="pr_Staff_UpdateWorkingHours" FunctionName="KYRIOModel.Store.pr_Staff_UpdateWorkingHours" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="KYRIOModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="KYRIOModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="KYRIOModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="KYRIOModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="KYRIOModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KYRIOModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="KYRIOModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="KYRIOModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

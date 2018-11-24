@@ -1,0 +1,667 @@
+﻿/* Added By Ivory Technolab Start*/
+/*Home Start*/
+    .home-page .card-header {
+        background-color: transparent;
+        padding: .75rem 0;
+        margin: 0 1.25rem;
+    }
+
+    .home-page .card-header p {
+        margin: 0;
+    }
+    .header-fixed .app-body {
+        background-color: #f7f7f8;
+    }
+    .card {
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        border:none;
+        height:100%;
+    }
+    .containt-chart{
+        display:flex
+    }
+    .card-body {
+        height: 100%;
+    }
+    .appointment-item-home span.badge {
+        min-width: 70px;
+        color: #fff;
+    }
+    .appointment-item-home:first-child{
+        border-top:none !important;
+    }
+    .appointment-item-home {
+        margin: 0;
+        cursor: pointer;
+        padding: .5rem 0 !important;
+        margin: 0 1.25rem;
+        width: calc(100% - 2.5rem);
+    }
+    #tableTopService.table .thead-light th, #tableTopStaff.table .thead-light th {
+        width: auto !important;
+        background-color: transparent;
+        border-top: none;
+        border-width: 1px;
+    }
+    #tableTopService_wrapper, #tableTopStaff_wrapper {
+        padding: 0 1.25rem !important;
+    }
+/*Home End*/
+/*Calender Start*/
+    .cal-page .fc-event .fc-time, .cal-page .fc-event .fc-title {
+        color: #fff;
+    }
+    .rightside-day > div {
+        display: flex !important;
+        justify-content: flex-end;
+    }
+    .rightside-day .btn-schedul, .rightside-day .btn-outline-schedul {
+        flex: 1;
+    }
+    .rightside-day .btn-outline-schedul {
+        border-radius: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    button#buttonToday {
+        background-color: #EEF0F2;
+        border-color: #A4ADBA;
+        color: #24334A;
+    }
+    div#buttonAppointmentCreate .btn-dark, div#buttonBlockTimeCreate .btn-dark, div#buttonSaleCreate .btn-dark {
+        background: #67768C;
+        border-radius: 3px;
+        color: white;
+        max-height: 2em;
+        font-weight: 600;
+        padding: 2px 10px;
+        pointer-events: none;
+        white-space: nowrap;
+        margin-right: 7px;
+        border:none
+    }
+    select#locationSearch, #staffResourSearch {
+        border-radius: 3px;
+    }
+    div#NotifyNoScheduled {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    .nofity-scheul {
+        position: absolute;
+        top: 42px;
+        left: 0px;
+        /* bottom: 0px; */
+        top: 50%;
+        right: 0px;
+        z-index: 100;
+        background-color: white;
+        height: calc(100% - 70px);
+        transform: translateY(-46%);
+    }
+    .cal-page .fc-toolbar.fc-header-toolbar {
+        display: none;
+    }
+.cal-header {
+    padding: 10px !important;
+    margin: 0;
+}
+    .cal-header .col-12 > div:first-child .icon-user, .cal-header .col-12 > div:last-child .icon-calendar {
+        display: none;
+    }
+/*Calender End*/
+/*Sales Start*/
+    .sales-page .nav-main {
+        border:none;
+    }
+    .nav-pills .nav-link {
+        color: rgba(36,51,74,.55);
+        font-weight:700;
+        position:relative;
+        padding:1rem 0;
+        margin:0 1rem;
+    }
+    .nav-pills .nav-link.active, .nav-pills .nav-link:hover {
+        background-color: transparent;
+        color: #20a8d8;
+        /*border-bottom: 2px solid #20a8d8;*/
+    }
+    .nav-pills .nav-link.active:after, .nav-pills .nav-link:hover:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #20a8d8;
+        left: 0;
+        border-radius: 3px;
+    }
+    .sales-page .tab-content-main .card .card-body .col-md-12 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .sales-page form#formDailySales .containtControl {
+        padding: 0 15px;
+        display: flex;
+        margin-bottom: 20px;
+        margin-top: 35px;
+    }
+    .sales-page form#formDailySales .containtControl > div {
+        margin-bottom:0;
+    }
+    .sales-page form#formDailySales h4 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: 300;
+        color: #000;
+        line-height:35px;
+    }
+    .sales-page h6#txtDailySales2 {
+        font-weight: 400;
+    }
+    .containtTable h5 {
+        margin: 10px 0;
+        line-height: 25px;
+        font-weight: 300;
+        color: #2c2c2c;
+    }
+    div#ContaintDatePicker {
+        padding: 0;
+    }
+    .export-btn {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-color: #c2c2c2;
+        margin-right: 10px;
+        border-radius: 3px;
+        color: #2c2c2c;
+    }
+    button#buttonPrevious {
+        border-color: #c2c2c2;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+    button#buttonNext {
+        border-color: #c2c2c2;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-left: transparent;
+    }
+    button#buttonPrevious i, button#buttonNext i {
+        color: #2c2c2c;
+    }
+    .select2-container--bootstrap .select2-selection {
+        border-color: #c2c2c2;
+        border-radius: 3px;
+        height:40px;
+    }
+    form#formDailySales #buttonToday {
+        background: transparent;
+        border: none;
+        border-top: 1px solid #c2c2c2;
+        border-bottom: 1px solid #c2c2c2;
+    }
+    button#btnView {
+        margin-left: 10px;
+        height: 40px;
+        background-color: transparent;
+        border-color: #c2c2c2;
+        border-radius: 3px;
+    }
+    div#ContaintDatePicker .row {
+        margin: 0;
+    }
+    table#table1, table#table2 {
+        margin: 0 !important;
+    }
+    .sum-table {
+        display: flex;
+    }
+        .sum-table table.dataTable.table-sm > thead > tr > th, table.dataTable.table-sm > thead > tr > th, table.dataTable.table-sm > thead > tr > th {
+            padding-right: 15px;
+            font-size: 13px;
+            border: none;
+            /* background: #f7f7f7; */
+            border-bottom: 1px solid rgba(229,229,229,.7);
+            color: rgba(44,44,44,.35);
+            background-color: #f7f7f8;
+            width: auto !important;
+        }
+    .sum-table .containtTable {
+        flex: 1;
+        /* flex-shrink: initial !important; */
+        /* flex-grow: initial !important; */
+        flex-direction: row;
+        width: 50%;
+        padding-right:0;
+    }
+    .sum-table .containtTable > div {
+        padding: 0;
+    }
+    .sum-table .containtTable:first-child {
+        margin-right: 30px;
+    }
+    .sum-table .table-sm td {
+        padding: 6px 12px;
+    }
+    select#status {
+        height: 40px;
+        border-radius: 3px;
+    }
+    #txtfilter {
+        margin-top: 10px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    #table1_filter input.form-control.form-control-sm {
+        height: 40px;
+        border-radius: 3px;
+        font-size: 14px;
+    }
+    #table1_length select {
+        height: 40px;
+        border-radius: 3px;
+    }
+    #table1_wrapper {
+        padding-bottom: 10px;
+    }
+.sidebar-fixed .sidebar, .sidebar-hidden .sidebar {
+    transition: .2s ease all;
+}
+.invoice-head-left {
+    display: flex;
+}
+
+    .invoice-head-left .input-group {
+        margin-right: 10px;
+    }
+
+    .invoice-head-left .input-group-text {
+        height: 40px;
+    }
+
+    .invoice-head-left input {
+        border-radius: 3px;
+    }
+/*Sales End*/
+
+    /*Message Start*/
+        #table_length select, #table_filter input {
+            height: 40px;
+            border-radius: 3px;
+        }
+        div#table_length{
+            text-align:left;
+        }
+
+/*Message End*/
+@media screen and (min-width:768px) and (max-width: 1100px) {
+    .containt-info .card-body, .containt-chart .card-body, .containt-table .card-body {
+            height: 460px;
+        }
+        .home-page .card-header{
+            text-align:left !important;
+        }
+        div#settings {
+            display: block;
+        }
+        .aside-menu .nav-tabs {
+            display:none;
+        }
+        .header-fixed .app-body {
+            position:relative;
+        }
+        .aside-menu-fixed .main {
+            margin-right: 0px;
+            
+        }
+        .aside-menu-fixed .aside-menu {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            top: 0;
+        }
+        .rightside-toggle span {
+            width: 5px;
+            height: 5px;
+            background-color: #333;
+            display: block;
+            border-radius: 5px;
+            /* text-align: right; */
+            margin-bottom: 3px;
+        }
+
+        .app-header.navbar .rightside-toggle {
+            min-width: initial;
+        }
+        .sidebar-mobile-show .main{
+            margin:0;
+        }
+        /*calender start*/
+            .date-toolbar .inputDateSingle {
+                width: 140px;
+            }
+            
+        .cal-header .col-12 > div:first-child .col-md-6{
+            padding:0 5px;
+        }
+        
+        /*calender end*/
+        /*Sales Start*/
+            .sum-table {
+                align-items: flex-start;
+            }
+            .sum-table .containtTable {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        table#table1, table#table2 {
+            margin: 0 !important;
+            max-width: 550px !important;
+            min-width: auto !important;
+        }
+        div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+            overflow-x: auto;
+            border: 1px solid #ddd;
+            padding: 0;
+            width: 100%;
+        }
+
+        div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+            max-width: 1000px !important;
+            width: 1000px !important;
+        }
+
+        #table1_wrapper .row:first-child > div {
+            flex: 1;
+            padding: 0 5px;
+        }
+        #table1_wrapper .row:first-child > div:last-child {
+            padding-right: 0;
+        }
+    
+        /*Sales End*/
+        /*Message start*/
+        .msg-page #table_wrapper .row:first-child > div {
+            padding: 0;
+        }
+
+            .msg-page #table_wrapper .row:nth-child(2) .col-sm-12 {
+                overflow-x: auto;
+                border: 1px solid #ddd;
+                padding: 0;
+                width: 100%;
+            }
+        /*Message End*/
+
+    }
+    @media (max-width: 1300px) { 
+        .containtTable {
+            overflow-x: auto;
+            display: initial;
+        }
+        div#table1_wrapper .row:nth-child(2) > .col-sm-12, .msg-page #table_wrapper .row:nth-child(2) .col-sm-12 {
+            overflow-x: auto;
+            padding: 0;
+            width: 100%;
+        }
+}
+    @media screen and (max-width:767px) {
+        .card{
+                border:none;
+            }
+            div#settings {
+                display: block;
+            }
+
+            .aside-menu .nav-tabs {
+                display: none;
+            }
+
+            .header-fixed .app-body {
+                position: relative;
+            }
+
+            .aside-menu-fixed .main {
+                margin-right: 0px;
+            }
+
+            .aside-menu-fixed .aside-menu {
+                position: absolute;
+                right: 0;
+                height: 100%;
+                top: 0;
+            }
+            .containt-info .card-body {
+                height:auto;
+            }
+            .rightside-toggle span {
+                width: 5px;
+                height: 5px;
+                background-color: #333;
+                display: block;
+                border-radius: 5px;
+                /* text-align: right; */
+                margin-bottom: 3px;
+            }
+            .app-header.navbar .rightside-toggle {
+                min-width: initial;
+            }
+            .sidebar-mobile-show .main {
+                margin: 0 !important;
+            }
+            /* calender start*/
+                .cal-header .col-12 {
+                    display: flex;
+                }
+                .cal-header .col-12 > div {
+                    flex: 1;
+                    padding: 0 5px;
+                }
+                .cal-header .col-12 > div#ContaintDatePicker{
+                    flex:2;
+                }
+                .rightside-day > div:first-child {
+                    display: none !important;
+                }
+                .cal-header .col-12 > div:last-child{
+                    max-width:80px;
+                }
+                .cal-header .col-12 > div:first-child > div {
+                    flex: 1;
+                    padding: 0 3px;
+                }
+
+                .cal-header .col-12 > div:first-child {
+                    display: flex;
+                }
+
+                .cal-header .col-12 > div:first-child .icon-user, .cal-header .col-12 > div:last-child .icon-calendar {
+                    font-size: 20px !important;
+                    position: absolute;
+                    top: calc(50% - 10px);
+                    left: calc(50% - 10px);
+                }
+                    .cal-header .col-12 > div:first-child .icon-user, .cal-header .col-12 > div:last-child .icon-calendar {
+                        display: block;
+                        pointer-events:none;
+                    }
+            /*calender end*/
+        /*Sales Start*/
+        .date-toolbar .inputDateSingle {
+            width: auto;
+            flex: 1;
+        }
+        .sales-page form#formDailySales .containtControl > div {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 0;
+        }
+        .sales-page form#formDailySales .containtControl, .sum-table {
+            flex-wrap: wrap;
+        }
+        .sales-page form#formDailySales .containtControl{
+            margin-top:15px;
+        }
+        .sum-table .containtTable {
+            flex: none;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        table#table1, table#table2 {
+            margin: 0 !important;
+            max-width: 550px !important;
+            min-width:auto !important;
+        }
+        .sum-table .containtTable > div {
+            padding: 0;
+            border: 1px solid #ddd;
+            overflow-x:auto;
+        }
+        #formVouchers .containtControl {
+            display: flex;
+        }
+        div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+            overflow-x: auto;
+            border: 1px solid #ddd;
+            padding: 0;
+            width: 100%;
+        }
+        div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+            max-width: 1000px !important;
+            width: 1000px !important;
+        }
+        #table1_wrapper .row:first-child {
+            flex-wrap: initial;
+        }
+
+        #table1_wrapper .row:first-child > div {
+            flex: 1;
+            padding: 0;
+        }
+        #table1_filter input.form-control.form-control-sm {
+            width: 96%;
+            min-width: auto;
+        }
+        .invoice-head-left{
+            flex-wrap:wrap;
+        }
+        .invoice-head-left .input-group {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        #formInvoices .export-btn {
+            top: -50px;
+            margin-right:15px;
+        }
+        #formInvoices button#btnView {
+            margin-left:0;
+            margin-top:10px;
+        }
+        /*Sales End*/
+        /*Message Start*/
+        .msg-page .containtTable, .msg-page #table_wrapper {
+            padding: 0;
+        }
+        .msg-page #table_wrapper .row {
+            margin:0;
+        }
+        .msg-page #table_wrapper .row:first-child > div {
+            width: 50%;
+            flex: 1;
+            padding: 0;
+        }
+        #table_filter input {
+            min-width:auto;
+            width:95%;
+        }
+        .msg-page #table_wrapper .row:nth-child(2) .col-sm-12 {
+            border:1px solid #ddd;
+            overflow-x:auto;
+            padding:0;
+        }
+        .msg-page table#table {
+            margin: 0 !important;
+            max-width: 650px !important;
+            width:620px !important;
+            min-width: auto !important;
+        }
+        /*Message End*/
+
+        }
+    @media only screen and (max-device-width:736px) and (orientation: landscape) {
+        select {
+            text-indent: 9999px;
+        }
+        table#table1, table#table2 {
+            margin: 0 !important;
+            max-width: 100vw !important;
+            min-width: auto !important;
+        }
+        .msg-page table#table{
+            width:100vw!important;
+        }
+        #table1_wrapper .row:first-child > div {
+            flex: 1;
+            padding: 0;
+            display: flex;
+        }
+        #table1_wrapper .row:first-child > div:last-child  {
+            justify-content:flex-end;
+        }
+        .msg-page div#table_filter {
+            text-align: right;
+        }
+
+    }
+    @media only screen and (device-width:812px) and (orientation: landscape) {
+    select {
+        text-indent: 9999px;
+    }
+
+    table#table1, table#table2 {
+        margin: 0 !important;
+        max-width: 100vw !important;
+        min-width: auto !important;
+    }
+
+    .sum-table .containtTable > div {
+        padding: 0;
+        border: 1px solid #ddd;
+        overflow-x: auto;
+    }
+
+    .sum-table .containtTable {
+        flex: none;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .sum-table {
+        flex-wrap: wrap;
+    }
+        div#table1_wrapper .row:nth-child(2) > .col-sm-12, .msg-page #table_wrapper .row:nth-child(2) .col-sm-12 {
+            overflow-x: auto;
+            border: 1px solid #ddd;
+            padding: 0;
+            width: 100%;
+        }
+
+            div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+                max-width: 1000px !important;
+                width: 1000px !important;
+            }
+
+        #table1_wrapper .row:first-child > div {
+            flex: 1;
+            padding: 0;
+        }
+        .msg-page #table_wrapper .row:first-child > div{
+            padding:0;
+        }
+}
+/* Added By Ivory Technolab End*/

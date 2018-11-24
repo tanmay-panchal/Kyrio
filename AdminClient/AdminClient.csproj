@@ -372,6 +372,69 @@
     <Compile Include="Models\ProductStockMovement.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\pr_DashboardAdmin_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Dashboard_TodayNextAppointment_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_AppointmentsCancellations_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_AppointmentsSummary_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_ClientList_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_ClientRetention_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_DiscountsSummary_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_OutstandingInvoices_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_PaymentsLog_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_PaymentsSummary_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_ProductConsumptionDetail_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_ProductConsumptionSummary_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_ProductSalesPerformance_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_SalesBy_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_SalesSummary_Payments_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_StockMovementLog_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_StockOnhand_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_TaxesSummary_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_TipsCollected_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_VoucherRedemptions_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_Report_VoucherSales_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ReferralSource.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>
@@ -399,10 +462,19 @@
     <Compile Include="Models\ServiceStaff.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\StatusUser.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Supplier.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SYS_PACKAGE.cs">
@@ -595,9 +667,11 @@
     <Content Include="ContentHtml\Staff\Modal.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\ivory-style.css" />
     <Content Include="Content\kyrio.css" />
     <Content Include="Content\coretheme.min.css" />
     <Content Include="Content\Roboto-font\font-roboto.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="Extension\css\bootstrap-big-grid.min.css" />
     <Content Include="Extension\css\bootstrap-colorpicker.css" />
     <Content Include="Extension\css\buttons.dataTables.min.css" />

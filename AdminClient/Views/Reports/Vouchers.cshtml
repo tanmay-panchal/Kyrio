@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <form id="formVouchers">
                     <div class="form-group containtControl">
-                        <div class="form-group col-fhd-4 col-xlg-4 col-md-4 col-sm-12 col-xs-4">
+                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-2 col-xs-4" style="padding-right:0;">
                             <select class="form-control" style="width: 100%" id="status" name="status">
                                 <option value="">All statuses</option>
                                 <option value="voucher_status_unpaid">Unpaid</option>
@@ -14,17 +14,17 @@
                                 <option value="voucher_status_refunded_invoice">Refunded Invoice</option>
                             </select>
                         </div>
-                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2" style="padding:0;">
                             <button type="button" name="btnView" id="btnView" class="btn btn-square btn-block btn-info" style="width:80px">View</button>
                         </div>
-                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                        @*<div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
                             
                         </div>
                         <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
                             
-                        </div>
+                        </div>*@
                         <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2 float-right">
-                            <button type="button" class="btn btn-info dropdown-toggle" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-info dropdown-toggle export-btn" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Export
                             </button>
                             <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
@@ -35,8 +35,8 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="col-md-12"><h6 id="txtfilter"></h6></div>
-                        <div class="col-md-12 containtTable">
+                        <h6 id="txtfilter"></h6>    
+                        <div class="containtTable">
                             <table class="table table-sm datatable no-footer" style="width:100%" id="table1">
                                 <thead>
                                     <tr>

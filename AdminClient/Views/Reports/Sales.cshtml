@@ -7,41 +7,43 @@
 <link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
 <link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
 <link href="@Url.Content("~/Content/kyrio.css")" rel="stylesheet">
+<link href="@Url.Content("~/Content/ivory-style.css")" rel="stylesheet">
+
 <!--#endregion-->
 <!--#region Html-->
-<div class="animated fadeIn">
+<div class="animated fadeIn sales-page">
     <div class="col-md-12">
         <section class="nav-tabs-scrollable-container reports-nav">
             <ul class="nav nav-pills nav-main" id="myTab1" role="tablist">
                 @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.daily_sales)))
-                { 
-                 <li class="nav-item">
-                    <a class="nav-link @(Model == 1 ? "active show" : "" )" href="/Reports/DailySales" role="tab">DAILY SALES</a>
-                </li>
-                 }
-                  }
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(Model == 1 ? "active show" : "" )" href="/Reports/DailySales" role="tab">DAILY SALES</a>
+                        </li>
+                    }
+                }
                 @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.appointments)))
-                {
-                <li class="nav-item">
-                    <a class="nav-link @(Model == 2 ? "active show" : "" )" href="/Reports/Appointments" role="tab">APPOINTMENTS</a>
-                </li>
-}
-                     }
-               @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.invoices)))
-                  { 
-                    <li class="nav-item">
-                     <a class="nav-link @(Model == 3 ? "active show" : "" )" href="/Reports/Invoices" role="tab">INVOICES</a>
-                </li>
-               }
-               }
-               @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.vouchers)))
-                  {
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(Model == 2 ? "active show" : "" )" href="/Reports/Appointments" role="tab">APPOINTMENTS</a>
+                        </li>
+                    }
+                }
+                @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.invoices)))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(Model == 3 ? "active show" : "" )" href="/Reports/Invoices" role="tab">INVOICES</a>
+                        </li>
+                    }
+                }
+                @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.vouchers)))
+                    {
 
-                     <li class="nav-item">
-                           <a class="nav-link @(Model == 4 ? "active show" : "" )" href="/Reports/Vouchers" role="tab">VOUCHERS</a>
-                </li>
-               }
-               }
+                        <li class="nav-item">
+                            <a class="nav-link @(Model == 4 ? "active show" : "" )" href="/Reports/Vouchers" role="tab">VOUCHERS</a>
+                        </li>
+                    }
+                }
             </ul>
         </section>
         <div class="tab-content tab-content-main" id="myTab1Content">

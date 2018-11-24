@@ -12,6 +12,8 @@ namespace AdminClient.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ModelEntity : DbContext
     {
@@ -107,5 +109,1103 @@ namespace AdminClient.Models
         public virtual DbSet<V_MESSAGE> V_MESSAGE { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
         public virtual DbSet<UpdateHistory> UpdateHistories { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+    
+        public virtual int pr_Dashboard_RecentSales(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Dashboard_RecentSales", businessIDParameter, locationIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Dashboard_TodayNextAppointment_Result> pr_Dashboard_TodayNextAppointment(Nullable<long> businessID, Nullable<System.DateTime> today)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var todayParameter = today.HasValue ?
+                new ObjectParameter("Today", today) :
+                new ObjectParameter("Today", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Dashboard_TodayNextAppointment_Result>("pr_Dashboard_TodayNextAppointment", businessIDParameter, todayParameter);
+        }
+    
+        public virtual int pr_Dashboard_TopService(Nullable<long> businessID)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Dashboard_TopService", businessIDParameter);
+        }
+    
+        public virtual int pr_Dashboard_TopStaff(Nullable<long> businessID)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Dashboard_TopStaff", businessIDParameter);
+        }
+    
+        public virtual int pr_Dashboard_UpcomingAppointments(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Dashboard_UpcomingAppointments", businessIDParameter, locationIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_DashboardAdmin_Result> pr_DashboardAdmin(Nullable<long> businessID)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_DashboardAdmin_Result>("pr_DashboardAdmin", businessIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<System.DateTime>> pr_GetStartTimeCalendar(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string modeView, Nullable<long> staffID)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var modeViewParameter = modeView != null ?
+                new ObjectParameter("ModeView", modeView) :
+                new ObjectParameter("ModeView", typeof(string));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.DateTime>>("pr_GetStartTimeCalendar", businessIDParameter, locationIDParameter, fromDateParameter, toDateParameter, modeViewParameter, staffIDParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_AppointmentsCancellations_Result> pr_Report_AppointmentsCancellations(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string byType)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var byTypeParameter = byType != null ?
+                new ObjectParameter("ByType", byType) :
+                new ObjectParameter("ByType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_AppointmentsCancellations_Result>("pr_Report_AppointmentsCancellations", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter, byTypeParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_AppointmentsSummary_Result> pr_Report_AppointmentsSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string byType)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var byTypeParameter = byType != null ?
+                new ObjectParameter("ByType", byType) :
+                new ObjectParameter("ByType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_AppointmentsSummary_Result>("pr_Report_AppointmentsSummary", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter, byTypeParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_ClientList_Result> pr_Report_ClientList(Nullable<long> businessID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_ClientList_Result>("pr_Report_ClientList", businessIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_ClientRetention_Result> pr_Report_ClientRetention(Nullable<long> businessID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_ClientRetention_Result>("pr_Report_ClientRetention", businessIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int pr_Report_CommissionDetailed(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_CommissionDetailed", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int pr_Report_CommissionSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string byType)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var byTypeParameter = byType != null ?
+                new ObjectParameter("ByType", byType) :
+                new ObjectParameter("ByType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_CommissionSummary", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter, byTypeParameter);
+        }
+    
+        public virtual int pr_Report_DailySales_CashMovementSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> date)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("Date", date) :
+                new ObjectParameter("Date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_DailySales_CashMovementSummary", businessIDParameter, locationIDParameter, dateParameter);
+        }
+    
+        public virtual int pr_Report_DailySales_TransactionSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> date)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("Date", date) :
+                new ObjectParameter("Date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_DailySales_TransactionSummary", businessIDParameter, locationIDParameter, dateParameter);
+        }
+    
+        public virtual int pr_Report_Dashboard(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> date, Nullable<int> mode)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("Date", date) :
+                new ObjectParameter("Date", typeof(System.DateTime));
+    
+            var modeParameter = mode.HasValue ?
+                new ObjectParameter("Mode", mode) :
+                new ObjectParameter("Mode", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_Dashboard", businessIDParameter, locationIDParameter, staffIDParameter, dateParameter, modeParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_DiscountsSummary_Result> pr_Report_DiscountsSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string byType)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var byTypeParameter = byType != null ?
+                new ObjectParameter("ByType", byType) :
+                new ObjectParameter("ByType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_DiscountsSummary_Result>("pr_Report_DiscountsSummary", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter, byTypeParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_OutstandingInvoices_Result> pr_Report_OutstandingInvoices(Nullable<long> businessID, Nullable<long> locationID)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_OutstandingInvoices_Result>("pr_Report_OutstandingInvoices", businessIDParameter, locationIDParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_PaymentsLog_Result> pr_Report_PaymentsLog(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string includeVoucher)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var includeVoucherParameter = includeVoucher != null ?
+                new ObjectParameter("IncludeVoucher", includeVoucher) :
+                new ObjectParameter("IncludeVoucher", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_PaymentsLog_Result>("pr_Report_PaymentsLog", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter, includeVoucherParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_PaymentsSummary_Result> pr_Report_PaymentsSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_PaymentsSummary_Result>("pr_Report_PaymentsSummary", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_ProductConsumptionDetail_Result> pr_Report_ProductConsumptionDetail(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string stockType)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var stockTypeParameter = stockType != null ?
+                new ObjectParameter("StockType", stockType) :
+                new ObjectParameter("StockType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_ProductConsumptionDetail_Result>("pr_Report_ProductConsumptionDetail", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter, stockTypeParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_ProductConsumptionSummary_Result> pr_Report_ProductConsumptionSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_ProductConsumptionSummary_Result>("pr_Report_ProductConsumptionSummary", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_ProductSalesPerformance_Result> pr_Report_ProductSalesPerformance(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, Nullable<long> supplierID, Nullable<long> brandID, Nullable<long> categoryID)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var supplierIDParameter = supplierID.HasValue ?
+                new ObjectParameter("SupplierID", supplierID) :
+                new ObjectParameter("SupplierID", typeof(long));
+    
+            var brandIDParameter = brandID.HasValue ?
+                new ObjectParameter("BrandID", brandID) :
+                new ObjectParameter("BrandID", typeof(long));
+    
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_ProductSalesPerformance_Result>("pr_Report_ProductSalesPerformance", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter, supplierIDParameter, brandIDParameter, categoryIDParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_SalesBy_Result> pr_Report_SalesBy(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, string channel, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string byType)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var channelParameter = channel != null ?
+                new ObjectParameter("Channel", channel) :
+                new ObjectParameter("Channel", typeof(string));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var byTypeParameter = byType != null ?
+                new ObjectParameter("ByType", byType) :
+                new ObjectParameter("ByType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_SalesBy_Result>("pr_Report_SalesBy", businessIDParameter, locationIDParameter, staffIDParameter, channelParameter, fromDateParameter, toDateParameter, byTypeParameter);
+        }
+    
+        public virtual int pr_Report_SalesByHourOfDay(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_SalesByHourOfDay", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int pr_Report_SalesByStaffBreakdown(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, string channel, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string itemType)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var channelParameter = channel != null ?
+                new ObjectParameter("Channel", channel) :
+                new ObjectParameter("Channel", typeof(string));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var itemTypeParameter = itemType != null ?
+                new ObjectParameter("ItemType", itemType) :
+                new ObjectParameter("ItemType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_SalesByStaffBreakdown", businessIDParameter, locationIDParameter, staffIDParameter, channelParameter, fromDateParameter, toDateParameter, itemTypeParameter);
+        }
+    
+        public virtual int pr_Report_SalesLog(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string includeVoucher)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var includeVoucherParameter = includeVoucher != null ?
+                new ObjectParameter("IncludeVoucher", includeVoucher) :
+                new ObjectParameter("IncludeVoucher", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_SalesLog", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter, includeVoucherParameter);
+        }
+    
+        public virtual int pr_Report_SalesSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_SalesSummary", businessIDParameter, locationIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_SalesSummary_Payments_Result> pr_Report_SalesSummary_Payments(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_SalesSummary_Payments_Result>("pr_Report_SalesSummary_Payments", businessIDParameter, locationIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int pr_Report_StaffTips(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_StaffTips", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int pr_Report_StaffWorkingHours(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_StaffWorkingHours", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_StockMovementLog_Result> pr_Report_StockMovementLog(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_StockMovementLog_Result>("pr_Report_StockMovementLog", businessIDParameter, locationIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int pr_Report_StockMovementSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_StockMovementSummary", businessIDParameter, locationIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_StockOnhand_Result> pr_Report_StockOnhand(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> toDate, Nullable<long> supplierID, Nullable<long> brandID, Nullable<long> categoryID)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            var supplierIDParameter = supplierID.HasValue ?
+                new ObjectParameter("SupplierID", supplierID) :
+                new ObjectParameter("SupplierID", typeof(long));
+    
+            var brandIDParameter = brandID.HasValue ?
+                new ObjectParameter("BrandID", brandID) :
+                new ObjectParameter("BrandID", typeof(long));
+    
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_StockOnhand_Result>("pr_Report_StockOnhand", businessIDParameter, locationIDParameter, toDateParameter, supplierIDParameter, brandIDParameter, categoryIDParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_TaxesSummary_Result> pr_Report_TaxesSummary(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_TaxesSummary_Result>("pr_Report_TaxesSummary", businessIDParameter, locationIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_TipsCollected_Result> pr_Report_TipsCollected(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_TipsCollected_Result>("pr_Report_TipsCollected", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_VoucherRedemptions_Result> pr_Report_VoucherRedemptions(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_VoucherRedemptions_Result>("pr_Report_VoucherRedemptions", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual ObjectResult<pr_Report_VoucherSales_Result> pr_Report_VoucherSales(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> staffID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var staffIDParameter = staffID.HasValue ?
+                new ObjectParameter("StaffID", staffID) :
+                new ObjectParameter("StaffID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_Report_VoucherSales_Result>("pr_Report_VoucherSales", businessIDParameter, locationIDParameter, staffIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int pr_Report_VouchersOutstandingBalance(Nullable<long> businessID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Report_VouchersOutstandingBalance", businessIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int pr_Staff_DeleteWorkingHours(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> userID, Nullable<System.DateTime> dateWorking, Nullable<short> isUpdateThisShift)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(long));
+    
+            var dateWorkingParameter = dateWorking.HasValue ?
+                new ObjectParameter("DateWorking", dateWorking) :
+                new ObjectParameter("DateWorking", typeof(System.DateTime));
+    
+            var isUpdateThisShiftParameter = isUpdateThisShift.HasValue ?
+                new ObjectParameter("IsUpdateThisShift", isUpdateThisShift) :
+                new ObjectParameter("IsUpdateThisShift", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Staff_DeleteWorkingHours", businessIDParameter, locationIDParameter, userIDParameter, dateWorkingParameter, isUpdateThisShiftParameter);
+        }
+    
+        public virtual int pr_Staff_Generate_WorkingHours(Nullable<long> businessID, Nullable<long> userID, Nullable<bool> isRepeat)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(long));
+    
+            var isRepeatParameter = isRepeat.HasValue ?
+                new ObjectParameter("IsRepeat", isRepeat) :
+                new ObjectParameter("IsRepeat", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Staff_Generate_WorkingHours", businessIDParameter, userIDParameter, isRepeatParameter);
+        }
+    
+        public virtual int pr_Staff_UpdateWorkingHours(Nullable<long> businessID, Nullable<long> locationID, Nullable<long> userID, Nullable<System.DateTime> dateWorking, Nullable<System.DateTime> shift1Start, Nullable<System.DateTime> shift1End, Nullable<System.DateTime> shift2Start, Nullable<System.DateTime> shift2End, Nullable<bool> isRepeat, string repeatType, Nullable<System.DateTime> endRepeat, Nullable<short> isUpdateThisShift)
+        {
+            var businessIDParameter = businessID.HasValue ?
+                new ObjectParameter("BusinessID", businessID) :
+                new ObjectParameter("BusinessID", typeof(long));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(long));
+    
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(long));
+    
+            var dateWorkingParameter = dateWorking.HasValue ?
+                new ObjectParameter("DateWorking", dateWorking) :
+                new ObjectParameter("DateWorking", typeof(System.DateTime));
+    
+            var shift1StartParameter = shift1Start.HasValue ?
+                new ObjectParameter("Shift1Start", shift1Start) :
+                new ObjectParameter("Shift1Start", typeof(System.DateTime));
+    
+            var shift1EndParameter = shift1End.HasValue ?
+                new ObjectParameter("Shift1End", shift1End) :
+                new ObjectParameter("Shift1End", typeof(System.DateTime));
+    
+            var shift2StartParameter = shift2Start.HasValue ?
+                new ObjectParameter("Shift2Start", shift2Start) :
+                new ObjectParameter("Shift2Start", typeof(System.DateTime));
+    
+            var shift2EndParameter = shift2End.HasValue ?
+                new ObjectParameter("Shift2End", shift2End) :
+                new ObjectParameter("Shift2End", typeof(System.DateTime));
+    
+            var isRepeatParameter = isRepeat.HasValue ?
+                new ObjectParameter("IsRepeat", isRepeat) :
+                new ObjectParameter("IsRepeat", typeof(bool));
+    
+            var repeatTypeParameter = repeatType != null ?
+                new ObjectParameter("RepeatType", repeatType) :
+                new ObjectParameter("RepeatType", typeof(string));
+    
+            var endRepeatParameter = endRepeat.HasValue ?
+                new ObjectParameter("EndRepeat", endRepeat) :
+                new ObjectParameter("EndRepeat", typeof(System.DateTime));
+    
+            var isUpdateThisShiftParameter = isUpdateThisShift.HasValue ?
+                new ObjectParameter("IsUpdateThisShift", isUpdateThisShift) :
+                new ObjectParameter("IsUpdateThisShift", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_Staff_UpdateWorkingHours", businessIDParameter, locationIDParameter, userIDParameter, dateWorkingParameter, shift1StartParameter, shift1EndParameter, shift2StartParameter, shift2EndParameter, isRepeatParameter, repeatTypeParameter, endRepeatParameter, isUpdateThisShiftParameter);
+        }
+    
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
     }
 }

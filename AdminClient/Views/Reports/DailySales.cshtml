@@ -4,14 +4,12 @@
             <div class="col-md-12">
                 <form id="formDailySales">
                     <div class="form-group containtControl">
-                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+                        <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2" style="padding:0">
                             <select class="form-control" style="width: 100%" id="LocationID" name="LocationID"></select>
                         </div>
-                        <div class="form-group col-fhd-10 col-xlg-10 col-md-10 col-sm-12 col-xs-10" style="display:flex">
-                            <div id="ContaintDatePicker"></div>
-                            <div><button type="button" name="btnView" id="btnView" class="btn btn-square btn-block btn-info" style="width:80px;">View</button></div>
+                        <div class="form-group col-fhd-10 col-xlg-10 col-md-10 col-sm-12 col-xs-10" style="display:flex;justify-content:flex-end;">
                             <div>
-                                <button type="button" class="btn btn-info dropdown-toggle" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-info dropdown-toggle export-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Export
                                 </button>
                                 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
@@ -20,40 +18,47 @@
                                     <a class="dropdown-item" href="#" id="buttonPDF" style="padding:0px"></a>
                                 </div>
                             </div>
+                            <div id="ContaintDatePicker">
+                                @*<i class="icon-calendar"></i>*@
+                            </div>
+                            <div><button type="button" name="btnView" id="btnView" class="btn btn-square btn-block btn-info" style="width:80px;">View</button></div>
+                            
                         </div>
 
                     </div>
                     <div class="col-md-12">
-                        <div class="col-md-6"><h4 id="txtDailySales"></h4></div>
-                        <div class="col-md-6"><h4>&nbsp;</h4></div>
-                        <div class="col-md-6"><h6 id="txtDailySales2"></h6></div>
-                        <div class="col-md-6"><h4>&nbsp;</h4></div>
-                        <div class="col-md-6"><h5>Transaction Summary</h5></div>
-                        <div class="col-md-6"><h5>Cash Movement Summary</h5></div>
-                        <div class="col-md-6 containtTable">
-                            <table class="table table-sm datatable no-footer" id="table1">
-                                <thead>
-                                    <tr>
-                                        <th>ITEM TYPE</th>
-                                        <th>SALES QTY</th>
-                                        <th>REFUND QTY</th>
-                                        <th>GROSS TOTAL</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                        <div class="col-md-6 containtTable">
-                            <table class="table table-sm datatable no-footer" id="table2">
-                                <thead>
-                                    <tr>
-                                        <th>PAYMENT TYPE</th>
-                                        <th>PAYMENTS COLLECTED</th>
-                                        <th>REFUNDS PAID</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                        <h4 id="txtDailySales"></h4>
+                        <h6 id="txtDailySales2"></h6>
+                        <div class="sum-table">
+
+
+                            <div class="containtTable">
+                                <table class="table table-sm datatable no-footer" id="table1">
+                                    <h5>Transaction Summary</h5>
+                                    <thead>
+                                        <tr>
+                                            <th>ITEM TYPE</th>
+                                            <th>SALES QTY</th>
+                                            <th>REFUND QTY</th>
+                                            <th>GROSS TOTAL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <div class="containtTable">
+                                <table class="table table-sm datatable no-footer" id="table2">
+                                    <h5>Cash Movement Summary</h5>
+                                    <thead>
+                                        <tr>
+                                            <th>PAYMENT TYPE</th>
+                                            <th>PAYMENTS COLLECTED</th>
+                                            <th>REFUNDS PAID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </form>
