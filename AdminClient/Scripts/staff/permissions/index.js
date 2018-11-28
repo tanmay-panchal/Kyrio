@@ -47,10 +47,10 @@
 
                 }
                 $(document).on("click", "div[name='orderStaff']", function () {
-                    debugger;
+                    //debugger;
                     $(this).find("input[type='checkbox']").iCheck('toggle');
                 })
-                debugger;
+                //debugger;
                 $("input[type='checkbox']:not(.switch-input)").iCheck({
 
                     checkboxClass: 'icheckbox_flat-green',
@@ -131,7 +131,7 @@
                     Owner: $(this).attr("role") == 'Owner' ? 1 : 0,
                 })
             })
-            ; debugger;
+            //; debugger;
             $.ajax({
                 url: "/Staff/UpdatePermissionLevel",
                 type: 'post',

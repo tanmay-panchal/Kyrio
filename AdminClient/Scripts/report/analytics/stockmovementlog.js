@@ -108,7 +108,7 @@ $(function () {
                 rowPos = functions.AddRow(["Time & Date", "Product", "SKU", "Barcode", "Brand", "Category", "Supplier", "Location", "Staff", "Action", "Adjustment", "Cost Price", "Adjustment Cost", "On Hand", "On Hand Cost"], rowPos);
                 functions.MergeCells(rowPos, 0, 73);
                 //#endregion
-                debugger;
+                //debugger;
                 //#region fill data to excel
 
 

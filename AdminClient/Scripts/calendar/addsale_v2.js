@@ -47,7 +47,7 @@ var objectVouchers = {
             id: "1",
             methodClick: function () {
                 $.ModalGiftVoucher(function () {
-                    debugger;
+                    //debugger;
                     var modal = $(this).closest(".modal");
                     var value = modal.find("#value").val();
                     var VoucherExpiryDate;
@@ -746,7 +746,7 @@ var SumTotal = function () {
             if (TaxDetail.length > 0) {
                 var isexist = false;
                 for (var i = 0; i < TaxDetail.length; i++) {
-                    debugger;
+                    //debugger;
                     if ($(this).attr("TaxID") == TaxDetail[i].TaxID) {
                         TaxDetail[i].TaxAmount = TaxDetail[i].TaxAmount + parseFloat($(this).attr("TaxAmount"));
                         isexist = true;
@@ -910,10 +910,10 @@ var AddItemTip = function (Item, modal) {
     modal.find("#" + id + " #CurrencySymbol2").text(Window.CurrencySymbol);
     modal.find("#" + id + " #TipAmount").val(Item.TipIsAmount == true ? Item.TipAmount : Item.TipPercent);
     //$(".containt-serivce [name='staffItem']:last")
-    debugger;
+    //debugger;
     modal.find("#" + id + " #SelectStaffID").InStallSelect2('/Home/LoadSelect2ForUserLocation', 20, 'Select staff', { "LocationId": $.GetLocation() });
     modal.find("#" + id + " #SelectStaffID").SetValueSelect2ID(Item.StaffID);
-    debugger;
+    //debugger;
     if (Item.TipIsAmount) {
         if (modal.find("#" + id + " [name='prefixTipAmount']").is(".btn-not-success")) {
             modal.find("#" + id + " [name='prefixTipAmount']").removeClass("btn-not-success").addClass("btn-success");
@@ -945,7 +945,7 @@ var AddItemTip = function (Item, modal) {
         }
     });
     modal.find("#" + id + " [name='prefixTipAmount']").click(function () {
-        debugger;
+        //debugger;
         modal.find("#" + id + " #CurrencySymbol1").text(Window.CurrencySymbol);
         var Amount = parseFloat(modal.find("#" + id + " #TipAmount").val() == "" ? 0 : modal.find("#" + id + " #TipAmount").val());
         var Percent = parseFloat((Amount / GlobalTotal) * 100).toFixed(2);
@@ -956,7 +956,7 @@ var AddItemTip = function (Item, modal) {
         }
     });
     modal.find("#" + id + " [name='percentTipAmount']").click(function () {
-        debugger;
+        //debugger;
         modal.find("#" + id + " #CurrencySymbol1").text('%');
         var Percent = parseFloat(modal.find("#" + id + " #TipAmount").val() == "" ? 0 : modal.find("#" + id + " #TipAmount").val());
         var Amount = parseFloat(parseFloat(Percent / 100) * GlobalTotal).toFixed(Window.NumberDecimal);
@@ -1111,7 +1111,7 @@ var ShowClientInfo = function (renposive) {
     $("#contentSearch").css('display', 'none');
     $("#contentRight").css('display', 'flex');
     $("#contentSearch").html("");
-    debugger;
+    //debugger;
     $("#contentSearch").append(renposive.Html);
 
     var clientTitle = $($('#contentSearch').find("div:first .align-items-start:first")[0].outerHTML);
@@ -1175,7 +1175,7 @@ var ShowClientInfo = function (renposive) {
     clientTitle.click(function () {
         $("#contentRight").css('display', 'none');
         $("#contentSearch").css('display', 'flex');
-        debugger;
+        //debugger;
         $("#contentLeft").append(closeClientDetail);
         var CloseSearch = function () {
             closeClientDetail.remove();
@@ -1685,7 +1685,7 @@ $(function () {
             //show client
             var Excute = function () {
                 var clientDestop = new ClientDetailDestop(parseInt(Invoice.ClientID), false);
-                debugger;
+                //debugger;
                 var renposive = clientDestop.CreateClient(function (renposive) {
                     ShowClientInfo(renposive);
                 });
@@ -1800,7 +1800,7 @@ $(function () {
                 var modal = $(this).closest(".modal");
                 InvoiceTips = [];
                 modal.find(".itemtip").each(function () {
-                    debugger;
+                    //debugger;
                     var isamount = false;
                     var Amount = 0;
                     var Percent = 0;
@@ -1840,7 +1840,7 @@ $(function () {
         var Excute = function () {
             var clientDestop = new ClientSearchDestop($.GetLocation(), true);
             var renposive = clientDestop.Excute(function (renposive) {
-                debugger;
+                //debugger;
                 var clientId = renposive.Data.Client.ClientID;
                 if (clientId != 0 && clientId) {
                     $("#ClientID").val(clientId);
@@ -1849,7 +1849,7 @@ $(function () {
                     var renposive = clientDestop.CreateClient(function (renposive) {
                         ShowClientInfo(renposive);
                     });
-                    debugger;
+                    //debugger;
                     $("#contentRight").css('display', 'flex');
                     $("#contentSearch").css('display', 'none');
                 }
@@ -1869,7 +1869,7 @@ $(function () {
     })
     $(document).keyup(function (e) {
         if (e.keyCode == 27) {
-            debugger;
+            //debugger;
             $("#contentSearch").css('display', 'none');
             $("#contentRight").css('display', 'block');
         }

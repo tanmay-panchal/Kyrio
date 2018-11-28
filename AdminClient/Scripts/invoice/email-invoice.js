@@ -11,7 +11,7 @@
         $.RequestAjax(this.UrlRequestData, JSON.stringify({
             "InvoiceID": this.InvoiceID
         }), function (reponsive) {
-            ; debugger;
+            //; debugger;
             var Invoice = reponsive.Invoice;
             var Client = reponsive.Client;
             var InvoiceDetail = reponsive.InvoiceDetail;

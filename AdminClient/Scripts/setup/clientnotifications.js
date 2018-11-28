@@ -5,7 +5,7 @@
         SettingGroup: "Client Notifications"
     }), function (data) {
         $.each(data.data, function () {
-            debugger;
+            //debugger;
             if (this.SettingCode == 'config_communications_enabled') {
                 var x = document.getElementById("groupsetting");
                 if (this.Value == "0") {
@@ -263,7 +263,7 @@
                                 async: false,
                                 cache: false,
                                 success: function (data) {
-                                    debugger;
+                                    //debugger;
                                     $("#" + settingcode).val(data.data);
                                     notice.close();
                                 }

@@ -97,7 +97,7 @@ $(function () {
                         entity[$(this).attr("id")] = moment(entity[$(this).attr("id")], $(this).attr("formatdate")).format("YYYY/MM/DD");
                     }
                 })
-                debugger;
+                //debugger;
                 $.RequestAjax("/UpdateHistory/AddOrUpdate", JSON.stringify({
                     entity: entity,
                     isUpdate: $("#Form [ispropertiesidmodel]").val() != 0,

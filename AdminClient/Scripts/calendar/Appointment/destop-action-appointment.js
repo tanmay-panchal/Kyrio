@@ -145,7 +145,7 @@ class ModalAppointmentActionDestop {
         }, 100)
     }
     Main() {
-        ; debugger;
+        //; debugger;
         if (!this.DestopClientDetail && !this.DestopClientDetailInforEmty && !this.DestopClientEmty && !this.DestopClientList && !this.DestopClientSearchItem && !this.DestopClientSeriveItem && !this.DestopConverContentLeft && !this.DestopIndex && !this.DestopRepeat)
             this.LoadData();
         this.LoadHtmlIndex();
@@ -248,7 +248,7 @@ class ModalAppointmentActionDestop {
                 var date = picker.startDate.format("ddd, DD MMM");
                 $(this).val(date);
             });
-            ; debugger;
+            //; debugger;
             if (that.AppointmentItem.EndRepeat) {
                 $('[name="EndRepeat"]').data('daterangepicker').setStartDate(moment(that.AppointmentItem.EndRepeat, "YYYY/MM/DD").toDate());
                 $('[name="EndRepeat"]').data('daterangepicker').setEndDate(moment(that.AppointmentItem.EndRepeat, "YYYY/MM/DD").toDate());
@@ -704,7 +704,7 @@ class ModalAppointmentActionDestop {
     AddService(valueStartTime, staffId) {
         var that = this;
         $("#containt-service").append(this.DestopClientSeriveItem.replace("@ContentHtml", $.trim(window.TimeFormat) == "24" ? this.DestopStartTime24hCombobox : this.DestopStartTime12hCombobox));
-        ; debugger;
+        //; debugger;
         $("[name='deleteService']").hide();
         if ($(".containt-serivce").length > 2) {
             $("[name='deleteService']").show();
@@ -736,7 +736,7 @@ class ModalAppointmentActionDestop {
                 LocationID: that.AppointmentItem.LocationID
             };
         }, null, true, function (data, params, element) {
-            ; debugger;
+            //; debugger;
             var contanitStaff = $(element).closest(".containt-serivce").find('[name="containtStaff"]');
             var contanitResource = $(element).closest(".containt-serivce").find('[name="containtResource"]');
             var inputIsRequestWidth = contanitStaff.find(".input-group-prepend").width();
@@ -961,7 +961,7 @@ class ModalAppointmentActionDestop {
 
         //#region lsScheduledDate
         if (that.AppointmentItem.FrequencyType != "no-repeat") {
-            ; debugger;
+            //; debugger;
             //var dateAppointMent = moment(that.AppointmentParent ? that.AppointmentParent.ScheduledDate : that.AppointmentItem.ScheduledDate).startOf('day');
             var dateAppointMent = moment(that.AppointmentItem.ScheduledDate).startOf('day');
             var unitFrequency = that.AppointmentItem.FrequencyType.toString().split(":")[0];

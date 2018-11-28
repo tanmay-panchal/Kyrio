@@ -173,7 +173,7 @@ $(function () {
                                     if (data.length > 0) {
                                         $.each(data, function (key, value) {
                                             _that.on("addedfile", function (file) {
-                                                ; debugger;
+                                                //; debugger;
                                                 if (file.ImageUrl) {
                                                     var dowloadButton = Dropzone.createElement('<a type="button" class="btn btn-link" style="padding-left: 26px; padding-top: 1px" href="' + file.ImageUrl + '">Download</a>');
                                                     if ($(file.previewElement).find("a").length == 1)

@@ -228,6 +228,22 @@ warning 6002: The table/view 'KYRIO.dbo.SYS_DIAL_CODE' does not have a primary k
           <Property Name="ParentAppointmentID" Type="bigint" />
           <Property Name="RepeatOrder" Type="int" />
         </EntityType>
+        <EntityType Name="TBL_APPOINTMENT_PROGRESS">
+          <Key>
+            <PropertyRef Name="AppointmentProcessID" />
+          </Key>
+          <Property Name="AppointmentProcessID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BusinessID" Type="bigint" Nullable="false" />
+          <Property Name="LocationID" Type="bigint" Nullable="false" />
+          <Property Name="StaffID" Type="bigint" Nullable="false" />
+          <Property Name="DateWorking" Type="date" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ResourceName" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Token" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TBL_APPOINTMENT_REMINDER">
           <Key>
             <PropertyRef Name="AppointmentID" />
@@ -2185,6 +2201,7 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
           <EntitySet Name="SYS_VOUCHER_EXPIRY_PERIOD" EntityType="Self.SYS_VOUCHER_EXPIRY_PERIOD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_APPOINTMENT" EntityType="Self.TBL_APPOINTMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_APPOINTMENT_PROGRESS" EntityType="Self.TBL_APPOINTMENT_PROGRESS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_APPOINTMENT_REMINDER" EntityType="Self.TBL_APPOINTMENT_REMINDER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_APPOINTMENT_SERVICE" EntityType="Self.TBL_APPOINTMENT_SERVICE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_BLOCK_TIME" EntityType="Self.TBL_BLOCK_TIME" Schema="dbo" store:Type="Tables" />
@@ -3247,6 +3264,7 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="TBL_APPOINTMENT_PROGRESS" EntityType="KYRIOModel.TBL_APPOINTMENT_PROGRESS" />
         </EntityContainer>
         <EntityType Name="Config">
           <Key>
@@ -5270,6 +5288,22 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="TBL_APPOINTMENT_PROGRESS">
+          <Key>
+            <PropertyRef Name="AppointmentProcessID" />
+          </Key>
+          <Property Name="AppointmentProcessID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessID" Type="Int64" Nullable="false" />
+          <Property Name="LocationID" Type="Int64" Nullable="false" />
+          <Property Name="StaffID" Type="Int64" Nullable="false" />
+          <Property Name="DateWorking" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Token" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -7303,6 +7337,23 @@ warning 6002: The table/view 'KYRIO.dbo.V_VOUCHER' does not have a primary key d
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="KYRIOModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="KYRIOModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="TBL_APPOINTMENT_PROGRESS">
+            <EntityTypeMapping TypeName="KYRIOModel.TBL_APPOINTMENT_PROGRESS">
+              <MappingFragment StoreEntitySet="TBL_APPOINTMENT_PROGRESS">
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="DateWorking" ColumnName="DateWorking" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+                <ScalarProperty Name="AppointmentProcessID" ColumnName="AppointmentProcessID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

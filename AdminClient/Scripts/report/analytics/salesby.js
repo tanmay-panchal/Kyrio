@@ -159,7 +159,7 @@ $(function () {
                 rowPos = functions.AddRow([headercol1, "Items Sold", "Gross Sale", "Discounts", "Refunds", "Net Sales", "Tax", "Total Sales"], rowPos);
                 functions.MergeCells(rowPos, 0, 73);
                 //#endregion
-                debugger;
+                //debugger;
                 //#region fill data to excel
                 var sItemsSold = 0;
                 var sGrossSales = 0;

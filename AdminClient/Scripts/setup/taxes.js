@@ -194,7 +194,7 @@ $(function () {
     Ladda.bind('#actionButtonSaveSetting', {
         callback: function (instance) {
             instance.start();
-            debugger;
+            //debugger;
             var BusinessSettings = [];
             BusinessSettings.push({
                 SettingCode: $("input[name=config_tax_calculation][value='include']").attr("name"),

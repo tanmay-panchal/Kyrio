@@ -5,22 +5,23 @@
 <div class="animated fadeIn">
     <div class="card">
         <div class="card-body">
-            <div class="form-group" id="containtTable">
+            <div class="form-group staff-mem-btn-cont" id="containtTable">
                 <div class="form-group">
-                    <div class="col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10"></div>
-                    <div class="col-4 col-sm-2 col-md-2 col-lg-2 col-xl-1">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="col-6 col-sm-9 col-md-9 col-lg-9 col-xl-9"></div>
+                    <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <button type="button" class="btn btn-info dropdown-toggle export-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Options
                         </button>
                         <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
                             <a class="dropdown-item" href="#" style="padding:0px" id="buttonExcel"></a>
                             <a class="dropdown-item" href="#" id="buttonCVX" style="padding:0px"></a>
                         </div>
+                        <button type="button" name="createStaff" class="btn btn-custome active hidden-xlg hidden-lg hidden-fhd hidden-rt hidden-rt15 hidden-8k hidden-uhd hidden-4k new-staff-btn" aria-pressed="true"><i class="fa fa-plus"></i></button>
+                        <button type="button" name="createStaff" class="btn btn-custome active hidden-xs hidden-sm hidden-md new-staff-btn" aria-pressed="true">New Staff</button>
                     </div>
-                    <div class="col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1">
-                        <button type="button" name="createStaff" class="btn btn-custome active hidden-xlg hidden-lg hidden-fhd hidden-rt hidden-rt15 hidden-8k hidden-uhd hidden-4k" aria-pressed="true"><i class="fa fa-plus"></i></button>
-                        <button type="button" name="createStaff" class="btn btn-custome active hidden-xs hidden-sm hidden-md" aria-pressed="true">New Staff</button>
-                    </div>
+                    @*<div class="col-2 col-sm-1 col-md-1 col-lg-1 col-xl-1">
+                        
+                    </div>*@
                 </div>
                 <div class="col-md-12 containtTable">
                     <table class="table table-sm datatable no-footer" style="width:100%" id="tableStaffMember">

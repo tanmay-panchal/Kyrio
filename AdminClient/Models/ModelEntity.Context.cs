@@ -110,6 +110,7 @@ namespace AdminClient.Models
         public virtual DbSet<Appointment> Appointments { get; set; }
         public virtual DbSet<UpdateHistory> UpdateHistories { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TBL_APPOINTMENT_PROGRESS> TBL_APPOINTMENT_PROGRESS { get; set; }
     
         public virtual int pr_Dashboard_RecentSales(Nullable<long> businessID, Nullable<long> locationID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
         {

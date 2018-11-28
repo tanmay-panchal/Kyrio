@@ -1,7 +1,7 @@
-﻿<h2>Taxes Summary</h2>
-<div class="col-md-12">
+﻿<h2 class="analy-title">Taxes Summary</h2>
+<div class="col-md-12 tax-sum-head">
     <div id="formReport">
-        <div class="form-group containtControl">
+        <div class="form-group containtControl" style="display:flex;">
             <div class="form-group col-fhd-4 col-xlg-4 col-md-3 col-sm-12 col-xs-4">
                 <div class="input-group">
                     <span class="input-group-prepend">
@@ -18,8 +18,11 @@
             <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
                 <button type="button" name="btnView" id="btnView" class="btn btn-square btn-block btn-info" style="width:80px;">View</button>
             </div>
+            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
+
+            </div>
             <div class="form-group col-fhd-2 col-xlg-2 col-md-3 col-sm-12 col-xs-2">
-                <button type="button" class="btn btn-info dropdown-toggle" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-info dropdown-toggle export-btn" style="position: absolute;right: 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Export
                 </button>
                 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
@@ -28,16 +31,14 @@
                     <a class="dropdown-item" href="#" id="buttonPDF" style="padding:0px"></a>
                 </div>
             </div>
-            <div class="form-group col-fhd-2 col-xlg-2 col-md-2 col-sm-12 col-xs-2">
 
-            </div>
         </div>
     </div>
 </div>
-<div class="col-md-12">
+<div class="col-md-12  tax-sum-table">
     <div class="col-md-12"><h6 id="txtfilter"></h6></div>
     <div class="col-md-12 containtTable">
-        <table class="table table-responsive-sm table-striped table-sm datatable no-footer" id="table" style="width:100%">
+        <table class="table table-responsive-sm table-sm datatable no-footer" id="table" style="width:100%">
             <thead>
                 <tr>
                     <th>Tax</th>

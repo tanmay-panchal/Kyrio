@@ -11,7 +11,7 @@ $(function () {
          "data": "BrandName", "name": "BrandName", "width": "60%", "class": "text-left"
      },
      {
-         "data": "ProductAssigned", "name": "ProductAssigned", "width": "20%", "class": "text-right"
+         "data": "ProductAssigned", "name": "ProductAssigned", "width": "20%", "class": "text-left"
      },
      {
          "data": "ModifyDate", "name": "ModifyDate", "class": "text-left", "width": "20%", "render": function (data, type, row) {

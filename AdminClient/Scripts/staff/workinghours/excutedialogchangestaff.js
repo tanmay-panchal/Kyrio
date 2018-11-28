@@ -74,10 +74,10 @@
         callback: function (instance) {
             instance.start();
             var userLocations = [];
-            debugger;
+            //debugger;
             $("[name='useridChangeStaff']").each(function () {
                 if (this.checked) {
-                    debugger;
+                    //debugger;
                     userLocations.push({
                         UserID: $(this).attr("userid"),
                         LocationID: $("#LocationId").val()

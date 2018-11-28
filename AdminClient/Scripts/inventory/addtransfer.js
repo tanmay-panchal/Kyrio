@@ -301,7 +301,7 @@ $(function () {
         }
     }
     var calculateTotalAmountTransfer = function () {
-        debugger;
+        //debugger;
         var total = 0;
         $("#actionModalMainTransfer #tableAddProduct tbody tr").each(function () {
             total = total + parseFloat($(this).find("[name='TotalCost']").val().replace(/,/gi, '') == "" ? 0 : $(this).find("[name='TotalCost']").val().replace(/,/gi, ''));
@@ -576,7 +576,7 @@ $(function () {
         calculateTotalAmountTransfer();
     })
     $(document).on("change", "#actionModalMainTransfer #tableAddProduct tbody tr input[name='Quantity']", function (event) {
-        debugger;
+        //debugger;
         var Quantity = $(this).val();
         var SupplyPrice = $(this).closest("tr").find("[name='SupplyPrice']").val().replace(/,/gi, '') == "" ? 0 : $(this).closest("tr").find("[name='SupplyPrice']").val().replace(/,/gi, '');
         $(this).closest("tr").find("[name='TotalCost']").val($.number(Quantity * SupplyPrice, Window.NumberDecimal, '.', ','));

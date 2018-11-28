@@ -41,7 +41,7 @@ $(function () {
         },
     });
     $(document).on("click", ".modal-wizard .item-modal-wizard", function () {
-        debugger;
+        //debugger;
         LocationID = $(this).attr("id-item-modal");
         var locationname = $(this).attr("locationname");
         var onhand = $(this).attr("onhand");
@@ -68,7 +68,7 @@ $(function () {
         modalfooter.style.display = 'block';
     });
     $("#btnSaveAdjustment").click(function () {
-        debugger;
+        //debugger;
         if ($("#formModalWizard").valid()) {
             $.RequestAjax("/Inventory/SaveStockMovement", JSON.stringify({
                 "ProductID": $("#ViewProductID").val(),

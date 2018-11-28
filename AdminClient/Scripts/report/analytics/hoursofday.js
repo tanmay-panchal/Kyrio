@@ -95,7 +95,7 @@ $(function () {
                 rowPos = functions.AddRow(["Hour", "Sales Qty", "Net Sales", "AV.Sale", "Sale% "], rowPos);
                 functions.MergeCells(rowPos, 0, 73);
                 //#endregion
-                debugger;
+                //debugger;
                 //#region fill data to excel
                 var sSalesQuantity = 0;
                 var sNetSales = 0;

@@ -102,7 +102,7 @@ $(function () {
                 rowPos = functions.AddRow(["Payment", "Transactions", "Gross Payments", "Refunds", "Net Payments"], rowPos);
                 functions.MergeCells(rowPos, 0, 73);
                 //#endregion
-                debugger;
+                //debugger;
                 //#region fill data to excel
                 var sTransactions = 0;
                 var sGrossPayments = 0;

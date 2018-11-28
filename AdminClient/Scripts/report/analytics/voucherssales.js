@@ -105,7 +105,7 @@ $(function () {
                 rowPos = functions.AddRow(["Date","Invoice no.","Customer","Issued Value","Discount","Total Sales"], rowPos);
                 functions.MergeCells(rowPos, 0, 73);
                 //#endregion
-                debugger;
+                //debugger;
                 //#region fill data to excel
                 var sIssuedValue = 0;
                 var sDiscount = 0;

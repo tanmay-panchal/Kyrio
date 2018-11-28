@@ -6,39 +6,41 @@
 <link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
 @using AdminClient.Controllers.Global;
 <link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/ivory-style.css")" rel="stylesheet">
+
 <!--#endregion-->
 <!--#region Html-->
-<div class="animated fadeIn">
+<div class="animated fadeIn staff-page">
     <div class="col-md-12">
         <section class="nav-tabs-scrollable-container reports-nav">
             <ul class="nav nav-pills nav-main" id="myTab1" role="tablist">
                 @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.working_hours)))
-                  { 
-                  <li class="nav-item">
-                     <a class="nav-link @(Model == 1 ? "active show" : "" )" href="/Staff/WorkingHours" role="tab">WORKING HOURS</a>
-                 </li>
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(Model == 1 ? "active show" : "" )" href="/Staff/WorkingHours" role="tab">WORKING HOURS</a>
+                        </li>
                     }
                 }
 
                 @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.closed_dates)))
                     {
-                <li class="nav-item">
-                    <a class="nav-link @(Model == 2 ? "active show" : "" )" href="/Staff/CloseDate" role="tab">CLOSED DATES</a>
-                </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(Model == 2 ? "active show" : "" )" href="/Staff/CloseDate" role="tab">CLOSED DATES</a>
+                        </li>
                     }
                 }
                 @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.staff_members)))
                     {
-                <li class="nav-item">
-                    <a class="nav-link @(Model == 3 ? "active show" : "" )" href="/Staff/StaffMember" role="tab">STAFF MEMBERS</a>
-                </li>}
-                    }
+                        <li class="nav-item">
+                            <a class="nav-link @(Model == 3 ? "active show" : "" )" href="/Staff/StaffMember" role="tab">STAFF MEMBERS</a>
+                        </li>}
+                }
                 @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.permission_levels)))
-                   { 
-                <li class="nav-item">
-                    <a class="nav-link @(Model == 4 ? "active show" : "" )" href="/Staff/Permissions" role="tab">PERMISSION LEVELS</a>
-                </li>
-                   }
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(Model == 4 ? "active show" : "" )" href="/Staff/Permissions" role="tab">PERMISSION LEVELS</a>
+                        </li>
+                    }
                 }
 
             </ul>

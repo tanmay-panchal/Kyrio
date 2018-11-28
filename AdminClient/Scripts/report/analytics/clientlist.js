@@ -86,7 +86,7 @@ $(function () {
             },
             methodCustomeAll: function (data, functions, rels, rowPos) {
                 var arrayColWidth = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15];
-                debugger;
+                //debugger;
                 rowPos = functions.AddRow(["ClientID", "First Name", "Last Name", "Appointments", "No Shows", "Total Sales", "Outstanding", "Gender", "Mobile Number", "Telephone", "Email", "Accepts Marketing", "Address", "Area", "City", "State", "PostCode", "Date of Birth", "Last Location", "Added", "Last Appointment", "Note", "Referral Source"], rowPos);
                 functions.MergeCells(rowPos, 0, 73);
                 $.each(table.rows().data(), function () {

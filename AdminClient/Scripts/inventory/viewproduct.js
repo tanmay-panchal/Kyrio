@@ -81,14 +81,14 @@ $(function () {
                 rowPos = functions.AddRow(["Time & Date", "Product", "SKU", "Barcode", "Brand", "Category", "Supplier", "Location", "Staff", "Action", "Adjustment", "Cost Price", "Adjustment Cost", "On Hand", "On Hand Cost"], rowPos);
                 functions.MergeCells(rowPos, 0, 73);
                 //#endregion
-                debugger;
+                //debugger;
                 $.RequestAjax("/Inventory/GetAllStockMovement", JSON.stringify({
                     "ProductID": $("#ViewProductID").val(),
                 }), function (data) {
                     if (data.data.length == 0) {
                     }
                     else {
-                        debugger;
+                        //debugger;
                         $.each(data.data, function () {
                             var TransactionTime = moment(this.TransactionTime).format(Window.FormatDateWithTimeJS);
                             var ProductName = this.ProductName == null ? '' : this.ProductName.toString() + '';
@@ -420,7 +420,7 @@ $(function () {
         callback: function (instance) {
             instance.start();
             if ($("#actionForm").valid()) {
-                debugger;
+                //debugger;
                 var entity = new Object();
                 $("#actionForm").find("[ispropertiesmodel]").each(function () {
                     if ($(this).is("input[type='text'],input[type='number'],input[type='email'],textarea,select,input[type='hidden'],input[type='password']"))

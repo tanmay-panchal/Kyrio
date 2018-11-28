@@ -707,7 +707,7 @@ $(function () {
     $("#actionModalMain #btnConfirmReceive").click(function () {
         var OrderProducts = [];
         $("#actionModalMain #tableViewProduct tbody tr").each(function () {
-            debugger;
+            //debugger;
             OrderProducts.push({
                 OrderProductID: $(this).attr("OrderProductID"),
                 OrderID: $("#actionModalMain #OrderID").val(),

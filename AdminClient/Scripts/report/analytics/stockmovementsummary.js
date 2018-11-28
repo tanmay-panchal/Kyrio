@@ -89,7 +89,7 @@ $(function () {
                 rowPos = functions.AddRow(["Product", "SKU", "Barcode", "Brand", "Category", "Supplier", "Start Stock", "Start Value", "Orders Received", "Deleted Invoice", "New Stock", "Returned", "Sold", "Internal Use", "Damaged", "Out of Date", "Transfers", "Adjustment", "Others", "End Stock", "End Value"], rowPos);
                 functions.MergeCells(rowPos, 0, 73);
                 //#endregion
-                debugger;
+                //debugger;
                 //#region fill data to excel
 
 

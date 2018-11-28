@@ -2079,7 +2079,7 @@ $(function () {
                         Amount = parseFloat((Percent / 100) * GlobalTotal).toFixed(Window.NumberDecimal);
                     }
                     if (Amount > 0) {
-                        debugger;
+                        //debugger;
                         InvoiceTips.push({
                             TipAmount: Amount,
                             TipPercent: Percent,

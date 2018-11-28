@@ -5,7 +5,7 @@
         SettingGroup: "Sales Settings"
     }), function (data) {
         $.each(data.data, function () {
-            debugger;
+            //debugger;
             if (this.SettingCode == 'business_voucher_expiration_period') {
                 $("#business_voucher_expiration_period").val(this.Value).change();
             }

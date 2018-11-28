@@ -599,7 +599,7 @@ class MobileAppointmentService {
 
 class MoblieEditOrCreateAppointment {
     constructor(locationId, startTime, ScheduledDate, staffId, clientID, appointmentId, callback) {
-        ; debugger;
+        //; debugger;
         ScheduledDate = ScheduledDate == null || ScheduledDate == undefined ? new Date() : ScheduledDate;
         var that = this;
         var hidePage = function () {
@@ -1212,7 +1212,7 @@ class MoblieEditOrCreateAppointment {
 
     //#region Public
     OpenModal() {
-        ; debugger;
+        //; debugger;
         var that = this;
         if (this.HTML.Index == null || this.HTML.ClientDetail == null || this.HTML.ClientEmpty == null || this.HTML.Repeat_ScheulDate == null || this.HTML.ServiceItem == null
             || that.HTML.Control.Duration == null || that.HTML.Control.Staff_IsRequest == null || that.HTML.Control.Starttime12h == null || that.HTML.Control.Starttime24h == null

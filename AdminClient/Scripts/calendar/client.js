@@ -214,7 +214,7 @@
             Body.find("#divTabInfo").css('display', 'none');
 
             Body.find("#btnTabAppointments").click(function () {
-                ; debugger;
+                //; debugger;
                 Body.find("#btnTabAppointments").removeClass("oEUy3Y").addClass("oEUy3Y");
                 Body.find("#btnTabProducts").removeClass("oEUy3Y");
                 Body.find("#btnTabInvoices").removeClass("oEUy3Y");
@@ -226,7 +226,7 @@
                 Body.find("#divTabInfo").css('display', 'none');
             })
             Body.find("#btnTabProducts").click(function () {
-                ; debugger;
+                //; debugger;
                 Body.find("#btnTabProducts").removeClass("oEUy3Y").addClass("oEUy3Y");
                 Body.find("#btnTabAppointments").removeClass("oEUy3Y");
                 Body.find("#btnTabInvoices").removeClass("oEUy3Y");
@@ -238,7 +238,7 @@
                 Body.find("#divTabInfo").css('display', 'none');
             })
             Body.find("#btnTabInvoices").click(function () {
-                ; debugger;
+                //; debugger;
                 Body.find("#btnTabInvoices").removeClass("oEUy3Y").addClass("oEUy3Y");
                 Body.find("#btnTabAppointments").removeClass("oEUy3Y");
                 Body.find("#btnTabProducts").removeClass("oEUy3Y");
@@ -250,7 +250,7 @@
                 Body.find("#divTabInfo").css('display', 'none');
             })
             Body.find("#btnTabInfo").click(function () {
-                ; debugger;
+                //; debugger;
                 Body.find("#btnTabInfo").removeClass("oEUy3Y").addClass("oEUy3Y");
                 Body.find("#btnTabAppointments").removeClass("oEUy3Y");
                 Body.find("#btnTabProducts").removeClass("oEUy3Y");

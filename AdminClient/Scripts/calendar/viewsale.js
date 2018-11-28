@@ -705,7 +705,7 @@ $(function () {
         }
     })
     $(".divRebook").click(function () {
-        ; debugger;
+        //; debugger;
         if (dataInvoice && dataInvoice.Invoice.AppointmentID) {
             localStorage.setItem("IsViewCopyOrCutAppointment", true);
             localStorage.setItem("locationIdCopyOrCutAppointment", dataInvoice.Invoice.LocationID);

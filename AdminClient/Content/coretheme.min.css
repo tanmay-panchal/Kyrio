@@ -12980,7 +12980,7 @@ base-chart.chart {
         overflow-x: hidden;
         overflow-y: auto;
         -ms-overflow-style: -ms-autohiding-scrollbar;
-        width: 200px;
+        width: 220px;
     }
 
         .sidebar .sidebar-nav::-webkit-scrollbar {
@@ -15410,25 +15410,33 @@ base-chart.chart {
     margin-top: 55px;
 }
 
-.sidebar-hidden .sidebar {
-    margin-left: -200px;
+.sidebar-fixed.sidebar-hidden .sidebar {
+    margin-left: -220px;
+    transition: .2s ease margin-left;
 }
 
 .sidebar-fixed .sidebar {
     position: fixed;
     z-index: 1019;
-    width: 200px;
+    width: 220px;
     height: calc(100vh - 55px);
+    /*margin-left: 0;*/
+    transition: .2s ease margin-left;
 }
 
 .sidebar-fixed .app-footer, .sidebar-fixed .main {
-    margin-left: 200px;
+    margin-left: 220px;
+    transition: .2s ease margin-left;
 }
 
 .sidebar-fixed.sidebar-hidden .app-footer, .sidebar-fixed.sidebar-hidden .main {
     margin-left: 0;
+    transition: .2s ease margin-left;
 }
-
+.ui-pnotify.ui-pnotify-fade-slow.ui-pnotify.ui-pnotify-move{
+    display:none !important;
+    transition:initial !important;
+}
 .sidebar-off-canvas .sidebar {
     position: fixed;
     z-index: 1019;
@@ -15483,16 +15491,19 @@ base-chart.chart {
     }
 }
 
-.aside-menu-hidden .aside-menu {
-    margin-right: -250px;
-}
+
 
 .aside-menu-fixed .aside-menu {
     position: fixed;
     right: 0;
     height: 100%;
+    transition: .2s ease margin-right;
+    margin-right:0px;
 }
-
+.aside-menu-hidden .aside-menu {
+    margin-right: -250px;
+    transition: .2s ease margin-right;
+}
     .aside-menu-fixed .aside-menu .tab-content {
         height: calc(100vh - 2.375rem - 55px);
     }
@@ -15563,10 +15574,10 @@ base-chart.chart {
     margin-bottom: 50px;
 }
 
-.app-footer, .app-header, .aside-menu, .main, .sidebar {
+/*.app-footer, .app-header, .aside-menu, .main, .sidebar {
     transition: margin-left .25s,margin-right .25s,width .25s,flex .25s;
     transition: margin-left .25s,margin-right .25s,width .25s,flex .25s,-ms-flex .25s;
-}
+}*/
 
 .sidebar-nav {
     transition: width .25s;

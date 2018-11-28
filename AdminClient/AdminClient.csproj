@@ -486,6 +486,9 @@
     <Compile Include="Models\TaxLocation.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TBL_APPOINTMENT_PROGRESS.cs">
+      <DependentUpon>ModelEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TBL_APPOINTMENT_REMINDER.cs">
       <DependentUpon>ModelEntity.tt</DependentUpon>
     </Compile>

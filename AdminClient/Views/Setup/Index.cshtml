@@ -1,98 +1,100 @@
 ﻿@using AdminClient.Controllers.Global;
+<link href="@Url.Content("~/Content/ivory-style.css")" rel="stylesheet">
+
 <!--#region Html-->
-<div class="animated fadeIn">
+<div class="animated fadeIn setup-page">
     <div class="row">
         <div class="col-md-6">
             @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.account_setup)))
-               {
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2><strong>Account Setup</strong></h2>
-                                <p class="text-muted">Manage your business general settings</p>
-                                <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                    <button type="button" onclick="location.href = '/Setup/CompanyDetails'" class="btn btn-link form-control" style="text-align:left">Company Details</button>
-                                </div>
-                                <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                    <button type="button" onclick="location.href = '/Setup/Locations'" class="btn btn-link form-control" style="text-align:left">Locations</button>
-                                </div>
-                                <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                    <button type="button" onclick="location.href = '/Setup/Resources'" class="btn btn-link form-control" style="text-align:left">Resources</button>
-                                </div>
-                                <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                    <button type="button" onclick="location.href = '/Setup/CalendarSettings'" class="btn btn-link form-control" style="text-align:left">Calendar Settings</button>
-                                </div>
-                                <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                    <button type="button" onclick="location.href = '/Setup/OnlineBookingSettings'" class="btn btn-link form-control" style="text-align:left">Online Booking Settings</button>
-                                </div>
-                                <div class="form-group">
-                                    <button type="button" onclick="location.href = '/Setup/StaffNotifications'" class="btn btn-link form-control" style="text-align:left">Staff Notifications</button>
+                {
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2><strong>Account Setup</strong></h2>
+                                    <p class="text-muted">Manage your business general settings</p>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/CompanyDetails'" class="btn btn-link form-control" style="text-align:left">Company Details</button>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/Locations'" class="btn btn-link form-control" style="text-align:left">Locations</button>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/Resources'" class="btn btn-link form-control" style="text-align:left">Resources</button>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/CalendarSettings'" class="btn btn-link form-control" style="text-align:left">Calendar Settings</button>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/OnlineBookingSettings'" class="btn btn-link form-control" style="text-align:left">Online Booking Settings</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" onclick="location.href = '/Setup/StaffNotifications'" class="btn btn-link form-control" style="text-align:left">Staff Notifications</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-               }
+                }
             }
 
         </div>
         <div class="col-md-6">
             @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.point_of_sale)))
-               {
-            <div class="card" style="min-height: 365px">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2><strong>Point of Sale</strong></h2>
-                            <p class="text-muted">Manage point of sale settings</p>
-                            <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                <button type="button" onclick="location.href = '/Setup/PaymentTypes'" class="btn btn-link form-control" style="text-align:left">Payment Types</button>
-                            </div>
-                            <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                <button type="button" onclick="location.href = '/Setup/Taxes'" class="btn btn-link form-control" style="text-align:left">Taxes</button>
-                            </div>
-                            <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                <button type="button" onclick="location.href = '/Setup/Discounts'" class="btn btn-link form-control" style="text-align:left">Discount Types</button>
-                            </div>
-                            <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                <button type="button" onclick="location.href = '/Setup/SalesSettings'" class="btn btn-link form-control" style="text-align:left">Sales Settings</button>
-                            </div>
-                            <div class="form-group">
-                                <button type="button" onclick="location.href = '/Setup/InvoicesReceipts'" class="btn btn-link form-control" style="text-align:left">Invoices & Receipts</button>
+                {
+                    <div class="card" style="min-height: 365px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2><strong>Point of Sale</strong></h2>
+                                    <p class="text-muted">Manage point of sale settings</p>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/PaymentTypes'" class="btn btn-link form-control" style="text-align:left">Payment Types</button>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/Taxes'" class="btn btn-link form-control" style="text-align:left">Taxes</button>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/Discounts'" class="btn btn-link form-control" style="text-align:left">Discount Types</button>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/SalesSettings'" class="btn btn-link form-control" style="text-align:left">Sales Settings</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" onclick="location.href = '/Setup/InvoicesReceipts'" class="btn btn-link form-control" style="text-align:left">Invoices & Receipts</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            }
+                }
             }
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             @{ if (CheckPermision.CheckPermissionFunction(nameof(Resources.Function.client_settings)))
-               {
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2><strong>Client Settings</strong></h2>
-                            <p class="text-muted">Setup client notifications, referral sources and cancellation reasons</p>
-                            <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                <button type="button" onclick="location.href = '/Setup/ClientNotifications'" class="btn btn-link form-control" style="text-align:left">Client Notifications</button>
-                            </div>
-                            <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
-                                <button type="button" onclick="location.href = '/Setup/ReferralSources'" class="btn btn-link form-control" style="text-align:left">Referral Sources</button>
-                            </div>
-                            <div class="form-group">
-                                <button type="button" onclick="location.href = '/Setup/CancellationReasons'" class="btn btn-link form-control" style="text-align:left">Cancellation Reasons</button>
+                {
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2><strong>Client Settings</strong></h2>
+                                    <p class="text-muted">Setup client notifications, referral sources and cancellation reasons</p>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/ClientNotifications'" class="btn btn-link form-control" style="text-align:left">Client Notifications</button>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px solid #dee3e7;">
+                                        <button type="button" onclick="location.href = '/Setup/ReferralSources'" class="btn btn-link form-control" style="text-align:left">Referral Sources</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" onclick="location.href = '/Setup/CancellationReasons'" class="btn btn-link form-control" style="text-align:left">Cancellation Reasons</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            }
+                }
             }
         </div>
     </div>

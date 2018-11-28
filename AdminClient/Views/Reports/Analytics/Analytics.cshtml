@@ -4,9 +4,11 @@
 <link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
 <link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
 <link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/ivory-style.css")" rel="stylesheet">
+
 <!--#endregion-->
 <!--#region Html-->
-<div class="animated fadeIn">
+<div class="animated fadeIn analytics-page">
     <div class="col-md-12">
         <section class="nav-tabs-scrollable-container reports-nav">
             <ul class="nav nav-pills nav-main" id="myTab1" role="tablist">
@@ -19,11 +21,17 @@
             </ul>
         </section>
         <div class="tab-content tab-content-main" id="myTab1Content">
-            <div class="tab-pane fade active show" role="tabpanel">
-                @{
-                    String fileView = ViewBag.URL;
-                    @Html.Partial(fileView);
-                }
+            <div class="tab-pane fade active show   ana-dashboard" role="tabpanel">
+                <div class="card">
+                    <div class="card-body">
+
+                        @{
+                            String fileView = ViewBag.URL;
+                            @Html.Partial(fileView);
+                        }
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

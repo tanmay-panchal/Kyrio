@@ -262,7 +262,7 @@
                                 async: false,
                                 cache: false,
                                 success: function (data) {
-                                    debugger;
+                                    //debugger;
                                     $("#" + settingcode).val(data.data);
                                     notice.close();
                                 }

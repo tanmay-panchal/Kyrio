@@ -112,7 +112,7 @@
     }
 /*Calender End*/
 /*Sales Start*/
-    .sales-page .nav-main {
+    .nav-main {
         border:none;
     }
     .nav-pills .nav-link {
@@ -221,16 +221,16 @@
     .sum-table {
         display: flex;
     }
-        .sum-table table.dataTable.table-sm > thead > tr > th, table.dataTable.table-sm > thead > tr > th, table.dataTable.table-sm > thead > tr > th {
-            padding-right: 15px;
-            font-size: 13px;
-            border: none;
-            /* background: #f7f7f7; */
-            border-bottom: 1px solid rgba(229,229,229,.7);
-            color: rgba(44,44,44,.35);
-            background-color: #f7f7f8;
-            width: auto !important;
-        }
+    .sum-table table.dataTable.table-sm > thead > tr > th, table.dataTable.table-sm > thead > tr > th, table.dataTable.table-sm > thead > tr > th {
+        padding-right: 15px;
+        font-size: 13px;
+        border: none;
+        /* background: #f7f7f7; */
+        border-bottom: 1px solid rgba(229,229,229,.7);
+        color: rgba(44,44,44,.35);
+        background-color: #f7f7f8;
+        width: auto !important;
+    }
     .sum-table .containtTable {
         flex: 1;
         /* flex-shrink: initial !important; */
@@ -269,9 +269,6 @@
     #table1_wrapper {
         padding-bottom: 10px;
     }
-.sidebar-fixed .sidebar, .sidebar-hidden .sidebar {
-    transition: .2s ease all;
-}
 .invoice-head-left {
     display: flex;
 }
@@ -287,6 +284,9 @@
     .invoice-head-left input {
         border-radius: 3px;
     }
+    #LocationID + .select2 {
+        margin-right: 10px;
+    }
 /*Sales End*/
 
     /*Message Start*/
@@ -297,12 +297,303 @@
         div#table_length{
             text-align:left;
         }
-
-/*Message End*/
-@media screen and (min-width:768px) and (max-width: 1100px) {
-    .containt-info .card-body, .containt-chart .card-body, .containt-table .card-body {
-            height: 460px;
+        form#workinghourform {
+            padding: 0 15px;
         }
+        .tableiscolfixed{
+            max-width:initial;
+            min-width:initial;
+        }
+        .containtTitleTable {
+            padding-left: 0;
+            min-width: 300px;
+            max-width: 300px;
+        }
+        .tab-content-main .form-group {
+            padding: 0 15px !important;
+        }
+        .containtTable {
+            flex-grow: initial;
+            padding-right: 0;
+        }
+       
+/*Message End*/
+/*Staff Start*/
+.staff-page button#buttonToday {
+    border-right: 0;
+    border-left: 0;
+}
+    .staff-page .table-bordered thead th {
+        border-bottom-width: 1px;
+    }
+    .staff-page button.btn.btn-link {
+        padding: 0;
+    }
+    .staff-page .table-sm td {
+        padding: 5px 10px 0;
+    }
+    .staff-page div#ContaintDatePicker {
+        padding: 0 !important;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #workinghourform .containtControl > div {
+        padding: 0 !important;
+    }
+
+    #workinghourform .containtControl > div:first-child {
+        padding-right: 10px !important;
+    }
+    .staff-page .containtNotification button.btn.btn-custome.active {
+        margin-bottom: 10px;
+    }
+    .staff-page #tableStaffMember_wrapper .table-sm td {
+        padding: 12px;
+    }
+    .new-staff-btn {
+        height: 40px;
+    }
+    div#containtTable.staff-mem-btn-cont > .form-group .col-xl-3 {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+    }
+    #containtServiceCustomer .row > div {
+        flex: 1;
+        width: auto !important;
+        border: 1px solid #ddd;
+        padding: 5px;
+        padding-left: 10px;
+    }
+        #containtServiceCustomer .row > div lable, #containtServiceCustomer .row > div strong{
+            margin-left: 0 !important;
+        }
+    div#containtServiceCustomer {
+        max-width: 500px;
+        margin-left:15px;
+    }
+    #containtServiceCustomer .row > div:first-child {
+        width: 250px;
+        flex: 3;
+    }
+    #containtServiceCustomer .btn-checkbox:hover {
+        background-color:transparent;
+    }
+    .scroll-view {
+        overflow-x: auto;
+        margin: 0 10px;
+    }
+    div#containtServiceCustomer {
+        max-width: 500px;
+        margin-left: 0;
+        overflow-x: auto;
+        width: 500px;
+    }
+
+/*Staff End*/
+/*Client Start*/
+.client-page div#containtTable .col-md-12:first-child > .row > div.col-xl-1:last-child{
+    padding:0;
+}
+/*Client End*/
+/*service Start*/
+.service-page #tableService tr{
+    position:relative;
+}
+    .service-page #tableService tr:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 4px;
+        height: 100%;
+        background-color: #007FC9;
+    }
+        .service-page #tableService tr > td:nth-child(2) {
+            width: 60%;
+        }
+/*service End*/
+
+/* book-setting start*/
+    .book-set-page .tab-content {
+        margin-top: 0;
+        background: #fff;
+        border: none;
+    }
+    .book-set-page h3.section-title {
+        font-weight: 300;
+    }
+    .book-set-page .btn-outline-secondary {
+        color: #626262;
+        background-color: #fff;
+        border-color: #c2c2c2;
+        border-radius:3px;
+    }
+    .book-set-page .btn-outline-secondary:hover {
+        background-color: #fafafa;
+        border-color: rgba(98,98,98,.27);
+        color: #1a1a1a;
+    }
+/* book-setting End*/
+/* Setup Start*/
+.setup-page .card {
+    box-shadow: 0 2px 5px 0 rgba(164, 173, 186, .25);
+    border: none;
+}
+    .setup-page .card:hover {
+        box-shadow: 0 5px 15px 5px rgba(164, 173, 186, .25);
+    }
+    .setup-page .card .col-md-6 {
+        margin-bottom: 30px;
+    }
+div.dataTables_wrapper div.dataTables_paginate {
+    margin-top: 15px;
+}
+/* Setup End*/
+
+.tab-content-main .card .card-body {
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+div.dataTables_wrapper div.dataTables_filter input {
+    min-width: 250px;
+}
+table.dataTable.table-sm .sorting:before, table.dataTable.table-sm .sorting_asc:before, table.dataTable.table-sm .sorting_desc:before,
+table.dataTable.table-sm .sorting:after, table.dataTable.table-sm .sorting_asc:after, table.dataTable.table-sm .sorting_desc:after {
+    display:none;
+}
+.client-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table tbody tr:hover {
+    background-color: #FBFBFB;
+}
+a#booking_page_link, a#facebook_button_link {
+    word-break: break-all;
+}
+/*Inventory Page Start*/
+.invtr-page .tab-content-main {
+    border: none;
+    padding-bottom: 20px;
+}
+.invtr-page .btn-block + .btn-block {
+    margin-top: 0;
+}
+.invtr-page #divNoData .btn-block {
+    display: inline-block;
+}
+#formProduct div#table_wrapper .row, #formBrand div#table_wrapper .row, #formCategory div#table_wrapper .row, #formSupplier div#table_wrapper .row,
+#formOrder div#table_wrapper .row {
+    margin: 0;
+}
+.invtr-page .input-group-text {
+    display: none;
+}
+select#FilterOrderStatus {
+    height: 40px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+#formOrder .form-group.containtControl > div {
+    padding: 0 !important;
+    padding-left: 10px !important;
+}
+/*Inventory Page End*/
+/* Analytics Start*/
+.ana-dashboard > .form-group {
+    margin-top: 20px;
+}
+
+.ana-dashboard .analytics + .form-control {
+    border: none;
+    background: transparent;
+}
+
+.ana-dashboard .analytics ~ .form-control {
+    border: none;
+}
+
+.analytics-page .card-header {
+    border-bottom: none;
+    background-color: transparent;
+}
+
+    .analytics-page .card-header p {
+        font-size: 18px;
+    }
+
+.analytics-page .card {
+    box-shadow: 0 2px 5px 0 #DEE3E7
+}
+
+.tab-content-main .analytics {
+    padding: 0 !important;
+}
+
+    .tab-content-main .analytics div {
+        padding: 0 !important;
+    }
+
+.analytics > div:first-child {
+    padding-right: 15px !important;
+}
+
+.analytics .group-button-mode {
+    flex-basis: initial;
+    justify-content: flex-end;
+}
+
+.analy-title {
+    font-weight: 300;
+    color: #000;
+    padding-left:10px;
+}
+.ana-dashboard .containtControl {
+    padding: 0 !important;
+}
+    .ana-dashboard .containtControl > div:first-child {
+        padding-left:10px !important;
+    }
+    .ana-dashboard input#searchDate {
+        height: 40px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+.ana-dashboard .input-group-text {
+    height: 40px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+.ana-dashboard select#IncludeVoucher {
+    height: 40px;
+    border-radius: 3px;
+}
+.disc-sum-tables h5, .disc-sum-tables #txtfilter, .out-std-inv-table #txtfilter, .stock-move-table #txtfilter, .stock-move-sum-table #txtfilter,
+.pro-con-table #txtfilter, .appoin-summ-table #txtfilter, .appo-cancel #txtfilter, .staff-work-table #txtfilter, .tip-staff-table #txtfilter, .comm-staff-summ #txtfilter,
+.comm-staff-det-table #txtfilter {
+    padding: 0 10px;
+}
+.stock-btn-cont {
+    display: flex;
+    justify-content: space-between;
+}
+.tab-content-main .card .card-body .pro-con-comm-table h5 {
+    padding: 0 15px;
+    font-weight: 300;
+    color: #000;
+}
+.appoin-summ-table h5, .appo-cancel-table h5, .comm-staff-summ-table h5 {
+    padding: 0 15px;
+}
+ 
+ /* Analytics End*/
+@media screen and (min-width:768px) and (max-width: 1100px) {
+    .modal-lg{
+        width:100%;
+    }
+    .containt-info .card-body, .containt-chart .card-body, .containt-table .card-body {
+        height: 460px;
+    }
         .home-page .card-header{
             text-align:left !important;
         }
@@ -397,204 +688,956 @@
                 width: 100%;
             }
         /*Message End*/
+        /*Staff start*/
+            div#tableCloseDay_wrapper .row:nth-child(2) > .col-sm-12 {
+                overflow-x: auto;
+                padding: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+                margin-bottom: 10px;
+            }
 
+            div#tableCloseDay_wrapper .row:nth-child(2) > .col-sm-12 table#tableCloseDay {
+                margin: 0 !important;
+            }
+
+            div#tableCloseDay_wrapper .row {
+                margin: 0;
+            }
+            div#containtTable.staff-mem-btn-cont .form-group > div {
+                display: flex;
+                justify-content: flex-end;
+                padding: 0 !important;
+            }
+
+            div#containtTable.staff-mem-btn-cont > .form-group {
+                display: flex;
+                padding: 0 !important;
+            }
+        /*Staff End*/
+    /* Client Start*/
+    div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 100% !important;
+        width: 100% !important;
+        min-width: initial;
+        margin: 0 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .client-page div#table_filter {
+        text-align: right;
+    }
+    .service-page #tableService tr td:last-child > button:first-child {
+        display: none !important;
+    }
+    .invtr-page #actionForm .col-md-6 .col-md-6 {
+        max-width: 100%;
+        padding: 0;
+    }
+    .tab-content-main .analytics .containt-datepicker {
+        margin-left: 20px !important;
+        max-width: 47%;
+    }
+        .analytics > div:first-child{
+            padding-right:0px !important;
+        }
+            .analytics > div:first-child .select2-container--bootstrap {
+                width:95% !important;
+            }
+    .ana-dashboard .export-btn {
+        position: relative !important;
+        float: right;
+    }
+
+    .ana-dashboard .containtControl > div {
+        padding: 0 5px !important;
+    }
+
+        .ana-dashboard .containtControl > div.form-group:nth-last-of-type(2) {
+            padding-right: 10px !important;
+        }
+
+    .ana-dashboard button#btnView {
+        margin-left: 0;
+        width: 100% !important;
+    }
+    .diss-b-type-table #table1_wrapper .row:nth-child(2) > .col-sm-12 #table1, .diss-b-pro-table #table3_wrapper .row:nth-child(2) > .col-sm-12 #table3,
+    .diss-b-staff-table #table4_wrapper .row:nth-child(2) > .col-sm-12 #table4, .diss-b-ser-table #table2_wrapper .row:nth-child(2) > .col-sm-12 #table2 {
+        max-width: 100% !important;
+        width: 100% !important;
+        min-width: initial !important;
+    }
+    .out-std-inv-table #table_wrapper .row:nth-child(2) > .col-sm-12 #table {
+        max-width: 780px !important;
+        width: 780px !important;
+    }
+        .diss-b-type-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+            padding: 0 10px;
+            border: none;
+        }
+        .tab-content-main .card .card-body .col-md-12.out-std-inv-table {
+            padding: 0 15px;
+        }
+        .out-std-inv-table div#table_wrapper {
+            padding:0;
+        }
+        .ana-dashboard .voucher-out-cont div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 1060px !important;
+            width: 1060px !important;
+        }
+
+        .ana-dashboard .voucher-out-cont .export-btn {
+            top: -10px;
+            margin-right: 0;
+        }
+    .ana-dashboard .vouch-sale-head .export-btn, .ana-dashboard .vouch-red-head .export-btn {
+        top: -10px;
+    }
+        .tab-content-main .card .card-body .voucher-out-cont {
+            padding-right: 10px;
+        }
+    .ana-dashboard .stock-btn-cont button#btnView {
+        width: 80px !important
+    }
+
+    .ana-dashboard .stock-hand-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 975px !important;
+        width: 955px !important;
+    }
+
+    .ana-dashboard .stock-hand-head .containtControl > div:last-child {
+        padding-right: 10px !important;
+    }
+    .tab-content-main .card .card-body .col-md-12.stock-hand-table {
+        padding-right: 10px;
+    }
+
+    .ana-dashboard .stock-hand-table .export-btn {
+        margin-right: 0;
+    }
+    .stock-btn-cont{
+        padding-left:10px;
+    }
+    .ana-dashboard .stock-move-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 975px !important;
+        width: 955px !important;
+    }
+
+
+    .tab-content-main .card .card-body .col-md-12.stock-move-table {
+        padding-right: 10px;
+    }
+
+    .ana-dashboard .stock-move-head .export-btn, .ana-dashboard .stock-move-sum-head .export-btn, .ana-dashboard .pro-con-head .export-btn,
+    .ana-dashboard .appoin-summ .export-btn, .ana-dashboard .appo-cancel .export-btn, .ana-dashboard .staff-work-head .export-btn, .ana-dashboard .tip-staff-head .export-btn,
+    .ana-dashboard .comm-staff-summ .export-btn, .ana-dashboard .comm-staff-det .export-btn {
+        top: -10px;
+    }
+    .pro-con-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1,
+    .pro-con-comm-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2,
+    .pro-con-comm-table div#table3_wrapper .row:nth-child(2) > .col-sm-12 table#table3,
+    .pro-con-comm-table div#table4_wrapper .row:nth-child(2) > .col-sm-12 table#table4,
+    .pro-con-comm-table div#table5_wrapper .row:nth-child(2) > .col-sm-12 table#table5,
+    .pro-con-comm-table div#table6_wrapper .row:nth-child(2) > .col-sm-12 table#table6,
+    .pro-con-comm-table div#table7_wrapper .row:nth-child(2) > .col-sm-12 table#table7,
+    .appoin-summ-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1,
+    .appoin-summ-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table2,
+    .appo-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1,
+    .appo-cancel-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2 {
+        max-width: 100% !important;
+        width: 100% !important;
+        min-width: initial;
+    }
+    .tab-content-main .card .card-body .appoin-summ-table .col-md-12 {
+        padding:0 15px;
+    }
+    .tab-content-main .card .card-body .appoin-summ-table #table2_wrapper{
+        padding:0;
+    }
+    .tab-content-main .card .card-body .appoin-summ-table > .col-md-12 #table2_wrapper {
+        padding: 0;
+    }
+
+    .comm-staff-summ-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1,
+    .comm-staff-summ-table div#table3_wrapper .row:nth-child(2) > .col-sm-12 table#table3,
+    .comm-staff-summ-table div#table4_wrapper .row:nth-child(2) > .col-sm-12 table#table4,
+    .comm-staff-summ-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2 {
+        max-width: 1200px !important;
+        width: 1170px !important;
+    }
+
+    .tab-content-main .card .card-body .col-md-12.comm-staff-summ-table {
+        padding: 0 15px;
+    }
+    .comm-staff-summ-table div#table1_wrapper .row:nth-child(2) > .col-sm-12,
+    .comm-staff-summ-table div#table3_wrapper .row:nth-child(2) > .col-sm-12,
+    .comm-staff-summ-table div#table4_wrapper .row:nth-child(2) > .col-sm-12,
+    .comm-staff-summ-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 {
+        border: none;
+    }
+    .ana-dashboard .comm-staff-det-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 1100px !important;
+        width: 870px !important;
+    }
+    .tab-content-main .card .card-body .comm-staff-det-table {
+        padding-right: 10px;
+    }
     }
     @media (max-width: 1300px) { 
         .containtTable {
             overflow-x: auto;
             display: initial;
         }
+        .msg-page .containtTable {
+            overflow-x: hidden;
+        }
         div#table1_wrapper .row:nth-child(2) > .col-sm-12, .msg-page #table_wrapper .row:nth-child(2) .col-sm-12 {
             overflow-x: auto;
             padding: 0;
             width: 100%;
         }
-}
-    @media screen and (max-width:767px) {
-        .card{
-                border:none;
-            }
-            div#settings {
-                display: block;
-            }
-
-            .aside-menu .nav-tabs {
-                display: none;
+        /*Staff start*/
+            div#tableCloseDay_wrapper .row:nth-child(2) > .col-sm-12 {
+                overflow-x: auto;
+                padding: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+                margin-bottom: 10px;
             }
 
-            .header-fixed .app-body {
-                position: relative;
-            }
-
-            .aside-menu-fixed .main {
-                margin-right: 0px;
-            }
-
-            .aside-menu-fixed .aside-menu {
-                position: absolute;
-                right: 0;
-                height: 100%;
-                top: 0;
-            }
-            .containt-info .card-body {
-                height:auto;
-            }
-            .rightside-toggle span {
-                width: 5px;
-                height: 5px;
-                background-color: #333;
-                display: block;
-                border-radius: 5px;
-                /* text-align: right; */
-                margin-bottom: 3px;
-            }
-            .app-header.navbar .rightside-toggle {
-                min-width: initial;
-            }
-            .sidebar-mobile-show .main {
+            div#tableCloseDay_wrapper .row:nth-child(2) > .col-sm-12 table#tableCloseDay {
                 margin: 0 !important;
             }
-            /* calender start*/
-                .cal-header .col-12 {
-                    display: flex;
-                }
-                .cal-header .col-12 > div {
-                    flex: 1;
-                    padding: 0 5px;
-                }
-                .cal-header .col-12 > div#ContaintDatePicker{
-                    flex:2;
-                }
-                .rightside-day > div:first-child {
-                    display: none !important;
-                }
-                .cal-header .col-12 > div:last-child{
-                    max-width:80px;
-                }
-                .cal-header .col-12 > div:first-child > div {
-                    flex: 1;
-                    padding: 0 3px;
-                }
 
-                .cal-header .col-12 > div:first-child {
-                    display: flex;
-                }
-
-                .cal-header .col-12 > div:first-child .icon-user, .cal-header .col-12 > div:last-child .icon-calendar {
-                    font-size: 20px !important;
-                    position: absolute;
-                    top: calc(50% - 10px);
-                    left: calc(50% - 10px);
-                }
-                    .cal-header .col-12 > div:first-child .icon-user, .cal-header .col-12 > div:last-child .icon-calendar {
-                        display: block;
-                        pointer-events:none;
-                    }
-            /*calender end*/
-        /*Sales Start*/
-        .date-toolbar .inputDateSingle {
-            width: auto;
-            flex: 1;
-        }
-        .sales-page form#formDailySales .containtControl > div {
-            margin-bottom: 10px;
-            width: 100%;
-            padding: 0;
-        }
-        .sales-page form#formDailySales .containtControl, .sum-table {
-            flex-wrap: wrap;
-        }
-        .sales-page form#formDailySales .containtControl{
-            margin-top:15px;
-        }
-        .sum-table .containtTable {
-            flex: none;
-            width: 100%;
-            flex-wrap: wrap;
-        }
-        table#table1, table#table2 {
-            margin: 0 !important;
-            max-width: 550px !important;
-            min-width:auto !important;
-        }
-        .sum-table .containtTable > div {
-            padding: 0;
-            border: 1px solid #ddd;
-            overflow-x:auto;
-        }
-        #formVouchers .containtControl {
+            div#tableCloseDay_wrapper .row {
+                margin: 0;
+            }
+            div#containtTable.staff-mem-btn-cont > .form-group {
+                display: flex;
+                padding: 0 !important;
+            }
+       
+        /*Staff End*/
+        .client-page div#containtTable .col-md-12:first-child > .row > div.col-xl-1:last-child {
             display: flex;
-        }
-        div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
-            overflow-x: auto;
-            border: 1px solid #ddd;
+            justify-content: flex-end;
             padding: 0;
-            width: 100%;
+        } 
+}
+@media screen and (max-width:767px) {
+    .card {
+        border: none;
+    }
+
+    div#settings {
+        display: block;
+    }
+
+    .aside-menu .nav-tabs {
+        display: none;
+    }
+
+    .header-fixed .app-body {
+        position: relative;
+    }
+
+    .aside-menu-fixed .main {
+        margin-right: 0px;
+    }
+
+    .aside-menu-fixed .aside-menu {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        top: 0;
+    }
+
+    .containt-info .card-body {
+        height: auto;
+    }
+
+    .rightside-toggle span {
+        width: 5px;
+        height: 5px;
+        background-color: #333;
+        display: block;
+        border-radius: 5px;
+        /* text-align: right; */
+        margin-bottom: 3px;
+    }
+
+    .app-header.navbar .rightside-toggle {
+        min-width: initial;
+    }
+
+    .sidebar-mobile-show .main {
+        margin: 0 !important;
+    }
+    /* calender start*/
+    .cal-header .col-12 {
+        display: flex;
+    }
+
+        .cal-header .col-12 > div {
+            flex: 1;
+            padding: 0 5px;
         }
+
+            .cal-header .col-12 > div#ContaintDatePicker {
+                flex: 2;
+            }
+
+    .rightside-day > div:first-child {
+        display: none !important;
+    }
+
+    .cal-header .col-12 > div:last-child {
+        max-width: 80px;
+    }
+
+    .cal-header .col-12 > div:first-child > div {
+        flex: 1;
+        padding: 0 3px;
+    }
+
+    .cal-header .col-12 > div:first-child {
+        display: flex;
+    }
+
+        .cal-header .col-12 > div:first-child .icon-user, .cal-header .col-12 > div:last-child .icon-calendar {
+            font-size: 20px !important;
+            position: absolute;
+            top: calc(50% - 10px);
+            left: calc(50% - 10px);
+        }
+
+        .cal-header .col-12 > div:first-child .icon-user, .cal-header .col-12 > div:last-child .icon-calendar {
+            display: block;
+            pointer-events: none;
+        }
+    /*calender end*/
+    /*Sales Start*/
+    .date-toolbar .inputDateSingle {
+        width: auto;
+        flex: 1;
+    }
+
+    .sales-page form#formDailySales .containtControl > div {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .animated.fadeIn > .col-md-12 {
+        padding: 0;
+    }
+
+    .sales-page form#formDailySales .containtControl > div:nth-child(2) {
+        flex-wrap: wrap;
+    }
+
+        .sales-page form#formDailySales .containtControl > div:nth-child(2) > div:first-child {
+            order: 2;
+        }
+
+        .sales-page form#formDailySales .containtControl > div:nth-child(2) > div#ContaintDatePicker {
+            order: 1;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+    .sales-page #LocationID + .select2 {
+        margin-bottom: 0;
+    }
+
+    .sales-page .invoice-head-left #LocationID + .select2 {
+        margin-bottom: 10px;
+    }
+
+    .sales-page .sum-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+        margin: 0 15px;
+    }
+
+    #formVouchers .containtControl > div {
+        padding: 0 !important;
+        flex: 1;
+    }
+
+        #formVouchers .containtControl > div:nth-child(2) button#btnView {
+            width: 100% !important;
+            margin-left: 0;
+        }
+
+        #formVouchers .containtControl > div:first-child {
+            flex: 2;
+            max-width: 125px;
+            margin-right: 10px;
+        }
+
+    .sales-page div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+        padding: 0;
+    }
+
+        .sales-page div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1, .sales-page div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2 {
+            max-width: 450px !important;
+            width: 450px !important;
+        }
+
+    .sales-page #formInvoices div#table1_wrapper .row:nth-child(2) > .col-sm-12, .sales-page #formVouchers div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+        padding: 0;
+    }
+
+        .sales-page #formInvoices div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+            max-width: 560px !important;
+            width: 560px !important;
+        }
+
+        .sales-page #formVouchers div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+            max-width: 1080px !important;
+            width: 1080px !important;
+        }
+
+    .sales-page form#formDailySales .containtControl > div:nth-child(2) > div:last-child {
+        order: 3;
+    }
+
+    .sales-page form#formDailySales .containtControl, .sum-table {
+        flex-wrap: wrap;
+    }
+
+    .sales-page form#formDailySales .containtControl {
+        margin-top: 15px;
+    }
+
+    .sum-table .containtTable {
+        flex: none;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    table#table1, table#table2 {
+        margin: 0 !important;
+        max-width: 550px !important;
+        min-width: auto !important;
+    }
+
+    .sum-table .containtTable > div {
+        padding: 0;
+        border: 1px solid #ddd;
+        overflow-x: auto;
+    }
+
+    #formVouchers .containtControl {
+        display: flex;
+    }
+
+    div#table1_wrapper .row:nth-child(2) > .col-sm-12, div#table_wrapper .row:nth-child(2) > .col-sm-12 {
+        overflow-x: auto;
+        border: 1px solid #ddd;
+        padding: 0;
+        width: 100%;
+    }
+
         div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
             max-width: 1000px !important;
             width: 1000px !important;
         }
-        #table1_wrapper .row:first-child {
-            flex-wrap: initial;
+
+        div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 500px !important;
+            width: 350px !important;
+            min-width: initial;
+            margin: 0 !important;
         }
 
-        #table1_wrapper .row:first-child > div {
+    #table1_wrapper .row:first-child {
+        flex-wrap: initial;
+    }
+
+        #table1_wrapper .row:first-child > div, #table_wrapper .row:first-child > div {
             flex: 1;
             padding: 0;
         }
-        #table1_filter input.form-control.form-control-sm {
-            width: 96%;
-            min-width: auto;
-        }
-        .invoice-head-left{
-            flex-wrap:wrap;
-        }
+
+    #table1_filter input.form-control.form-control-sm {
+        width: 96%;
+        min-width: auto;
+    }
+
+    .invoice-head-left {
+        flex-wrap: wrap;
+    }
+
         .invoice-head-left .input-group {
             margin-right: 0;
             margin-bottom: 10px;
         }
-        #formInvoices .export-btn {
-            top: -50px;
-            margin-right:15px;
-        }
-        #formInvoices button#btnView {
-            margin-left:0;
-            margin-top:10px;
-        }
-        /*Sales End*/
-        /*Message Start*/
-        .msg-page .containtTable, .msg-page #table_wrapper {
-            padding: 0;
-        }
+
+    #formInvoices .export-btn, #formAppointments .export-btn {
+        top: -50px;
+        margin-right: 15px;
+    }
+
+    #formInvoices button#btnView, #formAppointments button#btnView {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #LocationID + .select2 {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    /*Sales End*/
+    /*Message Start*/
+    .msg-page .containtTable, .msg-page #table_wrapper {
+        padding: 0;
+    }
+
         .msg-page #table_wrapper .row {
-            margin:0;
+            margin: 0;
         }
-        .msg-page #table_wrapper .row:first-child > div {
-            width: 50%;
-            flex: 1;
-            padding: 0;
-        }
-        #table_filter input {
-            min-width:auto;
-            width:95%;
-        }
-        .msg-page #table_wrapper .row:nth-child(2) .col-sm-12 {
-            border:1px solid #ddd;
-            overflow-x:auto;
-            padding:0;
-        }
-        .msg-page table#table {
+
+            .msg-page #table_wrapper .row:first-child > div {
+                width: 50%;
+                flex: 1;
+                padding: 0;
+            }
+
+    #table_filter input {
+        min-width: auto;
+        width: 95%;
+    }
+
+    .msg-page #table_wrapper .row:nth-child(2) .col-sm-12 {
+        border: 1px solid #ddd;
+        overflow-x: auto;
+        padding: 0;
+    }
+
+    .msg-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        margin: 0 !important;
+        max-width: 780px !important;
+        width: 780px !important;
+        min-width: auto !important;
+    }
+    /*Message End*/
+    /*Staff Start*/
+
+    #workinghourform .containtControl > div:first-child {
+        padding-right: 0px !important;
+    }
+
+    .staff-page div#ContaintDatePicker .row {
+        width: 100%;
+    }
+
+    .staff-page .date-toolbar .inputDate {
+        width: auto;
+        flex: 1;
+    }
+
+    .staff-page .containtTitleTable {
+        padding-left: 0;
+        min-width: 50%;
+        max-width: 50%;
+    }
+
+    div#tableCloseDay_wrapper .row:nth-child(2) > .col-sm-12, div#tableStaffMember_wrapper .row:nth-child(2) > .col-sm-12 {
+        overflow-x: auto;
+        padding: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+
+        div#tableCloseDay_wrapper .row:nth-child(2) > .col-sm-12 table#tableCloseDay,
+        div#tableStaffMember_wrapper .row:nth-child(2) > .col-sm-12 table#tableStaffMember {
             margin: 0 !important;
-            max-width: 650px !important;
-            width:620px !important;
-            min-width: auto !important;
         }
-        /*Message End*/
+
+        div#tableStaffMember_wrapper .row:nth-child(2) > .col-sm-12 table#tableStaffMember {
+            margin: 0 !important;
+            min-width: initial !important;
+            width: 850px !important;
+        }
+
+    div#tableCloseDay_wrapper .row, div#tableStaffMember_wrapper .row {
+        margin: 0;
+    }
+
+    div#containtTable.staff-mem-btn-cont, div#containtTable.staff-mem-btn-cont .form-group > div {
+        padding: 0 !important;
+    }
+
+        div#containtTable.staff-mem-btn-cont .form-group > div {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        div#containtTable.staff-mem-btn-cont > .form-group {
+            display: flex;
+            padding: 0 10px !important;
+        }
+    /*Staff End*/
+    /* Client start*/
+    .client-page .containtTable {
+        overflow-x: hidden;
+        display: block;
+        padding-right: 15px;
+    }
+
+    .client-page .card-body {
+        padding: 10px;
+    }
+
+    .client-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 530px !important;
+        width: 522px !important;
+        min-width: initial;
+        margin: 0 !important;
+    }
+
+    /* Client End*/
+    /* Inventory Start */
+    .invt-pro-head #btnView {
+        margin-left: 0;
+    }
+
+    .invt-pro-head .export-btn {
+        top: -50px;
+        right: 5px !important;
+    }
+
+    .tab-content-main .card .card-body .invt-pro-table {
+        padding: 0 15px;
+    }
+
+    .invt-pro-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 610px !important;
+        width: 610px !important;
+        min-width: initial;
+        margin: 0 !important;
+    }
+
+    #formBrand div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, #formCategory div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 450px !important;
+        width: 450px !important;
+    }
+
+    #formSupplier div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 650px !important;
+        width: 650px !important;
+    }
+
+    #formOrder div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 670px !important;
+        width: 670px !important;
+    }
+
+    #formBrand div#table_wrapper .row, #formCategory div#table_wrapper .row, #formSupplier div#table_wrapper .row, #formOrder div#table_wrapper .row {
+        margin: 0 15px;
+    }
+
+    .invtr-page #actionForm .form-group, .invtr-page #actionForm .col-md-6 {
+        padding: 0 !important;
+    }
+
+    .retail-row {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+
+        .retail-row > div {
+            flex: 1;
+        }
+
+            .retail-row > div:first-child {
+                flex: 2;
+            }
+
+    #hasEnableRetailSales .col-md-12 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    div#divNoData {
+        margin: 0;
+    }
+
+    #formOrder .form-group.containtControl > div {
+        padding: 0 15px !important;
+    }
+
+    #formOrder button#btnView {
+        margin-left: 0;
+    }
+
+    #formOrder .export-btn {
+        top: -50px;
+        right: 5px !important;
+    }
+    /* Inventory End */
+    /* Analytics Start */
+    .analytics .group-button-mode button {
+        margin: 0;
+    }
+
+    .analytics .datepicker {
+        flex-basis: 250px;
+    }
+
+    .tab-content-main .analytics .containt-datepicker {
+        flex-direction: row;
+        padding-top: 10px !important;
+    }
+
+    .analytics > div:first-child {
+        padding-right: 0 !important;
+        /* width: 100%; */
+        padding-bottom: 10px !important;
+    }
+
+    select#locationSearch + span, #staffSearch + span {
+        border-radius: 3px;
+        width: 100% !important;
+        border: none;
+    }
+
+    .ana-dashboard #LocationID + .select2 {
+        margin-bottom: 0;
+    }
+
+    .ana-dashboard .containtControl > div:first-child {
+        padding-left: 15px !important;
+    }
+
+    .ana-dashboard .export-btn {
+        position: absolute;
+        right: 5px !important;
+        top: 210px;
+    }
+
+    .ana-dashboard button#btnView {
+        margin-left: 0;
+    }
+
+    .ana-dashboard div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 660px !important;
+        width: 660px !important;
+    }
+
+    .tab-content-main .ana-dashboard .card .card-body .containtTable {
+        padding: 0 15px;
+    }
+
+    .ana-dashboard .payment-sum-head .export-btn, .ana-dashboard .disc-sum-head .export-btn, .ana-dashboard .tip-coll-head .export-btn {
+        position: absolute;
+        right: 5px !important;
+        top: -50px;
+    }
+
+    .ana-dashboard .payment-sum-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 495px !important;
+        width: 495px !important;
+    }
+
+    .disc-sum-tables .dataTables_wrapper .row:nth-child(2) > .col-sm-12 {
+        overflow-x: auto;
+        border: 1px solid #ddd;
+        padding: 0;
+        width: 100%;
+    }
+
+        .disc-sum-tables .dataTables_wrapper .row:nth-child(2) > .col-sm-12 table {
+            margin: 0 !important;
+        }
+
+    .diss-b-type-table #table1_wrapper .row:nth-child(2) > .col-sm-12 #table1, .diss-b-pro-table #table3_wrapper .row:nth-child(2) > .col-sm-12 #table3,
+    .diss-b-staff-table #table4_wrapper .row:nth-child(2) > .col-sm-12 #table4 {
+        max-width: 730px !important;
+        width: 730px !important;
+        min-width: initial !important;
+    }
+
+    .diss-b-ser-table #table2_wrapper .row:nth-child(2) > .col-sm-12 #table2 {
+        max-width: 720px !important;
+        width: 720px !important;
+    }
+
+    .out-std-inv-head .export-btn {
+        top: 0;
+    }
+
+    .ana-dashboard .out-std-inv-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 780px !important;
+        width: 780px !important;
+    }
+
+    .tab-content-main .out-std-inv-head .form-group .form-group {
+        margin-bottom: 0;
+    }
+
+    .tax-sum-head .containtControl {
+        display: block !important;
+    }
+
+    .ana-dashboard .tax-sum-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .ana-dashboard .tax-sum-head .export-btn {
+        position: absolute;
+        right: 5px !important;
+        top: -60px;
+    }
+
+    .ana-dashboard .tip-coll-head .containtControl {
+        display: block !important;
+    }
+
+    .ana-dashboard .tip-coll-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 660px !important;
+        width: 438px !important;
+    }
+
+    .ana-dashboard .voucher-out-cont div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 1060px !important;
+        width: 1060px !important;
+    }
+
+    .ana-dashboard .voucher-out-cont .export-btn {
+        position: absolute;
+        right: 5px !important;
+        top: 60px;
+    }
+
+    .ana-dashboard .vouch-sale-head .export-btn, .ana-dashboard .vouch-red-head .export-btn, .ana-dashboard .pro-con-head .export-btn,
+    .ana-dashboard .appo-cancel .export-btn, .ana-dashboard .comm-staff-det .export-btn {
+        position: absolute;
+        right: 5px !important;
+        top: 160px;
+    }
+
+    .ana-dashboard .stock-move-head .export-btn, .ana-dashboard .stock-move-sum-head .export-btn {
+        position: absolute;
+        right: 5px !important;
+        top: 120px;
+    }
+
+    .ana-dashboard .vouch-sale-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 660px !important;
+        width: 507px !important;
+    }
+
+    .ana-dashboard .vouch-red-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 660px !important;
+        width: 365px !important;
+    }
+
+    .ana-dashboard .stock-hand-head .containtControl {
+        display: block !important;
+    }
+
+    .stock-btn-cont {
+        padding-left: 15px;
+    }
+
+    .ana-dashboard .stock-hand-head .export-btn {
+        top: initial;
+        margin-right: 5px;
+    }
+
+    .ana-dashboard .stock-hand-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 975px !important;
+        width: 955px !important;
+    }
+
+    .ana-dashboard .stock-move-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 1090px !important;
+        width: 880px !important;
+    }
+
+    .ana-dashboard .stock-move-sum-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 970px !important;
+        width: 668px !important;
+    }
+
+    .pro-con-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1,
+    .appoin-summ-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    .appoin-summ-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 {
+        border:1px solid #ddd;
+        padding:0;
+    }
+    .pro-con-comm-table div#table2_wrapper .row:nth-child(2) > .col-sm-12,
+    .pro-con-comm-table div#table3_wrapper .row:nth-child(2) > .col-sm-12,
+    .pro-con-comm-table div#table4_wrapper .row:nth-child(2) > .col-sm-12,
+    .pro-con-comm-table div#table5_wrapper .row:nth-child(2) > .col-sm-12,
+    .pro-con-comm-table div#table6_wrapper .row:nth-child(2) > .col-sm-12,
+    .pro-con-comm-table div#table7_wrapper .row:nth-child(2) > .col-sm-12, .appo-cancel-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 {
+        padding: 0;
+        border: 1px solid #ddd;
+        overflow-x: auto;
+    }
+            .pro-con-comm-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2,
+            .pro-con-comm-table div#table3_wrapper .row:nth-child(2) > .col-sm-12 table#table3,
+            .pro-con-comm-table div#table4_wrapper .row:nth-child(2) > .col-sm-12 table#table4,
+            .pro-con-comm-table div#table5_wrapper .row:nth-child(2) > .col-sm-12 table#table5,
+            .pro-con-comm-table div#table6_wrapper .row:nth-child(2) > .col-sm-12 table#table6,
+            .pro-con-comm-table div#table7_wrapper .row:nth-child(2) > .col-sm-12 table#table7 {
+                max-width: 550px !important;
+                width: 440px !important;
+                min-width: initial !important;
+                margin:0px !important;
+            }
+            .comm-staff-summ-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1,
+            .comm-staff-summ-table div#table3_wrapper .row:nth-child(2) > .col-sm-12 table#table3,
+            .comm-staff-summ-table div#table4_wrapper .row:nth-child(2) > .col-sm-12 table#table4,
+            .comm-staff-summ-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2 {
+        max-width: 1200px !important;
+        width: 1170px !important;
+    }
+        .ana-dashboard .appoin-summ .export-btn, .ana-dashboard .staff-work-head .export-btn, .ana-dashboard .tip-staff-head .export-btn, .ana-dashboard .comm-staff-summ .export-btn {
+            top: 160px;
+        }
+    .appo-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+        max-width: 100% !important;
+        width: 100% !important;
+        min-width: initial !important;
+        margin: 0px !important;
+    }
+    .appo-cancel-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2 {
+        max-width: 670px !important;
+        width: 670px !important;
+        min-width: initial !important;
+        margin: 0px !important;
+    }
+    .ana-dashboard .staff-work-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 660px !important;
+        width: 465px !important;
+    }
+    .ana-dashboard .tip-staff-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 660px !important;
+        width: 540px !important;
+    }
+    .ana-dashboard .comm-staff-det-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        max-width: 1100px !important;
+        width: 860px !important;
+    }
+        /* Analytics End */
 
         }
     @media only screen and (max-device-width:736px) and (orientation: landscape) {
-        select {
+        .cal-header select {
             text-indent: 9999px;
         }
         table#table1, table#table2 {
@@ -616,12 +1659,70 @@
         .msg-page div#table_filter {
             text-align: right;
         }
-
+        div#table_wrapper .row:nth-child(2) > .col-sm-12{
+            border:none;
+        }
+        div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            border: 1px solid #ddd;
+        }
+        div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 100% !important;
+            width: 100% !important;
+            min-width: initial;
+            margin: 0 !important;
+        }
+        .client-page div#table_filter {
+            text-align: right;
+        }
+        .invt-pro-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, .sales-page #formInvoices div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+            max-width: 100% !important;
+            width: 100% !important;
+            min-width: initial;
+            margin: 0 !important;
+        }
+        #formBrand div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, #formCategory div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table,
+        #formSupplier div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, #formOrder div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        #formBrand div#table_wrapper div#table_filter, #formCategory div#table_wrapper div#table_filter, #formSupplier div#table_wrapper div#table_filter,
+        #formOrder div#table_wrapper div#table_filter {
+            text-align: right;
+        }
+        .client-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, .ana-dashboard div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table,
+        .ana-dashboard .payment-sum-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        .ana-dashboard .out-std-inv-head .containtControl > div {
+            flex: 1;
+        }
+        .ana-dashboard .tip-coll-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        .ana-dashboard .vouch-sale-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, .ana-dashboard .stock-move-sum-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        .pro-con-comm-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2, .pro-con-comm-table div#table3_wrapper .row:nth-child(2) > .col-sm-12 table#table3,
+        .pro-con-comm-table div#table4_wrapper .row:nth-child(2) > .col-sm-12 table#table4, .pro-con-comm-table div#table5_wrapper .row:nth-child(2) > .col-sm-12 table#table5,
+        .pro-con-comm-table div#table6_wrapper .row:nth-child(2) > .col-sm-12 table#table6, .pro-con-comm-table div#table7_wrapper .row:nth-child(2) > .col-sm-12 table#table7,
+        .ana-dashboard .staff-work-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, .ana-dashboard .tip-staff-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 100% !important;
+            width: 100% !important;
+            min-width: initial !important;
+            margin: 0px !important;
+        }
+        .ana-dashboard .comm-staff-det-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 1100px !important;
+            width: 870px !important;
+        }
     }
     @media only screen and (device-width:812px) and (orientation: landscape) {
-    select {
+    /*select {
         text-indent: 9999px;
-    }
+    }*/
 
     table#table1, table#table2 {
         margin: 0 !important;
@@ -652,8 +1753,8 @@
         }
 
             div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
-                max-width: 1000px !important;
-                width: 1000px !important;
+                max-width: 100% !important;
+                width: 100% !important;
             }
 
         #table1_wrapper .row:first-child > div {
@@ -662,6 +1763,140 @@
         }
         .msg-page #table_wrapper .row:first-child > div{
             padding:0;
+        }
+        div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 100% !important;
+            width: 100% !important;
+            min-width: initial;
+            margin: 0 !important;
+        }
+
+        .client-page div#table_filter {
+            text-align: right;
+        }
+        .tab-content-main .analytics .containt-datepicker {
+            margin-left: 20px !important;
+            max-width: 47%;
+        }
+         .sales-page #formVouchers div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1 {
+            max-width: 1080px !important;
+            width: 1080px !important;
+        }
+        .sales-page .sum-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+            margin: 0 15px;
+        }
+        .msg-page .containtTable {
+            overflow-x:hidden;
+            padding-right:15px;
+        }
+        .msg-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 800px !important;
+            width: 800px !important;
+        }
+        .ana-dashboard .export-btn {
+            position: relative !important;
+            float: right;
+        }
+        .ana-dashboard .containtControl > div {
+            padding: 0 5px !important;
+        }
+        .ana-dashboard .containtControl > div.form-group:nth-last-of-type(2) {
+            padding-right: 10px !important;
+        }
+        .ana-dashboard button#btnView {
+            margin-left: 0;
+            width: 100% !important;
+        }
+        .tab-content-main .card .card-body .col-md-12.disc-sum-tables > div,
+        .tab-content-main .card .card-body .col-md-12.out-std-inv-table{
+            padding: 0 15px;
+        }
+        .ana-dashboard .out-std-inv-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 780px !important;
+            width: 780px !important;
+        }
+        .ana-dashboard .voucher-out-cont div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 1060px !important;
+            width: 1060px !important;
+        }
+        .ana-dashboard .voucher-out-cont .export-btn {
+            top: -10px;
+            margin-right:0;
+        }
+        .tab-content-main .card .card-body .voucher-out-cont{
+            padding-right:10px; 
+        }
+        .stock-btn-cont {
+            padding-left:10px;
+        }
+        .ana-dashboard .stock-btn-cont button#btnView {
+            width: 80px !important
+        }
+        .ana-dashboard .stock-hand-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 975px !important;
+            width: 955px !important;
+        }
+        .ana-dashboard .stock-hand-head .containtControl > div:last-child {
+            padding-right: 10px !important;
+        }
+        .tab-content-main .card .card-body .col-md-12.stock-hand-table {
+            padding-right: 10px;
+        }
+        .ana-dashboard .stock-hand-table .export-btn {
+            margin-right:0;
+        }
+        .ana-dashboard .stock-move-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 975px !important;
+            width: 955px !important;
+        }
+
+
+        .tab-content-main .card .card-body .col-md-12.stock-move-table {
+            padding-right: 10px;
+        }
+
+        .ana-dashboard .stock-move-head .export-btn, .ana-dashboard .pro-con-head .export-btn, .ana-dashboard .staff-work-head .export-btn,
+        .ana-dashboard .comm-staff-summ .export-btn, .ana-dashboard .comm-staff-det .export-btn {
+            top: -10px;
+        }
+         
+        .tab-content-main .card .card-body .col-md-12 .pro-con-comm-table {
+            padding-right: 10px;
+        }
+        .pro-con-comm-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2, .pro-con-comm-table div#table3_wrapper .row:nth-child(2) > .col-sm-12 table#table3, .pro-con-comm-table div#table4_wrapper .row:nth-child(2) > .col-sm-12 table#table4, .pro-con-comm-table div#table5_wrapper .row:nth-child(2) > .col-sm-12 table#table5, .pro-con-comm-table div#table6_wrapper .row:nth-child(2) > .col-sm-12 table#table6, .pro-con-comm-table div#table7_wrapper .row:nth-child(2) > .col-sm-12 table#table7 {
+            max-width: 100% !important;
+            width: 100% !important;
+            min-width: initial !important;
+            margin: 0px !important;
+        }
+        .pro-con-head div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+            overflow-x:hidden;
+        }
+        .tab-content-main .card .card-body .appoin-summ-table > .col-md-12 {
+            padding: 0 15px;
+        }
+        .appoin-summ-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 {
+            border:none;
+        }
+        .tab-content-main .card .card-body .appoin-summ-table > .col-md-12 #table2_wrapper {
+            padding: 0;
+        }
+        .comm-staff-summ-table div#table1_wrapper .row:nth-child(2) > .col-sm-12 table#table1,
+        .comm-staff-summ-table div#table3_wrapper .row:nth-child(2) > .col-sm-12 table#table3,
+        .comm-staff-summ-table div#table4_wrapper .row:nth-child(2) > .col-sm-12 table#table4,
+        .comm-staff-summ-table div#table2_wrapper .row:nth-child(2) > .col-sm-12 table#table2 {
+            max-width: 1200px !important;
+            width: 1170px !important;
+        }
+        .tab-content-main .card .card-body .col-md-12.comm-staff-summ-table {
+            padding: 0 15px;
+        }
+        .ana-dashboard .comm-staff-det-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 1100px !important;
+            width: 870px !important;
+        }
+        .tab-content-main .card .card-body .comm-staff-det-table {
+            padding-right:10px;
         }
 }
 /* Added By Ivory Technolab End*/

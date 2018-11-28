@@ -5,9 +5,11 @@
 <link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
 <link href="@Url.Content("~/Extension/css/daterangepicker.min.css")" rel="stylesheet" />
 <link href="@Url.Content("~/Extension/css/intlTelInput.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/ivory-style.css")" rel="stylesheet">
+
 <!--#endregion-->
 <!--#region Html-->
-<div class="animated fadeIn">
+<div class="animated fadeIn client-page">
     <div class="card">
         <div class="card-body">
             <div class="form-group" id="containtTable">
@@ -18,7 +20,7 @@
 
                         </div>
                         <div class="col-4 col-sm-2 col-md-2 col-lg-2 col-xl-1">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-info dropdown-toggle export-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Options
                             </button>
                             <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 35px, 0px);">
@@ -38,7 +40,7 @@
                 </div>
 
                 <div class="col-md-12 containtTable">
-                    <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="table">
+                    <table class="table table-responsive-sm table-sm datatable no-footer" style="width:100%" id="table">
                         <thead>
                             <tr>
                                 <th></th>

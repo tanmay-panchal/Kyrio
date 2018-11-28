@@ -50,7 +50,7 @@ $(function () {
 
     //#region event 
     $(document).on("ifChanged", "#IsPercentage", function () {
-        debugger;
+        //debugger;
         if (this.checked) {
             $("#input_group_text").text("%");
         }

@@ -1,6 +1,6 @@
 ﻿class ModalStaff {
     constructor(UserID, callBack) {
-        ; debugger;
+        //; debugger;
         var that = this;
         this.UserID = UserID;
         this.CallBackHide = callBack;

@@ -178,7 +178,7 @@ var LoadClient = function (ClientID, CallBack) {
         $("#actionModal #AcceptMarketingNotifications").iCheck(client.AcceptMarketingNotifications == true ? 'check' : 'uncheck');
         $("#actionModal #Gender").val(client.Gender).change();
         $("#actionModal #ReferralSource").SetValueSelect2ID(client.ReferralSource);
-        debugger;
+        //debugger;
         if (client.DateOfBirth != null) {
             if (moment(client.DateOfBirth).year() == 1900) {
                 NotYear = true;

@@ -88,6 +88,7 @@
         <EntityTypeShape EntityType="KYRIOModel.Appointment" Width="1.5" PointX="30.375" PointY="23.75" />
         <EntityTypeShape EntityType="KYRIOModel.UpdateHistory" Width="1.5" PointX="30.375" PointY="9.75" />
         <EntityTypeShape EntityType="KYRIOModel.sysdiagram" Width="1.5" PointX="30.375" PointY="30.75" />
+        <EntityTypeShape EntityType="KYRIOModel.TBL_APPOINTMENT_PROGRESS" Width="1.5" PointX="7.375" PointY="31.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

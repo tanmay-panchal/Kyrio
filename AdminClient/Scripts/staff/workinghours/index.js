@@ -79,7 +79,7 @@ $(function () {
                     $.fn.DataTable = data.Result;
                     $.fn.DateFormat = timeFormat;
                     var RangerCloseDate = [];
-                    ; debugger;
+                    //; debugger;
                     for (var i = 0; i <= 6 ; i++) {
                         var DateWorking = moment(DateFrom).add(i, 'day').startOf('day');
                         $tableContaint.find("thead tr:last th:eq(" + i + ")").append('<span>' + DateWorking.format("ddd D MMM") + '</span>');

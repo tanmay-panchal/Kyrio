@@ -15,7 +15,7 @@ class ModalAppointmentViewDestop {
         $.RequestAjax("/Calendar/GetAppointmentBaseId", JSON.stringify({
             AppointmentID: that.AppointmentID,
         }), function (renponsive) {
-            ; debugger;
+            //; debugger;
             StartLoading();
             setTimeout(function () {
                 //get data
@@ -391,7 +391,7 @@ class ModalAppointmentViewDestop {
             select.addClass("form-control");
             select.attr("id", "appointmentReasonCancel")
             if (that.AppointmentServices.length > 0) {
-                ; debugger;
+                //; debugger;
                 var htmlCheckRepeat = "";
                 var appointmentSeviceFirst = that.AppointmentServices[0];
                 if (that.Appointment.FrequencyType != null && that.Appointment.FrequencyType != "no-repeat") {

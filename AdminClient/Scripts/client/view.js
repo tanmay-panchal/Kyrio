@@ -266,7 +266,7 @@ $(function () {
     })
     Ladda.bind('#actionButton', {
         callback: function (instance) {
-            debugger;
+            //debugger;
             instance.start();
             if ($("#actionForm").valid()) {
                 var entity = new Object();
@@ -338,7 +338,7 @@ $(function () {
         $.CallViewAppointment(AppointmentID);
     })
     $(document).on("click", "#divClientInvoice ._2mPFMy", function () {
-        debugger;
+        //debugger;
         var InvoiceID = $(this).attr("InvoiceID");
         window.location = "/Sale/Invoices?id=" + InvoiceID;
         localStorage.setItem("PreLink", "/Clients/Clients?id=" + $("#ViewClientID").val());

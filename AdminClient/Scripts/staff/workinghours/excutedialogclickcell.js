@@ -193,7 +193,7 @@ $(function () {
             var Shift2Start = $("#Shift2Start").data('daterangepicker').startDate._d;
             var Shift1End = $("#Shift1End").data('daterangepicker').startDate._d;
             if (Shift2Start - Shift1End > 0) {
-                ; debugger;
+                //; debugger;
                 var timeSubtract = Shift2Start.subtractTime(Shift1End);
                 $("#BreakTimeInMinutes").text((timeSubtract.hours > 0 ? timeSubtract.hours + " hours " : " ") + (timeSubtract.minutes > 0 ? timeSubtract.minutes + " minutes " : " ") + "break time");
             }

@@ -81,7 +81,7 @@ $(document).ready(function($){
   /* ---------- Main Menu Open/Close, Min/Full ---------- */
   $('.sidebar-toggler').click(function(){
     $('body').toggleClass('sidebar-hidden');
-    resizeBroadcast();
+    //resizeBroadcast();
   });
 
   $('.sidebar-minimizer').click(function(){
@@ -95,12 +95,12 @@ $(document).ready(function($){
 
   $('.aside-menu-toggler').click(function(){
     $('body').toggleClass('aside-menu-hidden');
-    resizeBroadcast();
+    //resizeBroadcast();
   });
 
   $('.mobile-sidebar-toggler').click(function(){
     $('body').toggleClass('sidebar-mobile-show');
-    resizeBroadcast();
+    //resizeBroadcast();
   });
 
   $('.sidebar-close').click(function(){
