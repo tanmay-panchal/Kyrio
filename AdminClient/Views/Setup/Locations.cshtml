@@ -3,14 +3,15 @@
 @Styles.Render("~/Style/datatable")
 <link href="@Url.Content("~/Extension/css/icheck.css")" rel="stylesheet">
 <link href="@Url.Content("~/Extension/css/PNotifyBrightTheme.css")" rel="stylesheet" />
-<!--#endregion-->
+<link href="@Url.Content("~/Content/ivory-style.css")" rel="stylesheet">
 
+<!--#endregion-->
 <!--#region Html-->
 <input type="hidden" id="CountryCode" value="@Model.CountryCode" />
 <div class="animated fadeIn">
     <div class="card">
         <div class="card-body">
-            <table class="table table-responsive-sm table-striped table-sm datatable no-footer" style="width:100%" id="tableLocation">
+            <table class="table table-responsive-sm table-sm datatable no-footer" style="width:100%" id="tableLocation">
                 <thead>
                     <tr>
                         <th></th>
@@ -116,7 +117,6 @@
     </div>
 </div>
 <!--#endregion-->
-
 <!--#region Include JS-->
 <script src="@Url.Content("~/Extension/js/icheck.min.js")"></script>
 @Scripts.Render("~/Scripts/PNotify")

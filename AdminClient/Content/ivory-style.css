@@ -194,11 +194,11 @@
     button#buttonPrevious i, button#buttonNext i {
         color: #2c2c2c;
     }
-    .select2-container--bootstrap .select2-selection {
-        border-color: #c2c2c2;
-        border-radius: 3px;
-        height:40px;
-    }
+.select2-container--bootstrap .select2-selection, #Channel {
+    border-color: #c2c2c2;
+    border-radius: 3px;
+    height: 40px;
+}
     form#formDailySales #buttonToday {
         background: transparent;
         border: none;
@@ -439,6 +439,7 @@
 .setup-page .card {
     box-shadow: 0 2px 5px 0 rgba(164, 173, 186, .25);
     border: none;
+    height: auto;
 }
     .setup-page .card:hover {
         box-shadow: 0 5px 15px 5px rgba(164, 173, 186, .25);
@@ -585,15 +586,54 @@ select#FilterOrderStatus {
 .appoin-summ-table h5, .appo-cancel-table h5, .comm-staff-summ-table h5 {
     padding: 0 15px;
 }
- 
- /* Analytics End*/
-@media screen and (min-width:768px) and (max-width: 1100px) {
-    .modal-lg{
-        width:100%;
+.analytics-page .rep-dash-page .card {
+    height: initial;
+    border: none !important;
+}
+.rep-dash-page > .row {
+    margin: 0;
+}
+.my-set-page input, .acc-page input {
+    height: 40px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.my-set-page .input-group-text, .acc-page .input-group-text {
+    height: 40px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+.acc-page select{
+    border-radius:3px;
+    height:40px !important;
+}
+.acc-page .check-cont {
+    display:flex;
+    align-items:center;
+}
+    .acc-page .check-cont label {
+        margin-left:10px;
     }
-    .containt-info .card-body, .containt-chart .card-body, .containt-table .card-body {
-        height: 460px;
+    /* Analytics End*/
+    .resources-page div#nodata {
+        margin: 0;
     }
+    .pro-sale-per-head .col-md-12 .containtControl {
+        display: flex;
+        justify-content: space-between;
+    }
+        .pro-sale-per-head .col-md-12 .containtControl .form-group:last-child{
+            padding-right:10px !important;
+        }
+        @media screen and (min-width:768px) and (max-width: 1100px) {
+            .modal-lg{
+                width:100%;
+            }
+            .containt-info .card-body, .containt-chart .card-body, .containt-table .card-body {
+                height: 460px;
+            }
         .home-page .card-header{
             text-align:left !important;
         }
@@ -882,6 +922,37 @@ select#FilterOrderStatus {
     .tab-content-main .card .card-body .comm-staff-det-table {
         padding-right: 10px;
     }
+    .tab-content-main .card .card-body .comm-staff-det-table {
+        padding-right: 10px;
+    }
+
+    .ana-dashboard .containtControl > div {
+        padding: 0 10px !important;
+    }
+    .fin-sum-table ._3_uf01:first-of-type {
+        padding-left:12px;
+    }
+    .fin-sum-table ._3_uf01:last-of-type {
+        padding-right:12px;
+    }
+            .ana-dashboard .pro-sale-per-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+                max-width: 1010px !important;
+                width: 830px !important;
+                border: none;
+            }
+
+            .ana-dashboard .pro-sale-per-head .export-btn {
+                margin-right: 0;
+            }
+
+            .tab-content-main .card .card-body .col-md-12.pro-sale-per-table {
+                padding: 0 15px;
+            }
+
+            .ana-dashboard .pro-sale-per-table div#table_wrapper .row:nth-child(2) > .col-sm-12 {
+                overflow-x: auto;
+                padding: 0;
+            }
     }
     @media (max-width: 1300px) { 
         .containtTable {
@@ -1429,7 +1500,7 @@ select#FilterOrderStatus {
 
     .ana-dashboard div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
         max-width: 660px !important;
-        width: 660px !important;
+        width: 652px !important;
     }
 
     .tab-content-main .ana-dashboard .card .card-body .containtTable {
@@ -1492,7 +1563,7 @@ select#FilterOrderStatus {
         width: 100% !important;
     }
 
-    .ana-dashboard .tax-sum-head .export-btn {
+    .ana-dashboard .tax-sum-head .export-btn, .ana-dashboard .fin-sum-head .export-btn {
         position: absolute;
         right: 5px !important;
         top: -60px;
@@ -1633,9 +1704,118 @@ select#FilterOrderStatus {
         max-width: 1100px !important;
         width: 860px !important;
     }
-        /* Analytics End */
-
+    .fin-sum-table ._3_uf01:first-of-type {
+        padding-left: 12px;
+    }
+    .fin-sum-table ._3_uf01:last-of-type {
+        padding-right: 12px;
+    }
+    .fin-sum-table ._3_uf01 {
+        flex-basis: 100% !important;
+    }
+        .fin-sum-table ._3_uf01 ._1XfXdG {
+            box-shadow: 0 2px 5px 0 #DEE3E7;
+            margin-bottom: 20px;
+            border:none;
         }
+        /* Analytics End */
+    div#tableLocation_wrapper .row:nth-child(2) > .col-sm-12,
+    div#datatable_wrapper .row:nth-child(2) > .col-sm-12 {
+        overflow-x: auto;
+        border: 1px solid #ddd;
+        padding: 0;
+        width: 100%;
+    }
+        div#tableLocation_wrapper .row:nth-child(2) > .col-sm-12 table#tableLocation
+        {
+            max-width: 700px !important;
+            width: 377px !important;
+            margin: 0 !important;
+            min-width: initial !important;
+        }
+        div#datatable_wrapper .row:nth-child(2) > .col-sm-12 table#datatable {
+            width:100%;
+        }
+        .pro-sale-per-head .col-md-12 .containtControl{
+            flex-wrap:wrap;
+        }
+        .pro-sale-per-head .col-md-12 .containtControl .form-group:last-child{
+            padding-right:15px !important;
+        }
+        .ana-dashboard .pro-sale-per-head .export-btn {
+            position: absolute;
+            right: 5px !important;
+            top: -70px;
+        }
+        .ana-dashboard .pro-sale-per-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 1010px !important;
+            width: 820px !important;
+        }
+        .staff-page div#modalStaff .modal-footer > div:first-child,
+        .staff-page div#staffForm .modal-footer > div:first-child {
+            order: 4;
+        }
+        .staff-page div#modalStaff .modal-footer > div,
+        .staff-page div#staffForm .modal-footer > div {
+            margin-bottom: 10px;
+        }
+        .staff-page div#modalStaff .modal-footer > div:nth-child(2),
+        .staff-page div#staffForm .modal-footer > div:nth-child(2) {
+            order: 3;
+        }
+        .staff-page div#modalStaff .modal-footer > div:nth-child(4),
+        .staff-page div#staffForm .modal-footer > div:nth-child(4) {
+            order: 2;
+        }
+        .staff-page div#modalStaff .modal-footer > div:nth-child(3),
+        .staff-page div#staffForm .modal-footer > div:nth-child(3) {
+            display: none;
+        }
+
+    .resources-page div#datatable_wrapper .row:nth-child(2) > .col-sm-12 table#datatable {
+        display: table;
+        margin: 0 !important;
+    }
+    .taxes-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        display: table;
+        width: 100% !important;
+    }
+    .diss-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        display: table;
+        width: 385px !important;
+    }
+    div#tableLocation_wrapper .row:nth-child(2) > .col-sm-12 table#tableLocation {
+        width: 550px !important;    
+    }
+    .ref-source-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        width: 380px !important;
+    }
+    .can-rel-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        width: 100% !important;
+    }
+    .nav-tabs .nav-link.active, .nav-tabs .navbar .active.dropdown-toggle, .navbar .nav-tabs .active.dropdown-toggle {
+        border: none;
+        border-bottom: 3px solid #20a8d8;
+    }
+    .clie-not-page .nav-tabs {
+        overflow-x:auto;
+    }
+    .clie-not-page .col-md-9 {
+        margin-bottom: 10px;
+    }
+    /*JD Style Start*/
+    #actionForm .col-md-6 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+            #actionForm .tab-content .col-md-3, #actionForm .tab-content .col-md-6, #actionForm .tab-content .col-md-12 {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        /*JD Style End*/
+
+    }
     @media only screen and (max-device-width:736px) and (orientation: landscape) {
         .cal-header select {
             text-indent: 9999px;
@@ -1701,7 +1881,9 @@ select#FilterOrderStatus {
             max-width: 100% !important;
             width: 100% !important;
         }
-        .ana-dashboard .vouch-sale-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, .ana-dashboard .stock-move-sum-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+        .ana-dashboard .vouch-sale-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table,
+        .ana-dashboard .stock-move-sum-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table, 
+        div#tableLocation_wrapper .row:nth-child(2) > .col-sm-12 table#tableLocation {
             max-width: 100% !important;
             width: 100% !important;
         }
@@ -1717,6 +1899,21 @@ select#FilterOrderStatus {
         .ana-dashboard .comm-staff-det-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
             max-width: 1100px !important;
             width: 870px !important;
+        }
+        .ana-dashboard .sale-by-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 660px !important;
+            width: 660px !important;
+        }
+        .ana-dashboard .pro-sale-per-table div#table_wrapper .row:nth-child(2) > .col-sm-12 {
+            border:1px solid #ddd;
+        }
+        .ana-dashboard .pro-sale-per-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 1010px !important;
+            width: 830px !important;
+            border: none;
+        }
+        .ref-source-page div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            width: 100% !important;
         }
     }
     @media only screen and (device-width:812px) and (orientation: landscape) {
@@ -1897,6 +2094,24 @@ select#FilterOrderStatus {
         }
         .tab-content-main .card .card-body .comm-staff-det-table {
             padding-right:10px;
+        }
+        .ana-dashboard .containtControl > div {
+            padding: 0 10px !important;
+        }
+        .ana-dashboard .pro-sale-per-table div#table_wrapper .row:nth-child(2) > .col-sm-12 table#table {
+            max-width: 1010px !important;
+            width: 830px !important;
+            border: none;
+        }
+        .ana-dashboard .pro-sale-per-head .export-btn {
+            margin-right: 0;
+        }
+        .tab-content-main .card .card-body .col-md-12.pro-sale-per-table {
+            padding: 0 15px;
+        }
+        .ana-dashboard .pro-sale-per-table div#table_wrapper .row:nth-child(2) > .col-sm-12 {
+            overflow-x: auto;
+            padding:0;
         }
 }
 /* Added By Ivory Technolab End*/
